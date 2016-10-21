@@ -133,7 +133,7 @@ WARC|true|Researchers interested in data analysis with web archives may request 
 ## Arrange and Describe in ASpace
 
 * Any archival object can be from web archives!
-* Resource must have <phystech> note with content "Web Archives"
+* Resource must have a phystech note with content "Web Archives"
 * Archival object and all parent objects must be Other Level, Web Archives
 * Two external documents notes
 	* Status: active, initial, or inactive
