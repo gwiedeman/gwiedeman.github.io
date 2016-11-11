@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>NY 19th Congressional District</title>
+<script src="../assets/d3.v3.min.js"></script>
+<style type="text/css">
+
+div#sidebar {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width: 250px;
+    height:400px;
+    overflow:scroll;
+
+    border: 1px solid black;
+    background: #eee;
+    padding: 5px;
+    }
+
+div#sidebar_lists {
+    font-size: 75%;
+}
+#sidebar_term {
+    clear: both;
+    }
+    
+#termselect {
+    width: 100%;
+}
+div.sidebar_list {
+    width: 50%;
+    float:left;
+}
+
+div#argsopts {
+    float: right;
+}
+div#metadata {
+    position: fixed;
+    top: 0;
+    right: 0;
+    border: 1px solid black;
+    background: #eee;
+    padding: 5px;
+}
+div.metadata {
+    font-size: 75%;
+}
+
+path.link {
+  fill: none;
+  stroke: #666;
+  stroke-width: 1.5px;
+}
+
+marker#plain {
+  fill: #666;
+}
+
+marker#in {
+  fill: #44f;
+}
+
+marker#out {
+  fill: #0f0;
+}
+
+path.link.hlOut {
+    stroke: #0f0;
+    stroke-width: 2px;
+}
+path.link.hlIn, path.link.hlUndirected {
+    stroke: #44f;
+    stroke-width: 2px;
+}
+
+
+circle {
+  fill: #eee;
+  stroke: #333;
+  stroke-width: 1.5px;
+}
+circle.hl {
+    stroke: #f00;
+    fill: #f00;
+}
+circle.hlIn, circle.hlUndirected.hlUndirected, circle.hlUndirected {
+    stroke: #0f0;
+    fill: #cfc;
+}
+circle.hlOut {
+    stroke: #66f;
+    fill: #ccf;
+}
+circle.hlout.hlIn {
+    stroke: #66f;
+    fill: #cfc;
+}
+
+text {
+  font: 10px sans-serif;
+  pointer-events: none;
+}
+
+text.shad {
+  stroke: #fff;
+  stroke-width: 3px;
+  stroke-opacity: .8;
+}
+g.hl text.shad {
+    stroke: #fcc;
+      stroke-opacity: 1;
+}
+g.hlIn text.shad, g.hlUndirected text.shad {
+    stroke: #cfc;
+      stroke-opacity: 1;
+}
+g.hlOut text.shad {
+    stroke: #ddf;
+      stroke-opacity: 1;
+}
+
+
+ul { margin: 0; padding: 0; list-style-type: none;}
+    </style>
+  </head>
+  <body>
+  
+    <div id="sidebar">
+        <div id="sidebar_selectdiv"></div>
+        <h2 id="sidebar_term"></h2>
+        <div id="sidebar_lists">
+            <div class="sidebar_list" id="sidebar_inlist"></div>
+            <div class="sidebar_list" id="sidebar_outlist"></div>
+        </div>
+    </div>
+    <svg id="chart"></svg>
+    <div id="metadata"></div>
+  
+    <script type="text/javascript">
+    var data = {"profile": {"count": 2065, "retweetcount": 1428, "args": ["projects/ny19"], "usercount": 0, "earliest": "2016-10-19 00:08:26 UTC", "geocount": 1, "metadatafile": "projects/ny19/metadata.json", "opts": {"graph": "directed", "field": "user", "mode": "replies", "template": "graph.html", "threshold": 1, "output": "html"}, "latest": "2016-10-28 18:03:01 UTC"}, "nodes": [{"name": "DailyFreeman", "title": "DailyFreeman (8 tweets)"}, {"name": "ChaskelBennett", "title": "ChaskelBennett (2 tweets)"}, {"name": "LeonGoldenberg1", "title": "LeonGoldenberg1 (2 tweets)"}, {"name": "KleinMatt1", "title": "KleinMatt1 (9 tweets)"}, {"name": "mpvollen", "title": "mpvollen (7 tweets)"}, {"name": "pausetheprocess", "title": "pausetheprocess (3 tweets)"}, {"name": "politicat1", "title": "politicat1 (2 tweets)"}, {"name": "1rose1wolf", "title": "1rose1wolf (4 tweets)"}, {"name": "JohnFasoNy", "title": "JohnFasoNy (22 tweets)"}, {"name": "josieO", "title": "josieO (8 tweets)"}, {"name": "MatthewDCWall", "title": "MatthewDCWall (13 tweets)"}, {"name": "hopecosta55", "title": "hopecosta55 (2 tweets)"}, {"name": "dainpasco", "title": "dainpasco (11 tweets)"}, {"name": "PWRooney", "title": "PWRooney (3 tweets)"}, {"name": "RobKowalWGBB", "title": "RobKowalWGBB (2 tweets)"}, {"name": "AndrewCWhite", "title": "AndrewCWhite (25 tweets)"}, {"name": "forthisItweet", "title": "forthisItweet (3 tweets)"}, {"name": "gmarceau", "title": "gmarceau (3 tweets)"}, {"name": "Vote_Faso_NY19", "title": "Vote_Faso_NY19 (54 tweets)"}, {"name": "saraeckel", "title": "saraeckel (4 tweets)"}, {"name": "CompleteItCuomo", "title": "CompleteItCuomo (4 tweets)"}, {"name": "okiegrl87", "title": "okiegrl87 (2 tweets)"}, {"name": "chenger605", "title": "chenger605 (2 tweets)"}, {"name": "JamesNani845", "title": "JamesNani845 (16 tweets)"}, {"name": "CSIJosh", "title": "CSIJosh (2 tweets)"}, {"name": "briandevine", "title": "briandevine (2 tweets)"}, {"name": "ZephyrTeachout", "title": "ZephyrTeachout (58 tweets)"}, {"name": "4vines", "title": "4vines (2 tweets)"}, {"name": "eoringel", "title": "eoringel (48 tweets)"}, {"name": "SeanMcA", "title": "SeanMcA (6 tweets)"}, {"name": "teamloverecords", "title": "teamloverecords (3 tweets)"}, {"name": "camillegallo", "title": "camillegallo (3 tweets)"}, {"name": "zhunterDC", "title": "zhunterDC (4 tweets)"}, {"name": "zahskl", "title": "zahskl (10 tweets)"}, {"name": "Vernielu", "title": "Vernielu (4 tweets)"}, {"name": "philtering1", "title": "philtering1 (3 tweets)"}, {"name": "NRCC", "title": "NRCC (4 tweets)"}, {"name": "BobSalera", "title": "BobSalera (4 tweets)"}, {"name": "Stewewewewism", "title": "Stewewewewism (2 tweets)"}, {"name": "ChrisPack716", "title": "ChrisPack716 (6 tweets)"}, {"name": "Del_the_funk66", "title": "Del_the_funk66 (2 tweets)"}, {"name": "BryanLesswing", "title": "BryanLesswing (6 tweets)"}, {"name": "basquiat518", "title": "basquiat518 (2 tweets)"}, {"name": "JA03221920", "title": "JA03221920 (2 tweets)"}, {"name": "KindredSpiritNY", "title": "KindredSpiritNY (36 tweets)"}, {"name": "AustinGrahamBou", "title": "AustinGrahamBou (3 tweets)"}, {"name": "DanClarkReports", "title": "DanClarkReports (14 tweets)"}, {"name": "JenniferMayer", "title": "JenniferMayer (14 tweets)"}, {"name": "Plantflowes", "title": "Plantflowes (2 tweets)"}, {"name": "MissAnthropy", "title": "MissAnthropy (2 tweets)"}, {"name": "downwithtyranny", "title": "downwithtyranny (6 tweets)"}, {"name": "Blue__America", "title": "Blue__America (10 tweets)"}, {"name": "1982JJessin", "title": "1982JJessin (2 tweets)"}, {"name": "matt_hamilton10", "title": "matt_hamilton10 (26 tweets)"}, {"name": "NYFarmer", "title": "NYFarmer (2 tweets)"}, {"name": "overtheneonmoon", "title": "overtheneonmoon (12 tweets)"}, {"name": "RTDEngEnv", "title": "RTDEngEnv (8 tweets)"}, {"name": "jjrieper", "title": "jjrieper (4 tweets)"}, {"name": "SusanMaylone", "title": "SusanMaylone (9 tweets)"}, {"name": "davidburn", "title": "davidburn (2 tweets)"}, {"name": "occupybergennj", "title": "occupybergennj (5 tweets)"}, {"name": "michaelwhitney", "title": "michaelwhitney (0 tweets)"}, {"name": "banditelli", "title": "banditelli (1 tweet)"}, {"name": "NYI81thm", "title": "NYI81thm (2 tweets)"}, {"name": "511nyBinghamton", "title": "511nyBinghamton (2 tweets)"}, {"name": "unionteach", "title": "unionteach (2 tweets)"}, {"name": "anondescript", "title": "anondescript (3 tweets)"}, {"name": "Sarahbear80", "title": "Sarahbear80 (3 tweets)"}, {"name": "IAgreeToSee", "title": "IAgreeToSee (2 tweets)"}, {"name": "ZephyrLeechout", "title": "ZephyrLeechout (6 tweets)"}, {"name": "EricLo", "title": "EricLo (8 tweets)"}, {"name": "NYStateBATs", "title": "NYStateBATs (4 tweets)"}, {"name": "likeitsays", "title": "likeitsays (4 tweets)"}, {"name": "SusanCMonte", "title": "SusanCMonte (2 tweets)"}, {"name": "BernieManiaa", "title": "BernieManiaa (2 tweets)"}, {"name": "FixDemocracy16", "title": "FixDemocracy16 (5 tweets)"}, {"name": "PeteSikora1", "title": "PeteSikora1 (2 tweets)"}, {"name": "BillLipton", "title": "BillLipton (2 tweets)"}, {"name": "Goodrats1120", "title": "Goodrats1120 (5 tweets)"}, {"name": "fzaman93", "title": "fzaman93 (2 tweets)"}, {"name": "Konducta4LFE", "title": "Konducta4LFE (2 tweets)"}, {"name": "jed_herring", "title": "jed_herring (2 tweets)"}, {"name": "Debojg2", "title": "Debojg2 (3 tweets)"}, {"name": "jstreetdotorg", "title": "jstreetdotorg (4 tweets)"}, {"name": "NancyCastleman", "title": "NancyCastleman (9 tweets)"}, {"name": "BGSheridan", "title": "BGSheridan (2 tweets)"}, {"name": "Braver_man", "title": "Braver_man (3 tweets)"}, {"name": "RabbiHecht", "title": "RabbiHecht (3 tweets)"}, {"name": "NYPolitiFact", "title": "NYPolitiFact (6 tweets)"}, {"name": "AnchorsAwayAdv", "title": "AnchorsAwayAdv (2 tweets)"}, {"name": "vivilock", "title": "vivilock (2 tweets)"}, {"name": "jonny_battle", "title": "jonny_battle (5 tweets)"}, {"name": "SuzanneBachner", "title": "SuzanneBachner (2 tweets)"}, {"name": "CityAndStateNY", "title": "CityAndStateNY (2 tweets)"}, {"name": "gilb195", "title": "gilb195 (2 tweets)"}, {"name": "supapally", "title": "supapally (2 tweets)"}, {"name": "TroutMaskReplca", "title": "TroutMaskReplca (2 tweets)"}, {"name": "benwilliams9999", "title": "benwilliams9999 (2 tweets)"}, {"name": "seankelly014", "title": "seankelly014 (2 tweets)"}, {"name": "hiriuku", "title": "hiriuku (3 tweets)"}, {"name": "grandmaofanange", "title": "grandmaofanange (3 tweets)"}, {"name": "Cwass56", "title": "Cwass56 (3 tweets)"}, {"name": "Ragcha", "title": "Ragcha (0 tweets)"}, {"name": "BaileySam", "title": "BaileySam (1 tweet)"}, {"name": "JSithavady", "title": "JSithavady (5 tweets)"}, {"name": "abwhite7", "title": "abwhite7 (3 tweets)"}, {"name": "orlaighdavis", "title": "orlaighdavis (2 tweets)"}, {"name": "mesquitepenny", "title": "mesquitepenny (3 tweets)"}, {"name": "chapmanclark", "title": "chapmanclark (2 tweets)"}, {"name": "jeezecat", "title": "jeezecat (2 tweets)"}, {"name": "llstudent08", "title": "llstudent08 (2 tweets)"}, {"name": "StopBigMoney", "title": "StopBigMoney (4 tweets)"}, {"name": "melimel521", "title": "melimel521 (3 tweets)"}, {"name": "CWADistrict1", "title": "CWADistrict1 (3 tweets)"}, {"name": "DemSpring", "title": "DemSpring (2 tweets)"}, {"name": "Jarred_A_Hoker", "title": "Jarred_A_Hoker (4 tweets)"}, {"name": "NewRBEworld", "title": "NewRBEworld (2 tweets)"}, {"name": "inartic", "title": "inartic (2 tweets)"}, {"name": "glamama", "title": "glamama (2 tweets)"}, {"name": "TiaRachel", "title": "TiaRachel (3 tweets)"}, {"name": "me_sheer_", "title": "me_sheer_ (2 tweets)"}, {"name": "jemsan1", "title": "jemsan1 (2 tweets)"}, {"name": "guillermoesnal", "title": "guillermoesnal (6 tweets)"}, {"name": "jess1962", "title": "jess1962 (10 tweets)"}, {"name": "DSiemback", "title": "DSiemback (3 tweets)"}, {"name": "quikjl_", "title": "quikjl_ (2 tweets)"}, {"name": "DFLprogressives", "title": "DFLprogressives (2 tweets)"}, {"name": "GottaLaff", "title": "GottaLaff (3 tweets)"}, {"name": "sigche", "title": "sigche (2 tweets)"}, {"name": "mairkor", "title": "mairkor (5 tweets)"}, {"name": "woflwaffle", "title": "woflwaffle (2 tweets)"}, {"name": "BadassTeachersA", "title": "BadassTeachersA (4 tweets)"}, {"name": "TJWoodstockNY", "title": "TJWoodstockNY (5 tweets)"}, {"name": "gramsci1937", "title": "gramsci1937 (4 tweets)"}, {"name": "LouisianaBernie", "title": "LouisianaBernie (8 tweets)"}, {"name": "TimW518", "title": "TimW518 (2 tweets)"}, {"name": "WorkingFamilies", "title": "WorkingFamilies (4 tweets)"}, {"name": "micjojd", "title": "micjojd (2 tweets)"}, {"name": "michaelvsprague", "title": "michaelvsprague (2 tweets)"}, {"name": "nelsnelson", "title": "nelsnelson (2 tweets)"}, {"name": "HealHealthcare", "title": "HealHealthcare (5 tweets)"}, {"name": "ctdulcimer", "title": "ctdulcimer (3 tweets)"}, {"name": "jeremiahlyell", "title": "jeremiahlyell (2 tweets)"}, {"name": "thelmadams", "title": "thelmadams (2 tweets)"}, {"name": "Cytokine99", "title": "Cytokine99 (2 tweets)"}, {"name": "jesusruns", "title": "jesusruns (3 tweets)"}, {"name": "LarisaShaterian", "title": "LarisaShaterian (2 tweets)"}, {"name": "aproiaTWCNews", "title": "aproiaTWCNews (8 tweets)"}, {"name": "trobertson", "title": "trobertson (2 tweets)"}, {"name": "TWCNewsSTier", "title": "TWCNewsSTier (5 tweets)"}, {"name": "ZackRCampbell", "title": "ZackRCampbell (2 tweets)"}, {"name": "catskillfishing", "title": "catskillfishing (26 tweets)"}, {"name": "Rt9Grad", "title": "Rt9Grad (2 tweets)"}, {"name": "NYWFP", "title": "NYWFP (7 tweets)"}, {"name": "hekasia", "title": "hekasia (3 tweets)"}, {"name": "itsWanda", "title": "itsWanda (2 tweets)"}, {"name": "hillaryfabrico", "title": "hillaryfabrico (2 tweets)"}, {"name": "marla_kilfoyle", "title": "marla_kilfoyle (4 tweets)"}, {"name": "kitson", "title": "kitson (10 tweets)"}, {"name": "moniquejolie", "title": "moniquejolie (4 tweets)"}, {"name": "TC_Stompa", "title": "TC_Stompa (0 tweets)"}, {"name": "313Doll", "title": "313Doll (1 tweet)"}, {"name": "solaramericanow", "title": "solaramericanow (3 tweets)"}, {"name": "SDS_Sunlight", "title": "SDS_Sunlight (3 tweets)"}, {"name": "L_Gale517", "title": "L_Gale517 (3 tweets)"}, {"name": "beth_dimino", "title": "beth_dimino (10 tweets)"}, {"name": "adriana7m", "title": "adriana7m (2 tweets)"}, {"name": "diamondsnjeans", "title": "diamondsnjeans (2 tweets)"}, {"name": "CL4R4GU3RR4", "title": "CL4R4GU3RR4 (3 tweets)"}, {"name": "emiljana137", "title": "emiljana137 (3 tweets)"}, {"name": "suaveadonis", "title": "suaveadonis (4 tweets)"}, {"name": "KUngernyc", "title": "KUngernyc (2 tweets)"}, {"name": "TheVipersNest", "title": "TheVipersNest (2 tweets)"}, {"name": "jonyedin", "title": "jonyedin (2 tweets)"}, {"name": "zie88z", "title": "zie88z (2 tweets)"}, {"name": "hspaulds", "title": "hspaulds (3 tweets)"}, {"name": "girlziplocked", "title": "girlziplocked (2 tweets)"}, {"name": "AdrianHZavala", "title": "AdrianHZavala (5 tweets)"}, {"name": "edfischman", "title": "edfischman (2 tweets)"}, {"name": "Ah_occ_o", "title": "Ah_occ_o (4 tweets)"}, {"name": "BethCol77455974", "title": "BethCol77455974 (2 tweets)"}, {"name": "JockBuster", "title": "JockBuster (2 tweets)"}, {"name": "misscrf", "title": "misscrf (2 tweets)"}, {"name": "pantaleo_mary", "title": "pantaleo_mary (4 tweets)"}, {"name": "JudyJones1990", "title": "JudyJones1990 (7 tweets)"}, {"name": "1Birdie4Sanders", "title": "1Birdie4Sanders (2 tweets)"}, {"name": "mrbabypants", "title": "mrbabypants (3 tweets)"}, {"name": "LadybugBooksNYC", "title": "LadybugBooksNYC (4 tweets)"}, {"name": "EmmaSegasture", "title": "EmmaSegasture (3 tweets)"}, {"name": "SaraCLMT", "title": "SaraCLMT (3 tweets)"}, {"name": "nate37716", "title": "nate37716 (6 tweets)"}, {"name": "PascoRevolution", "title": "PascoRevolution (12 tweets)"}, {"name": "OurPoliticalRev", "title": "OurPoliticalRev (3 tweets)"}, {"name": "BeeBop4933", "title": "BeeBop4933 (5 tweets)"}, {"name": "KAIJUKING23", "title": "KAIJUKING23 (16 tweets)"}, {"name": "Madwomanmoon", "title": "Madwomanmoon (2 tweets)"}, {"name": "AngieinWAState", "title": "AngieinWAState (2 tweets)"}, {"name": "AndrewNemec2", "title": "AndrewNemec2 (5 tweets)"}, {"name": "BernieUpstateNY", "title": "BernieUpstateNY (5 tweets)"}, {"name": "HR_PAC", "title": "HR_PAC (2 tweets)"}, {"name": "kevinrns", "title": "kevinrns (8 tweets)"}, {"name": "RiseShinePAC", "title": "RiseShinePAC (2 tweets)"}, {"name": "thehuntinghouse", "title": "thehuntinghouse (2 tweets)"}, {"name": "TzvetaManolova", "title": "TzvetaManolova (2 tweets)"}, {"name": "wolfeprowler1", "title": "wolfeprowler1 (2 tweets)"}, {"name": "FatVeganCommie", "title": "FatVeganCommie (4 tweets)"}, {"name": "samjohnftw", "title": "samjohnftw (3 tweets)"}, {"name": "KenFeltman", "title": "KenFeltman (2 tweets)"}, {"name": "angieptaylor", "title": "angieptaylor (2 tweets)"}, {"name": "Kilgore_Trout25", "title": "Kilgore_Trout25 (2 tweets)"}, {"name": "GarnetHeraman", "title": "GarnetHeraman (2 tweets)"}, {"name": "converting_vege", "title": "converting_vege (3 tweets)"}, {"name": "pennandtellum", "title": "pennandtellum (2 tweets)"}, {"name": "MargaretDudley1", "title": "MargaretDudley1 (2 tweets)"}, {"name": "RNunezLawrence", "title": "RNunezLawrence (2 tweets)"}, {"name": "Purplegarter1", "title": "Purplegarter1 (21 tweets)"}, {"name": "chic61dotcom", "title": "chic61dotcom (6 tweets)"}, {"name": "jopcar115", "title": "jopcar115 (2 tweets)"}, {"name": "poozer87", "title": "poozer87 (5 tweets)"}, {"name": "BobGKingston", "title": "BobGKingston (22 tweets)"}, {"name": "Mglasgo17", "title": "Mglasgo17 (3 tweets)"}, {"name": "djYishaiBYaL", "title": "djYishaiBYaL (3 tweets)"}, {"name": "ckkoch3", "title": "ckkoch3 (2 tweets)"}, {"name": "livebeef", "title": "livebeef (2 tweets)"}, {"name": "MicalMoser", "title": "MicalMoser (4 tweets)"}, {"name": "EnviroChem", "title": "EnviroChem (2 tweets)"}, {"name": "complainster", "title": "complainster (2 tweets)"}, {"name": "TimKaname", "title": "TimKaname (2 tweets)"}, {"name": "boomer4bernie", "title": "boomer4bernie (3 tweets)"}, {"name": "DonnaMaertz", "title": "DonnaMaertz (2 tweets)"}, {"name": "PrinceMyshkin", "title": "PrinceMyshkin (2 tweets)"}, {"name": "clanghoff1", "title": "clanghoff1 (2 tweets)"}, {"name": "mbouchard58", "title": "mbouchard58 (2 tweets)"}, {"name": "pattho", "title": "pattho (3 tweets)"}, {"name": "csilberman70", "title": "csilberman70 (3 tweets)"}, {"name": "BTavolacci", "title": "BTavolacci (5 tweets)"}, {"name": "NYNOW_PBS", "title": "NYNOW_PBS (3 tweets)"}, {"name": "SaveMain_St", "title": "SaveMain_St (4 tweets)"}, {"name": "TWCNewsAlbany", "title": "TWCNewsAlbany (3 tweets)"}, {"name": "CapitalTonight", "title": "CapitalTonight (1 tweet)"}, {"name": "insunlite", "title": "insunlite (2 tweets)"}, {"name": "Thee_Asthmatic", "title": "Thee_Asthmatic (2 tweets)"}, {"name": "joshingnyc", "title": "joshingnyc (2 tweets)"}, {"name": "HughJaeger", "title": "HughJaeger (2 tweets)"}, {"name": "pfoaprojectny1", "title": "pfoaprojectny1 (2 tweets)"}, {"name": "CitizenCait", "title": "CitizenCait (3 tweets)"}, {"name": "JaaaaayCeeeee", "title": "JaaaaayCeeeee (5 tweets)"}, {"name": "SarahTWCNews", "title": "SarahTWCNews (2 tweets)"}, {"name": "TWCNewsHV", "title": "TWCNewsHV (3 tweets)"}, {"name": "BrianLehrer", "title": "BrianLehrer (4 tweets)"}, {"name": "lahautj", "title": "lahautj (3 tweets)"}, {"name": "TVEPFOX", "title": "TVEPFOX (6 tweets)"}, {"name": "EricJafMN", "title": "EricJafMN (5 tweets)"}, {"name": "MicheleWojnar", "title": "MicheleWojnar (4 tweets)"}, {"name": "lgbral", "title": "lgbral (3 tweets)"}, {"name": "ArtGalleryTroy", "title": "ArtGalleryTroy (3 tweets)"}, {"name": "Mimzy122", "title": "Mimzy122 (2 tweets)"}, {"name": "GiftedPrude", "title": "GiftedPrude (2 tweets)"}, {"name": "bocesrn", "title": "bocesrn (5 tweets)"}, {"name": "mleleigh", "title": "mleleigh (2 tweets)"}, {"name": "TherealGlidden", "title": "TherealGlidden (4 tweets)"}, {"name": "mug_costanza", "title": "mug_costanza (2 tweets)"}, {"name": "RecoveredCons", "title": "RecoveredCons (2 tweets)"}, {"name": "lodgepolepines", "title": "lodgepolepines (2 tweets)"}, {"name": "dfleming16", "title": "dfleming16 (2 tweets)"}, {"name": "twilight2_0", "title": "twilight2_0 (2 tweets)"}, {"name": "ColdWarrior2000", "title": "ColdWarrior2000 (3 tweets)"}, {"name": "PixyPixl", "title": "PixyPixl (5 tweets)"}, {"name": "SenSanders", "title": "SenSanders (0 tweets)"}, {"name": "tealalltheway", "title": "tealalltheway (2 tweets)"}, {"name": "sparkyNadine", "title": "sparkyNadine (2 tweets)"}, {"name": "OurRevoIution", "title": "OurRevoIution (3 tweets)"}, {"name": "erictheteamster", "title": "erictheteamster (3 tweets)"}, {"name": "1rantingrooster", "title": "1rantingrooster (2 tweets)"}, {"name": "rjber15", "title": "rjber15 (3 tweets)"}, {"name": "organicgay", "title": "organicgay (2 tweets)"}, {"name": "FightonBernie", "title": "FightonBernie (2 tweets)"}, {"name": "ben__America", "title": "ben__America (2 tweets)"}, {"name": "Nu_Metal_Man", "title": "Nu_Metal_Man (2 tweets)"}, {"name": "OurRevolution", "title": "OurRevolution (2 tweets)"}, {"name": "_silversmith", "title": "_silversmith (4 tweets)"}, {"name": "wellhope", "title": "wellhope (2 tweets)"}, {"name": "teepeerecords", "title": "teepeerecords (2 tweets)"}, {"name": "guidedlightning", "title": "guidedlightning (2 tweets)"}, {"name": "reddit4bernie", "title": "reddit4bernie (4 tweets)"}, {"name": "ReneeRose723", "title": "ReneeRose723 (3 tweets)"}, {"name": "RussOnPolitics", "title": "RussOnPolitics (5 tweets)"}, {"name": "Peachie100", "title": "Peachie100 (2 tweets)"}, {"name": "WMN4SRVL", "title": "WMN4SRVL (3 tweets)"}, {"name": "singsingsolo", "title": "singsingsolo (2 tweets)"}, {"name": "reedadamson", "title": "reedadamson (2 tweets)"}, {"name": "JaysenBagbey", "title": "JaysenBagbey (2 tweets)"}, {"name": "CarlKornNYSUT", "title": "CarlKornNYSUT (3 tweets)"}, {"name": "danpallas88", "title": "danpallas88 (0 tweets)"}, {"name": "FonrougeGab", "title": "FonrougeGab (22 tweets)"}, {"name": "GinaWFox", "title": "GinaWFox (1 tweet)"}, {"name": "w4rma", "title": "w4rma (0 tweets)"}, {"name": "fasotwo", "title": "fasotwo (0 tweets)"}, {"name": "bennettdanielle", "title": "bennettdanielle (0 tweets)"}, {"name": "jonathansmucker", "title": "jonathansmucker (2 tweets)"}, {"name": "HarrisonKramer1", "title": "HarrisonKramer1 (4 tweets)"}, {"name": "WesterbergHS89", "title": "WesterbergHS89 (1 tweet)"}, {"name": "celtichief", "title": "celtichief (1 tweet)"}, {"name": "caradox", "title": "caradox (2 tweets)"}, {"name": "BobbyHonold", "title": "BobbyHonold (2 tweets)"}, {"name": "Ian_CNY", "title": "Ian_CNY (1 tweet)"}, {"name": "eileen_tweets", "title": "eileen_tweets (2 tweets)"}, {"name": "Vegemini", "title": "Vegemini (3 tweets)"}, {"name": "ppppolls", "title": "ppppolls (2 tweets)"}, {"name": "litknitgrit", "title": "litknitgrit (2 tweets)"}, {"name": "slinkerwink", "title": "slinkerwink (2 tweets)"}, {"name": "gregberlin", "title": "gregberlin (2 tweets)"}, {"name": "MikeNellis", "title": "MikeNellis (2 tweets)"}, {"name": "DKElections", "title": "DKElections (2 tweets)"}, {"name": "asmith83", "title": "asmith83 (3 tweets)"}, {"name": "Politics_Polls", "title": "Politics_Polls (2 tweets)"}, {"name": "RealBankReform", "title": "RealBankReform (2 tweets)"}, {"name": "Anthony_Stuart", "title": "Anthony_Stuart (2 tweets)"}, {"name": "joey_dwork", "title": "joey_dwork (2 tweets)"}, {"name": "Cinecrab", "title": "Cinecrab (12 tweets)"}, {"name": "RealCoolTimes", "title": "RealCoolTimes (2 tweets)"}, {"name": "el_gringo_duhal", "title": "el_gringo_duhal (2 tweets)"}, {"name": "eichendoit", "title": "eichendoit (3 tweets)"}, {"name": "TragerUFT", "title": "TragerUFT (2 tweets)"}, {"name": "midroad1", "title": "midroad1 (7 tweets)"}, {"name": "quailcrown", "title": "quailcrown (5 tweets)"}, {"name": "jwnychange", "title": "jwnychange (4 tweets)"}, {"name": "politico_chris", "title": "politico_chris (2 tweets)"}, {"name": "GoHedgeClippers", "title": "GoHedgeClippers (10 tweets)"}, {"name": "mkink", "title": "mkink (9 tweets)"}, {"name": "FatQuarter1822", "title": "FatQuarter1822 (2 tweets)"}, {"name": "JonCampbellGAN", "title": "JonCampbellGAN (0 tweets)"}, {"name": "KateAronoff", "title": "KateAronoff (1 tweet)"}, {"name": "NancyOsborne180", "title": "NancyOsborne180 (2 tweets)"}, {"name": "marbethflies", "title": "marbethflies (2 tweets)"}, {"name": "stphil", "title": "stphil (2 tweets)"}, {"name": "MacieBoughton", "title": "MacieBoughton (2 tweets)"}, {"name": "ObamaDems", "title": "ObamaDems (0 tweets)"}, {"name": "Chris_Strauch", "title": "Chris_Strauch (2 tweets)"}, {"name": "chris0s", "title": "chris0s (2 tweets)"}, {"name": "ParadigmShiftII", "title": "ParadigmShiftII (3 tweets)"}, {"name": "kareneinstein", "title": "kareneinstein (2 tweets)"}, {"name": "lewishardy", "title": "lewishardy (2 tweets)"}, {"name": "firehorse1200", "title": "firehorse1200 (1 tweet)"}, {"name": "BigHunterNY", "title": "BigHunterNY (6 tweets)"}, {"name": "kaiyg", "title": "kaiyg (2 tweets)"}, {"name": "bryan_boleyn", "title": "bryan_boleyn (2 tweets)"}, {"name": "asaxton71", "title": "asaxton71 (2 tweets)"}, {"name": "PaprikaPink", "title": "PaprikaPink (2 tweets)"}, {"name": "hotcoffeeandpie", "title": "hotcoffeeandpie (3 tweets)"}, {"name": "catawu", "title": "catawu (2 tweets)"}, {"name": "JoanieGentian", "title": "JoanieGentian (2 tweets)"}, {"name": "RabbiKolakowski", "title": "RabbiKolakowski (6 tweets)"}, {"name": "spimpsner", "title": "spimpsner (3 tweets)"}, {"name": "kevinjbrauer", "title": "kevinjbrauer (2 tweets)"}, {"name": "joyemail88", "title": "joyemail88 (2 tweets)"}, {"name": "dottiechauncy", "title": "dottiechauncy (2 tweets)"}, {"name": "mlrosie215", "title": "mlrosie215 (2 tweets)"}, {"name": "etecbill", "title": "etecbill (2 tweets)"}, {"name": "ethanmmm1", "title": "ethanmmm1 (2 tweets)"}, {"name": "JacquelynBaker8", "title": "JacquelynBaker8 (2 tweets)"}, {"name": "ArabsForBernie", "title": "ArabsForBernie (2 tweets)"}, {"name": "BryanViggiani", "title": "BryanViggiani (2 tweets)"}, {"name": "phillipwclark", "title": "phillipwclark (2 tweets)"}, {"name": "PhilipPapaelias", "title": "PhilipPapaelias (2 tweets)"}, {"name": "Grubiak_", "title": "Grubiak_ (2 tweets)"}, {"name": "NeoProgressive1", "title": "NeoProgressive1 (3 tweets)"}, {"name": "CraigCaplan", "title": "CraigCaplan (2 tweets)"}, {"name": "Rafaeslomejor", "title": "Rafaeslomejor (2 tweets)"}, {"name": "jallen1299", "title": "jallen1299 (3 tweets)"}, {"name": "LeoMaleyMA", "title": "LeoMaleyMA (2 tweets)"}, {"name": "morhannah", "title": "morhannah (2 tweets)"}, {"name": "Shirley10090505", "title": "Shirley10090505 (2 tweets)"}, {"name": "RoseAnnDeMoro", "title": "RoseAnnDeMoro (2 tweets)"}, {"name": "LaborDemocracy_", "title": "LaborDemocracy_ (2 tweets)"}, {"name": "leighadlr", "title": "leighadlr (2 tweets)"}, {"name": "greggiroux", "title": "greggiroux (2 tweets)"}, {"name": "thedailystar", "title": "thedailystar (3 tweets)"}, {"name": "CLF_423", "title": "CLF_423 (2 tweets)"}, {"name": "rdelaney1276", "title": "rdelaney1276 (2 tweets)"}, {"name": "AshleyHupfl", "title": "AshleyHupfl (2 tweets)"}, {"name": "robereid", "title": "robereid (2 tweets)"}, {"name": "merriox", "title": "merriox (2 tweets)"}, {"name": "JohnABusinger", "title": "JohnABusinger (2 tweets)"}, {"name": "mikeysandmel", "title": "mikeysandmel (2 tweets)"}, {"name": "owillis", "title": "owillis (2 tweets)"}, {"name": "barbiesnow37", "title": "barbiesnow37 (2 tweets)"}, {"name": "fwattention", "title": "fwattention (2 tweets)"}, {"name": "PaulKendal_", "title": "PaulKendal_ (2 tweets)"}, {"name": "kombiz", "title": "kombiz (3 tweets)"}, {"name": "SheldonLynette", "title": "SheldonLynette (2 tweets)"}, {"name": "BoomerNiner", "title": "BoomerNiner (2 tweets)"}, {"name": "ZaRdOz420WPN", "title": "ZaRdOz420WPN (3 tweets)"}, {"name": "OurRevolution2", "title": "OurRevolution2 (5 tweets)"}, {"name": "WeLoveJillStein", "title": "WeLoveJillStein (5 tweets)"}, {"name": "JimNichols", "title": "JimNichols (2 tweets)"}, {"name": "blessedjester", "title": "blessedjester (5 tweets)"}, {"name": "BernieSandars", "title": "BernieSandars (3 tweets)"}, {"name": "ILoveBernie1", "title": "ILoveBernie1 (6 tweets)"}, {"name": "BernieTheBest1", "title": "BernieTheBest1 (5 tweets)"}, {"name": "247miracle", "title": "247miracle (7 tweets)"}, {"name": "VoteGreen2", "title": "VoteGreen2 (5 tweets)"}, {"name": "BernieCrats1", "title": "BernieCrats1 (5 tweets)"}, {"name": "U_SOCIALISTAS", "title": "U_SOCIALISTAS (2 tweets)"}, {"name": "People4Bernie", "title": "People4Bernie (6 tweets)"}, {"name": "phillipanderson", "title": "phillipanderson (2 tweets)"}, {"name": "RickKarlinTU", "title": "RickKarlinTU (2 tweets)"}, {"name": "dinman558", "title": "dinman558 (2 tweets)"}, {"name": "andrewspolitics", "title": "andrewspolitics (2 tweets)"}, {"name": "ronaldo129", "title": "ronaldo129 (2 tweets)"}, {"name": "Teapublicanways", "title": "Teapublicanways (2 tweets)"}, {"name": "NPEaction", "title": "NPEaction (2 tweets)"}, {"name": "landolfi", "title": "landolfi (2 tweets)"}, {"name": "RedRevolutionCA", "title": "RedRevolutionCA (2 tweets)"}, {"name": "shattar0429", "title": "shattar0429 (2 tweets)"}, {"name": "joe_dirty", "title": "joe_dirty (2 tweets)"}, {"name": "Maggyw519", "title": "Maggyw519 (2 tweets)"}, {"name": "mixed_race", "title": "mixed_race (2 tweets)"}, {"name": "davidmcclatchey", "title": "davidmcclatchey (3 tweets)"}, {"name": "programjustin", "title": "programjustin (2 tweets)"}, {"name": "AmericaRising", "title": "AmericaRising (8 tweets)"}, {"name": "SpoaSteph", "title": "SpoaSteph (2 tweets)"}, {"name": "JerryLingle", "title": "JerryLingle (2 tweets)"}, {"name": "DebdLun", "title": "DebdLun (2 tweets)"}, {"name": "cqprofiles", "title": "cqprofiles (2 tweets)"}, {"name": "layla_2289", "title": "layla_2289 (2 tweets)"}, {"name": "aplemkseriously", "title": "aplemkseriously (2 tweets)"}, {"name": "elisha1022", "title": "elisha1022 (2 tweets)"}, {"name": "SciFactivist", "title": "SciFactivist (2 tweets)"}, {"name": "MaxwellCollyard", "title": "MaxwellCollyard (2 tweets)"}, {"name": "Support_ALL_USA", "title": "Support_ALL_USA (2 tweets)"}, {"name": "Charmed86", "title": "Charmed86 (2 tweets)"}, {"name": "mrJackCalvert", "title": "mrJackCalvert (2 tweets)"}, {"name": "LiberalPhenom", "title": "LiberalPhenom (2 tweets)"}, {"name": "phemale61", "title": "phemale61 (2 tweets)"}, {"name": "pixelren", "title": "pixelren (2 tweets)"}, {"name": "TrueBlueLiberal", "title": "TrueBlueLiberal (2 tweets)"}, {"name": "RaniVermonty", "title": "RaniVermonty (4 tweets)"}, {"name": "DNCBalloon", "title": "DNCBalloon (6 tweets)"}, {"name": "MariArtiB", "title": "MariArtiB (2 tweets)"}, {"name": "bernie16_607", "title": "bernie16_607 (4 tweets)"}, {"name": "zokh1", "title": "zokh1 (2 tweets)"}, {"name": "ClahJ", "title": "ClahJ (2 tweets)"}, {"name": "CHHolte", "title": "CHHolte (2 tweets)"}, {"name": "courtneygfuller", "title": "courtneygfuller (2 tweets)"}, {"name": "10chaselane", "title": "10chaselane (3 tweets)"}, {"name": "PalpableDisgust", "title": "PalpableDisgust (2 tweets)"}, {"name": "KateConstantini", "title": "KateConstantini (2 tweets)"}, {"name": "ramsincanon", "title": "ramsincanon (2 tweets)"}, {"name": "TAFORU", "title": "TAFORU (2 tweets)"}, {"name": "KenzoShibata", "title": "KenzoShibata (2 tweets)"}, {"name": "agrenell", "title": "agrenell (9 tweets)"}, {"name": "SquarePegDem", "title": "SquarePegDem (2 tweets)"}, {"name": "PatrioticMills", "title": "PatrioticMills (3 tweets)"}, {"name": "SarahEdmondsPhD", "title": "SarahEdmondsPhD (2 tweets)"}, {"name": "SDCoscione", "title": "SDCoscione (2 tweets)"}, {"name": "EonBolo", "title": "EonBolo (2 tweets)"}, {"name": "ColinTReed", "title": "ColinTReed (5 tweets)"}, {"name": "BaboonOxcart", "title": "BaboonOxcart (2 tweets)"}, {"name": "hofmann_rose", "title": "hofmann_rose (2 tweets)"}, {"name": "CTLizB", "title": "CTLizB (5 tweets)"}, {"name": "MichaelTG09", "title": "MichaelTG09 (3 tweets)"}, {"name": "AnthonyCraigBon", "title": "AnthonyCraigBon (2 tweets)"}, {"name": "vonzellainc", "title": "vonzellainc (2 tweets)"}, {"name": "bad_deku", "title": "bad_deku (2 tweets)"}, {"name": "MrDuckstep", "title": "MrDuckstep (2 tweets)"}, {"name": "DeniseSimone65", "title": "DeniseSimone65 (3 tweets)"}, {"name": "skaferowsky", "title": "skaferowsky (2 tweets)"}, {"name": "HaukeFischbeck", "title": "HaukeFischbeck (2 tweets)"}, {"name": "NagyNot", "title": "NagyNot (2 tweets)"}, {"name": "KAmosleh", "title": "KAmosleh (2 tweets)"}, {"name": "llarks", "title": "llarks (2 tweets)"}, {"name": "rpeguru", "title": "rpeguru (2 tweets)"}, {"name": "djneilarmstrong", "title": "djneilarmstrong (2 tweets)"}, {"name": "leecollinsma", "title": "leecollinsma (2 tweets)"}, {"name": "zoraudet", "title": "zoraudet (2 tweets)"}, {"name": "DanielDHogan", "title": "DanielDHogan (1 tweet)"}, {"name": "Silly_Elsa", "title": "Silly_Elsa (3 tweets)"}, {"name": "EvanRThies", "title": "EvanRThies (2 tweets)"}, {"name": "MuslimDemsOrg", "title": "MuslimDemsOrg (2 tweets)"}, {"name": "KinslerME", "title": "KinslerME (2 tweets)"}, {"name": "faiza_n_ali", "title": "faiza_n_ali (2 tweets)"}, {"name": "Teachers4Zephyr", "title": "Teachers4Zephyr (6 tweets)"}, {"name": "katieraffa", "title": "katieraffa (2 tweets)"}, {"name": "Nyr194", "title": "Nyr194 (3 tweets)"}, {"name": "planetcelia", "title": "planetcelia (2 tweets)"}, {"name": "mealinesam", "title": "mealinesam (2 tweets)"}, {"name": "tampabaybucsfan", "title": "tampabaybucsfan (2 tweets)"}, {"name": "KpHeaney", "title": "KpHeaney (2 tweets)"}, {"name": "EricSturrock", "title": "EricSturrock (9 tweets)"}, {"name": "carolburris", "title": "carolburris (2 tweets)"}, {"name": "Winshield20", "title": "Winshield20 (3 tweets)"}, {"name": "OhioBATs", "title": "OhioBATs (2 tweets)"}, {"name": "chadglasn", "title": "chadglasn (2 tweets)"}, {"name": "mnemosynesonnet", "title": "mnemosynesonnet (4 tweets)"}, {"name": "NYSLB", "title": "NYSLB (2 tweets)"}, {"name": "carminemac", "title": "carminemac (4 tweets)"}, {"name": "Limamoro42", "title": "Limamoro42 (2 tweets)"}, {"name": "tbegor", "title": "tbegor (2 tweets)"}, {"name": "merewhiz29", "title": "merewhiz29 (2 tweets)"}, {"name": "mstalksalot99", "title": "mstalksalot99 (2 tweets)"}, {"name": "MountainLakePBS", "title": "MountainLakePBS (2 tweets)"}, {"name": "DrPeterLang", "title": "DrPeterLang (2 tweets)"}, {"name": "__Reenie__", "title": "__Reenie__ (3 tweets)"}, {"name": "The_book_girl", "title": "The_book_girl (2 tweets)"}, {"name": "SDNorthShore", "title": "SDNorthShore (2 tweets)"}, {"name": "BridgetBallSha1", "title": "BridgetBallSha1 (3 tweets)"}, {"name": "Angiet5312", "title": "Angiet5312 (2 tweets)"}, {"name": "Olorin20", "title": "Olorin20 (2 tweets)"}, {"name": "TanjaTWCNews", "title": "TanjaTWCNews (7 tweets)"}, {"name": "balihai2", "title": "balihai2 (2 tweets)"}, {"name": "sherrilee7", "title": "sherrilee7 (2 tweets)"}, {"name": "licia2hot4u", "title": "licia2hot4u (2 tweets)"}, {"name": "DrDenaGrayson", "title": "DrDenaGrayson (2 tweets)"}, {"name": "imsagna", "title": "imsagna (2 tweets)"}, {"name": "HelloKiddyMeow", "title": "HelloKiddyMeow (2 tweets)"}, {"name": "gvest60", "title": "gvest60 (2 tweets)"}, {"name": "talk1776", "title": "talk1776 (3 tweets)"}, {"name": "SedonaRockss", "title": "SedonaRockss (2 tweets)"}, {"name": "wuhBAM", "title": "wuhBAM (2 tweets)"}, {"name": "Cgerm1", "title": "Cgerm1 (3 tweets)"}, {"name": "DavidHowardKing", "title": "DavidHowardKing (2 tweets)"}, {"name": "ScottSloofman", "title": "ScottSloofman (2 tweets)"}, {"name": "joelmsiegel", "title": "joelmsiegel (2 tweets)"}, {"name": "nilsen31", "title": "nilsen31 (2 tweets)"}, {"name": "LynnInCA", "title": "LynnInCA (2 tweets)"}, {"name": "cnreves", "title": "cnreves (3 tweets)"}, {"name": "DarkandWondrous", "title": "DarkandWondrous (2 tweets)"}, {"name": "LauraTenEyck", "title": "LauraTenEyck (2 tweets)"}, {"name": "kellystp", "title": "kellystp (2 tweets)"}, {"name": "ny_progressives", "title": "ny_progressives (2 tweets)"}, {"name": "kira_eric", "title": "kira_eric (2 tweets)"}, {"name": "sallenTWCNews", "title": "sallenTWCNews (3 tweets)"}, {"name": "adam_m_jcbs", "title": "adam_m_jcbs (2 tweets)"}, {"name": "KimberlyBozman", "title": "KimberlyBozman (3 tweets)"}, {"name": "jordanhirsch", "title": "jordanhirsch (2 tweets)"}, {"name": "sundriedkiwi", "title": "sundriedkiwi (2 tweets)"}, {"name": "zhatgimi", "title": "zhatgimi (2 tweets)"}, {"name": "JenModica", "title": "JenModica (2 tweets)"}, {"name": "bunnyborg", "title": "bunnyborg (2 tweets)"}, {"name": "Monaca6", "title": "Monaca6 (2 tweets)"}, {"name": "Leckenyc", "title": "Leckenyc (2 tweets)"}, {"name": "jocelynjtweet", "title": "jocelynjtweet (2 tweets)"}, {"name": "evapaterson", "title": "evapaterson (2 tweets)"}, {"name": "skrossa", "title": "skrossa (2 tweets)"}, {"name": "MschRn", "title": "MschRn (2 tweets)"}, {"name": "BernCalifornia", "title": "BernCalifornia (3 tweets)"}, {"name": "Jorja_TWCNews", "title": "Jorja_TWCNews (2 tweets)"}, {"name": "BrettBioKinetiX", "title": "BrettBioKinetiX (2 tweets)"}, {"name": "husky_sandals", "title": "husky_sandals (2 tweets)"}, {"name": "NancyDiMattia1", "title": "NancyDiMattia1 (2 tweets)"}, {"name": "WideLightImages", "title": "WideLightImages (2 tweets)"}, {"name": "Badlands75", "title": "Badlands75 (2 tweets)"}, {"name": "Only4RM", "title": "Only4RM (2 tweets)"}, {"name": "SolomonTWCNews", "title": "SolomonTWCNews (4 tweets)"}, {"name": "jfreewright", "title": "jfreewright (2 tweets)"}, {"name": "MichaelMurphyNY", "title": "MichaelMurphyNY (2 tweets)"}, {"name": "martini086", "title": "martini086 (2 tweets)"}, {"name": "Dzhessi", "title": "Dzhessi (2 tweets)"}, {"name": "JackolaLaura", "title": "JackolaLaura (2 tweets)"}, {"name": "glynmoody", "title": "glynmoody (2 tweets)"}, {"name": "igoefaster", "title": "igoefaster (4 tweets)"}, {"name": "arlenegloria", "title": "arlenegloria (2 tweets)"}, {"name": "NSkartveit", "title": "NSkartveit (2 tweets)"}, {"name": "CreativeLifeNYC", "title": "CreativeLifeNYC (2 tweets)"}, {"name": "tinkleefmans", "title": "tinkleefmans (2 tweets)"}, {"name": "sba1211", "title": "sba1211 (2 tweets)"}, {"name": "mcdonaugh_kevin", "title": "mcdonaugh_kevin (2 tweets)"}, {"name": "miamiforbernie", "title": "miamiforbernie (2 tweets)"}, {"name": "POTUS", "title": "POTUS (0 tweets)"}, {"name": "ncgazette", "title": "ncgazette (2 tweets)"}, {"name": "almyrOH", "title": "almyrOH (2 tweets)"}, {"name": "DFAaction", "title": "DFAaction (2 tweets)"}, {"name": "Harry4Troy", "title": "Harry4Troy (2 tweets)"}, {"name": "YaakovSidneyRay", "title": "YaakovSidneyRay (2 tweets)"}, {"name": "thetokensquare", "title": "thetokensquare (2 tweets)"}, {"name": "rdnarang", "title": "rdnarang (2 tweets)"}, {"name": "smallbizlocal", "title": "smallbizlocal (2 tweets)"}, {"name": "martin_mima", "title": "martin_mima (3 tweets)"}, {"name": "BeegBazza", "title": "BeegBazza (2 tweets)"}, {"name": "MixedPancake", "title": "MixedPancake (2 tweets)"}, {"name": "CorinneWilsonSD", "title": "CorinneWilsonSD (2 tweets)"}, {"name": "4anniereilly", "title": "4anniereilly (3 tweets)"}, {"name": "wadeblack", "title": "wadeblack (2 tweets)"}, {"name": "Latin_New_York", "title": "Latin_New_York (2 tweets)"}, {"name": "teka21bat", "title": "teka21bat (4 tweets)"}, {"name": "terilg", "title": "terilg (5 tweets)"}, {"name": "prattlandia", "title": "prattlandia (3 tweets)"}, {"name": "OFFTOMARS11531", "title": "OFFTOMARS11531 (2 tweets)"}, {"name": "butterbaugh15", "title": "butterbaugh15 (2 tweets)"}, {"name": "berningitup", "title": "berningitup (2 tweets)"}, {"name": "samueljlevin", "title": "samueljlevin (2 tweets)"}, {"name": "cbenson67", "title": "cbenson67 (2 tweets)"}, {"name": "DCScammers", "title": "DCScammers (2 tweets)"}, {"name": "bkeller504", "title": "bkeller504 (2 tweets)"}, {"name": "notryebald", "title": "notryebald (2 tweets)"}, {"name": "WoobieTuesday", "title": "WoobieTuesday (2 tweets)"}, {"name": "KimberlyS2008", "title": "KimberlyS2008 (2 tweets)"}, {"name": "StudentActionUS", "title": "StudentActionUS (2 tweets)"}, {"name": "JayAckroyd", "title": "JayAckroyd (2 tweets)"}, {"name": "Candidates4Prog", "title": "Candidates4Prog (3 tweets)"}, {"name": "nicolesandler", "title": "nicolesandler (2 tweets)"}, {"name": "DrRimmer", "title": "DrRimmer (3 tweets)"}, {"name": "meleskender_", "title": "meleskender_ (3 tweets)"}, {"name": "Tyronecstevens", "title": "Tyronecstevens (2 tweets)"}, {"name": "jennifermgreer", "title": "jennifermgreer (2 tweets)"}, {"name": "DanielArredond1", "title": "DanielArredond1 (2 tweets)"}, {"name": "JenniferCobra", "title": "JenniferCobra (3 tweets)"}, {"name": "AndyGreenSF", "title": "AndyGreenSF (2 tweets)"}, {"name": "PortiaABoulger", "title": "PortiaABoulger (2 tweets)"}, {"name": "citizen_ilya", "title": "citizen_ilya (2 tweets)"}, {"name": "marsmda", "title": "marsmda (2 tweets)"}, {"name": "Serengeti1", "title": "Serengeti1 (2 tweets)"}, {"name": "SeeTac7", "title": "SeeTac7 (2 tweets)"}, {"name": "markfinegan", "title": "markfinegan (2 tweets)"}, {"name": "Dixonthewall", "title": "Dixonthewall (2 tweets)"}, {"name": "serwkl", "title": "serwkl (2 tweets)"}, {"name": "rzitowsky", "title": "rzitowsky (2 tweets)"}, {"name": "jakeditolla", "title": "jakeditolla (2 tweets)"}, {"name": "robmickey", "title": "robmickey (2 tweets)"}, {"name": "Medley", "title": "Medley (2 tweets)"}, {"name": "rortybomb", "title": "rortybomb (2 tweets)"}, {"name": "MoyaDanniel", "title": "MoyaDanniel (2 tweets)"}, {"name": "brtnhll77", "title": "brtnhll77 (2 tweets)"}, {"name": "jaytheking", "title": "jaytheking (2 tweets)"}, {"name": "Shitpoke1234", "title": "Shitpoke1234 (2 tweets)"}, {"name": "lilirishsarah", "title": "lilirishsarah (2 tweets)"}, {"name": "JustinLaloGibbs", "title": "JustinLaloGibbs (2 tweets)"}, {"name": "cjammet", "title": "cjammet (2 tweets)"}, {"name": "crazytimes73", "title": "crazytimes73 (2 tweets)"}, {"name": "Soapm777", "title": "Soapm777 (2 tweets)"}, {"name": "GersonBorrero", "title": "GersonBorrero (2 tweets)"}, {"name": "rosewoodalmanac", "title": "rosewoodalmanac (2 tweets)"}, {"name": "red_simba", "title": "red_simba (2 tweets)"}, {"name": "eyi_rick", "title": "eyi_rick (2 tweets)"}, {"name": "Rjhoppel", "title": "Rjhoppel (2 tweets)"}, {"name": "facho1234", "title": "facho1234 (3 tweets)"}, {"name": "fchoroco", "title": "fchoroco (2 tweets)"}, {"name": "IL4Revolution", "title": "IL4Revolution (3 tweets)"}, {"name": "Lexwerks", "title": "Lexwerks (2 tweets)"}, {"name": "MelsensJohn", "title": "MelsensJohn (3 tweets)"}, {"name": "cybermz", "title": "cybermz (2 tweets)"}, {"name": "lucysindhu", "title": "lucysindhu (2 tweets)"}, {"name": "trmiles", "title": "trmiles (2 tweets)"}, {"name": "theaaa143", "title": "theaaa143 (2 tweets)"}, {"name": "brnsrc", "title": "brnsrc (2 tweets)"}, {"name": "pirateguy815", "title": "pirateguy815 (2 tweets)"}, {"name": "PeterOFallon1", "title": "PeterOFallon1 (2 tweets)"}, {"name": "BernPress", "title": "BernPress (2 tweets)"}, {"name": "RyanAndMoore", "title": "RyanAndMoore (4 tweets)"}, {"name": "geokem7", "title": "geokem7 (2 tweets)"}, {"name": "JakeWilliams125", "title": "JakeWilliams125 (2 tweets)"}, {"name": "sadele2", "title": "sadele2 (3 tweets)"}, {"name": "VlanTrunk", "title": "VlanTrunk (2 tweets)"}, {"name": "MettaConure", "title": "MettaConure (2 tweets)"}, {"name": "joneatsairplane", "title": "joneatsairplane (2 tweets)"}, {"name": "AaronBaczkowski", "title": "AaronBaczkowski (2 tweets)"}, {"name": "Jdutchy", "title": "Jdutchy (2 tweets)"}, {"name": "bernie16info", "title": "bernie16info (2 tweets)"}, {"name": "Bernie_Facts", "title": "Bernie_Facts (2 tweets)"}, {"name": "CeciliaFager1", "title": "CeciliaFager1 (2 tweets)"}, {"name": "sayonarashin", "title": "sayonarashin (2 tweets)"}, {"name": "VinnyCaizzi", "title": "VinnyCaizzi (3 tweets)"}, {"name": "RandallHolmesAZ", "title": "RandallHolmesAZ (2 tweets)"}, {"name": "RobynMae", "title": "RobynMae (2 tweets)"}, {"name": "FairWitness1", "title": "FairWitness1 (2 tweets)"}, {"name": "Sampy1227", "title": "Sampy1227 (2 tweets)"}, {"name": "Mglo", "title": "Mglo (2 tweets)"}, {"name": "cristo_monte", "title": "cristo_monte (2 tweets)"}, {"name": "docfonda", "title": "docfonda (2 tweets)"}, {"name": "NavKaz", "title": "NavKaz (3 tweets)"}, {"name": "twentyques", "title": "twentyques (2 tweets)"}, {"name": "jeffstrabone", "title": "jeffstrabone (2 tweets)"}, {"name": "AmbitDiva", "title": "AmbitDiva (1 tweet)"}, {"name": "Chefs4Marcellus", "title": "Chefs4Marcellus (2 tweets)"}, {"name": "tinapervan", "title": "tinapervan (2 tweets)"}, {"name": "DarrenEdward", "title": "DarrenEdward (2 tweets)"}, {"name": "HolleyA", "title": "HolleyA (2 tweets)"}, {"name": "TIFFANY092587", "title": "TIFFANY092587 (2 tweets)"}, {"name": "Janeway12004", "title": "Janeway12004 (2 tweets)"}, {"name": "OasusTheDingo", "title": "OasusTheDingo (3 tweets)"}, {"name": "EvanSpadoni", "title": "EvanSpadoni (4 tweets)"}, {"name": "RyanJSuto", "title": "RyanJSuto (3 tweets)"}, {"name": "CAJillybean", "title": "CAJillybean (2 tweets)"}, {"name": "sarbetter", "title": "sarbetter (2 tweets)"}, {"name": "Luvnstuff2", "title": "Luvnstuff2 (2 tweets)"}, {"name": "WvonGeldern", "title": "WvonGeldern (2 tweets)"}, {"name": "tigerbeat", "title": "tigerbeat (2 tweets)"}, {"name": "NYCA_WPH", "title": "NYCA_WPH (0 tweets)"}, {"name": "KIMORELLA", "title": "KIMORELLA (2 tweets)"}, {"name": "jeets", "title": "jeets (3 tweets)"}, {"name": "CLFSuperPAC", "title": "CLFSuperPAC (3 tweets)"}, {"name": "ShaunGains", "title": "ShaunGains (2 tweets)"}, {"name": "NYGovCuomo", "title": "NYGovCuomo (0 tweets)"}, {"name": "JakeDilemani", "title": "JakeDilemani (2 tweets)"}, {"name": "gsears1968", "title": "gsears1968 (3 tweets)"}, {"name": "JimmyFNmac", "title": "JimmyFNmac (3 tweets)"}, {"name": "Forbrydelsenfan", "title": "Forbrydelsenfan (2 tweets)"}, {"name": "Selendrile", "title": "Selendrile (2 tweets)"}, {"name": "SC4Sanders", "title": "SC4Sanders (2 tweets)"}, {"name": "Mr_Blain", "title": "Mr_Blain (2 tweets)"}, {"name": "Rickoshaay", "title": "Rickoshaay (4 tweets)"}, {"name": "sweeneysj1", "title": "sweeneysj1 (2 tweets)"}, {"name": "spp123steve12", "title": "spp123steve12 (3 tweets)"}, {"name": "TWCNewsCNY", "title": "TWCNewsCNY (0 tweets)"}, {"name": "ammoore7337", "title": "ammoore7337 (2 tweets)"}, {"name": "begbert309", "title": "begbert309 (2 tweets)"}, {"name": "rawsax", "title": "rawsax (2 tweets)"}, {"name": "PersnicketyRph", "title": "PersnicketyRph (2 tweets)"}, {"name": "dibshear", "title": "dibshear (2 tweets)"}, {"name": "jots", "title": "jots (2 tweets)"}, {"name": "BleuZ00m", "title": "BleuZ00m (2 tweets)"}, {"name": "timkni", "title": "timkni (2 tweets)"}, {"name": "dhwint", "title": "dhwint (2 tweets)"}, {"name": "holyclarissar", "title": "holyclarissar (2 tweets)"}, {"name": "LoveCanal2020", "title": "LoveCanal2020 (2 tweets)"}, {"name": "hobodoctor", "title": "hobodoctor (2 tweets)"}, {"name": "Smillaraaq", "title": "Smillaraaq (2 tweets)"}, {"name": "BillieO2", "title": "BillieO2 (2 tweets)"}, {"name": "LeMaige", "title": "LeMaige (2 tweets)"}, {"name": "knotiookin", "title": "knotiookin (3 tweets)"}, {"name": "karlgraff", "title": "karlgraff (2 tweets)"}, {"name": "OttoLincoln", "title": "OttoLincoln (2 tweets)"}, {"name": "Juliamarie630", "title": "Juliamarie630 (2 tweets)"}, {"name": "Nobly_Romo", "title": "Nobly_Romo (2 tweets)"}, {"name": "AnyaSchoolman", "title": "AnyaSchoolman (2 tweets)"}, {"name": "SienaResearch", "title": "SienaResearch (0 tweets)"}, {"name": "JonDTWCNews", "title": "JonDTWCNews (1 tweet)"}, {"name": "Moondoggie601", "title": "Moondoggie601 (2 tweets)"}, {"name": "ewabbott", "title": "ewabbott (2 tweets)"}, {"name": "KarenMageeNYSUT", "title": "KarenMageeNYSUT (3 tweets)"}, {"name": "cocobluesky", "title": "cocobluesky (6 tweets)"}, {"name": "DDstarbucks", "title": "DDstarbucks (2 tweets)"}, {"name": "YeahNets", "title": "YeahNets (2 tweets)"}, {"name": "yadlyeled", "title": "yadlyeled (3 tweets)"}, {"name": "hootie0321", "title": "hootie0321 (4 tweets)"}, {"name": "maxthecat2000", "title": "maxthecat2000 (3 tweets)"}, {"name": "TulsiGabbard", "title": "TulsiGabbard (0 tweets)"}, {"name": "leoniehaimson", "title": "leoniehaimson (2 tweets)"}, {"name": "NYSAPE", "title": "NYSAPE (2 tweets)"}, {"name": "joeltyner", "title": "joeltyner (8 tweets)"}, {"name": "fallynlive2ins1", "title": "fallynlive2ins1 (2 tweets)"}, {"name": "mirakyz", "title": "mirakyz (2 tweets)"}, {"name": "2sense2", "title": "2sense2 (2 tweets)"}, {"name": "MinnieSchnauzer", "title": "MinnieSchnauzer (3 tweets)"}, {"name": "TchrNORPAC", "title": "TchrNORPAC (3 tweets)"}, {"name": "acupuncturepath", "title": "acupuncturepath (2 tweets)"}, {"name": "tootsdles", "title": "tootsdles (3 tweets)"}, {"name": "JimAndrews518", "title": "JimAndrews518 (3 tweets)"}, {"name": "TheRassss", "title": "TheRassss (2 tweets)"}, {"name": "KathrynECramer", "title": "KathrynECramer (2 tweets)"}, {"name": "rebeccasears", "title": "rebeccasears (2 tweets)"}, {"name": "JohnnieCham", "title": "JohnnieCham (3 tweets)"}, {"name": "SemillaElek", "title": "SemillaElek (2 tweets)"}, {"name": "RsCongress", "title": "RsCongress (2 tweets)"}, {"name": "HillaryBeDamned", "title": "HillaryBeDamned (2 tweets)"}, {"name": "delphiniumjones", "title": "delphiniumjones (2 tweets)"}, {"name": "katie4tw", "title": "katie4tw (3 tweets)"}, {"name": "JanieBlakely", "title": "JanieBlakely (3 tweets)"}, {"name": "Noodoggy", "title": "Noodoggy (3 tweets)"}, {"name": "wishin4metswin", "title": "wishin4metswin (2 tweets)"}, {"name": "CatholicGirl15", "title": "CatholicGirl15 (2 tweets)"}, {"name": "McBride62460", "title": "McBride62460 (2 tweets)"}, {"name": "LexiOltmer004", "title": "LexiOltmer004 (2 tweets)"}, {"name": "rottweilersrule", "title": "rottweilersrule (2 tweets)"}, {"name": "MarkOttoNYC", "title": "MarkOttoNYC (2 tweets)"}, {"name": "WMHTPubMedia", "title": "WMHTPubMedia (3 tweets)"}, {"name": "TeachoutFasoSoc", "title": "TeachoutFasoSoc (2 tweets)"}, {"name": "Cheryl_Smith1", "title": "Cheryl_Smith1 (5 tweets)"}, {"name": "vegpeaceclarice", "title": "vegpeaceclarice (2 tweets)"}, {"name": "msd6thgrade", "title": "msd6thgrade (2 tweets)"}, {"name": "raynaellen", "title": "raynaellen (2 tweets)"}, {"name": "ProudWIDemocrat", "title": "ProudWIDemocrat (2 tweets)"}, {"name": "KC_Jax", "title": "KC_Jax (3 tweets)"}, {"name": "NegriCari", "title": "NegriCari (2 tweets)"}, {"name": "GuntherRandall", "title": "GuntherRandall (2 tweets)"}, {"name": "cweiner766", "title": "cweiner766 (2 tweets)"}, {"name": "heroin_kills_CT", "title": "heroin_kills_CT (2 tweets)"}, {"name": "StephenZeoli", "title": "StephenZeoli (2 tweets)"}, {"name": "trishguajardo", "title": "trishguajardo (3 tweets)"}, {"name": "Monkeyfister1", "title": "Monkeyfister1 (2 tweets)"}, {"name": "DianeSweet", "title": "DianeSweet (2 tweets)"}, {"name": "simoneonphone", "title": "simoneonphone (2 tweets)"}, {"name": "veggiebratsch", "title": "veggiebratsch (2 tweets)"}, {"name": "mitch_shapiro", "title": "mitch_shapiro (2 tweets)"}, {"name": "Cooking4Bernie", "title": "Cooking4Bernie (2 tweets)"}, {"name": "PleaseBRational", "title": "PleaseBRational (3 tweets)"}, {"name": "wimberley_jake", "title": "wimberley_jake (2 tweets)"}, {"name": "brooklynrichied", "title": "brooklynrichied (2 tweets)"}, {"name": "katharineholt", "title": "katharineholt (2 tweets)"}, {"name": "Shurusprout", "title": "Shurusprout (2 tweets)"}, {"name": "NickRaels", "title": "NickRaels (2 tweets)"}, {"name": "drinkwine247", "title": "drinkwine247 (2 tweets)"}, {"name": "TerryGipsonNY", "title": "TerryGipsonNY (2 tweets)"}, {"name": "BernieEffect", "title": "BernieEffect (2 tweets)"}, {"name": "alexis_equita", "title": "alexis_equita (2 tweets)"}, {"name": "zombie1113", "title": "zombie1113 (2 tweets)"}, {"name": "zenozora98", "title": "zenozora98 (2 tweets)"}, {"name": "marknotmatt", "title": "marknotmatt (2 tweets)"}, {"name": "i_AM_theChange", "title": "i_AM_theChange (2 tweets)"}, {"name": "RussMurphNY", "title": "RussMurphNY (2 tweets)"}, {"name": "Cool123", "title": "Cool123 (2 tweets)"}, {"name": "RoosterWrangler", "title": "RoosterWrangler (2 tweets)"}, {"name": "ESMMorningShow", "title": "ESMMorningShow (2 tweets)"}, {"name": "DeevElliott", "title": "DeevElliott (2 tweets)"}, {"name": "SNetibutr", "title": "SNetibutr (2 tweets)"}, {"name": "sulefiasco", "title": "sulefiasco (2 tweets)"}, {"name": "relapsing", "title": "relapsing (2 tweets)"}, {"name": "GrnProgressive", "title": "GrnProgressive (4 tweets)"}, {"name": "thepplzWARrior", "title": "thepplzWARrior (2 tweets)"}, {"name": "HeidiJaster", "title": "HeidiJaster (2 tweets)"}, {"name": "GreenJaneMann", "title": "GreenJaneMann (2 tweets)"}, {"name": "tntomalley", "title": "tntomalley (2 tweets)"}, {"name": "Mivasair", "title": "Mivasair (2 tweets)"}, {"name": "_Chris_Bowman", "title": "_Chris_Bowman (2 tweets)"}, {"name": "NYPatriot4Trump", "title": "NYPatriot4Trump (3 tweets)"}, {"name": "DebMeier", "title": "DebMeier (2 tweets)"}, {"name": "joylutes", "title": "joylutes (3 tweets)"}, {"name": "lpaulsen769", "title": "lpaulsen769 (2 tweets)"}, {"name": "BeckyMcBeath", "title": "BeckyMcBeath (2 tweets)"}, {"name": "WildPowers", "title": "WildPowers (2 tweets)"}, {"name": "IRBroadshow", "title": "IRBroadshow (2 tweets)"}, {"name": "donaltc", "title": "donaltc (2 tweets)"}, {"name": "babaOsamie", "title": "babaOsamie (2 tweets)"}, {"name": "ThadM44", "title": "ThadM44 (2 tweets)"}, {"name": "wakingupinvages", "title": "wakingupinvages (2 tweets)"}, {"name": "mrronharrell", "title": "mrronharrell (2 tweets)"}, {"name": "LiberalPhoenix", "title": "LiberalPhoenix (2 tweets)"}, {"name": "gracchus56", "title": "gracchus56 (2 tweets)"}, {"name": "ThePigskinColum", "title": "ThePigskinColum (2 tweets)"}, {"name": "firstgreatwater", "title": "firstgreatwater (3 tweets)"}, {"name": "BKforBernie", "title": "BKforBernie (2 tweets)"}, {"name": "German_XD", "title": "German_XD (2 tweets)"}, {"name": "Anne_Arkie", "title": "Anne_Arkie (2 tweets)"}, {"name": "Laurajaxheights", "title": "Laurajaxheights (2 tweets)"}, {"name": "jongordymac", "title": "jongordymac (2 tweets)"}, {"name": "JoshMichaels14", "title": "JoshMichaels14 (2 tweets)"}, {"name": "faithomalley", "title": "faithomalley (2 tweets)"}, {"name": "ozzygrrrr", "title": "ozzygrrrr (2 tweets)"}, {"name": "ravenredhead14", "title": "ravenredhead14 (2 tweets)"}, {"name": "MatsLiland", "title": "MatsLiland (2 tweets)"}, {"name": "TheMarshMachine", "title": "TheMarshMachine (2 tweets)"}, {"name": "DisasterAreaPP", "title": "DisasterAreaPP (2 tweets)"}, {"name": "Luis_Alejandro9", "title": "Luis_Alejandro9 (2 tweets)"}, {"name": "SeamusOReilly69", "title": "SeamusOReilly69 (2 tweets)"}, {"name": "HaiuHai", "title": "HaiuHai (2 tweets)"}, {"name": "UpstateCrook", "title": "UpstateCrook (2 tweets)"}, {"name": "HealthLGBTQ", "title": "HealthLGBTQ (2 tweets)"}, {"name": "AMWeinstein", "title": "AMWeinstein (2 tweets)"}, {"name": "breezehxme", "title": "breezehxme (2 tweets)"}, {"name": "skyinthegrass", "title": "skyinthegrass (2 tweets)"}, {"name": "3lueDoggie", "title": "3lueDoggie (2 tweets)"}, {"name": "1JS_USA", "title": "1JS_USA (2 tweets)"}, {"name": "kivlen_edward", "title": "kivlen_edward (3 tweets)"}, {"name": "CleanGreenCal", "title": "CleanGreenCal (2 tweets)"}, {"name": "nychange", "title": "nychange (2 tweets)"}, {"name": "ritakiser25", "title": "ritakiser25 (2 tweets)"}, {"name": "pansy_toppy", "title": "pansy_toppy (2 tweets)"}, {"name": "alla_mynk", "title": "alla_mynk (2 tweets)"}, {"name": "AndrewTimmons2", "title": "AndrewTimmons2 (2 tweets)"}, {"name": "ConBluth", "title": "ConBluth (2 tweets)"}, {"name": "jocaywood", "title": "jocaywood (2 tweets)"}, {"name": "elyse4design", "title": "elyse4design (3 tweets)"}, {"name": "TheHolyFlipster", "title": "TheHolyFlipster (2 tweets)"}, {"name": "kierobar", "title": "kierobar (2 tweets)"}, {"name": "General_Jovan", "title": "General_Jovan (3 tweets)"}, {"name": "rabidbadger", "title": "rabidbadger (2 tweets)"}, {"name": "djmertz", "title": "djmertz (2 tweets)"}, {"name": "GaryReilly39", "title": "GaryReilly39 (2 tweets)"}, {"name": "chelseabauer", "title": "chelseabauer (2 tweets)"}, {"name": "TheDiganator", "title": "TheDiganator (2 tweets)"}, {"name": "susansternberg", "title": "susansternberg (2 tweets)"}, {"name": "RichardStk1", "title": "RichardStk1 (0 tweets)"}, {"name": "MargeBorchert", "title": "MargeBorchert (2 tweets)"}, {"name": "SharonSloomis", "title": "SharonSloomis (2 tweets)"}, {"name": "cellib4", "title": "cellib4 (2 tweets)"}, {"name": "Long_Archer", "title": "Long_Archer (2 tweets)"}, {"name": "Marktorres29", "title": "Marktorres29 (2 tweets)"}, {"name": "real_adc", "title": "real_adc (2 tweets)"}, {"name": "crimsonboudoir", "title": "crimsonboudoir (2 tweets)"}, {"name": "PithDaily", "title": "PithDaily (2 tweets)"}, {"name": "zippity2k", "title": "zippity2k (3 tweets)"}, {"name": "melandvinnie", "title": "melandvinnie (2 tweets)"}, {"name": "stephenlerner", "title": "stephenlerner (3 tweets)"}, {"name": "SkeeterNYC", "title": "SkeeterNYC (0 tweets)"}, {"name": "maggieNYT", "title": "maggieNYT (0 tweets)"}, {"name": "furf", "title": "furf (2 tweets)"}, {"name": "KaijaF", "title": "KaijaF (2 tweets)"}, {"name": "ron_nica", "title": "ron_nica (2 tweets)"}, {"name": "RobertHarding", "title": "RobertHarding (1 tweet)"}, {"name": "changermindset", "title": "changermindset (2 tweets)"}, {"name": "wearecrownhghts", "title": "wearecrownhghts (2 tweets)"}, {"name": "dmorrispress", "title": "dmorrispress (3 tweets)"}, {"name": "bomber9996", "title": "bomber9996 (2 tweets)"}, {"name": "LIProgress", "title": "LIProgress (2 tweets)"}, {"name": "electray1", "title": "electray1 (2 tweets)"}, {"name": "ldbrillante", "title": "ldbrillante (2 tweets)"}, {"name": "DominiqueMcCor1", "title": "DominiqueMcCor1 (2 tweets)"}, {"name": "Ringuette", "title": "Ringuette (3 tweets)"}, {"name": "tates5a", "title": "tates5a (2 tweets)"}, {"name": "wlange2", "title": "wlange2 (3 tweets)"}, {"name": "BreezeOmega", "title": "BreezeOmega (2 tweets)"}, {"name": "SheriMamaGG3", "title": "SheriMamaGG3 (3 tweets)"}, {"name": "ronald_jankins", "title": "ronald_jankins (1 tweet)"}, {"name": "2016bethechange", "title": "2016bethechange (2 tweets)"}, {"name": "BernieXVI", "title": "BernieXVI (2 tweets)"}, {"name": "wavesofeuphoria", "title": "wavesofeuphoria (2 tweets)"}, {"name": "citizenactionny", "title": "citizenactionny (9 tweets)"}, {"name": "JBackuesUCM", "title": "JBackuesUCM (3 tweets)"}, {"name": "MikeAdamo", "title": "MikeAdamo (2 tweets)"}, {"name": "EclecticMommaZ", "title": "EclecticMommaZ (2 tweets)"}, {"name": "OccupyTheSEC", "title": "OccupyTheSEC (2 tweets)"}, {"name": "MarleneRPeralta", "title": "MarleneRPeralta (2 tweets)"}, {"name": "carmenvellon", "title": "carmenvellon (2 tweets)"}, {"name": "tatere", "title": "tatere (2 tweets)"}, {"name": "Hearthstoker", "title": "Hearthstoker (2 tweets)"}, {"name": "I_miss_Bernie", "title": "I_miss_Bernie (2 tweets)"}, {"name": "Loxodonta_s", "title": "Loxodonta_s (2 tweets)"}, {"name": "Boingphoto", "title": "Boingphoto (2 tweets)"}, {"name": "WarWomensRights", "title": "WarWomensRights (4 tweets)"}, {"name": "PaulChaseJr", "title": "PaulChaseJr (2 tweets)"}, {"name": "GFJacobs", "title": "GFJacobs (2 tweets)"}, {"name": "MyScarletFelony", "title": "MyScarletFelony (2 tweets)"}, {"name": "FedUpWNarcissts", "title": "FedUpWNarcissts (2 tweets)"}, {"name": "Iverson7502", "title": "Iverson7502 (2 tweets)"}, {"name": "tgrossman850", "title": "tgrossman850 (2 tweets)"}, {"name": "bissett_wilc", "title": "bissett_wilc (2 tweets)"}, {"name": "JeremyCorbong", "title": "JeremyCorbong (2 tweets)"}, {"name": "bendicoot", "title": "bendicoot (4 tweets)"}, {"name": "HMPita", "title": "HMPita (2 tweets)"}, {"name": "ipox77", "title": "ipox77 (2 tweets)"}, {"name": "KtMartin17", "title": "KtMartin17 (2 tweets)"}, {"name": "luisa_tasayco", "title": "luisa_tasayco (4 tweets)"}, {"name": "jordanndavis", "title": "jordanndavis (2 tweets)"}, {"name": "1liddlesister", "title": "1liddlesister (2 tweets)"}, {"name": "ChrisCornellCC", "title": "ChrisCornellCC (3 tweets)"}, {"name": "EricShapiro3", "title": "EricShapiro3 (3 tweets)"}, {"name": "watershedpost", "title": "watershedpost (0 tweets)"}, {"name": "caslk", "title": "caslk (2 tweets)"}, {"name": "Youngxbloodx", "title": "Youngxbloodx (2 tweets)"}, {"name": "anonoMAN42", "title": "anonoMAN42 (2 tweets)"}, {"name": "DinahBernista", "title": "DinahBernista (2 tweets)"}, {"name": "jeremycluchey", "title": "jeremycluchey (2 tweets)"}, {"name": "YodelsB", "title": "YodelsB (2 tweets)"}, {"name": "jdvanlaningham", "title": "jdvanlaningham (2 tweets)"}, {"name": "PSW_66", "title": "PSW_66 (3 tweets)"}, {"name": "jnlfoot", "title": "jnlfoot (2 tweets)"}, {"name": "josefveest", "title": "josefveest (3 tweets)"}, {"name": "peacelovedave", "title": "peacelovedave (2 tweets)"}, {"name": "LauraElainePhot", "title": "LauraElainePhot (2 tweets)"}, {"name": "HenryCorp", "title": "HenryCorp (3 tweets)"}, {"name": "Stoptesting15", "title": "Stoptesting15 (2 tweets)"}, {"name": "edgery", "title": "edgery (2 tweets)"}, {"name": "ChrissyLandy", "title": "ChrissyLandy (2 tweets)"}, {"name": "S76FITZ", "title": "S76FITZ (3 tweets)"}, {"name": "sellers61", "title": "sellers61 (2 tweets)"}, {"name": "rweingarten", "title": "rweingarten (2 tweets)"}, {"name": "poeboston", "title": "poeboston (2 tweets)"}, {"name": "cataldo804", "title": "cataldo804 (2 tweets)"}, {"name": "Geneuwin", "title": "Geneuwin (2 tweets)"}, {"name": "plantperson1", "title": "plantperson1 (2 tweets)"}, {"name": "mb78209", "title": "mb78209 (2 tweets)"}, {"name": "FlaSound", "title": "FlaSound (2 tweets)"}, {"name": "RobertBCohen", "title": "RobertBCohen (2 tweets)"}, {"name": "greenfield855", "title": "greenfield855 (2 tweets)"}, {"name": "nayasala", "title": "nayasala (2 tweets)"}, {"name": "outwidit", "title": "outwidit (2 tweets)"}, {"name": "bechey", "title": "bechey (2 tweets)"}, {"name": "PickledBeetz", "title": "PickledBeetz (2 tweets)"}, {"name": "Enrico056", "title": "Enrico056 (2 tweets)"}, {"name": "AutoCutter1", "title": "AutoCutter1 (2 tweets)"}, {"name": "mdricard", "title": "mdricard (3 tweets)"}, {"name": "kalhan", "title": "kalhan (2 tweets)"}, {"name": "JDGinc", "title": "JDGinc (2 tweets)"}, {"name": "burnodo", "title": "burnodo (2 tweets)"}, {"name": "KristinSnortum", "title": "KristinSnortum (2 tweets)"}, {"name": "gabino_58", "title": "gabino_58 (2 tweets)"}, {"name": "KRNaturalPhoto", "title": "KRNaturalPhoto (2 tweets)"}, {"name": "cat7912", "title": "cat7912 (2 tweets)"}, {"name": "pjlacasse22", "title": "pjlacasse22 (2 tweets)"}, {"name": "Citizen_Stephen", "title": "Citizen_Stephen (2 tweets)"}, {"name": "howserob", "title": "howserob (2 tweets)"}, {"name": "JJMCCABE2", "title": "JJMCCABE2 (2 tweets)"}, {"name": "carolhoernlein", "title": "carolhoernlein (2 tweets)"}, {"name": "ladydreamspeed", "title": "ladydreamspeed (3 tweets)"}, {"name": "jeffsonstein", "title": "jeffsonstein (2 tweets)"}, {"name": "ShayRaiZ", "title": "ShayRaiZ (2 tweets)"}, {"name": "jgreutert", "title": "jgreutert (2 tweets)"}, {"name": "kenobikathy", "title": "kenobikathy (2 tweets)"}, {"name": "feminista54", "title": "feminista54 (2 tweets)"}, {"name": "siciliantaurus", "title": "siciliantaurus (2 tweets)"}, {"name": "tga_tgoodfellow", "title": "tga_tgoodfellow (2 tweets)"}, {"name": "joshfoxfilm", "title": "joshfoxfilm (2 tweets)"}, {"name": "dario135", "title": "dario135 (2 tweets)"}, {"name": "valerie_cullins", "title": "valerie_cullins (8 tweets)"}, {"name": "AbsonJill", "title": "AbsonJill (2 tweets)"}, {"name": "Thelonious08", "title": "Thelonious08 (2 tweets)"}, {"name": "sayjhoward", "title": "sayjhoward (2 tweets)"}, {"name": "horvmv", "title": "horvmv (2 tweets)"}, {"name": "still_berning", "title": "still_berning (2 tweets)"}, {"name": "calvin_tranman", "title": "calvin_tranman (2 tweets)"}, {"name": "dHoodstr", "title": "dHoodstr (2 tweets)"}, {"name": "WriteBuild", "title": "WriteBuild (2 tweets)"}, {"name": "MrKellyEnright", "title": "MrKellyEnright (2 tweets)"}, {"name": "anniefrench50", "title": "anniefrench50 (2 tweets)"}, {"name": "cscollard", "title": "cscollard (2 tweets)"}, {"name": "GayleFarny", "title": "GayleFarny (2 tweets)"}, {"name": "If_Its_Magic", "title": "If_Its_Magic (2 tweets)"}, {"name": "nysnysnews", "title": "nysnysnews (2 tweets)"}, {"name": "peacelily1121", "title": "peacelily1121 (2 tweets)"}, {"name": "electionlogofun", "title": "electionlogofun (2 tweets)"}, {"name": "ENIgnacio", "title": "ENIgnacio (2 tweets)"}, {"name": "Twitlertwit", "title": "Twitlertwit (2 tweets)"}, {"name": "QualityNinja", "title": "QualityNinja (2 tweets)"}, {"name": "AlyJohnsonKurts", "title": "AlyJohnsonKurts (2 tweets)"}, {"name": "FoneboneJay", "title": "FoneboneJay (2 tweets)"}, {"name": "Stwallace23", "title": "Stwallace23 (2 tweets)"}, {"name": "lopez_jasiel", "title": "lopez_jasiel (2 tweets)"}, {"name": "sirkycart", "title": "sirkycart (2 tweets)"}, {"name": "msw12545", "title": "msw12545 (2 tweets)"}, {"name": "IanATompkins", "title": "IanATompkins (2 tweets)"}, {"name": "ed_averill", "title": "ed_averill (2 tweets)"}, {"name": "NoirMonster", "title": "NoirMonster (2 tweets)"}, {"name": "emmamac0920", "title": "emmamac0920 (2 tweets)"}, {"name": "FiascoLinguini", "title": "FiascoLinguini (2 tweets)"}, {"name": "nfinsitu", "title": "nfinsitu (2 tweets)"}, {"name": "TedKottler", "title": "TedKottler (2 tweets)"}, {"name": "yamatoejam", "title": "yamatoejam (2 tweets)"}, {"name": "DestroyCode", "title": "DestroyCode (2 tweets)"}, {"name": "livviento", "title": "livviento (2 tweets)"}, {"name": "IndeeOne", "title": "IndeeOne (2 tweets)"}, {"name": "18comppg", "title": "18comppg (2 tweets)"}, {"name": "chiefwally", "title": "chiefwally (2 tweets)"}, {"name": "d_svoice", "title": "d_svoice (2 tweets)"}, {"name": "skorpyos", "title": "skorpyos (2 tweets)"}, {"name": "757hokiedem", "title": "757hokiedem (2 tweets)"}, {"name": "OldSaukRiver", "title": "OldSaukRiver (2 tweets)"}, {"name": "HarrisonDemsNY", "title": "HarrisonDemsNY (2 tweets)"}, {"name": "DWilliams1001", "title": "DWilliams1001 (2 tweets)"}, {"name": "poohsbrana", "title": "poohsbrana (2 tweets)"}, {"name": "DMor315", "title": "DMor315 (2 tweets)"}, {"name": "FvrDrms", "title": "FvrDrms (2 tweets)"}, {"name": "SebastianCONFOR", "title": "SebastianCONFOR (2 tweets)"}], "links": [{"source": 3, "target": 219, "value": 2}, {"source": 8, "target": 28, "value": 3}, {"source": 8, "target": 224, "value": 2}, {"source": 8, "target": 55, "value": 9}, {"source": 10, "target": 294, "value": 1}, {"source": 15, "target": 294, "value": 1}, {"source": 18, "target": 28, "value": 5}, {"source": 18, "target": 18, "value": 1}, {"source": 19, "target": 18, "value": 1}, {"source": 26, "target": 44, "value": 3}, {"source": 26, "target": 440, "value": 1}, {"source": 26, "target": 903, "value": 1}, {"source": 26, "target": 151, "value": 4}, {"source": 26, "target": 280, "value": 1}, {"source": 26, "target": 193, "value": 1}, {"source": 26, "target": 343, "value": 1}, {"source": 26, "target": 881, "value": 2}, {"source": 26, "target": 55, "value": 1}, {"source": 26, "target": 673, "value": 1}, {"source": 26, "target": 18, "value": 14}, {"source": 26, "target": 950, "value": 1}, {"source": 26, "target": 28, "value": 4}, {"source": 26, "target": 404, "value": 1}, {"source": 26, "target": 783, "value": 1}, {"source": 28, "target": 294, "value": 1}, {"source": 28, "target": 18, "value": 2}, {"source": 36, "target": 151, "value": 1}, {"source": 44, "target": 44, "value": 1}, {"source": 46, "target": 46, "value": 2}, {"source": 46, "target": 18, "value": 1}, {"source": 47, "target": 18, "value": 1}, {"source": 50, "target": 18, "value": 1}, {"source": 53, "target": 28, "value": 1}, {"source": 53, "target": 53, "value": 4}, {"source": 54, "target": 18, "value": 1}, {"source": 55, "target": 28, "value": 1}, {"source": 55, "target": 294, "value": 1}, {"source": 55, "target": 18, "value": 8}, {"source": 61, "target": 62, "value": 1}, {"source": 66, "target": 294, "value": 1}, {"source": 84, "target": 28, "value": 1}, {"source": 102, "target": 103, "value": 1}, {"source": 151, "target": 219, "value": 3}, {"source": 151, "target": 151, "value": 3}, {"source": 151, "target": 294, "value": 1}, {"source": 153, "target": 151, "value": 1}, {"source": 153, "target": 158, "value": 1}, {"source": 158, "target": 158, "value": 4}, {"source": 160, "target": 161, "value": 1}, {"source": 218, "target": 218, "value": 1}, {"source": 219, "target": 3, "value": 2}, {"source": 219, "target": 219, "value": 3}, {"source": 219, "target": 151, "value": 6}, {"source": 219, "target": 294, "value": 1}, {"source": 224, "target": 294, "value": 1}, {"source": 238, "target": 28, "value": 1}, {"source": 239, "target": 28, "value": 1}, {"source": 252, "target": 294, "value": 1}, {"source": 268, "target": 44, "value": 1}, {"source": 286, "target": 294, "value": 1}, {"source": 293, "target": 294, "value": 1}, {"source": 295, "target": 294, "value": 1}, {"source": 296, "target": 294, "value": 1}, {"source": 297, "target": 294, "value": 1}, {"source": 298, "target": 294, "value": 1}, {"source": 299, "target": 299, "value": 1}, {"source": 299, "target": 294, "value": 1}, {"source": 300, "target": 294, "value": 1}, {"source": 301, "target": 294, "value": 1}, {"source": 302, "target": 294, "value": 1}, {"source": 304, "target": 294, "value": 1}, {"source": 305, "target": 889, "value": 1}, {"source": 305, "target": 294, "value": 1}, {"source": 319, "target": 319, "value": 6}, {"source": 331, "target": 151, "value": 2}, {"source": 332, "target": 151, "value": 1}, {"source": 337, "target": 44, "value": 1}, {"source": 460, "target": 476, "value": 1}, {"source": 489, "target": 489, "value": 3}, {"source": 569, "target": 570, "value": 1}, {"source": 569, "target": 193, "value": 1}, {"source": 688, "target": 147, "value": 1}, {"source": 693, "target": 193, "value": 1}, {"source": 704, "target": 44, "value": 1}, {"source": 726, "target": 727, "value": 1}, {"source": 737, "target": 84, "value": 1}, {"source": 872, "target": 84, "value": 1}, {"source": 884, "target": 151, "value": 1}, {"source": 885, "target": 151, "value": 1}, {"source": 937, "target": 151, "value": 1}], "metadata": {"search": "#ny19", "creator": "Greg Wiedeman", "title": "NY 19th Congressional District"}};
+    var metadata = data.metadata;
+    var profile = data.profile;
+    var opts = profile.opts;
+    
+    var mode = opts["mode"];
+    var threshold = opts["threshold"];
+    var graph = opts["graph"];
+    var field = opts["field"];
+    var links = data["links"];
+    var nodes = data["nodes"];
+    
+
+    html = "<strong>" + metadata["title"] + "</strong> | Search: " + metadata["search"];
+        html += " | Threshold: " + threshold;
+        if (mode) html += " | Mode: " + mode;
+        html += "<br/>";
+    html += profile.count + " tweets from " + profile.usercount + " users, including " + profile.retweetcount + " retweets (" + (profile.retweetcount / profile.count * 100).toFixed(2) + "%), "
+    html += "and " + profile.geocount + " with geo (" + (profile.geocount / profile.count * 100).toFixed(2) + "%): "
+    html += profile.earliest + " to " + profile.latest
+    d3.select("#metadata").html(html);
+
+    
+    switch (field) {
+        case "user": twitterlinkroot = "https://twitter.com/";
+            break;
+        case "hashtag": twitterlinkroot = "https://twitter.com/hashtag/";
+            break;
+    }
+    
+    // in directed graph we want different styles for in and out links, but
+    // in undirected they should be the same.
+    var inLinkClass = (graph == 'directed') ? "In" : "Undirected";
+    var outLinkClass = (graph == 'directed') ? "Out" : "Undirected";
+    
+    // hide the outlink div if this is an undirected graph
+    if (graph == 'undirected')
+         d3.select("#sidebar_outlist").remove();
+    
+    function twitterlink(n) {
+        return "<a href='" + twitterlinkroot + n + "'>" + n + "</n>";
+    }
+    
+    function selectlink(n) {
+        return "<a href='javascript:termselect(\"" + n + "\")'>" + n + "</n>";
+    }
+    
+    function listsort(l) {
+        sortl = [];
+        for (var a = 0; a < l.length; a++) {
+            sortl.push(l[a].toLowerCase() + " " + l[a]);
+        }
+        sortl = sortl.sort();
+        for (var a = 0; a < sortl.length; a++) {
+            sortl[a] = sortl[a].split(" ")[1];
+        }
+        return sortl;
+    }
+    
+    function listhtml(l) {
+        l = listsort(l);
+        var html = "<ul>";
+        for (var a = 0; a < l.length; a++) {
+            html += "<li>" + selectlink(l[a]) + "</li>";
+        }
+        html += "</ul>";
+        return html;
+    }
+    
+    function selecthtml(l) {
+        l = listsort(l);
+        html = "<select id='termselect' onchange='termselect(this.value)'>";
+        for (var a = 0; a < l.length; a++) {
+            html += "<option>" + l[a] + "</option>";
+        }
+        html += "</select>";
+        return html;
+    }
+    
+    function termselect(name) {
+           // working with:
+       //    this:
+       //    <circle class="" transform="translate(974.0229211897631,951.403518091633)" id="circle_RobertCBinkley" r="6">
+    //     <title>RobertCBinkley (1/1)</title>
+    //  </circle>
+    //  d:
+    //  {"name": "RobertCBinkley", "title": "RobertCBinkley (1/1)"}
+    //  path:
+    //        <path d="M952.2..." marker-end="url(#plain)" in="pabinkley" out="RobertCBinkley" 
+    //            class="link suit out_RobertCBinkley in_pabinkley hlOut"/>
+         
+           root = d3.select("#circle_" + name);
+           // show selected term in sidebar
+           d3.select("#sidebar_term").html(twitterlink(name));
+
+           
+           pathsfg = d3.select("#paths-fg");
+           circlesfg = d3.select("#circles-fg");
+           textsfg = d3.select("#texts-fg");
+           paths = d3.select("#paths");
+           circles = d3.select("#circles");
+           texts = d3.select("#texts");
+           
+           // clear previous selections
+           d3.selectAll(".hl").classed("hl", false);
+           d3.selectAll(".hl"+inLinkClass).classed("hl"+inLinkClass, false);
+           d3.selectAll(".hl"+outLinkClass).classed("hl"+outLinkClass, false);
+           // put foregrounded paths etc. (if any) back in background
+           var p = pathsfg.selectAll("path");
+           // add arrowheads if directed graph
+           if (graph == 'directed') 
+               p.attr("marker-end", "url(#plain)");
+           if (p.size() > 0)
+               d3.select("#paths").each(function() {
+                   f = this;
+                   p.each(function() { 
+                       f.appendChild(this) 
+                   });
+            })
+           var p = circlesfg.selectAll("circle");
+           if (p.size() > 0)
+               d3.select("#circles").each(function() {
+                   f = this;
+                   p.each(function() { 
+                       f.appendChild(this) 
+                   });
+            })
+           var p = textsfg.selectAll("g");
+           if (p.size() > 0)
+               d3.select("#texts").each(function() {
+                   f = this;
+                   p.each(function() { 
+                       f.appendChild(this) 
+                   });
+            })
+           
+        // highlight current node, paths, branch nodes
+           root.classed("hl", true);
+           d3.select("#text_" + name).classed("hl", true);
+           // highlight paths
+           var inlist = [];
+           var outlist = [];
+           var alllist = {}; // may have to handle duplicates, from in and out lists
+           p = d3.selectAll("path.out_" + name).classed("hl"+outLinkClass, true);
+           if (graph == 'directed')
+               p.attr("marker-end", "url(#out)")
+            p.each(function(d){
+               if (d.target.name != name) {
+                   if (graph == 'directed')
+                       outlist.push(d.target.name);
+                   else
+                       alllist[d.target.name] = true;
+                   d3.select("#circle_" + d.target.name).classed("hl"+inLinkClass, true); 
+                   d3.select("#text_" + d.target.name).classed("hl"+inLinkClass, true);
+               };
+           });
+           p = d3.selectAll("path.in_" + name).classed("hl"+inLinkClass, true);
+           if (graph == 'directed')
+               p.attr("marker-end", "url(#in)");
+           p.each(function(d){
+               if (d.source.name != name) {
+                   if (graph == 'directed')
+                       inlist.push(d.source.name);
+                   else
+                       alllist[d.source.name] = true;
+                   d3.select("#circle_" + d.source.name).classed("hl"+outLinkClass, true); 
+                   d3.select("#text_" + d.source.name).classed("hl"+outLinkClass, true);
+                   if (graph == 'directed')
+                       this["marker-end"] = "url(#out)";
+               };
+           });
+        var inlabel = {"retweets": "Retweeted by", "replies": "Replies to this", "mentions": "Mentioned"};
+        var outlabel = {"retweets": "Retweeted", "replies": "Replies from this", "mentions": "Mentioned by"};
+        if (graph == 'directed') {
+            d3.select("#sidebar_inlist").html("<h3>" + inlabel[mode] + "</h3>" + listhtml(inlist));
+            d3.select("#sidebar_outlist").html("<h3>" + outlabel[mode] + "</h3>" + listhtml(outlist));
+        }
+        else
+            d3.select("#sidebar_inlist").html("<h3>Co-Tags</h3>" + listhtml(Object.keys(alllist).sort()));
+
+        // move path to a different group: based on https://groups.google.com/forum/#!topic/d3-js/KEiqiUPZHUs
+           var p = paths.selectAll("path.out_" + name +", path.in_" + name);
+           if (p.size() > 0)
+               d3.select("#paths-fg").each(function() {
+                   f = this;
+                   p.each(function() { 
+                       f.appendChild(this) 
+                   });
+            })
+           var p = circles.selectAll(".hl, .hlIn, .hlOut, .hlUndirected");
+           if (p.size() > 0)
+               d3.select("#circles-fg").each(function() {
+                   f = this;
+                   p.each(function() { 
+                       f.appendChild(this) 
+                   });
+            })
+           var p = texts.selectAll(".hl, .hlIn, .hlOut, .hlUndirected");
+           if (p.size() > 0)
+               d3.select("#texts-fg").each(function() {
+                   f = this;
+                   p.each(function() { 
+                       f.appendChild(this) 
+                   });
+            })
+
+
+    }
+    
+
+// set box size to window size
+var win = window,
+    d = document,
+    e = d.documentElement,
+    g = d.getElementsByTagName('body')[0]
+
+// prepare list of terms for dropdown
+var terms = [];
+for (var a = 0; a < nodes.length; a++) {
+    terms.push(nodes[a]["name"]);
+}
+
+d3.select("#sidebar_selectdiv").html(selecthtml(terms));
+    
+// get viewport dimensions
+var portw = win.innerWidth || e.clientWidth || g.clientWidth,
+    porth = win.innerHeight|| e.clientHeight|| g.clientHeight;
+
+// make the svg really really big
+w = 2000;
+h = 2000;
+
+// but we'll want to scroll so that it is centred
+scrollx = (w >= portw) ? Math.round((w - portw)/2) : 0;
+scrolly = (h >= porth) ? Math.round((h - porth)/2) : 0;
+
+var force = d3.layout.force()
+    .nodes(d3.values(nodes))
+    .links(links)
+    .size([w, h])
+    .linkDistance(60)
+    .charge(-300)
+    .on("tick", tick)
+    .start();
+
+var svg = d3.select("#chart")
+    .attr("width", w)
+    .attr("height", h);
+
+// Per-type markers, as they don't inherit styles.
+svg.append("svg:defs").selectAll("marker")
+    .data(["plain", "in", "out"])
+  .enter().append("svg:marker")
+    .attr("id", String)
+    .attr("viewBox", "0 -5 10 10")
+    .attr("refX", 15)
+    .attr("refY", -1.5)
+    .attr("markerWidth", 6)
+    .attr("markerHeight", 6)
+    .attr("orient", "auto")
+  .append("svg:path")
+    .attr("d", "M0,-5L10,0L0,5");
+
+var path = svg.append("svg:g")
+    .attr("id", "paths")
+  .selectAll("path")
+    .data(force.links())
+  .enter().append("svg:path")
+    .attr("class", function(d) { return "link " + d.type + " out_" + d.source.name + " in_" + d.target.name; })
+    .attr("out", function(d) { return d.source.name; })
+    .attr("in", function(d) { return d.target.name; });
+// add arrowheads if directed graph
+if (graph == 'directed')
+    path.attr("marker-end", "url(#plain)");
+
+var circle = svg.append("svg:g")
+    .attr("id", "circles")
+    .selectAll("circle")
+    .data(force.nodes())
+  .enter().append("svg:circle")
+    .attr("r", 6)
+    .attr("id", function(d) {return "circle_" + d.name;})
+   .on("click", function(d) {
+        termselect(d.name);
+           })
+   .call(force.drag);
+
+// tooltips
+ circle.append("title")
+      .text(function(d) { return d.title; });
+
+var text = svg.append("svg:g")
+    .attr("id", "texts")
+    .selectAll("g")
+    .data(force.nodes())
+  .enter().append("svg:g")
+  .attr("id", function(d) {return "text_" + d.name;});
+
+// A copy of the text with a thick white stroke for legibility.
+text.append("svg:text")
+    .attr("x", 8)
+    .attr("y", ".31em")
+    .attr("class", "shad")
+    
+    .text(function(d) { return d.name; });
+
+text.append("svg:text")
+    .attr("x", 8)
+    .attr("y", ".31em")
+    .text(function(d) { return d.name; });
+
+// foreground groups: we move highlighted objects here, to bring them in front of the rest
+var pathsfg = svg.append("svg:g")
+    .attr("id", "paths-fg");
+var circlesfg = svg.append("svg:g")
+    .attr("id", "circles-fg");
+var textsfg = svg.append("svg:g")
+    .attr("id", "texts-fg");
+
+// Use elliptical arc path segments to doubly-encode directionality.
+function tick() {
+  path.attr("d", function(d) {
+    var dx = d.target.x - d.source.x,
+        dy = d.target.y - d.source.y,
+        dr = Math.sqrt(dx * dx + dy * dy);
+    return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
+  });
+
+  circle.attr("transform", function(d) {
+    return "translate(" + d.x + "," + d.y + ")";
+  });
+
+  text.attr("transform", function(d) {
+    return "translate(" + d.x + "," + d.y + ")";
+  });
+}
+//    });
+
+window.scrollTo(scrollx, scrolly);
+</script>
+</body>
+
+None
