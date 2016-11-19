@@ -403,6 +403,15 @@ display: none;
     min-height: 100%;
     background: #b5b5b7;
 	color: #252839;
+	padding-top: 100px;
+}
+
+@media(min-width:400px) {
+    .cv-section {
+		/*height: 100%;*/
+		padding-top: 0px;
+    }
+
 }
 
 .cv-section h1 {
