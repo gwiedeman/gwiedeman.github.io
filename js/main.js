@@ -43,12 +43,12 @@ if(!tap){
 			$("#abs5").hide()
 			$(".abstract-default").show()
 		}); 
+		$('#writing-6').mouseenter(function () {
+		  $(".abstract-default").hide()
+		  $("#abs6").show()
+		});
 		$('#writing-6').mouseleave(function () {
 			$("#abs6").hide()
-			$(".abstract-default").show()
-		}); 
-		$('#writing-7').mouseleave(function () {
-			$("#abs7").hide()
 			$(".abstract-default").show()
 		}); 
 	}
