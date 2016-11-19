@@ -1,0 +1,466 @@
+/*!
+ * Start Bootstrap - Scrolling Nav HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+ /*
+#252839
+#677077
+#b5b5b7
+#f2b632
+#dbdee1
+ */
+ 
+body {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+/* Custom Navbar */
+
+.navbar-custom {
+  background-color: #252839;
+  border: 0px;
+}
+.navbar-custom .navbar-brand {
+  color: #b5b5b7;
+}
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .navbar-brand:focus {
+  color: #dbdee1;
+}
+.navbar-custom .navbar-text {
+  color: #b5b5b7;
+}
+.navbar-custom .navbar-nav > li > a {
+  color: #b5b5b7;
+}
+.navbar-custom .navbar-nav > li > a:hover,
+.navbar-custom .navbar-nav > li > a:focus {
+  color: #dbdee1;
+}
+.navbar-custom .navbar-nav > .active > a,
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus {
+  color: #dbdee1;
+  background-color: #677077;
+}
+.nav > li > a:focus, .nav > li > a:hover{
+  background-color: #677077;
+}
+.navbar-custom .navbar-nav > .open > a,
+.navbar-custom .navbar-nav > .open > a:hover,
+.navbar-custom .navbar-nav > .open > a:focus {
+  color: #dbdee1;
+  background-color: #677077;
+}
+.navbar-custom .navbar-toggle {
+  border-color: #677077;
+}
+.navbar-custom .navbar-toggle:hover,
+.navbar-custom .navbar-toggle:focus {
+  background-color: #677077;
+}
+.navbar-custom .navbar-toggle .icon-bar {
+  background-color: #b5b5b7;
+}
+.navbar-custom .navbar-collapse,
+.navbar-custom .navbar-form {
+  border-color: #b5b5b7;
+}
+.navbar-custom .navbar-link {
+  color: #b5b5b7;
+}
+.navbar-custom .navbar-link:hover {
+  color: #dbdee1;
+}
+
+@media (max-width: 767px) {
+  .navbar-custom .navbar-nav .open .dropdown-menu > li > a {
+    color: #b5b5b7;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-custom .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #dbdee1;
+  }
+  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-custom .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #dbdee1;
+    background-color: #677077;
+  }
+}
+.navbar-brand {
+	font-family: 'Roboto Slab', serif;
+}
+
+/*end custom navbar */
+
+@media(min-width:767px) {
+    .navbar {
+        padding: 20px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+
+    .top-nav-collapse {
+        padding: 0;
+    }
+}
+
+/* Fonts */
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Roboto Slab', serif;
+}
+
+p {
+	font-family: "Open Sans", sans serif;
+}
+
+
+.navbar li, a {
+	font-family: "Bree Serif", serif;
+}
+
+
+/* Intro Section */
+
+.intro-section {
+    height: auto;
+    min-height: 100%;
+    padding-top: 40px;
+    text-align: center;
+    background: #252839;
+	color: #b5b5b7;
+}
+
+.intro-section > .container {
+    height: 100%;
+	top: 0%;
+}
+
+@media(min-width:767px) {
+    .intro-section {
+        padding-top: 150px;
+		height: 100%;
+    }
+
+}
+
+.intro-section .container .jumbotron, .container-fluid .jumbotron {
+	background: inherit;
+}
+
+.jumbotron h1 {
+	font-size: 38px;
+}
+
+.jumbotron {
+	text-align: left;
+}
+
+.jumbotron a {
+	text-decoration: none;
+	color: #f2b632;
+}
+
+.jumbotron p {
+	color: #dbdee1;
+}
+
+.jumbotron a:hover {
+	color: #677077;
+}
+
+.carousel {
+	margin: 0px 30px 30px 30px;
+	border: 10px solid #f2b632;
+	border-radius: 0px;
+}
+
+/* ends Intro Section */
+
+.container {
+	top: 20%;
+	position: relative;
+}
+
+/* About Section */
+
+.about-section {
+	height: auto;
+    min-height: 100%;
+    text-align: center;
+    background: #677077;
+	color: #dbdee1;
+	padding-top: 100px;
+}
+
+@media(min-width:400px) {
+    .about-section {
+		/*height: 100%;*/
+		padding-top: 0px;
+    }
+
+}
+
+.about-section h1 {
+	margin-bottom: 50px;
+	margin-top: 10%;
+}
+
+.about-section .text {
+	text-align: left;
+	margin-bottom: 50px;
+}
+
+/* ends About Section */
+
+/* Writing Section */
+
+.writing-section {
+    height: auto;
+    min-height: 100%;
+    text-align: center;
+    background: #b5b5b7;
+	color: #252839;
+	text-align: left;
+	padding-top: 100px;
+}
+
+.writing-section .abstract {
+	margin-top: 20px;
+	display: none;
+}
+
+.writing-section .list-group-item:hover {
+	background: #677077;
+	color: #b5b5b7;
+}
+
+
+.writing-section .list-group-item:hover h5 {
+	color: #dbdee1;
+}
+
+.writing-section .abstract-default {
+	margin-top: 20px;
+	display: block;
+}
+
+#abs5 {
+	display: none;
+}
+#writing-5 {
+display: none;
+}
+
+@media(min-height:700px) {
+	#writing-5 {
+		display: block;
+	}
+}
+
+#more {
+	margin-left: 40px;
+}
+
+@media(min-width:400px) {
+    .writing-section {
+		height: 100%;
+		padding-top: 0px;
+    }
+
+}
+
+/* ends Writing Section */
+
+/* Presentations Section */
+
+.presentations-section {
+    height: auto;
+    min-height: 100%;
+    text-align: center;
+    background: #252839;
+	color: #b5b5b7;
+	padding-top: 100px;
+}
+
+@media(min-width:400px) {
+    .presentations-section {
+		/*height: 100%;*/
+		padding-top: 0px;
+    }
+
+}
+
+.presentations-section h1 {
+	margin-bottom: 50px;
+	margin-top: 10%;
+}
+
+.sequence {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	margin-bottom: 30px;
+}
+
+.workshop-well {
+	width: 350px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	padding: 10px 10px 10px 10px;
+}
+
+.workshop-well > .row > .col-xs-12 > h4 {
+	margin: 20px 20px 20px 20px;
+}
+
+.workshop-well > .row > .col-xs-12 > h5 {
+	color: #f2b632;
+}
+
+.workshop-well > .row > .col-xs-12 > h4 > a {
+	font-family: 'Roboto Slab', serif;
+}
+
+.presentations-section .workshop-well {
+	background: #677077;
+	color: #dbdee1;
+	border-color: #677077;
+}
+
+.presentations-section .workshop-well > .row > .col-xs-12 > h4 > a {
+	color: #dbdee1;
+}
+
+.presentations-section .workshop-well > .row > .col-xs-12 > h4 > a:hover {
+	color: #b5b5b7;
+}
+
+.workshop-well > .row > .col-xs-12 > h4 > a:hover {
+	text-decoration: none;	
+}
+
+.workshop-well > .row > .col-xs-12 > p {
+	font-style: italic;
+}
+
+/* ends Presentations Section */
+
+/* Code Section */
+
+.code-section {
+    /*height: 100%;*/
+    text-align: center;
+    background: #677077;
+	color: #dbdee1;
+	padding-top: 100px;
+}
+
+@media(min-width:400px) {
+    .code-section {
+		/*height: 100%;*/
+		padding-top: 0px;
+    }
+
+}
+
+.code-section h1 {
+	margin-bottom: 50px;
+	margin-top: 10%;
+}
+
+.code-section .workshop-well {
+	background: #252839;
+	color: #677077;
+	border-color: #252839;
+}
+
+.code-section .workshop-well > .row > .col-xs-12 > h4 > a {
+	color: #dbdee1;
+}
+
+.code-section .workshop-well > .row > .col-xs-12 > h4 > a:hover {
+	color: #677077;
+}
+
+/* ends Code Section */
+
+/* CV Section */
+
+.cv-section {
+    min-height: 100%;
+    background: #b5b5b7;
+	color: #252839;
+}
+
+.cv-section h1 {
+	margin-bottom: 50px;
+	margin-top: 10%;
+}
+
+.title-row {
+	text-align: center;
+}
+
+ul ul {
+	margin-bottom: 10px;
+}
+
+.cv-section li p a {
+	font-family: "Open Sans", sans serif;
+}
+
+.cv-section {
+	padding-bottom: 100px !important;
+}
+
+/* ends CV Section */
+
+/* Footer Section */
+
+.footer-section {
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    text-align: left;
+    background: #f2b632;
+	color: #252839;
+}
+
+.footer-section a {
+	margin: 3px 3px;
+}
+
+.footer-section .container {
+	top: 0;
+}
+
+.footer-section .list-inline {
+	float: left;
+}
+
+.footer-section .licence {
+	float: right;
+	margin: 3.5px 0px;
+}
+
+.footer-section .licence > a > img {
+	width: 70%;
+	margin-top: 5px;
+}
+
+/* ends Footer Section */
