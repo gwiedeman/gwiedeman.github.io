@@ -383,7 +383,7 @@ display: none;
 
 .code-section .workshop-well {
 	background: #252839;
-	color: #677077;
+	color: #b5b5b7;
 	border-color: #252839;
 }
 
@@ -427,7 +427,7 @@ ul ul {
 	margin-bottom: 10px;
 }
 
-.cv-section li p a {
+.cv-section li a {
 	font-family: "Open Sans", sans serif;
 }
 
