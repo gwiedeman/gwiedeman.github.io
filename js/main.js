@@ -3,6 +3,14 @@ var tap = ("ontouchstart" in document.documentElement);
 if(!tap){
 	
 	window.onload = function() {
+		$('#writing-9').mouseenter(function () {
+		  $(".abstract-default").hide()
+		  $("#abs9").show()
+		});
+		$('#writing-9').mouseleave(function () {
+			$("#abs9").hide()
+			$(".abstract-default").show()
+		});
 		$('#writing-0').mouseenter(function () {
 		  $(".abstract-default").hide()
 		  $("#abs0").show()
