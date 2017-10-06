@@ -86,13 +86,13 @@ University at Albany, SUNY
 
 ## Inefficient Storage
 
-<!-- .slide: data-background="img/istorage2.jpg" -->
+<!-- .slide: data-background="img/istorage2.JPG" -->
 
 ---
 
 ## Efficient Storage
 
-<!-- .slide: data-background="img/estorage.jpg" -->
+<!-- .slide: data-background="img/estorage.JPG" -->
 
 ---
 
@@ -115,7 +115,7 @@ University at Albany, SUNY
 
 ---
 
-<!-- .slide: data-background="img/istorage2.jpg" -->
+<!-- .slide: data-background="img/istorage2.JPG" -->
 
 ---
 
@@ -127,13 +127,13 @@ University at Albany, SUNY
 
 ## Where do Files Live?
 
-<img src="img/hdd3.jpg" style="background-color: #fff;"/>
+<img src="img/hdd3.JPG" style="background-color: #fff;"/>
 
 ---
 
 ## NTFS on Windows
 
-<img src="img/mft1.jpg" style="background-color: #fff;"/>
+<img src="img/mft1.JPG" style="background-color: #fff;"/>
 
 Brian Carrier, <i>File System Forensic Analysis</i> (Addison-Wesley, 2005), p. 283
 
@@ -141,7 +141,7 @@ Brian Carrier, <i>File System Forensic Analysis</i> (Addison-Wesley, 2005), p. 2
 
 ## $MFT (Master File Table)
 
-<img src="img/mft2.jpg" style="background-color: #fff;"/>
+<img src="img/mft2.JPG" style="background-color: #fff;"/>
 
 Carrier, p. 280
 
@@ -149,7 +149,7 @@ Carrier, p. 280
 
 ## $MFT (Master File Table)
 
-<img src="img/mft3.jpg" style="background-color: #fff;"/>
+<img src="img/mft3.JPG" style="background-color: #fff;"/>
 
 Carrier, p. 295
 
@@ -162,19 +162,19 @@ Carrier, p. 295
 
 ## Deleting Files
 
-<img src="img/hdd3.jpg" style="background-color: #fff;"/>
+<img src="img/hdd3.JPG" style="background-color: #fff;"/>
 
 ---
 
 ## Efficiency in Sectors
 
-<img src="img/mft2.jpg" style="background-color: #fff;"/>
+<img src="img/mft2.JPG" style="background-color: #fff;"/>
 
 ---
 
 ## Efficiency in Sectors
 
-<img src="img/slackSpace1.jpg" style="background-color: #fff;"/>
+<img src="img/slackSpace1.JPG" style="background-color: #fff;"/>
 
 Carrier, p. 188
 
@@ -182,7 +182,7 @@ Carrier, p. 188
 
 ## Slack Space
 
-<img src="img/slackSpace2.jpg" style="background-color: #fff;"/>
+<img src="img/slackSpace2.JPG" style="background-color: #fff;"/>
 
 Carrier, p. 188
 
