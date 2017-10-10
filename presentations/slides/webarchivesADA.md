@@ -6,6 +6,10 @@ M.E. Grenander Department of Special Collections & Archives
 
 ---
 
+<!-- .slide: data-background="img/stacks.jpg" -->
+
+---
+
 <!-- .slide: data-background="img-iipc/undergradBulletin.png" -->
 
 ---
@@ -24,7 +28,7 @@ M.E. Grenander Department of Special Collections & Archives
 
 ---
 
-## Research with Twitter Data
+## Twitter Data
 
 * Detecting Russian bots: it`s
 * Ed Summers [apostrophe dataset](https://github.com/edsu/apostrophe) 40 accounts
@@ -38,5 +42,29 @@ M.E. Grenander Department of Special Collections & Archives
 
 ---
 
+## Challenges of Working with WARCS
+
+* .warc file ISO standard
+* Tremendous volume of data
+* Mess of HTML, CSS, JavaScript
+* Unclear provenance
+
+---
+
+Jonathan Albright
+
+---
+
+## Tools are getting easier
+
+* [Archives Unleashed Toolkit](https://github.com/archivesunleashed/aut)
+* [Warclight](https://github.com/archivesunleashed/warclight)
+
+---
+
 * 8595 of 10649 URLs were still live
 * 81%
+
+---
+
+# How to Collect
