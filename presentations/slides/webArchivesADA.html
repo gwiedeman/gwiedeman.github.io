@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>ADA Web Archives</title>
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/moon2.css" id="theme">
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+          document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+    </head>
+    <body>
+
+        <div class="reveal">
+            <div class="slides"><section  data-markdown><script type="text/template">
+## Data Analytics Approaches for Web Archives
+
+Gregory Wiedeman<br/>
+University Archivist<br/>
+M.E. Grenander Department of Special Collections & Archives
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/stacks.jpg" -->
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img-iipc/undergradBulletin.png" -->
+</script></section><section  data-markdown><script type="text/template">
+## Collecting the Web at UAlbany
+
+* Preserve and manage permanent public records
+* Crawling and preserving albany.edu since 2012
+* Began outside collecting in 2016
+* 1.5 TB of Web Data
+* Collect, preserve, provide access, and encourage use
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/uaWebArchives.png" -->
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/docnow.png" -->
+</script></section><section  data-markdown><script type="text/template">
+## Twitter Data
+
+* Detecting Russian bots: it`s
+* Ed Summers [apostrophe dataset](https://github.com/edsu/apostrophe) 40 accounts
+* Collected 14,217 tweets with [Twarc](https://github.com/DocNow/twarc)
+
+<img src="img/botTweets.png"/>
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/botLang.png" -->
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/botClouds.jpg" -->
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/ny19.png" -->
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="https://cdn-images-1.medium.com/max/2000/1*E0WUcF2AdNDoeflM_iCkGg.jpeg" -->
+
+
+<a href="https://medium.com/@d1gi/the-election2016-micro-propaganda-machine-383449cc1fba" style="background-color:white; padding: 10px;white-space: nowrap;border: 2px solid rgba(255, 255, 255, .6);background-clip: padding-box;">Jonathan Albright, "The #Election2016 Micro-Propaganda Machine"</a>
+</script></section><section  data-markdown><script type="text/template">
+## Working with WARCs
+
+* .warc file ISO standard
+* Tremendous volume of data
+* Mess of HTML, CSS, JavaScript
+* Unclear provenance
+* Standard derivative datasets <!-- .element: class="fragment" data-fragment-index="1" -->
+* Tools becoming easier to use <!-- .element: class="fragment" data-fragment-index="1" -->
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/aut.png" -->
+</script></section><section  data-markdown><script type="text/template">
+* 8595 of 10649 URLs were still live
+* 81%
+</script></section><section  data-markdown><script type="text/template">
+## Funding availability 
+</script></section><section  data-markdown><script type="text/template">
+## Collecting the Web
+
+* Smaller research-focused collections
+* Work with Internet Archive to get older data
+</script></section><section  data-markdown><script type="text/template">
+## Links
+
+* [Github repo]
+* [UAlbany Web Archiving Program](http://library.albany.edu/archive/webarchives)
+* [An Open-Source Strategy for Documenting Events: The Case Study of the 42nd Canadian Federal Election on Twitter](http://journal.code4lib.org/articles/11358)
+* [Archives Unleashed Toolkit](https://github.com/archivesunleashed/aut)
+* [Warclight](https://github.com/archivesunleashed/warclight)</script></section></div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            function extend() {
+              var target = {};
+              for (var i = 0; i < arguments.length; i++) {
+                var source = arguments[i];
+                for (var key in source) {
+                  if (source.hasOwnProperty(key)) {
+                    target[key] = source[key];
+                  }
+                }
+              }
+              return target;
+            }
+
+            // Optional libraries used to extend on reveal.js
+            var deps = [
+              { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+              { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+              { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+              { src: 'plugin/math/math.js', async: true }
+            ];
+
+            // default options to init reveal.js
+            var defaultOptions = {
+              controls: true,
+              progress: true,
+              history: true,
+              center: true,
+              transition: 'fade',
+              dependencies: deps
+            };
+
+            // options from URL query string
+            var queryOptions = Reveal.getQueryHash() || {};
+
+            var options = {};
+            options = extend(defaultOptions, options, queryOptions);
+            Reveal.initialize(options);
+        </script>
+        
+          <script src="/scripts/gwiedeman.github.io"></script>
+    </body>
+</html>
