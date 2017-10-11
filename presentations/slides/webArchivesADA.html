@@ -17,6 +17,7 @@
 
         <div class="reveal">
             <div class="slides"><section  data-markdown><script type="text/template">
+
 ## Data Analytics Approaches for Web Archives
 
 Gregory Wiedeman<br/>
@@ -25,7 +26,7 @@ M.E. Grenander Department of Special Collections & Archives
 </script></section><section  data-markdown><script type="text/template">
 <!-- .slide: data-background="img/stacks.jpg" -->
 </script></section><section  data-markdown><script type="text/template">
-<!-- .slide: data-background="img-iipc/undergradBulletin.png" -->
+<!-- .slide: data-background="img/undergradBulletin.png" -->
 </script></section><section  data-markdown><script type="text/template">
 ## Collecting the Web at UAlbany
 
@@ -47,9 +48,9 @@ M.E. Grenander Department of Special Collections & Archives
 
 <img src="img/botTweets.png"/>
 </script></section><section  data-markdown><script type="text/template">
-<!-- .slide: data-background="img/botLang.png" -->
+<!-- .slide: data-background="img/botClouds.png" -->
 </script></section><section  data-markdown><script type="text/template">
-<!-- .slide: data-background="img/botClouds.jpg" -->
+<!-- .slide: data-background="img/domainsTop10.png" -->
 </script></section><section  data-markdown><script type="text/template">
 <!-- .slide: data-background="img/ny19.png" -->
 </script></section><section  data-markdown><script type="text/template">
@@ -69,23 +70,40 @@ M.E. Grenander Department of Special Collections & Archives
 </script></section><section  data-markdown><script type="text/template">
 <!-- .slide: data-background="img/aut.png" -->
 </script></section><section  data-markdown><script type="text/template">
-* 8595 of 10649 URLs were still live
-* 81%
+<!-- .slide: data-background="img/linksClouds.png" -->
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/linkRanking.png" -->
 </script></section><section  data-markdown><script type="text/template">
 ## Funding availability 
-</script></section><section  data-markdown><script type="text/template">
-## Collecting the Web
 
+* [Mellon Foundation Scholarly Communications](https://mellon.org/programs/scholarly-communications/)
+
+* [NEH Digital Humanities Advancement Grants (Due in January 2018)](https://www.neh.gov/grants/odh/digital-humanities-advancement-grants)
+* [NEH Institutes for Advanced Topics in the Digital Humanities (for training programs)](https://www.neh.gov/grants/odh/institutes-advanced-topics-in-the-digital-humanities)
+
+
+* [IMLS National Digital Platform](https://www.imls.gov/issues/national-issues/national-digital-platform)
+* [National Archives NHPRC supports access and use of records](https://www.archives.gov/nhprc/announcement/archival.html)
+</script></section><section  data-markdown><script type="text/template">
+## Collecting the Web at UAlbany
+
+* We need partners!
 * Smaller research-focused collections
 * Work with Internet Archive to get older data
+* How can we improve?
 </script></section><section  data-markdown><script type="text/template">
 ## Links
 
-* [Github repo]
-* [UAlbany Web Archiving Program](http://library.albany.edu/archive/webarchives)
-* [An Open-Source Strategy for Documenting Events: The Case Study of the 42nd Canadian Federal Election on Twitter](http://journal.code4lib.org/articles/11358)
-* [Archives Unleashed Toolkit](https://github.com/archivesunleashed/aut)
-* [Warclight](https://github.com/archivesunleashed/warclight)</script></section></div>
+* [Github repo](https://github.com/UAlbanyArchives/apostropheTesting)
+* [UAlbany Web Archiving Program ](http://library.albany.edu/archive/webarchives)
+* [Doc Now (http://www.docnow.io/)](http://www.docnow.io/)
+* [Archives Unleashed Toolkit](https://github.com/archivesunleashed/aut), [Warclight](https://github.com/archivesunleashed/warclight) 
+* [Jonathan Albright, "The #Election2016 Micro-Propaganda Machine"](https://medium.com/@d1gi/the-election2016-micro-propaganda-machine-383449cc1fba)
+* [An Open-Source Strategy for Documenting Events: The Case Study of the 42nd Canadian Federal Election on Twitter, in Code4Lib](http://journal.code4lib.org/articles/11358)
+* Live Visualizations
+	* [NY19 Congressional District](http://www.gregwiedeman.com/presentations/slides/twarcExamples/ny19-retweets.html)
+	* [Links top 10 domains](http://www.gregwiedeman.com/presentations/slides/d3plus/domainsTop10.html)
+	* [Links all domains](http://www.gregwiedeman.com/presentations/slides/d3plus/domains.html)</script></section></div>
         </div>
 
         <script src="lib/js/head.min.js"></script>
@@ -121,14 +139,16 @@ M.E. Grenander Department of Special Collections & Archives
               progress: true,
               history: true,
               center: true,
-              transition: 'fade',
+              transition: 'default',
               dependencies: deps
             };
 
             // options from URL query string
             var queryOptions = Reveal.getQueryHash() || {};
 
-            var options = {};
+            var options = {
+  "transition": "fade"
+};
             options = extend(defaultOptions, options, queryOptions);
             Reveal.initialize(options);
         </script>

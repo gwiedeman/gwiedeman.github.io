@@ -92,6 +92,15 @@ M.E. Grenander Department of Special Collections & Archives
 
 ## Funding availability 
 
+* [Mellon Foundation Scholarly Communications](https://mellon.org/programs/scholarly-communications/)
+
+* [NEH Digital Humanities Advancement Grants (Due in January 2018)](https://www.neh.gov/grants/odh/digital-humanities-advancement-grants)
+* [NEH Institutes for Advanced Topics in the Digital Humanities (for training programs)](https://www.neh.gov/grants/odh/institutes-advanced-topics-in-the-digital-humanities)
+
+
+* [IMLS National Digital Platform](https://www.imls.gov/issues/national-issues/national-digital-platform)
+* [National Archives NHPRC supports access and use of records](https://www.archives.gov/nhprc/announcement/archival.html)
+
 ---
 
 ## Collecting the Web at UAlbany
