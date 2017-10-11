@@ -16,7 +16,7 @@ M.E. Grenander Department of Special Collections & Archives
 
 ---
 
-<!-- .slide: data-background="img-iipc/undergradBulletin.png" -->
+<!-- .slide: data-background="img/undergradBulletin.png" -->
 
 ---
 
@@ -48,11 +48,11 @@ M.E. Grenander Department of Special Collections & Archives
 
 ---
 
-<!-- .slide: data-background="img/botLang.png" -->
+<!-- .slide: data-background="img/botClouds.png" -->
 
 ---
 
-<!-- .slide: data-background="img/botClouds.jpg" -->
+<!-- .slide: data-background="img/domainsTop10.png" -->
 
 ---
 
@@ -82,8 +82,11 @@ M.E. Grenander Department of Special Collections & Archives
 
 ---
 
-* 8595 of 10649 URLs were still live
-* 81%
+<!-- .slide: data-background="img/linksClouds.png" -->
+
+---
+
+<!-- .slide: data-background="img/linkRanking.png" -->
 
 ---
 
@@ -91,17 +94,24 @@ M.E. Grenander Department of Special Collections & Archives
 
 ---
 
-## Collecting the Web
+## Collecting the Web at UAlbany
 
+* We need partners!
 * Smaller research-focused collections
 * Work with Internet Archive to get older data
+* How can we improve?
 
 ---
 
 ## Links
 
-* [Github repo]
-* [UAlbany Web Archiving Program](http://library.albany.edu/archive/webarchives)
-* [An Open-Source Strategy for Documenting Events: The Case Study of the 42nd Canadian Federal Election on Twitter](http://journal.code4lib.org/articles/11358)
-* [Archives Unleashed Toolkit](https://github.com/archivesunleashed/aut)
-* [Warclight](https://github.com/archivesunleashed/warclight)
+* [Github repo](https://github.com/UAlbanyArchives/apostropheTesting)
+* [UAlbany Web Archiving Program ](http://library.albany.edu/archive/webarchives)
+* [Doc Now (http://www.docnow.io/)](http://www.docnow.io/)
+* [Archives Unleashed Toolkit](https://github.com/archivesunleashed/aut), [Warclight](https://github.com/archivesunleashed/warclight) 
+* [Jonathan Albright, "The #Election2016 Micro-Propaganda Machine"](https://medium.com/@d1gi/the-election2016-micro-propaganda-machine-383449cc1fba)
+* [An Open-Source Strategy for Documenting Events: The Case Study of the 42nd Canadian Federal Election on Twitter, in Code4Lib](http://journal.code4lib.org/articles/11358)
+* Live Visualizations
+	* [NY19 Congressional District](http://www.gregwiedeman.com/presentations/slides/twarcExamples/ny19-retweets.html)
+	* [Links top 10 domains](http://www.gregwiedeman.com/presentations/slides/d3plus/domainsTop10.html)
+	* [Links all domains](http://www.gregwiedeman.com/presentations/slides/d3plus/domains.html)
