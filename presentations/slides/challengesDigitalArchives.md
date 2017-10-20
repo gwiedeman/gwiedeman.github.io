@@ -108,6 +108,7 @@ University records are public records, subject to FOIL <!-- .element: class="fra
 * Creates XML accession metadata file
 * Runs createSIP.py command line tool
 * Enters line in accessions.xlsx
+* Manual collecting over GoogleDrive
 
 ---
 

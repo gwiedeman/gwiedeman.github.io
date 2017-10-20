@@ -102,6 +102,7 @@ University records are public records, subject to FOIL <!-- .element: class="fra
 * Creates XML accession metadata file
 * Runs createSIP.py command line tool
 * Enters line in accessions.xlsx
+* Manual collecting over GoogleDrive
 </script></section><section  data-markdown><script type="text/template">
 ## Bag-it
 
@@ -231,7 +232,9 @@ University records are public records, subject to FOIL <!-- .element: class="fra
             // options from URL query string
             var queryOptions = Reveal.getQueryHash() || {};
 
-            var options = {};
+            var options = {
+  "transition": "fade"
+};
             options = extend(defaultOptions, options, queryOptions);
             Reveal.initialize(options);
         </script>
