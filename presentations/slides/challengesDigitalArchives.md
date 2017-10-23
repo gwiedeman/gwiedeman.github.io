@@ -5,7 +5,7 @@ University Archivist
 
 ---
 
-## Overview of University Archives
+## The University Archives
 
 * University Records
 	* Office of the President
