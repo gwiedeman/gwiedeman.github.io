@@ -10,6 +10,10 @@ revealOptions:
 
 ---
 
+<!-- .slide: data-background="http://library.albany.edu/sites/all/themes/New_UArchives/img/full/news1.jpg" -->
+
+---
+
 ## University Archives
 
 * Collect permanent university records
@@ -54,10 +58,6 @@ revealOptions:
 <video width="100%" height="100%" autoplay controls>
   <source src="scroll.webm" type="video/webm">
 </video>
-
----
-
-<!-- .slide: data-background="http://library.albany.edu/sites/all/themes/New_UArchives/img/full/news1.jpg" -->
 
 ---
 
