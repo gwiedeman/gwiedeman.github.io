@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Espy Project</title>
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/moon2.css" id="theme">
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+          document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+    </head>
+    <body>
+
+        <div class="reveal">
+            <div class="slides"><section  data-markdown><script type="text/template">
+
+## The Espy Project
+
+#### Building Digital Infrastructure
+</script></section><section  data-markdown><script type="text/template">
+## University Archives
+
+* Collect permanent university records
+
+* Make them accessible
+</script></section><section  data-markdown><script type="text/template">
+## Traditional Practices
+
+* Collecting during office moves, when storage areas get crowded
+
+* Call the University Archivist for information
+</script></section><section  data-markdown><script type="text/template">
+## The University Archives
+
+* University Records
+	* Office of the President
+	* University Senate
+	* University Council
+	* Office of the Provost
+	* Graduate & Undergraduate Education
+		* Records of Schools and Colleges
+		* Records of Academic Departments
+	* Web Archives
+* Student Groups and Manuscripts
+	* Student Association
+	* Albany Student Press
+	* Faculty and Alumni Papers
+</script></section><section  data-markdown><script type="text/template">
+## Building a Modern Collecting Program
+
+* Automated digital transfers
+* Web crawling
+* Disk imaging of external media
+* Paper when maintained as such
+* Format-neutral practices
+* Requires digital infrastructure
+</script></section><section  data-markdown><script type="text/template">
+## Born-Digital Records Collecting in Practice
+
+* Files On the Live Web
+	* Web crawling
+* Files dispersed around the University
+	* Local Computers
+	* Network Shares
+	* Cloud Storage
+	* Different Software Applications
+	* Private Computers
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img-iipc/minutes.png" -->
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img-iipc/undergradBulletin.png" -->
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/applications1.png" -->
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/applications2.png" -->
+</script></section><section  data-markdown><script type="text/template">
+#### [Ben Goldman, "Outfitting a Born-Digital Archives Program"<br/><i>Practical Technology for Archives</i>&nbsp;&nbsp; Issue 2 (June 2014)](http://https://practicaltechnologyforarchives.org/issue2_goldman/)
+
+
+<!-- .slide: data-background="img/diskImaging.jpg" -->
+
+</script></section><section  data-markdown><script type="text/template">
+## Establishing a Collecting Program
+
+<img src="img/recordsCollecting1.png"/>
+</script></section><section  data-markdown><script type="text/template">
+
+## Transfer Scripts
+
+* Network Folder Share
+	* Archives and creator has access
+* Python script run on task scheduler
+* Weekly checks for new files
+* CSV log files of files transferred
+* Creates XML accession metadata file
+* Runs createSIP.py command line tool
+* Enters line in accessions.xlsx
+* Manual collecting over GoogleDrive
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/transferShares.png" -->
+</script></section><section  data-markdown><script type="text/template">
+## Establishing a Collecting Program
+
+* \\\\LINCOLN\Library\UA200
+
+* [Transfer Script](https://github.com/UAlbanyArchives/ua200/blob/master/ua200.py)
+
+<img src="img/recordsCollecting2.png"/>
+</script></section><section  data-markdown><script type="text/template">
+## Establishing a Collecting Program
+
+<img src="img/recordsCollecting3.png"/>
+</script></section><section  data-markdown><script type="text/template">
+## Establishing a Collecting Program
+
+<img src="img/recordsCollecting4.png"/>
+</script></section><section  data-markdown><script type="text/template">
+## Current Storage
+
+* \\\\romeo\SPE\ua200-7VsAhYXbfYg3EKXaypCJeD
+
+</script></section><section  data-markdown><script type="text/template">
+## Current Access System
+
+* [University Senate Records](http://meg.library.albany.edu:8080/archive/view?docId=ua200.xml)
+* [Luna DAMS](http://library.albany.edu/archive/digitalselections)
+* [Digital Media Department](http://meg.library.albany.edu:8080/archive/view?docId=ua395.xml)
+</script></section><section  data-markdown><script type="text/template">
+## Maintenance
+
+* Scripts break over time
+	* No more ad-hoc approaches
+	* No more XML data stores
+* Network of well-maintained interoperable tools
+</script></section><section  data-markdown><script type="text/template">
+## Introduction to APIs
+
+* [Wayback Machine](https://web.archive.org/web/*/http://www.albany.edu/undergraduate_bulletin/)
+
+* <a href="https://web.archive.org/cdx/search/cdx?url=http://www.albany.edu/undergraduate_bulletin/">Wayback Machine API</a>
+
+* [Archive-It](https://partner.archive-it.org/login?next=/archiveit)
+* [Page for Crawl](https://partner.archive-it.org/652/collections/6916/crawl/552635)
+* [API for Crawl](https://partner.archive-it.org/api/crawl_job/552635)
+</script></section><section  data-markdown><script type="text/template">
+## What can you do with APIs?
+
+* [ArchivesSpace](http://169.226.92.31:8080/)
+* [Office of Diversity and Inclusion](http://169.226.92.31:8080/resources/415)
+* [ArchivesSpace API](http://169.226.92.31:8089/)
+	* python2
+	* from archives_tools import aspace as AS
+	* session = AS.getSession()
+	* odi = AS.getResource(session, "2", "415")
+	* AS.pp(odi)
+	* print odi.title
+	* print odi.finding_aid_author
+
+</script></section><section  data-markdown><script type="text/template">
+## APIs: Solving Problems with Maintainable Solutions
+
+* [David Baldus Papers](http://169.226.92.31:8080/resources/227#tree::archival_object_78037)
+* C:\Projects\asInventory
+	* python2 asDownload.py
+	* 16b7133df26424617e649391b53ea6ce
+</script></section><section  data-markdown><script type="text/template">
+## Separation of Concerns: Smaller Tools
+
+* [Find-it](http://libstaff/find-it/index.html)
+* [Director of Planning Records](http://meg.library.albany.edu:8080/archive/view?docId=ua020.xml)
+* [Box uploader](http://libstaff/find-it/boxes.html)
+* \\\\libstaff\wwwroot\find-it
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/systemDesign.jpg" -->
+</script></section><section  data-markdown><script type="text/template">
+## An Interoperable Repository with APIs
+
+* ArchivesSpace for Managing Metadata
+	* Spreadsheet tool
+	* Find-it
+* Archive-It for Web Archives
+* [Hyrax Repository for Digital Storage](http://169.226.92.29:8081/) <!-- .element: class="fragment" data-fragment-index="1" -->
+</script></section><section  data-markdown><script type="text/template">
+
+## Portland Common Data Model
+
+<img src="img/pcdm.png" style="background-color: #fff;"/>
+</script></section><section  data-markdown><script type="text/template">
+## API Access Allows Maintainable Workflows
+
+* [API Access]
+
+<img src="img/recordsCollecting5.png"/>
+</script></section><section  data-markdown><script type="text/template">
+## Open, Interconnected Workflows
+
+1. Detect accession
+2. Get contextual data from ArchivesSpace API
+4. Ingest into digital repository
+5. Que for review 
+6. Expose data into central search index
+</script></section><section  data-markdown><script type="text/template">
+## An Interoperable Repository with APIs
+
+<img src="img/apiConnections.png"/>
+</script></section><section  data-markdown><script type="text/template">
+## An Interoperable Repository with APIs
+
+* ArchivesSpace for Managing Metadata
+	* Spreadsheet tool
+	* Find-it
+* Archive-It for Web Archives
+* [Hyrax Repository for Digital Storage](http://169.226.92.29:8081/)
+* [Arclight for Public Access](http://169.226.92.29:8080/repositories) <!-- .element: class="fragment" data-fragment-index="1" -->
+
+</script></section><section  data-markdown><script type="text/template">
+## APIs also Make Access Possible
+
+<img src="img/recordsCollecting6.png"/>
+</script></section><section  data-markdown><script type="text/template">
+<img src="img/recordsCollecting7.png"/>
+</script></section><section  data-markdown><script type="text/template">
+## What it will Look Like
+
+* [Arclight](http://169.226.92.29:8080/?f%5Bhas_online_content_ssim%5D%5B%5D=online&q=&search_field=all_fields)
+</script></section><section  data-markdown><script type="text/template">
+## Repository Supports
+
+* University Records Collecting
+* [API access to collections](http://169.226.92.29:8080/catalog/ua200aspace_42c592cd855d47df4a37b6bc9ea67991?format=json)
+	* Enables new research
+* On-Demand Digitization
+* Born-Digital Outside Collecting
+	* New York Modern Political Archive
+	* National Death Penalty Archive
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="http://library.albany.edu/sites/all/themes/New_UArchives/img/full/news1.jpg" -->
+</script></section><section  data-markdown><script type="text/template">
+## New Possibilities
+
+* [Espy Metadata Tool](http://169.226.92.29/)
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/espyMetadata.png" -->
+</script></section><section  data-markdown><script type="text/template">
+## The Espy Project
+
+#### Building Digital Infrastructure
+
+<img src="img/apiConnections.png"/></script></section></div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            function extend() {
+              var target = {};
+              for (var i = 0; i < arguments.length; i++) {
+                var source = arguments[i];
+                for (var key in source) {
+                  if (source.hasOwnProperty(key)) {
+                    target[key] = source[key];
+                  }
+                }
+              }
+              return target;
+            }
+
+            // Optional libraries used to extend on reveal.js
+            var deps = [
+              { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+              { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+              { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+              { src: 'plugin/math/math.js', async: true }
+            ];
+
+            // default options to init reveal.js
+            var defaultOptions = {
+              controls: true,
+              progress: true,
+              history: true,
+              center: true,
+              transition: 'default',
+              dependencies: deps
+            };
+
+            // options from URL query string
+            var queryOptions = Reveal.getQueryHash() || {};
+
+            var options = {
+  "transition": "fade"
+};
+            options = extend(defaultOptions, options, queryOptions);
+            Reveal.initialize(options);
+        </script>
+        
+          <script src="/scripts/slides"></script>
+    </body>
+</html>
