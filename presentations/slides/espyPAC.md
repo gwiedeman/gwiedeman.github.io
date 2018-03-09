@@ -219,7 +219,7 @@ revealOptions:
 	* Spreadsheet tool
 	* Find-it
 * Archive-It for Web Archives
-* [Hyrax Repository for Digital Storage](http://169.226.92.29:8081/) <!-- .element: class="fragment" data-fragment-index="1" -->
+* [Hyrax Repository for Digital Storage](http://169.226.179.171:3000/) <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
@@ -260,7 +260,7 @@ revealOptions:
 	* Spreadsheet tool
 	* Find-it
 * Archive-It for Web Archives
-* [Hyrax Repository for Digital Storage](http://169.226.92.29:8081/)
+* [Hyrax Repository for Digital Storage](http://169.226.179.171:3000/)
 * [Arclight for Public Access](http://169.226.92.29:8080/repositories) <!-- .element: class="fragment" data-fragment-index="1" -->
 
 
