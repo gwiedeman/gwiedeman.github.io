@@ -1,0 +1,312 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Processing Born-Digital Images at Scale</title>
+        <link rel="stylesheet" href="/css/reveal.css">
+        <link rel="stylesheet" href="/css/theme/serif.css" id="theme">
+        <link rel="stylesheet" href="/css/highlight/zenburn.css">
+        <link rel="stylesheet" href="/css/print/paper.css" type="text/css" media="print">
+
+
+    </head>
+    <body>
+
+        <div class="reveal">
+            <div class="slides"><section  data-markdown><script type="text/template">
+
+<style>
+#fLeft {float: left; max-width: 50%;}
+#fRight {float: right; max-width: 50%;}
+</style>
+
+## Processing Born-Digital Images at Scale
+
+#### Gregory Wiedeman
+#### University Archivist
+#### University at Albany, SUNY
+#### NSDA Content Interest Group
+</script></section><section  data-markdown><script type="text/template">
+### Born-Digital Photography at UAlbany
+
+* Began in 1999
+* Campus Photographer in Digital Media Department
+* Photographer is state employee, so images are public records!
+* Two periods, with gap in-between
+    * 1999-2010 wrote files to DVDs, Access DB
+    * 2012-present SmugMug service
+</script></section><section  data-markdown><script type="text/template">
+#### Growth of Born-Digital Photography 1999-2010
+
+<div id="fLeft">
+<img src="img/photoEventsGraph.png"/>
+</div>
+<div id="fRight">
+<img src="img/photoImagesGraph.png"/>
+</div>
+</script></section><section  data-markdown><script type="text/template">
+### 1999-2010 Period
+<div id="fLeft">
+<ul>
+<li>4 Boxes of DVDs, about 600 disks</li>
+    <ul>
+        <li>about 20 CD-Rs</li>
+    </ul>
+<li>1.8 TB of data</li>
+<li>Camera Raw files (.NEF, .CR2) and .JPG derivatives of used images</li>
+</ul>
+</div>
+<div id="fRight">
+<img src="img/dvds.JPG"/>
+</div>
+</script></section><section  data-markdown><script type="text/template">
+### 1999-2010 Period
+<div id="fLeft">
+<ul>
+<li>Job number folder contained images, written on disk</li>
+<li>Metadata in Access DB</li>
+<ul>
+    <li>Date</li>
+    <li>Photographers description of event</li>
+    <li>Costs, etc.</li>
+</ul>
+</ul>
+</div>
+<div id="fRight">
+<img src="img/dvds.JPG"/>
+</div>
+</script></section><section  data-markdown><script type="text/template">
+### Previous Work
+
+* Student Assistant manually selecting images
+* Adding detailed item-level metadata
+* Upload to Luna DAMS
+* Small Percentage over years.
+</script></section><section  data-markdown><script type="text/template">
+### 2012-present
+
+<div id="fLeft">
+<ul>
+<li>SmugMug service</li>
+<ul>
+    <li>Online photo web app</li>
+    <li>about 20,000 images</li>
+</ul>
+<li>Photographer Uploads selection of images with metadata</li>
+</ul>
+</div>
+<div id="fRight">
+<img src="img/smugmug2.png"/>
+</div>
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/smugmug3.png" -->
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/smugmug4.png" -->
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/smugmug5.png" -->
+</script></section><section  data-markdown><script type="text/template">
+## SmugMug has an API
+
+<img src="img/smugmugAPI.png"/>
+</script></section><section  data-markdown><script type="text/template">
+## Needs
+
+* Automation
+    * Need to scale
+    * No metadata creation, must describe themselves
+* Transparency
+    * Researchers need context
+* Access
+    * No restrictions, immediate public access
+    * Presentation within existing collections (EAD)
+    * Support reference work now
+</script></section><section  data-markdown><script type="text/template">
+## Using Python
+
+* Python is great at working with data across systems
+* Requests library to query SmugMug API
+* os library to read filesystem, copy files
+* Subprocess to call other command line tools
+    * TSK, ImageMagick
+* Bagit-python
+* lxml to work with XML and EAD
+</script></section><section  data-markdown><script type="text/template">
+## Mass Image DVDs
+
+* Used BitCurator Forensic Machine
+* Ripping from disk ran into Filesystem issues
+    * different ISO formats
+* Running dd was most dependable
+* 5 external disk drives
+</script></section><section  data-markdown><script type="text/template">
+
+## Mass Image DVDs
+
+<div id="fLeft">
+<img src="img-saa16/diskRip.png"/>
+</div>
+<div id="fRight">
+<img src="img-saa16/IMG_1571.JPG"/>
+</div>
+</script></section><section  data-markdown><script type="text/template">
+<img src="img/diskImages.png"/>
+</script></section><section  data-markdown><script type="text/template">
+<img src="img-saa16/carvingFiles.png"/>
+</script></section><section  data-markdown><script type="text/template">
+<img src="img-saa16/corruptedFiles.png"/>
+</script></section><section  data-markdown><script type="text/template">
+## Appraisal in Born-Digital Processing
+
+* Archives manage materials at scale
+* Time-limited project, initially less than 2 months
+* Other collections need attention
+</script></section><section  data-markdown><script type="text/template">
+## Appraisal Decisions
+
+* Not to retain camera raw permanently
+    * Large, access barrier
+    * Not a final product, proprietary
+* Convert all files to JPG
+    * 1.8 TB down to a managable 274 MB
+* Not spending time recovering all files
+    * diminishing returns
+</script></section><section  data-markdown><script type="text/template">
+## JPEG compression!?
+
+* Edited, used pre-2010 images were JPGs
+    * Why go back to unedited raw?
+* All post-2010 images through SmugMug were JPGs
+* JPG compression visually looked the best
+* Purpose of collection was to document university events
+* Users happy with JPGs
+* Not using compression is not a preservation strategy
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img-saa16/compare1.png" -->
+</script></section><section  data-markdown><script type="text/template">
+## In the Spirit of OAIS
+
+* Does appraisal conflict with OAIS?
+* SIPs are non-permanent .dd images and Access DB exports
+* AIPs are processed bags with metadata 
+* DIPs are metadata in EAD, linked to JPGs on web server
+</script></section><section  data-markdown><script type="text/template">
+## The SIPs/AIPs
+
+<img src="img-saa16/sip-aip.png"/>
+</script></section><section  data-markdown><script type="text/template">
+## Crawling SmugMug
+
+* Wrote a crawler for SmugMug
+* Download all images
+* Periodically crawl for updates
+* Hash index to see if already downloaded
+* Package in to Bags with XML metadata file
+    * Directory structure and descriptive metadata
+* Separate script to write metadata into EAD files
+* it broke <!-- .element: class="fragment" data-fragment-index="1" -->
+</script></section><section  data-markdown><script type="text/template">
+## Access
+
+* Listed DVD albums in CSV
+* Student arranged into SmugMug directory structure with spreadsheet
+    * Described image sets without Job numbers
+* Python script updated EAD-XML with directory structure
+    * Each image set is a component with DAO link
+    * Batch generated HTML files
+    * Exposed as [XTF finding aid](https://meg.library.albany.edu:8443/archive/view?docId=ua395.xml)
+    </script></section><section  data-markdown><script type="text/template">
+## Access
+
+<img src="img-saa16/accessSystem6.png"/>
+</script></section><section  data-markdown><script type="text/template">
+### Things I've learned
+
+* This gets complicated
+* Just because you can script it, doesn't mean its a sustainable workflow
+* You can put any junk in XML
+* Maintenance is an issue
+* Infrastructure first
+</script></section><section  data-markdown><script type="text/template">
+## Building Infrastructure
+
+* Stopped collecting from SmugMug for now
+* Arclight for archival description
+* Hyrax repository for digital archives content
+    * connects to Arclight API
+    * backed by data model
+* New [SIP/AIP Model](https://github.com/UAlbanyArchives/createSIP)
+    * Validate to Spec using [Bagit-profiles](https://github.com/bagit-profiles/bagit-profiles)
+    </script></section><section  data-markdown><script type="text/template">
+## Future Plans
+
+* Network of open systems connected by REST APIs
+* Ingest utility
+    * Make Bag according to Spec
+    * Post to Hyrax, backed by Data Model
+    * Post accession to ArchivesSpace
+* Processing utility
+    * Any content processing
+    * Post description to ArchivesSpace, exposed in Arclight
+    * Post public content to Hyrax, linked to Arclight description
+    </script></section><section  data-markdown><script type="text/template">
+### Processing Born-Digital Images at Scale
+
+<img src="img-saa16/accessSystem6.png"/>
+
+</script></section></div>
+        </div>
+
+        <script src="/lib/js/head.min.js"></script>
+        <script src="/js/reveal.js"></script>
+
+        <script>
+            function extend() {
+              var target = {};
+              for (var i = 0; i < arguments.length; i++) {
+                var source = arguments[i];
+                for (var key in source) {
+                  if (source.hasOwnProperty(key)) {
+                    target[key] = source[key];
+                  }
+                }
+              }
+              return target;
+            }
+
+            // Optional libraries used to extend on reveal.js
+            var deps = [
+              { src: '/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+              { src: '/plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: '/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: '/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+              { src: '/plugin/zoom-js/zoom.js', async: true },
+              { src: '/plugin/notes/notes.js', async: true },
+              { src: '/plugin/math/math.js', async: true }
+            ];
+
+            // default options to init reveal.js
+            var defaultOptions = {
+              controls: true,
+              progress: true,
+              history: true,
+              center: true,
+              transition: 'default', // none/fade/slide/convex/concave/zoom
+              dependencies: deps
+            };
+
+            // options from URL query string
+            var queryOptions = Reveal.getQueryHash() || {};
+
+            var options = {"transition":"fade"};
+            options = extend(defaultOptions, options, queryOptions);
+        </script>
+
+
+        <script>
+            Reveal.initialize(options);
+        </script>
+    </body>
+</html>
