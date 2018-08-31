@@ -330,6 +330,10 @@ display: none;
 	color: #f2b632;
 }
 
+.workshop-well > .row > .col-xs-12 > p > a {
+	color: #f2b632;
+}
+
 .workshop-well > .row > .col-xs-12 > h4 > a {
 	font-family: 'Roboto Slab', serif;
 }
