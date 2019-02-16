@@ -221,14 +221,29 @@ our own</li>
 
 ### Metadata Matters
 
-* "Crime Committed" changed to "Crime Convicted"
-* Race does not conform to an established standard
 * General Data Improvements
+	* "Crime Committed" changed to "Crime Convicted"
 	* Added Date of Conviction to Date of Execution
 	* ISO dates
 	* First and last name in individual fields
 	* Sex to become gender assigned
-	* Feedback welcome!
+* Race does not conform to an established standard
+* Feedback welcome!
+
+---
+
+### "Unconfirmed" cases
+
+<img src="img/enslavedWoman1.png"/>
+
+---
+
+<div id="fLeft">
+<img src="img/B19_F006_000008.jpg"/>
+</div>
+<div id="fRight">
+<img src="img/B19_F006_000009.jpg"/>
+</div>
 
 ---
 
@@ -248,18 +263,6 @@ our own</li>
 	<img alt='Note of unconfirmed execution: "Legal Execution for Witchcraft in 1793 sounds fishy..."' src="img/B36_F004_000010.jpg"/>
 </div>
    
----
-
-<img src="img/enslavedWoman1.png"/>
-
----
-
-<div id="fLeft">
-<img src="img/B19_F006_000008.jpg"/>
-</div>
-<div id="fRight">
-<img src="img/B19_F006_000009.jpg"/>
-</div>
 
 ---
 
