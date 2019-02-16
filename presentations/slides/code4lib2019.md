@@ -34,7 +34,8 @@ UAlbany collects records from researchers, writers, and activists related to cap
 ---
 
 <div id="fLeft">
-Watt Espy Papers: The most complete set of extant records of American executions.
+<h3>Watt Espy Papers</h3>
+The most complete set of extant records of American executions.
 <ul>
 <br/>
 <li>24,036 sides of index cards</li>
@@ -93,9 +94,10 @@ Watt Espy Papers: The most complete set of extant records of American executions
 
 
 <div id="fLeft">
-<img alt="Arclight logo" src="img/arclight_logo.png" style="margin: -5px; background-color: #000; border: none; box-shadow: none; width: 300px" />
+<img alt="CLIR Logo" src="img/clir.png" />
 </div>
 <div id="fRight">
+<img alt="ArcLight logo" src="img/arclight_logo.png" style="margin: -5px; background-color: #000; border: none; box-shadow: none; width: 300px" />
 <img alt="Hyrax logo" src="img/hyrax_logo.png" style="margin: -5px; background: none; border: none; box-shadow: none;" width="300px" />
 </div>
 
@@ -103,16 +105,36 @@ Watt Espy Papers: The most complete set of extant records of American executions
 
 ### The "We"
 
-* 3 archivists
-    * Mark Wolfe
-    * Melissa McMullen
-    * me
-* Partial support from Library Systems Staff
-    * Department Head
-    * Systems Administrator
-    * Web Developer
-    * Database Administrator
-
+<div id="fLeft">
+<ul>
+<li>3 archivists</li>
+	<ul>
+		<li>Mark Wolfe</li>
+		<li>Melissa McMullen</li>
+		<li>Me</li>
+	</ul>
+</ul>
+<ul>
+<li>Graduate Student Assistants</li>
+	<ul>
+		<li>Amanda</li>
+		<li>Sheri</li>
+		<li>Miles</li>
+	</ul>
+</ul>
+</div>
+<div id="fRight">
+<ul>
+<li>Library Systems Staff (partial support)</li>
+	<ul>
+		<li>Department Head</li>
+		<li>Systems Administrator</li>
+		<li>Web Developer</li>
+		<li>Database Administrator</li>
+	</ul>
+</ul>
+</div>
+	
 ---
 
 ### Espy Metadata Creation Tool
@@ -132,9 +154,18 @@ Watt Espy Papers: The most complete set of extant records of American executions
 
 <!-- .slide: data-background="img/espy1.png" -->
 
+<p class="altText">Screenshot of metadata creation tool to link records with redis autocomplete.</p>
+
 ---
 
 <!-- .slide: data-background="img/espy3.png" -->
+
+<p class="altText">Screenshot of metadata creation tool displaying three types of source material.</p>
+
+---
+
+<img style="width:50%;" alt="Records from newspaper listing hundreds of executions. This was still very challenging to link to hundreds on individual records, no matter what we tried." src="img/B44_F001_000026.jpg" />
+
 
 ---
 
@@ -201,24 +232,22 @@ our own</li>
 
 ---
 
-### "Unconfirmed cases
+### "Unconfirmed" cases
 
-* over 5,000 records added
-    * Documented and underdocumented
-    
-    
----
-
-### Linked Data Problems
-
-* Hard to find vocabularies with sufficient precision
-* Create one?
-	* Access to expertise, School of Criminal Justice, Advisory Board
-* Issues with digital archival objects as well
-* Archives may have a fundamental mission conflict with linked data
-	* Archival description manages objects with minimal metadata
-	* Archives offer information in context, not objective/verifiable data
-
+<div id="fLeft">
+<ul>
+<li>Added over 5,800 records</li>
+	<ul>
+		<li>Real number will be smaller after disambiguation</li>
+	</ul>
+<li>15,000 to 20,000 known executions</li>
+<li>Documented and underdocumented</li>
+</ul>
+</div>
+<div id="fRight">
+	<img alt='Note of unconfirmed execution: "Legal Execution for Witchcraft in 1793 sounds fishy..."' src="img/B36_F004_000010.jpg"/>
+</div>
+   
 ---
 
 <img src="img/enslavedWoman1.png"/>
@@ -232,31 +261,51 @@ our own</li>
 <img src="img/B19_F006_000009.jpg"/>
 </div>
 
+---
+
+### Linked Data Problems
+
+* Hard to find vocabularies with sufficient precision
+* Create one?
+	* Access to expertise, School of Criminal Justice, Advisory Board
+* Issues with digital archival objects as well
+* Archives may have a fundamental mission conflict with linked data
+	* Archival description manages objects with minimal metadata by relying on context
+	* Archives don't aim to create objective/authoritative data
+
 
 ---
 
 <!-- .slide: data-background="img/c4l-arclight1.png" -->
+<p class="altText">Screenshot of ArcLight, which is used with Hyrax and NCSU's Quicksearch to provide access.</p>
 
 ---
 
 <!-- .slide: data-background="img/c4l-arclight2.png" -->
+<p class="altText">Screenshot of ArcLight showing links to contextual archival description.</p>
 
 ---
 
 <!-- .slide: data-background="img/c4l-arclight3.png" -->
+<p class="altText">Screenshot of ArcLight highlighing links to contextual archival description.</p>
 
 ---
 
 <!-- .slide: data-background="img/arclight3.png" -->
+<p class="altText">Screenshot of JSON API provided by ArcLight.</p>
 
 ---
 
 <!-- .slide: data-background="img/c4l-hyrax1.png" -->
+<p class="altText">Screenshot of document in Hyrax with contextual links provided by ArcLight API.</p>
 
 ---
 
 ### Providing Computational Access to Records of American Capital Punishment
 <br/>
+
+<h4>Soft launch up at <a href="https://archives.albany.edu">https://archives.albany.edu</a></h4>
+
 ##### Gregory Wiedeman
 ##### University Archivist
 ##### University at Albany, SUNY
