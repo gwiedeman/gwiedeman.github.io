@@ -11,6 +11,7 @@ revealOptions:
 .whitebg {background-color: #fff; margin-top: 30% !important; padding: 15px !important; border-radius: 15px;}
 .altText {background-color: #fff; bottom: 30px; position: fixed; padding: 15px !important; border-radius: 5px;}
 section {height:100%}
+.pullDown {height:auto}
 </style>
 
 ### Providing Computational Access to Records of American Capital Punishment
