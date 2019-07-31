@@ -171,6 +171,41 @@ file.close()
 
 ---
 
+### Serialize ASpace Data to CSV
+
+```python
+import csv
+from asnake.aspace import ASpace
+
+aspace = ASpace()
+repo = aspace.repositories(2)
+
+startDir = "C:\\Users\\Greg"
+csvFile = os.path.join(startDir, "mySheet.csv")
+
+sheet = []
+for collection in repo.resources:
+    row = []
+    
+    id = collection.id_0
+    title = collection.title
+    row.append(id)
+    row.append(title)
+    
+    for date in collection.dates:
+        if date.end:
+            row.append(date.begin + "/" + date.end)
+        else:
+            row.append(date.begin)
+        
+file = open(csvFile, "w")
+writer = csv.writer(file)
+writer.writerows(sheet)
+file.close()
+```
+
+---
+
 ### Resources
 
 * Search and use Stack Overflow answers!
@@ -178,6 +213,8 @@ file.close()
 * [ArchivesSnake Wiki](https://github.com/archivesspace-labs/ArchivesSnake/wiki)
     * [ArchivesSnake Getting Started Guide](https://github.com/archivesspace-labs/ArchivesSnake/wiki/Getting-Started-Guide)
     * [ArchivesSnake Commonly Used Objects](https://github.com/archivesspace-labs/ArchivesSnake/wiki/Commonly-Used-Objects)
+* [ArchivesSpace API Workshop](https://github.com/archivesspace/api-training)
+* [API Overview Video - Valerie Addonizio](https://www.youtube.com/watch?v=NUtuQ-LqAr4)
 * Archives Data Slack: shoes-untied.slack.com
 * [ArchivesSpace API docs](https://archivesspace.github.io/archivesspace/api/)
 
