@@ -1,0 +1,12 @@
+- name: Main
+  link: /
+- name: About
+  link: /about
+- name: Writing
+  link: /writing
+- name: Presentations
+  link: /presentations
+- name: Code
+  link: /code
+- name: CV
+  link: /cv
