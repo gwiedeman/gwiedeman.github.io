@@ -2,20 +2,16 @@
 layout: page
 title: About
 permalink: /about/
-background: '/images/2019-04-27 08-43-58-0.JPG'
+background: '/images/2019-04-22 10-12-47-0.JPG'
 ---
 
-Test Text!
+This is a place to put some of the things I'm working on. I am currently the [University Archivist at the University of Albany, SUNY](https://library.albany.edu/archive/).
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+I focus on collecting documentation of the university and making it available for research use. I get to solve problems with paper records and legacy digital records, work with metadata at scale, and create ways to make a lot of content available on the web.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+I do a ton of work with Python, Rails, APIs, obsolete digital formats, and web technologies. I also manage the department's ArchivesSpace instance, [ArcLight access system](https://archives.albany.edu/description/), and [Hyrax digital repository](https://archives.albany.edu/catalog).
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+I have a research background in 19th century American History and did some work on how people understood faraway places, particularly the Eastern Mediterranean.
 
+This is not totally a blog, but a place to share things I've [written](/writing), [spoken about](/presentations), or [coded](/code). I also have some plans to write stuff here that's not really suitable for publication.
 
-[jekyll-organization]: https://github.com/jekyll
