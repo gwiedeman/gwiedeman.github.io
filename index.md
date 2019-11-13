@@ -3,5 +3,5 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
-background: '/images/2019-04-27 08-43-58-0.JPG'
+background: '/images/2019-04-27 08-38-16-0.JPG'
 ---
