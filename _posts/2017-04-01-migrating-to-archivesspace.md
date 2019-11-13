@@ -1,8 +1,10 @@
 ---
 layout: post
 title:  Migrating to ArchivesSpace at UAlbany
+link: https://github.com/UAlbanyArchives/aspacemigration
+link_label: Scripts
+original: Originally posted on Github
 ---
-
 
 This is an overview our ArchivesSpace migration process and descriptions of the code used. Hopefully this rather long-winded description helps document our processes and thinking.
 

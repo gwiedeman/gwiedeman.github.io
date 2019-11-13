@@ -82,9 +82,9 @@ defaults:
   - scope:
       path: ""
     values:
-      background: '/images/2019-04-25_13-04-26-0.JPG'
+      background: '/assets/images/2019-04-25_13-04-26-0.JPG'
   - scope:
-      path: "code"
+      path: "/code"
     values:
-      background: '/images/2019-04-25 12-50-04-0.JPG'
-      #background: '/images/2019-04-23 15-26-16-0.JPG'
+      background: '/assets/images/2019-04-25 12-50-04-0.JPG'
+      #background: '/assets/images/2019-04-23 15-26-16-0.JPG'

@@ -2,7 +2,7 @@
 layout: page
 title: About
 permalink: /about/
-background: '/images/2019-04-22 10-12-47-0.JPG'
+background: '/assets/images/2019-04-22 10-12-47-0.JPG'
 ---
 
 This is a place to put some of the things I'm working on. I am currently the [University Archivist at the University of Albany, SUNY](https://library.albany.edu/archive/).

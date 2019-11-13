@@ -1,4 +1,5 @@
 ---
+layout: page
 title: asInventory
 link: asInventory.html
 ---
