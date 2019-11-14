@@ -1,0 +1,11 @@
+html, body, header { 
+	height: 100%; 
+}
+
+footer, hr {
+	display: none;
+}
+
+header.masthead {
+	margin-bottom: 0px;
+}

@@ -1,3 +1,25 @@
+@media only screen and (max-width: 1500px) {
+  .card-columns {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+  }
+}
+.card-primary {
+  background-color: #0085A1;
+  border-color: #0085A1; }
+  .card-primary:hover, .btn-primary:focus, .btn-primary:active {
+    color: #fff;
+    background-color: #00657b !important;
+    border-color: #00657b !important; }
+
+.card-columns {
+  column-count: 4;
+}
+.card-columns .card p {
+	font-size: 16px;
+}
+
 .highlight  { background: #ffffff; }
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */

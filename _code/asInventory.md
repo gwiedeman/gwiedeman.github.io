@@ -1,6 +1,6 @@
 ---
-layout: page
 title: asInventory
-link: asInventory.html
+link: https://github.com/UAlbanyArchives/asInventory
+code: Python
 ---
-Uploads and downloads file inventories to and from ArchivesSpace 
+Tool to Upload and download file inventories to and from the ArchivesSpace API. We use it at UAlbany for file-level description and describing born-digital materials.
