@@ -5,7 +5,7 @@ permalink: /about/
 background: '/assets/images/2019-04-22 10-12-47-0.JPG'
 ---
 
-This is a place to put some of the things I'm working on. I am currently the [University Archivist at the University of Albany, SUNY](https://library.albany.edu/archive/).
+This is a place to put some of the things I'm working on. I am currently the university archivist in the [M.E. Grenander Department of Special Collections & Archives](https://library.albany.edu/archive/) at the [University of Albany, SUNY](https://library.albany.edu).
 
 I focus on collecting documentation of the university and making it available for research use. I get to solve problems with paper records and legacy digital records, work with metadata at scale, and create ways to make a lot of content available on the web.
 

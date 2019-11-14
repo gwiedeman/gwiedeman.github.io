@@ -32,9 +32,11 @@ layout: default
 
         {{ content }}
 
-        <a href="{{ page.link }}"><button name="button" class="btn btn-primary btn-lg" onclick="{{ page.link }}">Slides</button></a>
+        <a href="{{ site.baseurl }}/slides/{{ page.link }}"><button name="button" class="btn btn-primary btn-lg" onclick="{{ page.link }}">Slides</button></a>
         {% if page.pdf %}
-        	<a href="{{ page.pdf }}""><button name="button" class="btn btn-success btn-lg" onclick="{{ page.pdf }}">PDF</button></a>
+        	<a href="{{ page.pdf }}""><button name="button" class="btn btn-danger btn-lg" onclick="{{ page.pdf }}">
+            <i class="far fa-file-pdf"></i>
+          PDF</button></a>
         {% endif %}
 
 

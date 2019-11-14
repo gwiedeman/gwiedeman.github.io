@@ -19,6 +19,12 @@
 .card-columns .card p {
 	font-size: 16px;
 }
+@media only screen and (min-width: 1800px) {
+  .card-columns {
+    column-count: 5;
+
+  }
+}
 
 .highlight  { background: #ffffff; }
 .highlight .c { color: #999988; font-style: italic } /* Comment */

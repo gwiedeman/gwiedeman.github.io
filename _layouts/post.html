@@ -44,7 +44,7 @@ layout: default
         {% endif %}
 
         {% if page.link %}
-          <a href="{{ page.link }}""><button name="button" class="btn btn-success btn-lg" onclick="{{ page.link }}">
+          <a href="{{ page.link | prepend: site.baseurl | replace: '//', '/' }}""><button name="button" class="btn btn-success btn-lg" onclick="{{ page.link }}">
           {% if page.journal %}
             {{ page.journal }}
           {% else %}
@@ -53,8 +53,14 @@ layout: default
           </button></a>
         {% endif %}
 
+        {% if page.pdf %}
+          <a href="{{ page.pdf | prepend: site.baseurl | replace: '//', '/'}}""><button name="button" class="btn btn-danger btn-lg" onclick="{{ page.pdf }}">
+            <i class="fas fa-file-pdf"></i>
+          PDF</button></a>
+        {% endif %}
+
         {% if page.original %}
-          <p><i><a href="{{ page.link }}">{{ page.original }}</a></i></p>
+          <p><i><a href="{{ page.link | prepend: site.baseurl | replace: '//', '/'}}">{{ page.original }}</a></i></p>
         {% endif %}
 
         {{ content }}
