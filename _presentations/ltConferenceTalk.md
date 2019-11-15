@@ -1,0 +1,315 @@
+---
+title: 'Lowell Thomas and American Cultural Knowledge of Palestine and Arabia'
+date: 2013-03-16
+event: Northeastern University Graduate History Conference
+abstract: This was a talk I gave while writing my MA thesis. There's a lot of good observations and details here, as well as things that make me cringe. The description of this knowledge-structure-building as merely pragmatic is pretty terrible, as it completely overlooks the very obvious power dynamics.
+---
+
+> “…the interest of various lands is intellectual. We like them for what they are to us, rather than for what they are in themselves.” [^1]
+> 
+> -George William Curtis, 1852
+
+[1]Lowell Thomas was born to two schoolteachers in a small house in rural western Ohio in 1892. His father soon moved the family to Cincinnati to study medicine. A visiting cousin informed the family of a need for doctors in tiny Kirkman, Iowa, and the family set out again. According to his memoir, young Lowell’s first memories were in Krikman: a tornado and a circus train passing though. Thomas remembered that the circus never stopped in Kirkman, only at Harlan – a town distant enough at eight miles away that Lowell’s father made only one attempt at the impassible muddy road before saying, “never again.”[^2] Thomas remembers the little town being quite isolated. He recalled asking his father if the train went all the way to Harlan. Yes, his father replied, and beyond that.[^3]
+
+[2]It was in that little town in Iowa where Lowell first attended school at the age of five. In 1899 a seven year old Thomas used Barnes’s Elementary Geography in primary school. It took Thomas two attempts to sign his name in the front cover. The worn binding shows extended use of a book he would keep for the rest of his life. Lesson four began Asia. Here students learned to associate the concepts of Persia and Arabia with dry climates and hot deserts. The text also described how man’s ancestors, Adam and Eve, lived in Asia in the Garden of Eden, found somewhere between the Tigris and Euphrates Rivers...[^4] Lesson Five is more detailed. Here students learned that Arabia was once, “renowned for its literature, men of learning and libraries.” They also learned where it all went wrong: twelve-hundred years ago, when “a religious fanatic, declared himself a prophet.”[^5]
+
+[3] It was this juxtaposition of heritage and Otherness that typified nineteenth-century Americans’ understanding of the Eastern Mediterranean. The Levant of the past was a land of Americans’ common heritage, the birthplace of both civilization and religion. However, the Levant of the present was an exotic and debilitated landscape inhabited by a deviant Other. All concepts of the region—peoples, places, and ideas—were located in this taxonomy of past Levant and present Levant, or emerged as a garbled mess that conveyed a general uneasiness. To accommodate these competing ideas Americans and their geography texts often offered a narrative of cultural development from genesis in the Eastern Mediterranean to the most improved society on the shores of North America.
+
+However, it is important to note that the primary purpose of this knowledge structure, and the cultural narratives that resulted, was not to demean the Eastern “peoples.” Not to render them inferior. And not the first step of the rise of American hegemony. In fact, it was pragmatic. These systems of rationality enabled young students to address each individual observation—as well as the larger whole of the world—and regulate themselves and their functions relative to new experiences. The massive generalization and profiling necessary for knowledge structures were self-confirming, and useful—if not to understand the Eastern Mediterranean—then to fulfill the social needs of Americans – a concern that was much closer to home.
+
+[4] In nineteenth-century America, geography was seen as beginning subject, necessary for later subjects like History. The process was a method of fostering the development of these conceptual frameworks in children. The preface of Thomas’s copy of Barnes’s Elementary Geography argued that geography enabled students to develop their reasoning powers.[^6] Young Americans from all over the nation learned the same ideas about the Eastern Mediterranean. From the early nineteenth century until well into the Progressive Era, learning depended on personal Bible-study and poorly trained teachers – often young adults with no formal training. The result of this was a severe dependence on any available textbooks and pupils who memorized and recited the texts.[^7] The textbook market in the nineteenth-century featured widespread demand and few authors capable of providing such texts. Thus, many publishers reprinted popular works and authors plagiarized and copied the formatting or even the content of their peers – standardizing the content of textbooks themselves, based on market demand. The schoolbooks that resulted were remarkably uniform. In fact, the only common educational experience shared by most pupils throughout the nineteenth century would have been their textbooks.
+
+This paper is an abbreviation of a study that examined over 50 geography textbooks targeted at primary school children and published between 1800 and 1913. All works examined were published in multiple editions and were in use during the nineteenth century in primary schools throughout the United States.
+
+[5] “Turkey in Asia,” more than any other land, conveyed a unique and powerful set of ideas in American geography textbooks. The most “celebrated” and “important” part of Asiatic Turkey was the southern part of Syria, often, but not always, identified by geography textbooks as Palestine. This land had a number of important and widely-known packaged characteristics, yet two in particular were distinguished for their primacy. S. Augustus Mitchell called it, “…the country of the Israelites, and the birth-place of the Christian religion.” [^8] Mimicking biblical typology, Palestine was first the land of the ancient Jews and second the land of Christ’s ministry. Jedidiah Morse, Jesse Olney, S. G. Goodrich, J .E. Worcester and Roswell Smith refer to the area as “Judea” and Peter Parley’s Geography for Beginners deems the country the Land of Canaan.[^9] Unconcerned with the actual realities of the region, American geography authors imparted their own organizational classifications onto the Eastern Mediterranean.
+
+American cultural knowledge of Palestine had to accommodate the Old and New Testaments as well as a rough history of the Crusades and knowledge of ancient empires such as the Assyrians, Phoenicians and Romans. Each city or landmark included a set of ideas that were very familiar to American readers. Authors often used the exact language as each other – conveying concepts that came attached to distinct, essentialized characteristics. Many authors associated “agriculture” with the characteristics “neglected,” or “wilderness.” [^10] Neglect also connected to the plethora of architectural ruins that students learned dotted the landscape.[^11] Textbook authors assembled these concepts and their features into a useful and adaptable conceptual structure through which Americans comprehended the region. These concepts had a unique effect on Americans’ self-understanding because of their origins in scripture. Authors and readers explored the ontology of Palestine and basked in celebration of their heritage – reaffirming their sense of self and self-purpose.
+
+[6] Arabia conveyed a completely different set of ideas. American geography textbooks described Arabia as a peripheral landscape stuck in the past. Prolific authors such as Jedidiah Morse and S. Augustus Mitchell portrayed Arabia as the miscellaneous wilderness of the Levant that surrounded Egypt, Syria, Palestine, and Mesopotamia – wherever fertility ended and desert began. Here was a land with exotic produce and swarthy nomads who roamed the deserts living like the figures in the Book of Genesis. Out of this bygone Otherness arose a pretender to the Christian path to salvation which spread by force. Yet, Islam’s corrupt heart inherently undermined it – a comforting conclusion to young students. Nineteenth-century Americans explored their Arabia ontology much like one views a museum exhibit – examining the world as it used to be. From this rational structure of knowledge students were enabled—even invited—to make overly-simplistic, universal comparisons driven by social pressures and existential anxieties. To them Arabia was a cautionary tale. A story that showed Americans how far they had come since Genesis, and served as a warning against falsehood and exploitation.
+
+[7] After his childhood in Iowa, a young Lowell Thomas became a newspaper reporter. He had his first big break exposing a man blackmailing a number of wealthy Chicago industrialists, including the heads of companies such as Armour and International Harvester. He experimented with travel writing in the West before receiving a fellowship to study law at Princeton, where he also taught oratory. Sensing an opportunity that meshed well with his unique skill-set, Thomas obtained funding from his grateful Chicago friends and set off to Alaska using the title of Princeton professor.
+
+[8] He produced a travelogue lecture that presented Alaska as the last American frontier. The performance combined film, still images, and narration that informed and entertained audiences with anecdotes from the edge of civilization.[^12] A performance in Washington, D.C. impressed the Secretary of the Interior, Franklin K. Lane who then contracted Thomas for a series of campaigns on domestic tourism during the First World War. With the U.S. entrance into the war in 1917, Thomas instead left for Europe with his wife and innovative cameraman Harry Chase. [9]Touring first in England, than Italy, Thomas found the bloody war of attrition in the trenches lacking in appeal for American audiences. When he heard of General Allenby’s campaign in Palestine he saw his opportunity and sped off to Egypt where he stalwartly lobbied the British War Office to allow him to tail the British advance. [10]It was February 1918 in Jerusalem where Thomas met T. E. Lawrence and followed him into the desert for over a week. In Palestine Thomas witnessed the latter stage of the campaign of 1918 that featured the capture of northern Palestine, Damascus, and Aleppo.
+
+[11] Thomas returned to America where he completed his travelogue and gave his first performance at the Century Theater in New York on March 9th , 1919. His popular performances soon moved to Madison Square Garden where he impressed early Jewish Zionist leaders Jacob Schiff and Nathan Straus, as well as British theater promoter Percy Burton. Thomas’s travelogue charged $2 a ticket and ran for five successful weeks in New York, followed by a short run in Ocean City, New Jersey. Burton offered to bring the performance to London, but Thomas declined because of a planned U.S. tour and instead took an offer to take his show to the Methodist Centenary Celebration in Columbus, Ohio. The effort was a financial failure and Thomas wrote to his Chicago investors to explain the loss of $10,000. He explained that the organizers had sold “season ticket” buttons which guaranteed them free admission. Despite drawing over three thousand spectators a day, the show took in a mere $44.[^13] After the Columbus debacle, a fairly distressed Thomas was still able to obtain an agreement with Burton – this time with a written contract. In New York and Columbus Thomas gauged the popularity of what was originally a series of travelogues also concerning the Italian Front and the German Revolution. By July he had combined the most popular two – creating “With Allenby in Palestine and Lawrence in Arabia,” a two-part travelogue with a ten minute intermission in between to mimic theater performances.
+
+[12] Thomas’s travelogue was an entertaining tale full of delightful anecdotes which mimicked the reality of the region. Audiences expected to be amazed as well as informed. The performances were a technological marvel at the time that combined hand-colored lantern slides, film strips, and lighting all matched to Thomas’s lecture by his innovative photographer Harry Chase. Thomas was one of the first to directly score music to match his performances. [13] Audiences also likely got their first taste of aerial photography as Thomas displayed motion pictures of the pyramids from above while joking how the unsteadiness was due to the pilot’s hangover from the night before. For certain, it was a presentation that audiences had ever seen before.
+
+[14] The lectures reiterated the taxonomy of knowledge that was familiar to American audiences. His descriptions of the Eastern Mediterranean were generalizations that were assumed to be indicative of the whole. These essentialisms helped audiences locate themselves within the context of the East. All Bedouin squatted, Australians and New Zealanders were individualists, and Egyptians were natural laborers that need to be strictly disciplined. [^14] Most notably, Thomas presented the travelogue in two distinct parts: Palestine (the land of Americans’ cultural past) and Arabia (the land of the Other) – the land of the Bible and the land of the Arabian Nights.
+
+[15] Thomas depicted Palestine as the land of Americans’ cultural past – the setting of important cultural narratives from which Americans defined themselves. The performance was full of social identifications that could be physically or tangibly absurd. Here Palestine was the land of the events of the Old Testament, of Jesus and the apostles, and of the medieval Crusades – identifications that were reinforced and perpetuated by Thomas in his many references to these events. Thomas often asked audiences to “recall” these people and events from their ontological memories as they toured the corresponding locations. Gaza was the land of Samson and Delilah, Thomas explained. An overlooking mountain was where Moses viewed the Promised Land. Thomas displayed images of the road from Jaffa to Jerusalem and explained that audiences were walking in the footsteps of the Apostles and the crusaders.[^15]
+
+The “Holy City” of Jerusalem was the central landmark of Americans’ perceived cultural heritage. As Thomas declared, “…this city more than Athens and more than Rome has taught the nations civic justice, and has given its name to that ideal city in Heaven – The New Jerusalem, the City of God.”[^16] When he discussed Jerusalem, listeners were able to contextualize their understanding of present self, and idealized future. They were reminded of correlating events from that cultural past, as Thomas spoke of Christian chivalry, the Knights Templar, and Saladin.[^17] Thomas used these concepts to invite his audiences to take part in their perceived narratives of cultural development. After he described how Allenby’s army took Jerusalem, he proclaimed that, “…at last the dream of civilized peoples for the past thousand years had come true and the Holy Land had been freed!” [^18] The landscape itself was portrayed as a central part of American cultural genealogy. Audiences learned about their cultural past and Thomas’s presentation of Palestine was an existentially-comforting celebration of that heritage.
+
+[16] Thomas, like many travel writers from the nineteenth-century, found the conditions in the Levant to be disparaging. The focal point of this notion was the starving beggar children in the “Holy City.” Harry Chase took a number of photographs of these skinny children swaddled in rags and many were displayed in Thomas’s travelogue. Thomas told of starving children who were unable to walk. Allenby’s men, he reassured, provided them with baths, clothes, food, and schooling. [17] One child apparently refused to sleep in a bed and insisted on squatting in a corner, like his natural brethren of the desert. It took caring Westerners weeks to break him of this benighted habit and restore him to civility. [^19] The desolate conditions of Jerusalem, juxtaposed with the superior state of society of the West, implied a just cause of aiding those in need. Thomas took the time to mention that the American Red Cross undertook that mission and established a soup kitchen which fed hundreds of local women each day.[^20]
+
+[18] The second half of the performance, “With Lawrence in Arabia,” was distinct from the first. After a ten minute intermission Thomas invited the audience back into the theater, to “…join this camel caravan and journey off to the mysterious land of the Arabian Nights.” [^21] [19] He depicted Arabia as a far off and unknown land of exotic peoples and practices. Audiences explored the “Arabia” of their cultural knowledge, where the exotic manners and customs that reigned were completely foreign to American society. [20] Thomas described an Arab village, where, “Before the war very few people visited this town because the inhabitants has a quaint little habit of welcoming visitors by shooting at them from behind palm trees.”[^22] Thomas told audiences how these people were different – reassuring listeners about their own social norms.
+
+[21]The presentation also reaffirmed narratives of cultural development by classifying the inhabitants of Arabia as the stagnated relatives of American cultural ancestors. Audiences learned that these people were the descendants of Abraham though his first son, Ishmael. [^23] Contrary to the others that developed civilized society, these people were frozen in time and, in many cases, inherently lacked the capacities to engage with the improvements of the early twentieth century. Audiences learned that, “One day the Arabs shot down a German plane with their rifles, and when it landed in the desert they ran out and clipped off its wings so that it wouldn’t fly away!”[^24] The Arabs of “With Lawrence in Arabia” were childlike. They were obsessed with small trinkets through which they distinguished rank among themselves. Thomas described how Lawrence would always have camel-loads of watches and field glasses to give away as presents.[^25] He told audiences how these men were uncontrollable wild men who were somehow tamed by the daring Lawrence who had to supervise their use of weapons.[^26] [22] Thomas repeatedly relayed his surprise to his spectators that the patchwork army was disciplined – enough even to attack “in regular formation!” It was for this impossible mission, to build an army out of the feuding nomadic Bedouin, that Lawrence was celebrated. Thomas admonished that, “I don’t know of a more hopeless task.”[^27]
+
+[23] Thomas’s travelogue needed a hero and he found one in T. E. Lawrence. A relatively obscure figure after the war, the performances in London drew him immediate fame. Audiences were taught that he was somewhat of an enigma. Lawrence of Arabia was an enlightened poet and archaeologist who abraded with military command yet became master of the desert people and led them to free their land from the harsh yoke of the Turks. As Thomas majestically articulated how “…this blue-eyed poet of Gaelic ancestry…” united the ancient tribes and freed Arabia from the Turks. Audiences learned that Lawrence was made into Arabian royalty, “…and honorary descendant of the Prophet Mohammet.” [^28] Thomas’s Lawrence of Arabia was a somewhat exaggerated figure, a uniquely brilliant officer who was responsible, with the mere assistance of Emir Faisal, for the grand successes of the Arab Campaign.
+
+[24] The travelogue also portrayed Arabia as the land of the Arabian Nights, an experience that titillated Western audiences and fulfilled escapist fantasies. Audiences leaned of Auda Abu Tayi, “…the fiercest, wittiest and most hospitable old pirate in the Arabian Desert – and the biggest liar east of Suez. He has the reputation of having killed 87 men in hand-to-hand personal combat.” [^29] [25] Yet the most preeminent example of mysterious fantasizing was Lawrence himself. Following the example of others such as Richard Burton and Bayard Taylor, Lawrence dressed “in the robes of an Oriental Pontentate,” in absolute fulfillment of this escapism.[^30] The contradictory blonde, blue-eyed Bedouin was a medium through which audiences imagined what it was like to explore this land of Arabia where none of the normal social rules applied.
+
+[26] Percy Burton made “With Allenby in Palestine and Lawrence in Arabia” a social event. The travelogue was the most successful off-season theater performance ever. [^31] The run in London was extended multiple times and the performances quickly became a social sensation. Overall, Thomas estimated that over one million attended the travelogue during the 1919-1920 season. [^32] Attendees included countless notables from the London social scene, including Queen Mary, the Prince of Wales, Winston Churchill, Prime Minister David Lloyd George, and French Prime Minister Georges Clemenceau. Thomas’s influence certainly reached the center of elite British society. David Lloyd George even offered a blurb that was used on advertisements for later performances, claiming that the travelogue, “taught me more than a year at Oxford.”[^33] While Thomas’s travelogue was sweeping London, Lloyd George and Clemanceau were determining the fate of the modern Middle East.[^34]
+
+In the spring of 1920 the Thomases returned to the United States, where Lowell performed on the national lecture circuit. Successful runs in Philadelphia and Washington, D.C. drew a similar effect as in London. Thomas later detailed how cabinet members and most of congress attended.[^35] [27] Thomas would eventually establish a decades-long career contingent on Americans’ fascination with escapism and alterity. In 1930 he settled down in Pawling, New York as a CBS and NBC radio broadcaster and the voice of Fox Movietone News. His nightly news broadcast was the longest running program in radio history and often featured excerpts from Thomas on his worldwide travels to peculiar places ranging from Tahiti to the South Pole. Despite his adventurous forays abroad, Thomas remained firmly entrenched in the social mainstream of American culture. He counted Herbert Hoover, Thomas Dewey and Richard Nixon among his friends and maintained membership in many exclusive elite organizations. A man entrenched in modern America’s inner circle, Lowell Thomas crafted a long and wildly successful career out of American’s defining fascination with Otherness.
+
+[28] The young boy from an isolated small town became a famous world traveler, reaching more places that he could have ever learned about in school. Thomas kept his geography textbook throughout his entire life and it resided in his library when he died in 1981 at the age of 89. The text is the only schoolbook that remained with his personal papers and one of the few surviving items that date from his childhood.
+
+
+### Bibliography
+
+Most of the textbooks used in this project are part of the John A. Nietz Old Textbook Collection, Hillman Library, University of Pittsburgh, Pittsburgh, PA. The remaining two works can be found on Google Books as noted. The travel accounts can also be found on Google Books. The Lowell Thomas Papers can be found at the James A. Cannavino Library, Marist College, Poughkeepsie, NY. The images displayed can be found online at the Marist College Archives and Special Collections website.
+
+Adams, Daniel. Geography, or a Description of the World. 1818. Reprint, Boston: Lincoln & Edmands, 1832.
+
+Appleby, Joyce. Inheriting the Revolution: The First Generation of Americans. Cambridge, MA; London: The Belknap Press of Harvard University Press, 2000.
+
+Appleton’s Elementary Geography . 1880. Reprint, New York; Boston; Chicago: D. Appleton and Company, 1882.
+
+Appleton’s Higher Geography . New York; Boston; Chicago: D. Appleton and Company, 1881.
+
+Bryant, William Cullen. Letters from the East. New York: G. P. Putnam & Son., 1869.
+
+Butler, Samuel. An Atlas of Ancient Geography. 1834. Reprint, Philadelphia, Blanchard and Lea, 1854.
+
+Cornell, Sarah S. Intermediate Geography. New York: D. Appleton and Company, 1855.
+
+Cornell, Sarah S. Primary School Geography. 1854. Reprint, New York: D. Appleton & Company; Cincinnati; Rickey, Mallory & Company, 1857.
+
+Cummings, J. A. An Introduction to Ancient and Modern Geography. 1813. Reprint, Boston: Cummings and Hillard; Cambridge, MA: Hillard and Metcalf, 1820.
+
+Curtis, George William. The Howadji in Syria. New York: Harper & Brothers, 1852.
+
+Davis, John. The Landscape of Belief: Encountering the Holy Land in Nineteenth-Century American Art and Culture. Princeton: Princeton University Press, 1996.
+
+Davis, Moshe. America and The Holy Land: With Eyes Toward Zion-IV. Westport, CT; London: Praeger, 1995.
+
+Dolev, Eran & Louis Lillywhite. Allenby's Military Medicine: Life and Death World War I Palestine. London: I.B. Tauris, 2007.
+
+Dwight, Nathaniel. A Short but Comprehensive System of Geography. 1795. Reprint, Albany: Farrand & Green, 1812.
+
+Edwards, Rebecca. New Spirits: Americans in the Gilded Age, 1865-1905. New York; Oxford: Oxford University Press, 2006.
+
+Fishlow, Albert. “Levels of Nineteenth-Century American Investment in Education.” The Journal of Economic History 26:4 (1966): 418-436.
+
+Goodrich, Samuel Griswold. A Pictorial Geography of the World. 1840. Reprint, Boston: C. D. Strong, 1841.
+
+Goodrich, Samuel Griswold. A System of School Geography. 1831. Reprint, New York: F. J. Huntington & Co., 1839.
+
+Goodrich, Samuel Griswold. Peter Parley’s Geography for Beginners. c. 1829. Reprint, New York: Huntington and Savage: 1845.
+
+Guyot, Arnold. The Earth and Its Inhabitants: A Common School Geography. 1866. Reprint, New York: Charles Scribner & Company, 1870.
+
+Guyot, Arnold. The Earth and Man. 1849. Reprint, Boston: Gould and Lincoln; New York: Sheldon, Lamport, and Blakeman, 1855.
+
+Guyot, Arnold. Elementary School Geography. 1868. Reprint, New York: Scribner, Armstrong, and Company; Chicago: Hadley Brothers; Boston: Thompson, Brown, and Company, 1875.
+
+Guyot, Arnold. Grammar School Geography. 1880. Reprint, New York: Charles Scribner’s Sons, 1882.
+
+Guyot, Arnold. Primary School Geography. 1866. Reprint, Baltimore: Kelly and Piet, 1868.
+
+Harper’s Introductory Geography . New York: Harper & Brothers, 1877.
+
+Harper’s School Geography . New York: Harper & Brothers, 1876.
+
+Howe, Daniel Walker. What Hath God Wrought: The Transformation of America, 1815-1848. Oxford; New York: Oxford University Press, 2007.
+
+Huntington, Nathaniel. A System of Modern Geography. 1833. Reprint, Hartford: E. White and Hutchison & Dwier, 1836.
+
+Huntington, Nathaniel. Introduction to Modern Geography. 1836. Reprint, Hartford: Reed & Barber, 1838.
+
+Jones, Douglas Alan. “The Tradition of Didacticism in America’s Early Reading Textbooks, 1780-1830.” PhD diss., Michigan State University, 1990.
+
+Kidd, Thomas S. American Christians and Islam: Evangelical Culture and Muslims from the Colonial Period to the Age of Terrorism. Princeton; Oxford: Princeton University Press, 2009.
+
+Koch, Cynthia Marie. “The Virtuous Curriculum: Schoolbooks and American Culture, 1785-1830.” PhD diss., University of Pennsylvania, 1991.
+
+Long, Burke O. Imagining the Holy Land: Maps, Models, and Fantasy Travels. Bloomington; Indianapolis: Indiana University Press, 2003.
+
+Majid, Anomar. “The Political Geography of Holiness.” American Literary History 21:3 (2009):633-646.
+
+Makdisi, Ussama. Artillery of Heaven: American Missionaries and the Failed Conversion of the Middle East. Ithaca; London: Cornell University Press, 2008.
+
+Marr, Timothy. The Cultural Roots of Early American Islamicism. Cambridge; New York: Cambridge University Press, 2006.
+
+Maury, Matthew Fontaine. Manuel of Geography. 1870. Reprint, New York; New Orleans: University Publishing Company, 1893.
+
+Maury, Matthew Fontaine. Revised Elementary Geography. New York; Cincinnati; Chicago: American Book Company, 1900.
+
+McNally, Francis. An Improved System of Geography. 1855. Reprint, New York: A. S. Barnes and Co.; Boston: Woolworth, Ainsworth & Company, 1870.
+
+Mitchell, S. Augustus. Ancient Geography. 1845. Reprint, Philadelphia: Thomas, Cowperthwait & Co., 1852.
+
+Mitchell, S. Augustus. First Lessons in Geography for Young Children. 1859. New York; Cincinnati; Chicago: American Book Company, 1885.
+
+Mitchell, S. Augustus. New Ancient Geography. 1845. Reprint, Philadelphia: E. H. Butler & Co., 1871.
+
+Mitchell, S. Augustus. New Primary Geography. 1855. Reprint, Philadelphia: E. H. Butler & Co., 1866.
+
+Mitchell, S. Augustus. A System of Modern Geography. 1847. Reprint, Philadelphia: Thomas, Cowperthwait, & Co., 1847.
+
+Monroe, Elizabeth. Britain's Moment in the Middle East, 1914-1956. London: Chatto & Windus Ltd, 1963.
+
+Monteith, James. Barnes’s Elementary Geography. 1885. Reprint, New York; Cincinnati, Chicago: American Book Company, 1896.
+
+Monteith, James. Introduction to the Manuel of Geography. 1857. Reprint, Philadelphia: Sower, Barnes & Co., 1859.
+
+Monteith, James. Manual of Geography. New York: A. S. Barnes & H. Burr, 1853.
+
+Moreau, Joseph. Schoolbook Nation: Conflicts over American History Textbooks from the Civil War to the Present. Ann Arbor: University of Michigan Press, 2004.
+
+Morse, Jedidiah. The American Universal Geography. 1789. Reprint, Boston: Lincoln & Edmands; S. T. Armstrong; West Richardson & Lord; Charlestown: G. Clarke; New York: S. Wood & Sons; Collins & Hannay, and J. Eastburn, & Co.; Albany: Websters and Skinners; Utica: Seward & Williams; Philadelphia: M. Carey & Son; W. W. Woodward; Baltimore: Cushing & Jewett; F. Lucas; Savannah: S. C. & J. Schenck, 1819.
+
+Morse, Jedidiah. Elements of Geography. 1795. Reprint, Boston: I. Thomas and E. T. Andrews; Worcester: I. Thomas; New York: S. Campbell; Philadelphia: M. Carey; Baltimore: Thomas, Andrews and Butler, 1796.
+
+Morse, Jedidiah & Sidney Morse. A New System of Modern Geography. 1822. Reprint, Boston: Richardson and Lord, 1826.
+
+Morse, Jedidiah. Geography Made Easy. New Haven: Maies, Bowen and Dana, 1784.
+
+Morse, Jedidiah. Geography Made Easy. 1784. Reprint, Boston: Thomas & Andrews; New York: S. Wood; Philadelphia, M. Carey, 1818. [Found on Google Books]
+
+Morse, Sidney, A System of Geography for the Use of Schools. 1822. Reprint, New York: Harper & Brothers, 1845.
+
+Nietz, John A. The Evolution of American Secondary School Textbooks. Rutland, VT: Charles E. Tuttle Company, 1966.
+
+Nietz, John A. “Experiences of a Book Collector.” History of Education Quarterly 8:3 (1968): 399-403.
+
+Nietz, John A. Old Textbooks. Pittsburgh: University of Pittsburgh Press, 1961.
+
+Obenzinger, Hilton. American Palestine: Melville, Twain, and the Holy Land Mania. Princeton: Princeton University Press, 1999.
+
+Olney, Jesse. Practical System of Modern Geography. 1828. Reprint, Hartford: D. F. Robinson & Co., 1830.
+
+Olney, Jesse. Practical System of Modern Geography. 1828. Reprint, New York: Robinson, Pratt & Co., 1838. [Found on Google Books]
+
+Olney, Jesse. Practical System of Modern Geography. 1828. Reprint, New York: Pratt, Woodford & Co., 1851.
+
+Parish, Elijah. A New System of Modern Geography. 1810. Reprint, Newburyport, MA: E. Little & Co., 1812.
+
+Ra’ad, Basem L. “Construction of Sacred Topography: the Nineteenth Century and Today.” Nineteenth-Century Contexts 29:2-3 (2007): 251-269.
+
+Redway, Jacques W. and Russell Hinman. Natural Advanced Geography. New York; Cincinnati; Chicago: American Book Company, 1898.
+
+Redway, Jacques W. and Russell Hinman. Natural Elementary Geography. New York; Cincinnati; Chicago: American Book Company, 1897.
+
+Redway, Jacques W. and Russell Hinman. Natural Introductory Geography. 1897. Reprint. New York; Cincinnati; Chicago: American Book Company, 1907.
+
+Reese, William J. “The Origins of Progressive Education.” History of Education Quarterly 41:1 (2001): 1-24.
+
+Rodgers, Stephanie Stidham. Inventing the Holy Land: American Protestant Pilgrimage to Palestine, 1865-1941. Lanham; Boulder; New York; Toronto; Plymouth, UK: Lexington Books, 2011.
+
+Schacker-Mill, Jennifer. “Otherness and Otherworldliness: Edward W. Lane's Ethnographic Treatment of The Arabian Nights.” Journal of American Folklore 113:448 (Spring 2000): 164-184.
+
+Schueller, Malini Jonar. U.S. Orientalisms: Race, Nation, and Gender in Literature, 1790-1890. Ann Arbor, MI: University of Michigan Press, 1998.
+
+Sexton, Jay. The Monroe Doctrine: Empire and Nation in Nineteenth-Century America. New York: Hill and Wang, 2011.
+
+Smith, Roswell. An Introductory Geography. 1846. New York: Daniel Burgess & Co, 1853.
+
+Smith, Roswell. Geography on the Productive System. 1835. Reprint, Philadelphia: J. B. Lippincott & Co., 1857.
+
+Stephens, John Lloyd. Incidents of Travel in Egypt, Arabia Petraea, and The Holy Land. 1837. Reprint, New York: Harper & Brothers, Publishers, 1853.
+
+Stewart, K. J. (Kensey Johns). A Geography for Beginners. Richmond, VA: J. W. Randolph, 1865.
+
+Swinton, William. Introductory Geography. New York; Chicago: Ivison, Blakeman and Company, 1882.
+
+Taylor, Bayard. Lands of the Saracen: or, Pictures of Palestine, Asia Minor, Sicily, and Spain. New York: G. P. Putnam & Co., 1855.
+
+Thomas, Lowell. Good Evening Everybody: From Cripple Creek to Samarkand. New York: William Morrow and Company, Inc., 1976.
+
+Thomas, Lowell. Lowell Thomas Papers. James A. Cannavino Library, Marist College, Poughkeepsie, NY.
+
+Tolan, John V. Saracens: Islam in the Medieval European Imagination. New York: Columbia University Press, 2002.
+
+Trafton, Scott. Egypt Land: Race and Nineteenth-Century American Egyptomania. Durham; London: Duke University Press, 2004.
+
+Twain, Mark. The Innocents Aboard, or, The New Pilgrims’ Progress. Hartford: The American Publishing Company, 1869.
+
+Varisco, Daniel Martin. Reading Orientalism: Said and the Unsaid. Seattle; London: University of Washington Press, 2007.
+
+Vogel, Lester I. To See A Promised Land: Americans and the Holy Land in the Nineteenth Century. University Park, PA: The Pennsylvania State University Press, 1992.
+
+Willetts, Jacob. An Easy Grammar of Geography. 1824. Reprint, Poughkeepsie: S. Potter & Co., 1820.
+
+Woodbridge, William. A System of Universal Geography. 1824. Hartford: John Beach, 1838.
+
+Woodbridge, William. Rudiments of Geography. 1823. Hartford: Oliver D. Cooke & Co., 1830.
+
+Worcester, J. E. Elements of Geography. 1819. Reprint, Boston: Phillips & Sampson, 1846.
+
+Yothers, Brian. The Romance of the Holy Land in American Travel Writing, 1790-1876. Burlington, VT: Ashgate Publishing Company, 2007.
+
+## Notes
+
+[^1]: George William Curtis, The Howadji in Syria, (New York: Harper & Brothers, 1852), 82.
+
+[^2]: Lowell Thomas, Good Evening Everybody: From Cripple Creek to Samarkand (New York: William Morrow and Company, Inc., 1976), 22-23.
+
+[^3]: Thomas, 23.
+
+[^4]: James Monteith, Barnes’s Elementary Geography (1885; Reprint, New York; Cincinnati; Chicago: American Book Company, 1896), 79.
+
+[^5]: Ibid., 81.
+
+[^6]: Ibid., [preface]:.
+
+[^7]: Nietz, Old Textbooks, 1, & Nietz, The Evolution of American Secondary School Textbooks, 6.
+
+[^8]: S. Augustus Mitchell, A System of Modern Geography (1839. Reprint, Philadelphia: Thomas, Cowperthwait & Co., 1847), 282.
+
+[^9]: Jedidiah Morse, Geography Made Easy (1784. Reprint, Boston: Thomas & Andrews; New York: S. Wood; Philadelphia, M. Carey, 1818), 199; Jesse Olney, A Practical System of Modern Geography (1828. Reprint, New York: Pratt, Woodford & Co., 1851), 228; S. G. Goodrich, A System of School Geography, 284; Olney, A Practical System of Modern Geography (1828. Reprint, Hartford: D. F. Robinson & Co., 1830), 227; J. E. Worcester, Elements of Geography (1819. Reprint, Boston: Phillips & Sampson, 1846), 168; Roswell Smith,Geography on the Productive System (1835. Reprint, Philadelphia: J. B. Lippincott & Co., 1857), 262; S. G. Goodrich, Peter Parley’s Geography for Beginners (c.1892. Reprint. New York: Huntington and Savage, 1845), 142-143.
+
+[^10]: Daniel Adams, Geography, or A Description of the World (1818. Reprint, Boston: Lincoln & Edmands, 1832), 257; Olney,A Practical System of Modern Geography (1828. Reprint, Hartford: D. F. Robinson & Co., 1830), 198; Goodrich, A System of School Geography, 226; S. Morse, 60; S. S. Cornell, Intermediate Geography (New York: D. Appleton and Company, 1855), 70; R. Smith, 261.
+
+[^11]: Nathaniel Dwight, A Short But Comprehensive System of the Geography of the World (1795. Reprint, Albany: Farrand & Green, 1812), 92; R. Smith, 261; Olney, A Practical System of Modern Geography (1828. Reprint, New York: Pratt, Woodford & Co., 1851), 228; Harper’s School Geography (New York: Harper & Brothers, 1876), 109; see also: Goodrich, A System of School Geography, 227; M. F. Maury, Maury’s Revised Elementary Geography (New York; Cincinnati; Chicago: American Book Company, 1900), 113; Dwight, 93.
+
+[^12]: Lowell Thomas Papers, James A. Cannavino Library Archives and Special Collections, Marist College, Box 499, File 4 & Box 500, File 23.
+
+[^13]: Lowell Thomas, “Special Report to the Officers, Board of Directors and Stockholders of Thomas Travelogues, Inc.” June 30, 1919; Lowell Thomas Papers, Series 1.25.2.4.1, Box 502, Folder 9.
+
+[^14]: Lowell Thomas, “With Allenby in Palestine,” 11, 7, 14; With Allenby in Palestine and Lawrence in Arabia, Original Script, circa 1919; Lowell Thomas Papers Series 1.25.2.2, Box 501, Folder 4.
+
+[^15]: Thomas, “With Allenby in Palestine,” 13, 12, 20.
+
+[^16]: Ibid., 29.
+
+[^17]: Thomas, “With Allenby in Palestine,” 21; see also: 18.
+
+[^18]: Ibid., 26.
+
+[^19]: Thomas, “With Allenby in Palestine,” 30.
+
+[^20]: Ibid., 31.
+
+[^21]: Ibid., 34.
+
+[^22]: Thomas, “With Allenby in Palestine,” 15.
+
+[^23]: Thomas, “With Lawrence in Arabia,” 12.
+
+[^24]: Ibid., 14.
+
+[^25]: Ibid., 17, 18.
+
+[^26]: Ibid., 9-10.
+
+[^27]: Ibid., 10, 2.
+
+[^28]: Ibid., 2-3.
+
+[^29]: Ibid., 11.
+
+[^30]: Ibid., 1.
+
+[^31]: Untitled promotional brochures, circa 1929; Lowell Thomas Papers, Series 1.25.2.5.3, Box 504, Folder 5.
+
+[^32]: Lowell Thomas Remembers the Allenby and Lawrence Show (transcript), undated; Lowell Thomas Papers, Series 1.25.2.6, Box 505, Folder 7.
+
+[^33]: The Carnagey-Thomas Travelogues: Canada brochure, circa 1920; Lowell Thomas Papers, Series 1.25.2.5.2, Box 503, Folder 8.
+
+[^34]: Elizabeth Monroe, Britain's Moment in the Middle East, 1914-1956 (London: Chatto & Windus Ltd, 1963), 50-70.
+
+[^35]: Lowell Thomas Remembers the Allenby and Lawrence Show (transcript), undated; Lowell Thomas Papers, Series 1.25.2.6, Box 505, Folder 7.
