@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Effective Metadata Systems for Archives: EAD and Unified Collection Management Systems - Greg Wiedeman
+    
+  </title>
+
+  <meta name="description" content="I’m going to talk about effective archival metadata systems. This title is purposefully broad in order to include a number of different systems. [slide] Nota...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/presentations/NYAC2015.html">
+  <link rel="alternate" type="application/rss+xml" title="Greg Wiedeman" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Greg Wiedeman</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/writing">Writing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/presentations">presentations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/code">Code</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cv">CV</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Page Header -->
+
+<header class="masthead" style="background-image: url('/assets/images/2019-04-25_13-04-26-0.JPG')">
+  
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Effective Metadata Systems for Archives: EAD and Unified Collection Management Systems</h1>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+      	<h2>2015 June 4   <i class="fa fa-cube" aria-hidden="true" style="margin: 0px 15px;"></i>  
+ 		   <i>NYAC 2015</i></h2>
+
+       
+        
+
+       
+
+         <p><h3>Abstract</h3></p>
+         <p><i>At NYAC I talked about some ideas that were floating around in my head about Archives metadata and how I started cleaning up our inconsistant finding aids.</i></p>
+
+         
+
+          
+            <a href="/slides/NYAC2015.pdf""><button name="button" class="btn btn-danger btn-lg" onclick="/slides/NYAC2015.pdf">
+              <i class="far fa-file-pdf"></i>
+            PDF</button></a>
+          
+
+          <p>
+            <p>I’m going to talk about effective archival metadata systems. This title is purposefully broad in order to include a number of different systems. [slide] Notably, Paper finding aids, EAD, accession databases, and what I’m calling Unified Collection Management Systems, namely Archivist’s Toolkit, Archon, and now ArchivesSpace. Without thinking about it, we often conflate these systems. I’m going to take a look at the functions of these systems—basically what they do and don’t do—in order to clarify their use. At the end I’m going to talk about the steps we’re taking at UAlbany to develop an effective metadata system, and introduce some tools we’re using.</p>
+
+<p>[slide] Now there are a couple important functions that your metadata systems must do. You have to be able to easily create records. Edit or update them when necessary. The system must also enable you to perform a number of administrative functions like managing collection size, location, restrictions, and level of processing. You have to validate your data, ensure it is purged of any data entry mistakes. A lot of your data needs to be publicly accessible, and ideally you should be able to aggregate your data with outside institutions for wider access. And finally, systems change, so you need to be able to migrate you data to new systems. Traditionally, archival metadata systems have been one thing: Finding Aids. Whether made of paper or ones and zeros they have fulfilled many of these important functions. The finding aid itself has long been a collection management tool. Now for those of us who still have an old paper finding aid or two kicking around, we see that these paper information systems were only of limited effectiveness, and all of these functions were either completely manual or just not possible.</p>
+
+<p>[slide] Now, perhaps the most lasting legacy of paper finding aids is the propagation of local descriptive and administrative practices. Finding aids, particularly paper ones, are extremely flexible as metadata systems. What also comes into play is the theory that archival collections are unique, and the idea that descriptive and administrative practices also must be unique. This is a poor line of thinking, as we would never get anything done if we changes our practices for each type of material we come across. Now, by “local practices” I don’t mean “bad practices.” Outside of a few notable exceptions, I haven’t really come across archivists making bad decisions. What I have seen is archivists developing local practices that are effective in the short term because of their local situation, but difficult to standardize or sustain. This can be due to resource restrictions or just their unique institutional context. In fact, we always standardize our descriptive and administrative practices. And many of these decisions are really arbitrary. We pick something and stick with it. The problem was never unstandardized practices, it was always standardizing practices at the local level – and finding aids were the enablers.</p>
+
+<p>[slide] Now the central problem with paper finding aids as metadata systems stems from one thing: Unstructured Data. A good way to think of structured and unstructured data is the difference between Word documents and Excel spreadsheets. When data has structure, it conforms to a set of predefined rules, like data confined in the cells of and Excel spreadsheet. Then we can say “cell A12” as a substitute for our data. You need a set standard rules that govern your data – like where each unit of data starts and ends. Structured data lets us develop tools for creating and working with our data, allows us to repurpose our data, automate changes, and ensure standardization. Now archivists have long understood this concept. In the 1990s they were innovators – becoming early adopters to a new technology called XML, which would allow them to give structure to their data in a universally-compatible format. Yet, in developing the EAD standard, archivists made a number of defensible decisions that have proven to have really hindered the capabilities and effectiveness of the standard.</p>
+
+<p>[slide] First, EAD allows for too much mixed content and unstructured data. Evidence of this can be found in the EAD2002 and elements. This means the combination of data and other element fields that attempts to combine both data and metadata in a single field. This is really unnecessary for an archives data store, which brings me to my next point. Early literature on EAD was riddled with complaints that researchers were not finding EAD finding aids very usable, and the standard sometimes reflects this confusion between storing data and displaying data by allowing you to enter visual information like headers. EAD is a data store, not an access tool. Furthermore, it is difficult at best to effectively validate EAD files. While using a DTD or schema may identify major structural errors, it is still extraordinarily easy to create bad finding aids that validate. Last and most important, is the overall extreme permissiveness of the standard. There are many different ways of encoding the same information. What good is having structure if the structure is allowed to take multiple forms? This problem has made it exceedingly difficult to develop tools that work with EAD, has caused migration issues, and has effectively prevented fixing of the standard because everyone’s EAD finding aids are different. EAD really is a plural standard – an oxymoron. This permissiveness has essentially been a death knell to the standard as a collection management tool and it is clear EAD has passed its high water mark as a central part of an archivist’s everyday activity.</p>
+
+<p>[slide] All of these problems can be explained when you consider the context of EAD’s development. The use of mixed content reflects the characteristics of its biggest influence, TEI, which requires mixed content to encode prose. The failure to differentiate between storage and display is really understandable when you realize that when archivist were developing EAD, CSS and the concept of separation of concerns were not yet widespread in the web community. Also, the validation issue affects all but the simplest XML and really all non-tabular data stores. Finally, the flexibility that undermines EAD was allowed because of the varied local practices I talked about before, leftover from the paper world. In fact, without this permissiveness, there is no way that EAD would have been as successful or as widely implemented as it is today.</p>
+
+<p>[slide] Now, there’s a lot of good in EAD as well. If you can actually standardize your local use of the standard, you get a really useful structured data store in the closest format to digital vellum that we can get. The hierarchical structure of XML seems made with archival description in mind. Furthermore, in 2015 we now have the cheap processing power and accessible tools to really get the most out of XML. Things like Solr, XQuery, XML databases, Schematron, and mature programming APIs didn’t really exist ten or fifteen years ago. Furthermore, the widespread use of EAD in archives has raised the technical capabilities of archivists everywhere. Like many other archivists, my first introduction to any sort of code was EAD. While the need for expertise in XML must have been a big change for archivists, the personal and institutional knowledge gained by archives since the proliferation of EAD has made archivists much more technically capable. Now some job descriptions require working with disk images, automating description from digital files, or command line scripting. As a profession, working with EAD has helped prepare archivists for these new and evolving challenges.</p>
+
+<p>[slide] Over the past ten years, the archival community has gone in a different direction from managing their data in EAD and began developing what I’m going to call Unified Collection Management Tools. The impetus for these tools was the challenge of creating and managing consistent and effective metadata, both descriptive and administrative, in EAD. A common point of confusion is that these tools are a way to implement EAD. This is not really true, despite the fact that this has been stated in peer reviewed publications. While these tools can export data in EAD, implementing one of these complex tools just to create EAD files is beyond overkill. In fact, Unified Collection Management Tools were created as a way to avoid EAD, and each of these pieces of software relies on traditional relational databases, rather than XML.</p>
+
+<p>[slide] One of the first of these programs was Archivist’s Toolkit which was first released in 2006. It’s a Java program that runs locally or on a server and provides a bunch of administrative and descriptive functionality. It stores accessions, manages locations, helps with authority control, manages user permissions, and allows you to enter descriptive metadata. Another early system, Archon, was developed by the University of Illinois in 2005. It is a PHP-based system for managing, creating and providing public access to descriptive metadata. Archon also manages and provides access to digital objects, and does provide some administrative functionality, like location tracking. Access to Memory is another front-end focused system that provides public access to descriptive metadata and digital objects. While it is a proprietary system developed by Artefactual Systems, Access to Memory is also free and open source, written primarily in PHP, and presents descriptive metadata over the web in a matter that tries to meet the current trends in modern web design. It also provides a basic accession system as well. Now the most important Collection Management Tool today is ArchivesSpace. It just made its first official release in 2013 and many repositories have implemented or have at least discussed implementing this new software.</p>
+
+<p>[slide] The general idea was to use the back-end data model of Archivist’s Toolkit with the public access capabilities of Archon. While functionally this makes sense, technically it doesn’t, as both of these programs have different data models, were written in different programming languages, and had different functionality. So why combine these two systems? The first reason might be money. As these systems get more complex, they cost more to develop and maintain. But I think the money reason is just part of the real reason, which is the idea that having multiple systems was redundant. With one unified system, archivists could better pool resources – money, development effort, and institutional knowledge. What is important about ArchivesSpace isn’t really the software itself, which is fluid and will like continue to change like all software. The model is what’s important – a unified system for managing the entirety of descriptive and administrative metadata, communally developed, based on community needs. I question the idea that there should be one system that attempts to be an end-to-end metadata system. I doubt that we are ever going to have one metadata system, particularly one that works for all archives. The diverse needs that would have to be met makes the system more complex, taking up greater resources to manage than smaller—even partially redundant—systems.</p>
+
+<p>[slide]Now I think my criticisms are different from those commonly raised. The local practices I talked about before are really at the center of the resistance to ArchivesSpace. By design, the system is more restrictive than EAD. In just about all cases, implementing ArchivesSpace will involve some modification of your local practices. No complex tool like this will work 100% like you would like it to. These problems have less to do with the software itself than with the further standardization of archives metadata that is necessary for the mass consistency and aggregation that we still haven’t been to obtain. Often, the problem is that finding aids allowed these practices in the first place.</p>
+
+<p>[slide] The best evidence for the problems with the Unified Collection Management System Model is the persistence of EAD. Now, even with a complete implementation of ArchivesSpace, EAD would always remain as the preservation minimum because XML is really good as a preservation format. But the more pressing evidence is the persistence of EAD in the center of archives’ metadata workflows – now more automated than manual, but still there. In many cases, Unified Collection Management Tools have not actually encompassed the entire metadata workflow. EAD is still being use to unify difference systems. Most notably, EAD is becoming popular as a metadata dump. Archivists will create and manage some metadata in one tool, some more in another, and automate the unification of that data in EAD. This then becomes the bridge to a separate public access system. Now some may see this as a temporary measure, but I think that this modular system design can be more resilient to change and be effective both now and in the future.</p>
+
+<p>[slide] Now I’m going to talk about how we are applying some of these ideas at UAlbany. Currently, we do not use a unified collection management tool, and are only now getting the last of our collections encoded into EAD from unstructured HTML finding aids. Moving directly to ArchivesSpace or something similar at this point would be a tall task because of the inconsistency of our descriptive and particularly our administrative metadata. I think that when we talk of migration issues, we’re most often talking about metadata issues. In that our metadata is too inconsistent or incomplete to migrate easily. Thus, we implemented a simple tool to standardize our EAD creation and I’ve been focusing on shoring up our legacy EAD files to make sure they are consistent and well-encoded.</p>
+
+<p>[slide] The tool we are using is EADMachine, an open source python program I created as a Project Archivist to consistently create complete EAD files from our data entry spreadsheets. It uses a spreadsheet template for data entry from the collection to the file level. Each sheet is a different component, series or subseries. You save the file and use a simple GUI executable that reads a one of your local EAD finding aids and matches the new data to that example file. It also creates a basic HTML access file, and converts a complete EAD file back to the spreadsheet template. Now, the tool is designed for small archives to produce EAD finding aids without the commitment to a more complex system, and really, it would have been more useful in 2003 than 2015. But it is useful to standardize new metadata creation almost instantly with a very little learning curve.</p>
+
+<p>[slide] In addition to using EADMachine to promote consistent metadata creation, I wrote a number of python scripts to identify and correct abnormalities and inconsistencies in our encoding practices. This included implementing a unique ID system for every component, finding and removing special characters, standardizing use of , and fixing some more embarrassing encoding issues that I’m sure most archives have if they really look. Right now I’m testing a workflow using python scripts to automate updates to EAD finding aids for born-digital accretions and our on-demand digitization workflow. Part of this project will develop a rule-based validation program that is extremely granular and specific to our version of EAD. Finally, in the fall we are finalizing our move to XTF for a public access system.</p>
+
+<p>[slide] Now this doesn’t mean that we are going to be sticking with EAD as our metadata store for long. In fact, part of the problem with EAD is that it takes a considerable amount of effort and skill to get your metadata in shape. We might move to ArchivesSpace in the near future, and our accession database will likely be the reason for it. The reason we are taking this path is twofold. First, most—if not all—of the data wrangling we are doing now would have to be done anyway to move our metadata into ArchivesSpace. Now with consistent metadata, we will be prepared to migrate to essentially any system with little issue. Secondly, I don’t see ArchivesSpace as being an all-encompassing system for us. We will likely us separate systems for public access and managing digital objects, and we may do so for metadata creation. What I’m visualizing is a modular system design based on different functionalities. XTF, for example should outlast the migration of our accession system. And when a better public access system comes along, we can move to that without altering our accessioning and metadata creation processes.</p>
+
+<p>[slide] Overall, I believe we discuss different tools often, but it is how you use them that is more important. We are discussing the quality of the hammer over the technique of the craftsman. No matter how perfect a tool is, inconsistent use undermines its application. Also, I think we might need to rethink the Unified Collection Management System model. I am skeptical that we are ever going to have one system for our metadata that does everything. A modular network of simpler systems is a more likely outcome.</p>
+
+          </p>
+
+       
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:gwiedeman@albany.edu">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/gregwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/gwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy; Gregory Wiedeman 2019
+        </p>
+        <p class="copyright text-muted">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+
+</body>
+
+</html>

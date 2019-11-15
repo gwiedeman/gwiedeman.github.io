@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Processing Born-Digital Images at Scale - Greg Wiedeman
+    
+  </title>
+
+  <meta name="description" content="I&#39;m an archivist who works to make information more accessible.">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/md/ndsa2018.html">
+  <link rel="alternate" type="application/rss+xml" title="Greg Wiedeman" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Greg Wiedeman</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/writing">Writing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/presentations">presentations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/code">Code</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cv">CV</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <style>
+#fLeft {float: left; max-width: 50%;}
+#fRight {float: right; max-width: 50%;}
+</style>
+
+<h2 id="processing-born-digital-images-at-scale">Processing Born-Digital Images at Scale</h2>
+
+<h4 id="gregory-wiedeman">Gregory Wiedeman</h4>
+<h4 id="university-archivist">University Archivist</h4>
+<h4 id="university-at-albany-suny">University at Albany, SUNY</h4>
+<h4 id="nsda-content-interest-group">NSDA Content Interest Group</h4>
+
+<hr />
+
+<h3 id="born-digital-photography-at-ualbany">Born-Digital Photography at UAlbany</h3>
+
+<ul>
+  <li>Began in 1999</li>
+  <li>Campus Photographer in Digital Media Department</li>
+  <li>Photographer is state employee, so images are public records!</li>
+  <li>Two periods, with gap in-between
+    <ul>
+      <li>1999-2010 wrote files to DVDs, Access DB</li>
+      <li>2012-present SmugMug service</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h4 id="growth-of-born-digital-photography-1999-2010">Growth of Born-Digital Photography 1999-2010</h4>
+
+<div id="fLeft">
+<img src="img/photoEventsGraph.png" />
+</div>
+<div id="fRight">
+<img src="img/photoImagesGraph.png" />
+</div>
+
+<hr />
+
+<h3 id="1999-2010-period">1999-2010 Period</h3>
+<div id="fLeft">
+<ul>
+<li>4 Boxes of DVDs, about 600 disks</li>
+    <ul>
+        <li>about 20 CD-Rs</li>
+    </ul>
+<li>1.8 TB of data</li>
+<li>Camera Raw files (.NEF, .CR2) and .JPG derivatives of used images</li>
+</ul>
+</div>
+<div id="fRight">
+<img src="img/dvds.JPG" />
+</div>
+
+<hr />
+
+<h3 id="1999-2010-period-1">1999-2010 Period</h3>
+<div id="fLeft">
+<ul>
+<li>Job number folder contained images, written on disk</li>
+<li>Metadata in Access DB</li>
+<ul>
+    <li>Date</li>
+    <li>Photographers description of event</li>
+    <li>Costs, etc.</li>
+</ul>
+</ul>
+</div>
+<div id="fRight">
+<img src="img/dvds.JPG" />
+</div>
+
+<hr />
+
+<h3 id="previous-work">Previous Work</h3>
+
+<ul>
+  <li>Student Assistant manually selecting images</li>
+  <li>Adding detailed item-level metadata</li>
+  <li>Upload to Luna DAMS</li>
+  <li>Small Percentage over years.</li>
+</ul>
+
+<hr />
+
+<h3 id="2012-present">2012-present</h3>
+
+<div id="fLeft">
+<ul>
+<li>SmugMug service</li>
+<ul>
+    <li>Online photo web app</li>
+    <li>about 20,000 images</li>
+</ul>
+<li>Photographer Uploads selection of images with metadata</li>
+</ul>
+</div>
+<div id="fRight">
+<img src="img/smugmug2.png" />
+</div>
+
+<hr />
+
+<!-- .slide: data-background="img/smugmug3.png" -->
+
+<hr />
+
+<!-- .slide: data-background="img/smugmug4.png" -->
+
+<hr />
+
+<!-- .slide: data-background="img/smugmug5.png" -->
+
+<hr />
+
+<h2 id="smugmug-has-an-api">SmugMug has an API</h2>
+
+<p><img src="img/smugmugAPI.png" /></p>
+
+<hr />
+
+<h2 id="needs">Needs</h2>
+
+<ul>
+  <li>Automation
+    <ul>
+      <li>Need to scale</li>
+      <li>No metadata creation, must describe themselves</li>
+    </ul>
+  </li>
+  <li>Transparency
+    <ul>
+      <li>Researchers need context</li>
+    </ul>
+  </li>
+  <li>Access
+    <ul>
+      <li>No restrictions, immediate public access</li>
+      <li>Presentation within existing collections (EAD)</li>
+      <li>Support reference work now</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="using-python">Using Python</h2>
+
+<ul>
+  <li>Python is great at working with data across systems</li>
+  <li>Requests library to query SmugMug API</li>
+  <li>os library to read filesystem, copy files</li>
+  <li>Subprocess to call other command line tools
+    <ul>
+      <li>TSK, ImageMagick</li>
+    </ul>
+  </li>
+  <li>Bagit-python</li>
+  <li>lxml to work with XML and EAD</li>
+</ul>
+
+<hr />
+
+<h2 id="mass-image-dvds">Mass Image DVDs</h2>
+
+<ul>
+  <li>Used BitCurator Forensic Machine</li>
+  <li>Ripping from disk ran into Filesystem issues
+    <ul>
+      <li>different ISO formats</li>
+    </ul>
+  </li>
+  <li>Running dd was most dependable</li>
+  <li>5 external disk drives</li>
+</ul>
+
+<hr />
+
+<h2 id="mass-image-dvds-1">Mass Image DVDs</h2>
+
+<div id="fLeft">
+<img src="img-saa16/diskRip.png" />
+</div>
+<div id="fRight">
+<img src="img-saa16/IMG_1571.JPG" />
+</div>
+
+<hr />
+
+<p><img src="img/diskImages.png" /></p>
+
+<hr />
+
+<p><img src="img-saa16/carvingFiles.png" /></p>
+
+<hr />
+
+<p><img src="img-saa16/corruptedFiles.png" /></p>
+
+<hr />
+
+<h2 id="appraisal-in-born-digital-processing">Appraisal in Born-Digital Processing</h2>
+
+<ul>
+  <li>Archives manage materials at scale</li>
+  <li>Time-limited project, initially less than 2 months</li>
+  <li>Other collections need attention</li>
+</ul>
+
+<hr />
+
+<h2 id="appraisal-decisions">Appraisal Decisions</h2>
+
+<ul>
+  <li>Not to retain camera raw permanently
+    <ul>
+      <li>Large, access barrier</li>
+      <li>Not a final product, proprietary</li>
+    </ul>
+  </li>
+  <li>Convert all files to JPG
+    <ul>
+      <li>1.8 TB down to a managable 274 MB</li>
+    </ul>
+  </li>
+  <li>Not spending time recovering all files
+    <ul>
+      <li>diminishing returns</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="jpeg-compression">JPEG compression!?</h2>
+
+<ul>
+  <li>Edited, used pre-2010 images were JPGs
+    <ul>
+      <li>Why go back to unedited raw?</li>
+    </ul>
+  </li>
+  <li>All post-2010 images through SmugMug were JPGs</li>
+  <li>JPG compression visually looked the best</li>
+  <li>Purpose of collection was to document university events</li>
+  <li>Users happy with JPGs</li>
+  <li>Not using compression is not a preservation strategy</li>
+</ul>
+
+<hr />
+
+<!-- .slide: data-background="img-saa16/compare1.png" -->
+
+<hr />
+
+<h2 id="in-the-spirit-of-oais">In the Spirit of OAIS</h2>
+
+<ul>
+  <li>Does appraisal conflict with OAIS?</li>
+  <li>SIPs are non-permanent .dd images and Access DB exports</li>
+  <li>AIPs are processed bags with metadata</li>
+  <li>DIPs are metadata in EAD, linked to JPGs on web server</li>
+</ul>
+
+<hr />
+
+<h2 id="the-sipsaips">The SIPs/AIPs</h2>
+
+<p><img src="img-saa16/sip-aip.png" /></p>
+
+<hr />
+
+<h2 id="crawling-smugmug">Crawling SmugMug</h2>
+
+<ul>
+  <li>Wrote a crawler for SmugMug</li>
+  <li>Download all images</li>
+  <li>Periodically crawl for updates</li>
+  <li>Hash index to see if already downloaded</li>
+  <li>Package in to Bags with XML metadata file
+    <ul>
+      <li>Directory structure and descriptive metadata</li>
+    </ul>
+  </li>
+  <li>Separate script to write metadata into EAD files</li>
+  <li>it broke <!-- .element: class="fragment" data-fragment-index="1" --></li>
+</ul>
+
+<hr />
+
+<h2 id="access">Access</h2>
+
+<ul>
+  <li>Listed DVD albums in CSV</li>
+  <li>Student arranged into SmugMug directory structure with spreadsheet
+    <ul>
+      <li>Described image sets without Job numbers</li>
+    </ul>
+  </li>
+  <li>Python script updated EAD-XML with directory structure
+    <ul>
+      <li>Each image set is a component with DAO link</li>
+      <li>Batch generated HTML files</li>
+      <li>Exposed as <a href="https://meg.library.albany.edu:8443/archive/view?docId=ua395.xml">XTF finding aid</a></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="access-1">Access</h2>
+
+<p><img src="img-saa16/accessSystem6.png" /></p>
+
+<hr />
+
+<h3 id="things-ive-learned">Things I’ve learned</h3>
+
+<ul>
+  <li>This gets complicated</li>
+  <li>Just because you can script it, doesn’t mean its a sustainable workflow</li>
+  <li>You can put any junk in XML</li>
+  <li>Maintenance is an issue</li>
+  <li>Infrastructure first</li>
+</ul>
+
+<hr />
+
+<h2 id="building-infrastructure">Building Infrastructure</h2>
+
+<ul>
+  <li>Stopped collecting from SmugMug for now</li>
+  <li>Arclight for archival description</li>
+  <li>Hyrax repository for digital archives content
+    <ul>
+      <li>connects to Arclight API</li>
+      <li>backed by data model</li>
+    </ul>
+  </li>
+  <li>New <a href="https://github.com/UAlbanyArchives/createSIP">SIP/AIP Model</a>
+    <ul>
+      <li>Validate to Spec using <a href="https://github.com/bagit-profiles/bagit-profiles">Bagit-profiles</a></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="future-plans">Future Plans</h2>
+
+<ul>
+  <li>Network of open systems connected by REST APIs</li>
+  <li>Ingest utility
+    <ul>
+      <li>Make Bag according to Spec</li>
+      <li>Post to Hyrax, backed by Data Model</li>
+      <li>Post accession to ArchivesSpace</li>
+    </ul>
+  </li>
+  <li>Processing utility
+    <ul>
+      <li>Any content processing</li>
+      <li>Post description to ArchivesSpace, exposed in Arclight</li>
+      <li>Post public content to Hyrax, linked to Arclight description</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="processing-born-digital-images-at-scale-1">Processing Born-Digital Images at Scale</h3>
+
+<p><img src="img-saa16/accessSystem6.png" /></p>
+
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:gwiedeman@albany.edu">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/gregwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/gwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy; Gregory Wiedeman 2019
+        </p>
+        <p class="copyright text-muted">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+
+</body>
+
+</html>

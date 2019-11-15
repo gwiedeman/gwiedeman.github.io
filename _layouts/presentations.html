@@ -28,16 +28,56 @@ layout: default
       <div class="col-lg-8 col-md-10 mx-auto">
 
       	<h2>{{ page.date | date: "%Y %B %-d" }}   <i class="fa fa-cube" aria-hidden="true" style="margin: 0px 15px;"></i>  
- 		<i>{{ page.event }}</i></h2>
+ 		   <i>{{ page.event }}</i></h2>
 
-        {{ content }}
-
-        <a href="{{ site.baseurl }}/slides/{{ page.link }}"><button name="button" class="btn btn-primary btn-lg" onclick="{{ page.link }}">Slides</button></a>
-        {% if page.pdf %}
-        	<a href="{{ page.pdf }}""><button name="button" class="btn btn-danger btn-lg" onclick="{{ page.pdf }}">
-            <i class="far fa-file-pdf"></i>
-          PDF</button></a>
+       {% if page.link contains '://' %}
+          {% assign fullurl = page.link %}
+        {% else %}
+          {% assign rooturl = "/slides/" | prepend: site.baseurl | replace: '//', '/' %}
+          {% assign fullurl = page.link | prepend: rooturl %}
         {% endif %}
+        {% if page.pdf contains '://' %}
+          {% assign fullpdf = page.pdf %}
+        {% else %}
+          {% assign rootpdf = "/slides/" | prepend: site.baseurl | replace: '//', '/' %}
+          {% assign fullpdf = page.pdf | prepend: rootpdf %}
+        {% endif %}
+
+       {% if page.abstract %}
+
+         <p><h3>Abstract</h3></p>
+         <p><i>{{ page.abstract }}</i></p>
+
+         {% if page.link %}
+            <a href="{{ fullurl }}"><button name="button" class="btn btn-primary btn-lg" onclick="{{ fullurl }}">Slides</button></a>
+          {% endif %}
+
+          {% if page.pdf %}
+            <a href="{{ fullpdf }}""><button name="button" class="btn btn-danger btn-lg" onclick="{{ fullpdf }}">
+              <i class="far fa-file-pdf"></i>
+            PDF</button></a>
+          {% endif %}
+
+          <p>
+            {{ content }}
+          </p>
+
+       {% else %}
+
+          {{ content }}
+
+          {% if page.link %}
+            <a href="{{ fullurl }}"><button name="button" class="btn btn-primary btn-lg" onclick="{{ fullurl }}">Slides</button></a>
+          {% endif %}
+
+          {% if page.pdf %}
+          	<a href="{{ fullpdf }}""><button name="button" class="btn btn-danger btn-lg" onclick="{{ fullpdf }}">
+              <i class="far fa-file-pdf"></i>
+            PDF</button></a>
+          {% endif %}
+
+        {% endif %}
+
 
 
 

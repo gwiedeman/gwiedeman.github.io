@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Describing Web Archives with the Partner Data API - Greg Wiedeman
+    
+  </title>
+
+  <meta name="description" content="I&#39;m an archivist who works to make information more accessible.">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/md/code4lib2019.html">
+  <link rel="alternate" type="application/rss+xml" title="Greg Wiedeman" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Greg Wiedeman</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/writing">Writing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/presentations">presentations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/code">Code</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cv">CV</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <style>
+#fLeft {float: left; max-width: 60%; text-align: left;}
+#fRight {float: right; max-width: 40%; text-align: left;}
+#fRight img {margin: 20px;}
+#smallLink {font-size: 18px;}
+.whitebg {background-color: #fff; margin-top: 30% !important; padding: 15px !important; border-radius: 15px;}
+.altText {background-color: #fff; bottom: 30px; position: fixed; padding: 15px !important; border-radius: 5px;}
+section {height:100%}
+.pullDown {height:auto}
+</style>
+
+<h3 id="providing-computational-access-to-records-of-american-capital-punishment">Providing Computational Access to Records of American Capital Punishment</h3>
+<p><br /></p>
+<h5 id="gregory-wiedeman">Gregory Wiedeman</h5>
+<h5 id="university-archivist">University Archivist</h5>
+<h5 id="university-at-albany-suny">University at Albany, SUNY</h5>
+<h5 id="-gregwiedeman"><img alt="Twitter logo" src="img-saa16/twitter.png" style="margin: -5px; background: none; border: none; box-shadow: none;" width="45px" /> @GregWiedeman</h5>
+<h5 id="code4lib-2019">Code4Lib 2019</h5>
+
+<hr />
+
+<h3 id="national-death-penalty-archive">National Death Penalty Archive</h3>
+
+<div id="fLeft">
+UAlbany collects records from researchers, writers, and activists related to capital punishment in the United States as part of the <a href="https://archives.albany.edu/static/91.html">National Death Penalty Archive</a>.
+</div>
+<div id="fRight">
+<img alt="Image of Death penalty moratorium walk held my Floridians for Alternatives to the Death Penalty" src="http://library.albany.edu/sites/all/themes/New_UArchives/img/700/ndpa700.jpg" />
+</div>
+
+<hr />
+
+<div id="fLeft">
+<h3>Watt Espy Papers</h3>
+The most complete set of extant records of American executions.
+<ul>
+<br />
+<li>24,036 sides of index cards</li>
+<li>A 101,566 pages of reference materials
+<ul>
+<li>Copies of Correctional Records</li>
+<li>Copies of newspapers and published sources</li>
+<li>Written notes</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="fRight">
+	<img alt="Image of correctional record for Jerry Coleman from the Watt Espy Papers" src="img/B35_F011_000067.jpg" />
+</div>
+
+<hr />
+
+<!-- .slide: data-background="https://library.albany.edu/sites/all/themes/New_UArchives/img/1900/ndpa1.jpg" alt="Test" -->
+
+<p class="altText">Image of Index card summaries of executions.</p>
+
+<hr />
+
+<h3 id="the-espy-file">The ESPY File</h3>
+
+<ul>
+  <li><a href="https://www.icpsr.umich.edu/icpsrweb/NACJD/studies/8451/summary">NSF-funded project</a> in 1984 to create a dataset from the collection.
+    <ul>
+      <li>“The most often cited and used list of America’s legal executions”</li>
+    </ul>
+  </li>
+  <li>Researchers have traveled to view discrepancies with the source material</li>
+  <li>Paul H. Blackman and Vance McLaughlin, <a href="https://doi.org/10.1177/1088767911418054">The Espy File on American Executions: User Beware</a> (2011)</li>
+</ul>
+
+<hr />
+
+<h4 id="computational-analysis-and-the-death-penalty">Computational Analysis and the Death Penalty</h4>
+
+<ul>
+  <li><i>Furman v. Georgia</i> (1972)</li>
+  <li><i>Gregg v. Georgia</i>, etc. (1976)</li>
+  <li>Marvin Wolfgang and Marc Riedel Study (1973) and <i>Maxwell v. Bishop</i></li>
+  <li>David Baldus-led Georgia Study</li>
+  <li><i>McCleskey v. Kemp </i> (1987)
+    <ul>
+      <li>Found “racially disproportionate impact”</li>
+      <li>invalidated statistical analysis for 14th amendment claims</li>
+    </ul>
+  </li>
+  <li><i>Miller-El v. Dretke</i> (2005)
+    <ul>
+      <li>Utilized statistical analysis for <i>Batson</i> challenge</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="the-digital-archive-of-executions-in-the-united-states-1608-2002"><a href="http://registry.clir.org/projects/23081088">The Digital Archive of Executions in the United States, 1608-2002</a></h3>
+<div style="margin: 30px;">
+<ul>
+<li>CLIR-funded digitization project</li>
+<li>Provide context to data points</li>
+<li>API access to underlying data</li>
+</ul>
+</div>
+
+<div id="fLeft">
+<img alt="CLIR Logo" src="img/clir.png" />
+</div>
+<div id="fRight">
+<img alt="ArcLight logo" src="img/arclight_logo.png" style="margin: -5px; background-color: #000; border: none; box-shadow: none; width: 300px" />
+<img alt="Hyrax logo" src="img/hyrax_logo.png" style="margin: -5px; background: none; border: none; box-shadow: none;" width="300px" />
+</div>
+
+<hr />
+
+<h3 id="the-we">The “We”</h3>
+
+<div id="fLeft">
+<ul>
+<li>3 archivists</li>
+	<ul>
+		<li>Mark Wolfe</li>
+		<li>Melissa McMullen</li>
+		<li>Me</li>
+	</ul>
+</ul>
+<ul>
+<li>Graduate Student Assistants</li>
+	<ul>
+		<li>Amanda Partridge</li>
+		<li>Sheri Sarnoff</li>
+		<li>Miles Lawlor</li>
+	</ul>
+</ul>
+</div>
+<div id="fRight">
+<ul>
+<li>Library Systems Staff (partial support)</li>
+	<ul>
+		<li>Department Head</li>
+		<li>Systems Administrator</li>
+		<li>Web Developer</li>
+		<li>Database Administrator</li>
+	</ul>
+</ul>
+</div>
+
+<hr />
+
+<h3 id="supporting-open-source-at-ualbany">Supporting Open-Source at UAlbany</h3>
+
+<ul>
+  <li>Systems and University staff had experience with enterprise systems</li>
+  <li>On-site virtualized data center</li>
+  <li>CLIR Grant demonstrated the value of the work we could do with more technology</li>
+  <li>Archivists and Systems staff learned together collaboratively
+    <ul>
+      <li>Archivists took hands-on role with Rails, adapting and configuring systems</li>
+    </ul>
+  </li>
+  <li>Sustainability a work in progress</li>
+  <li>Dependent on maintainers and open source community</li>
+</ul>
+
+<hr />
+
+<h3 id="espy-metadata-creation-tool">Espy Metadata Creation Tool</h3>
+
+<ul>
+  <li>Samvera and Hyrax are Rails applications</li>
+  <li>“Ramp up” plan for repository implementation and maintenance</li>
+  <li>Makes connections between 4 difference sources
+    <ul>
+      <li>Small Index Cards</li>
+      <li>Large Index Cards</li>
+      <li>Reference Material</li>
+      <li>Espy File data</li>
+    </ul>
+  </li>
+  <li>Create new Espy Records backed by Data Model</li>
+  <li>Make the computer do the boring work</li>
+  <li>Focus on intellectual process of metadata creation</li>
+</ul>
+
+<hr />
+
+<!-- .slide: data-background="img/espy1.png" -->
+
+<p class="altText">Screenshot of metadata creation tool to link records with redis autocomplete.</p>
+
+<hr />
+
+<!-- .slide: data-background="img/espy3.png" -->
+
+<p class="altText">Screenshot of metadata creation tool displaying three types of source material.</p>
+
+<hr />
+
+<p><img style="width:50%;" alt="Records from newspaper listing hundreds of executions. This was still very challenging to link to hundreds on individual records, no matter what we tried." src="img/B44_F001_000026.jpg" /></p>
+
+<hr />
+
+<div id="fLeft">
+<h4>Metadata Matters</h4>
+<ul>
+<li>Espy File data demonstrated creators’ 
+priorities, values, and mental framing 
+that are inappropriate or conflict with 
+our own</li>
+</ul>
+<img src="img/codebook2.png" />
+</div>
+<div id="fRight">
+	<ul>
+	<li>Occupation:
+	<ul>
+	<li>"Armed robber"</li>
+	<li>"Asylum Escapee"</li>
+	<li>"Bandit"</li>
+	<li>"Criminal"</li>
+	<li>"Cult Leader"</li>
+	<li>"Gang Member"</li>
+	<li>"Lunatic"</li>
+	<li>"Male Nurse"</li>
+	<li>"Retarded"</li>
+	<li>"Slave"</li>
+	<li>"Student"</li>
+	</ul>
+	</li>
+	</ul>
+</div>
+
+<hr />
+
+<h3 id="metadata-matters">Metadata Matters</h3>
+
+<ul>
+  <li>General Data Improvements
+    <ul>
+      <li>“Crime Committed” changed to “Crime Convicted”</li>
+      <li>Added Date of Conviction to Date of Execution</li>
+      <li>ISO dates</li>
+      <li>First and last name in individual fields</li>
+      <li>Sex to become gender assigned</li>
+    </ul>
+  </li>
+  <li>Race does not conform to an established standard</li>
+  <li>Feedback welcome!</li>
+</ul>
+
+<hr />
+
+<h3 id="unconfirmed-cases">“Unconfirmed” cases</h3>
+
+<p><img src="img/enslavedWoman1.png" alt="Index card summary of enslaved women named Phoebe who was accused of murder, it is unclear if she was executed." /></p>
+
+<hr />
+
+<div id="fLeft">
+<img src="img/B19_F006_000008.jpg" alt="Article from the 1829 New Orleans Bee which is one of the few known primary sources documenting the case." />
+</div>
+<div id="fRight">
+<img src="img/B19_F006_000009.jpg" alt="Second article from the 1829 New Orleans Bee which is one of the few known primary sources documenting the case." />
+</div>
+
+<hr />
+
+<h3 id="unconfirmed-cases-1">“Unconfirmed” cases</h3>
+
+<div id="fLeft">
+<ul>
+<li>Added over 6,000 records</li>
+	<ul>
+		<li>Real number will be smaller after disambiguation</li>
+	</ul>
+<li>15,254 to 21,325 known executions</li>
+<li>Documented and underdocumented</li>
+</ul>
+</div>
+<div id="fRight">
+	<img alt="Note of unconfirmed execution: &quot;Legal Execution for Witchcraft in 1793 sounds fishy...&quot;" src="img/B36_F004_000010.jpg" />
+</div>
+
+<hr />
+
+<h3 id="linked-data-problems">Linked Data Problems</h3>
+
+<ul>
+  <li>Hard to find vocabularies with sufficient precision</li>
+  <li>Create one?
+    <ul>
+      <li>Access to expertise, School of Criminal Justice, Advisory Board</li>
+    </ul>
+  </li>
+  <li>Issues with digital archival objects as well</li>
+  <li>Archives may have a fundamental mission conflict with linked data
+    <ul>
+      <li>Archival description manages objects with minimal metadata by relying on context</li>
+      <li>Archives don’t aim to create objective/authoritative data</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<!-- .slide: data-background="img/c4l-arclight1.png" -->
+<p class="altText">Screenshot of ArcLight, which is used with Hyrax and NCSU's Quicksearch to provide access.</p>
+
+<hr />
+
+<!-- .slide: data-background="img/c4l-arclight2.png" -->
+<p class="altText">Screenshot of ArcLight showing links to contextual archival description.</p>
+
+<hr />
+
+<!-- .slide: data-background="img/c4l-arclight3.png" -->
+<p class="altText">Screenshot of ArcLight highlighing links to contextual archival description.</p>
+
+<hr />
+
+<!-- .slide: data-background="img/arclight3.png" -->
+<p class="altText">Screenshot of JSON API provided by ArcLight.</p>
+
+<hr />
+
+<!-- .slide: data-background="img/c4l-hyrax1.png" -->
+<p class="altText">Screenshot of document in Hyrax with contextual links provided by ArcLight API.</p>
+
+<hr />
+
+<h3 id="providing-computational-access-to-records-of-american-capital-punishment-1">Providing Computational Access to Records of American Capital Punishment</h3>
+<p><br /></p>
+
+<h4><a href="https://archives.albany.edu">https://archives.albany.edu</a></h4>
+
+<h5 id="gregory-wiedeman-1">Gregory Wiedeman</h5>
+<h5 id="university-archivist-1">University Archivist</h5>
+<h5 id="university-at-albany-suny-1">University at Albany, SUNY</h5>
+<h5 id="-gregwiedeman-1"><img alt="Twitter logo" src="img-saa16/twitter.png" style="margin: -5px; background: none; border: none; box-shadow: none;" width="45px" /> @GregWiedeman</h5>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:gwiedeman@albany.edu">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/gregwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/gwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy; Gregory Wiedeman 2019
+        </p>
+        <p class="copyright text-muted">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+
+</body>
+
+</html>

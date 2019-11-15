@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Using XML Data with XQuery - Greg Wiedeman
+    
+  </title>
+
+  <meta name="description" content="XQuery Class Outline Introduction and goals of the class Show what XQuery is and what it does Get class to write a simple XQuery script Give class a starting...">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/presentations/xqueryClass.html">
+  <link rel="alternate" type="application/rss+xml" title="Greg Wiedeman" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Greg Wiedeman</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/writing">Writing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/presentations">presentations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/code">Code</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cv">CV</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Page Header -->
+
+<header class="masthead" style="background-image: url('/assets/images/2019-04-25_13-04-26-0.JPG')">
+  
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Using XML Data with XQuery</h1>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+      	<h2>2015 April 9   <i class="fa fa-cube" aria-hidden="true" style="margin: 0px 15px;"></i>  
+ 		   <i>IST 538 Fundamentals of XML</i></h2>
+
+       
+        
+
+       
+
+         <p><h3>Abstract</h3></p>
+         <p><i>Guest lesson I've given twice in Fall 2014 and Spring 2015 for a graduate XML class in the UAlbany Information Science program. Here I tried to get the class to understand how to make use of their XML data in mass, and how that can inform them how to better structure their data in the first place.</i></p>
+
+         
+
+          
+            <a href="/slides/xqueryClass.pdf""><button name="button" class="btn btn-danger btn-lg" onclick="/slides/xqueryClass.pdf">
+              <i class="far fa-file-pdf"></i>
+            PDF</button></a>
+          
+
+          <p>
+            <h2 id="xquery-class-outline">XQuery Class Outline</h2>
+
+<ul>
+  <li>Introduction and goals of the class
+    <ul>
+      <li>Show what XQuery is and what it does</li>
+      <li>Get class to write a simple XQuery script</li>
+      <li>Give class a starting point for later exploration</li>
+    </ul>
+  </li>
+  <li>What is XQuery? How is it used?
+    <ul>
+      <li>W3C standard</li>
+      <li>Designed for users without formal programming background</li>
+      <li>Designed to extract, transform, and manipulate XML data</li>
+      <li>mySQL for XML data</li>
+    </ul>
+  </li>
+  <li>Introduction to BaseX GUI
+    <ul>
+      <li>Example of a successful query  [use EADsummary.xq]</li>
+      <li>Example of a failed query and how to find errors</li>
+      <li>Saving and loading scripts and documents</li>
+    </ul>
+  </li>
+  <li>Structure of and XQuery script and basic rules
+    <ul>
+      <li>Prolog and Body</li>
+      <li>Odd punctuation</li>
+      <li>Variables</li>
+      <li>FLOWR expressions</li>
+      <li>Detail what FOR, etc. does</li>
+      <li>XPATH in XQuery, @attributes</li>
+      <li>Operators</li>
+      <li>IF expressions</li>
+      <li>Functions</li>
+      <li>Formatting results in XML/HTML</li>
+    </ul>
+  </li>
+  <li>Knowing your XML source
+    <ul>
+      <li>introduce league.xml</li>
+    </ul>
+  </li>
+  <li>Get class to write a basic XQuery script (class now follows along)
+    <ul>
+      <li>
+        <p>Simple For/Return:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   for $player in doc("national.xml")/LEAGUE/PLAYER
+   return $player
+</code></pre></div>        </div>
+      </li>
+      <li>$Variables</li>
+      <li>Editing and undo (CTRL+Z and CTRL+Y)</li>
+      <li>XPath use (/ and // and ../)</li>
+      <li>
+        <p>Declare variable in prolog:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   declare variable $xml := doc (‘national.xml');
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>Let</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   let $qualify := 500
+</code></pre></div>        </div>
+      </li>
+      <li>Order by
+        <ul>
+          <li>
+            <p>Return player names  in order of AB</p>
+
+            <p><code class="highlighter-rouge">
+    order by $player/AB descending
+   </code></p>
+          </li>
+          <li>
+            <p>difference between integers and strings</p>
+
+            <p><code class="highlighter-rouge">
+    order by $player/NAME
+   </code></p>
+          </li>
+          <li>Who has the highest AVG?</li>
+          <li>
+            <p>Which players led the league in SO?</p>
+
+            <p><code class="highlighter-rouge">
+    order by number($player/SO) descending
+   </code></p>
+          </li>
+        </ul>
+      </li>
+      <li>Where
+        <ul>
+          <li>Who has the highest AVG with over 500 AB?</li>
+          <li>
+            <p>Return players with over  500 AB</p>
+
+            <p><code class="highlighter-rouge">
+    where $player/AB &gt; 500
+    where $player/AB &gt;= $qualify
+   </code></p>
+          </li>
+          <li>use of operators</li>
+        </ul>
+      </li>
+      <li>Comments <code class="highlighter-rouge">(: comments :)</code>
+        <ul>
+          <li>Comment out qualifying for the batting title</li>
+        </ul>
+      </li>
+      <li>Functions
+        <ul>
+          <li>
+            <p>How many players play in the league?</p>
+
+            <p><code class="highlighter-rouge">
+    let $number := count($xml/LEAGUE/PLAYER)
+    return $number
+   </code></p>
+          </li>
+          <li>
+            <p>How many home runs were his last season?</p>
+
+            <p><code class="highlighter-rouge">
+    let $number := sum($xml/LEAGUE/PLAYER)
+    return $number
+   </code></p>
+          </li>
+        </ul>
+      </li>
+      <li>IF expression
+        <ul>
+          <li>
+            <p>Return the names of players who hit more than 25 home runs</p>
+
+            <p><code class="highlighter-rouge">
+    for $player in doc("national.xml")/LEAGUE/PLAYER
+    return
+        if ($player/HR &gt;= 25)
+        then $player/NAME
+        else ()
+   </code></p>
+          </li>
+        </ul>
+      </li>
+      <li>Formatting results in XML
+        <ul>
+          <li>Return a XML file of the batting title leaders with the batters name and average</li>
+          <li>
+            <p>Need a root node just like an XML file</p>
+
+            <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    for $player in doc("national.xml")/LEAGUE/PLAYER
+    let $qualify := 500
+    where $player/AB &gt; $qualify
+    order by number($player/AVG) descending
+    return
+       &lt;batter&gt;
+       &lt;name&gt;{$player/NAME}&lt;/name&gt;
+       &lt;average&gt;{$player/AVG}&lt;/average&gt;
+      &lt;/batter&gt;
+    ```
+
+* return only the data not nodes
+        
+</code></pre></div>            </div>
+            <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;name&gt;{data($player/NAME)}&lt;/name&gt;
+&lt;average&gt;{data($player/AVG)}&lt;/average&gt;
+```
+</code></pre></div>            </div>
+          </li>
+          <li>
+            <p>Return with one element per batter</p>
+
+            <p><code class="highlighter-rouge">
+    &lt;batter avg="{data($player/AVG)}"&gt;{data($player/NAME)}&lt;/batter&gt;
+    }&lt;/leaders&gt;
+   </code></p>
+          </li>
+        </ul>
+      </li>
+      <li>IF expression within FLOWR
+        <ul>
+          <li>
+            <p>Return a list of AVG leaders but disqualify players wh   * hit 25 or more HR</p>
+
+            <p>```
+    <leaders>{</leaders></p>
+
+            <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for $player in doc("national.xml")/LEAGUE/PLAYER
+let $qualify := 500
+where $player/AB &gt; $qualify
+order by number($player/AVG) descending
+return
+  if ($player/HR &gt;= 25)
+  then &lt;batter avg="DISQUALIFIED"&gt;{data($player/NAME)}&lt;/batter&gt;
+  else &lt;batter avg="{data($player/AVG)}"&gt;{data($player/NAME)}&lt;/batter&gt;
+
+}&lt;/leaders&gt;
+```
+</code></pre></div>            </div>
+          </li>
+          <li>
+            <p>Let’s not show the disqualified players at all ()</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>Return an HTML table of qualified leaders(AB&lt;500) that lists: NAME, AVG, HR, SO/BB, WAR sort by SO/BB</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   xquery version "3.0";
+   declare variable $xml := collection('baseball');
+
+   <span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>
+     <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"table.css"</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;/head&gt;</span>
+   <span class="nt">&lt;body&gt;</span> 
+   <span class="nt">&lt;table&gt;</span>
+   <span class="nt">&lt;tr&gt;</span>
+     <span class="nt">&lt;th&gt;</span>Name<span class="nt">&lt;/th&gt;</span>
+     <span class="nt">&lt;th&gt;</span>AVG<span class="nt">&lt;/th&gt;</span>
+     <span class="nt">&lt;th&gt;</span>HR<span class="nt">&lt;/th&gt;</span>
+     <span class="nt">&lt;th&gt;</span>K/BB<span class="nt">&lt;/th&gt;</span>
+     <span class="nt">&lt;th&gt;</span>WAR<span class="nt">&lt;/th&gt;</span>
+   <span class="nt">&lt;/tr&gt;</span>
+   {
+          
+   for $player in $xml/LEAGUE/PLAYER
+   let $qualify := 100
+   where $player/AB &gt; $qualify
+   let $k := $player/SO
+   let $walk := $player/BB
+   let $ktowalk := $walk div $k
+   order by $ktowalk descending
+   return
+     <span class="nt">&lt;tr&gt;</span>
+       <span class="nt">&lt;td&gt;</span>{data($player/NAME)}<span class="nt">&lt;/td&gt;</span>
+       <span class="nt">&lt;td&gt;</span>{data($player/AVG)}<span class="nt">&lt;/td&gt;</span>
+       <span class="nt">&lt;td&gt;</span>{data($player/HR)}<span class="nt">&lt;/td&gt;</span>
+       <span class="nt">&lt;td&gt;</span>{data($ktowalk)}<span class="nt">&lt;/td&gt;</span>
+       <span class="nt">&lt;td&gt;</span>{data($player/WAR)}<span class="nt">&lt;/td&gt;</span>
+     <span class="nt">&lt;/tr&gt;</span>
+
+   }<span class="nt">&lt;/table&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+   <span class="nt">&lt;/html&gt;</span>
+</code></pre></div>        </div>
+
+        <ul>
+          <li>reduce the K/BB ratio   to two decimal places</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>What XQuery can teach you about XML
+    <ul>
+      <li>XML is very flexible</li>
+      <li>Hard to predict how data will be used until you use it</li>
+      <li>Breaks document-centric thinking</li>
+      <li>Query and manipulate not reformat</li>
+      <li>Further separate data storage and display</li>
+    </ul>
+  </li>
+  <li>In-Class exercises:
+    <ul>
+      <li>Hardest: use the EAD files in the EAD folder to make a HTML table of collections, listing collection level information: title, unitdate, extent, and author</li>
+      <li>Medium: From the baseball collection, return a HTML table listing player name, team, hits, RBIs, and WAR, sorted by hits</li>
+      <li>Easier: from the baseball collection, return a basic XML file that lists the name, team, and RBIs of each player that had over 90 RBIs</li>
+    </ul>
+  </li>
+</ul>
+
+          </p>
+
+       
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:gwiedeman@albany.edu">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/gregwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/gwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy; Gregory Wiedeman 2019
+        </p>
+        <p class="copyright text-muted">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+
+</body>
+
+</html>

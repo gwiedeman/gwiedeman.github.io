@@ -13,7 +13,7 @@ background: '/assets/images/2019-04-21 08-47-35-0.JPG'
     <dt class="col-sm-3"></dt>
   	{% else %}
     	{% assign ider = year %}
-      <dt class="col-sm-3"><h3>{{ ider }}</h3></dt>
+      <dt class="col-sm-3"><a id="{{ ider }}"><h3>{{ ider }}</h3></a></dt>
     {% endif %}
      <dd class="col-sm-9">
       <h3><a href="{{ talk.url }}">{{ talk.title }}</a></h3>
@@ -22,7 +22,13 @@ background: '/assets/images/2019-04-21 08-47-35-0.JPG'
         <i class="fa fa-cube" aria-hidden="true" style="margin: 0px 15px;"></i>  
         <i>{{ talk.event }}</i>
       </h5>
-      <p>{{ talk.content | markdownify }}</p>
+      <p>
+        {% if talk.abstract %}
+          {{ talk.abstract | strip_html | truncatewords: 35 }}
+        {% else %}
+          {{ talk.content | strip_html | truncatewords: 35 }}
+        {% endif %}
+      </p>
     </dd>
   {% endfor %}
 </dl>

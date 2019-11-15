@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Describing Web Archives with the Partner Data API - Greg Wiedeman
+    
+  </title>
+
+  <meta name="description" content="I&#39;m an archivist who works to make information more accessible.">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/md/ait2018.html">
+  <link rel="alternate" type="application/rss+xml" title="Greg Wiedeman" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Greg Wiedeman</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/writing">Writing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/presentations">presentations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/code">Code</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cv">CV</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <style>
+#fLeft {float: left; max-width: 50%;}
+#fRight {float: right; max-width: 50%;}
+#smallLink {font-size: 18px;}
+.whitebg {background-color: #fff; margin-top: 30% !important; padding: 15px !important; border-radius: 15px;}
+</style>
+
+<h3 id="describing-web-archives-with-the-partner-data-api">Describing Web Archives with the Partner Data API</h3>
+<p><br /></p>
+<h5 id="gregory-wiedeman">Gregory Wiedeman</h5>
+<h5 id="university-archivist">University Archivist</h5>
+<h5 id="university-at-albany-suny">University at Albany, SUNY</h5>
+<h5 id="-gregwiedeman"><img src="img-saa16/twitter.png" style="margin: -5px; background: none; border: none; box-shadow: none;" width="45px" /> @GregWiedeman</h5>
+
+<hr />
+
+<h3 id="web-archiving-at-ualbany">Web Archiving at UAlbany</h3>
+
+<ul>
+  <li>Document permanent university records online</li>
+  <li>Continue outside collecting in native format</li>
+  <li>1 University Archives line (me)
+    <ul>
+      <li>typically a part-time grad student</li>
+    </ul>
+  </li>
+  <li>We have stuff to do
+    <ul>
+      <li>~18,000 student, 1,200 staff university</li>
+      <li>Public records collecting program</li>
+      <li>~250 collections, ~1/3 folder-level description</li>
+      <li>Oh yeah, and web archives <!-- .element: class="fragment" data-fragment-index="1" --></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="web-archives-are-archives">Web Archives are Archives</h3>
+
+<ul>
+  <li>Tremendous volume of interlinked information</li>
+  <li>Context of creation and use is important</li>
+</ul>
+
+<hr />
+
+<h3 id="we-do-not-describe-web-archives-as-archives">We do not describe web archives as archives</h3>
+
+<ul>
+  <li>Archive-It discovery is a format-based silo</li>
+  <li>Dublin Core/Catalog-like description is inefficent and duplicative</li>
+  <li>Even detailed and laborious description only documents a small portion</li>
+  <li>Privileges description of content rather than context</li>
+</ul>
+
+<hr />
+
+<h3 id="if-i-had-to-enter-detailed-metadata-for-each-archive-it-collection-or-each-seed">If I had to enter detailed metadata for each Archive-It collection (or each seed!),</h3>
+
+<h3 id="i-would-collect-less-">I would collect less. <!-- .element: class="fragment" data-fragment-index="1" --></h3>
+
+<hr />
+
+<h3 id="describing-web-archives-with-dacs">Describing Web Archives with DACS</h3>
+
+<ul>
+  <li>Use context to efficiently manage records at scale</li>
+  <li>“Power of Provenance”
+    <ul>
+      <li>Discovery by context of creation/use, rather than format silos</li>
+    </ul>
+  </li>
+  <li>Aggregate descripion
+    <ul>
+      <li>Minimum  level of description</li>
+      <li>User-driven enhancement of existing discription</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="dacs-statement-of-principles">DACS Statement of Principles</h3>
+
+<p><a href="https://github.com/saa-ts-dacs/dacs">https://github.com/saa-ts-dacs/dacs</a></p>
+
+<blockquote>
+  <p>“3. Because archival description privileges intellectual content in context, descriptive rules apply equally to all records, regardless of format or carrier type.”</p>
+</blockquote>
+
+<hr />
+
+<h3 id="dacs-statement-of-principles-1">DACS Statement of Principles</h3>
+
+<p><a href="https://github.com/saa-ts-dacs/dacs">https://github.com/saa-ts-dacs/dacs</a></p>
+
+<blockquote>
+  <p>“4a. Records must be described in aggregate and may be described in parts.”</p>
+</blockquote>
+
+<hr />
+
+<h3 id="dacs-statement-of-principles-2">DACS Statement of Principles</h3>
+
+<p><a href="https://github.com/saa-ts-dacs/dacs">https://github.com/saa-ts-dacs/dacs</a></p>
+
+<blockquote>
+  <p>“10. Archivists must have a user-driven reason to enhance existing archival description.”</p>
+</blockquote>
+
+<hr />
+
+<!-- .slide: data-background="img/webArchContext.png" -->
+
+<hr />
+
+<h3 id="i-tried-this-its-difficult">I tried this, it’s difficult</h3>
+
+<p><img src="img-saa16/ASpace-dfd.png" /></p>
+
+<hr />
+
+<h2 id="now-we-have-the-tools">Now We Have the Tools</h2>
+
+<ul>
+  <li>ArchivesSpace
+    <ul>
+      <li>Interoperable storage for archival descripion</li>
+      <li>API and <a href="https://github.com/archivesspace-labs/ArchivesSnake">ArchivesSnake</a></li>
+    </ul>
+  </li>
+  <li>CDX
+    <ul>
+      <li>All the content description is here</li>
+    </ul>
+  </li>
+  <li>Partner Data API
+    <ul>
+      <li>All the technical context is here</li>
+      <li>DC descriptive metadata</li>
+    </ul>
+  </li>
+  <li>Content Storage
+    <ul>
+      <li>Interoperable storage for technical metadata</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="archivesspace">ArchivesSpace</h2>
+
+<ul>
+  <li>Interoperable storage for archival descripion</li>
+  <li>API and <a href="https://github.com/archivesspace-labs/ArchivesSnake">ArchivesSnake</a></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from asnake.aspace import ASpace
+
+AS = ASpace()
+repo = AS.repositories(2)
+
+collection = repo.resources(253)
+for child in collection.tree.children:
+    if child.level == "Web Archives":
+        series = child.record
+        newArchivalObject = AS.archival_object.new()
+        # add description here
+        
+        newArchivalObject.parent = series
+        newArchivalObject.resource = collection
+        newArchivalObject.post()
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="archive-it-cdx">Archive-It CDX</h2>
+
+<ul>
+  <li><a href="https://support.archive-it.org/hc/en-us/articles/115001790023-Access-Archive-It-s-Wayback-index-with-the-CDX-C-API">List of captures by URL and collection number</a></li>
+  <li>crawl ID after July 2015</li>
+  <li><a id="smallLink" href="http://wayback.archive-it.org/3308/timemap/cdx?url=https://www.albany.edu/president/about-the-president.php">http://wayback.archive-it.org/3308/timemap/cdx?url=https://www.albany.edu/president/about-the-president.php</a></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>edu,albany)/president/about-the-president.php 20171218033537 http://www.albany.edu/president/about-the-president.php text/html 200 VQR3D3JAD6BIB36O4ELJH7L6U2IESQOT - - 6977 871017071 ARCHIVEIT-3308-MONTHLY-JOB512297-20171217200124134-00000.warc.gz
+edu,albany)/president/about-the-president.php 20180117191831 https://www.albany.edu/president/about-the-president.php text/html 200 7BXF5EVUN52ZYR7THHFXKQXF7I3LBHNC - - 7157 309246547 ARCHIVEIT-3308-MONTHLY-JOB541502-20180117165511664-00000.warc.gz
+edu,albany)/president/about-the-president.php 20180217194454 https://www.albany.edu/president/about-the-president.php text/html 200 XD6ET6ZBLTNN6OLSCVSMIXU44TWN5W4M - - 8019 411195409 ARCHIVEIT-3308-MONTHLY-JOB550452-20180217165509323-00000.warc.gz
+edu,albany)/president/about-the-president.php 20180317200843 https://www.albany.edu/president/about-the-president.php text/html 200 KY54GB6LH24DRIZGBIO4R3VXXA2UHTN3 - - 8074 392459899 ARCHIVEIT-3308-MONTHLY-JOB557606-20180317165527317-00000.warc.gz
+edu,albany)/president/about-the-president.php 20180417185510 https://www.albany.edu/president/about-the-president.php text/html 200 O6SIJTKE2X565QJ5ZEWPZYSK3H53HZDH - - 8085 227334518 ARCHIVEIT-3308-MONTHLY-JOB566289-20180417155443995-00000.warc.gz
+edu,albany)/president/about-the-president.php 20180517190232 https://www.albany.edu/president/about-the-president.php warc/revisit - O6SIJTKE2X565QJ5ZEWPZYSK3H53HZDH - - 648 223149579 ARCHIVEIT-3308-MONTHLY-JOB576427-20180517155506038-00000.warc.gz
+edu,albany)/president/about-the-president.php 20180617184722 https://www.albany.edu/president/about-the-president.php text/html 200 F2CRCBL5TZRROHBN5GCF7IESJR44ABIQ - - 8081 59342345 ARCHIVEIT-3308-MONTHLY-JOB599287-20180617155438242-00000.warc.gz
+edu,albany)/president/about-the-president.php 20180717204617 https://www.albany.edu/president/about-the-president.php text/html 200 W6VTFG3HQYDTRLUEGMVA2M5BU75QT47N - - 7968 130376348 ARCHIVEIT-3308-MONTHLY-JOB647847-20180717155427452-00000.warc.gz
+
+
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="partner-data-api">Partner Data API</h2>
+
+<ul>
+  <li>Its the stuff in the Archive-It web app
+    <ul>
+      <li><a href="https://partner.archive-it.org/api/collection?id=7082">Collections</a></li>
+      <li><a href="https://partner.archive-it.org/api/seed/1020827">Seeds!</a></li>
+      <li><a href="https://partner.archive-it.org/api/seed?collection=6372">Seeds in a collection!</a></li>
+      <li><a href="https://partner.archive-it.org/api/crawl_job/303101">Crawls!</a></li>
+      <li><a href="https://partner.archive-it.org/api/scope_rule?collection=6372">Rules!</a></li>
+      <li><a href="https://partner.archive-it.org/api/seed?collection=3721">Metadata!</a></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="content-storage">Content Storage</h2>
+
+<div id="fLeft">
+<img src="img/webArchivesAspace.png" />
+</div>
+<div id="fRight">
+<ul>
+<li>Need a place to put stuff</li>
+<li>Hyrax Repository with Web Archives Model</li>
+<li>API ingest</li>
+<li>[PCDM Web Archives Working Group](https://github.com/pcdm/webarchiving_wg/wiki/February-20,-2018)</li>
+<li>[A Model!](https://docs.google.com/drawings/d/1YiY-tQ4HnNVf-fU-cX50OdWX1xwdImji4Cl63LBS9gM/edit)</li>
+</ul>
+</div>
+
+<hr />
+
+<!-- .slide: data-background="img/dwa1.png" -->
+<h3 class="whitebg">Scope and schedule crawls in Archive-It</h3>
+
+<hr />
+
+<!-- .slide: data-background="img/dwa2.png" -->
+<h3 class="whitebg">Describe in ASpace with other records</h3>
+
+<hr />
+
+<!-- .slide: data-background="img/dwa3.png" -->
+<h3 class="whitebg">Use CDX to post new description to ASpace when page is updated</h3>
+
+<hr />
+
+<!-- .slide: data-background="img/dwa4.png" -->
+<h3 class="whitebg">Download WARCS with WASAPI?</h3>
+
+<hr />
+
+<!-- .slide: data-background="img/dwa5.png" -->
+<h3 class="whitebg">Get crawl and scoping rules</h3>
+
+<hr />
+
+<!-- .slide: data-background="img/dwa6.png" -->
+<h3 class="whitebg">Make all this discoverable</h3>
+
+<hr />
+
+<h2 id="two-processes">Two Processes</h2>
+
+<ol>
+  <li>Create ArchivesSpace records from CDX
+    <ul>
+      <li>Standard method of defining Web Archives actionably in ASpace</li>
+      <li>ASpace Plugin or exterior API process</li>
+    </ul>
+  </li>
+  <li>Create content records for each capture from Partner Data API
+    <ul>
+      <li>Need a standard data model</li>
+      <li>Need a system agnostic process</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="i-need-help">I need help!</h3>
+
+<ul>
+  <li>More use cases!</li>
+  <li>Need to define basic standard practices</li>
+  <li>Describing Web Archives Interest Group?
+    <ul>
+      <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdfx4qtXYrizbSwR1Uk8OxJS7p9JrRy3JOEAA4ooAOkHnKbrg/viewform?usp=sf_link">https://bit.ly/ELsNXC</a></li>
+    </ul>
+  </li>
+  <li>Slides: <a href="http://www.gregwiedeman.com/ait2018.html">http://www.gregwiedeman.com/ait2018.html</a></li>
+  <li>Code: <a href="https://github.com/UAlbanyArchives/describingWebArchives">https://github.com/UAlbanyArchives/describingWebArchives</a></li>
+  <li>DACS Principles: <a href="https://github.com/saa-ts-dacs/dacs">https://github.com/saa-ts-dacs/dacs</a></li>
+</ul>
+
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:gwiedeman@albany.edu">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/gregwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/gwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy; Gregory Wiedeman 2019
+        </p>
+        <p class="copyright text-muted">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+
+</body>
+
+</html>

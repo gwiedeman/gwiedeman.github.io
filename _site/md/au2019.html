@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Greg Wiedeman
+  </title>
+
+  <meta name="description" content="I&#39;m an archivist who works to make information more accessible.">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/md/au2019.html">
+  <link rel="alternate" type="application/rss+xml" title="Greg Wiedeman" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Greg Wiedeman</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/writing">Writing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/presentations">presentations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/code">Code</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cv">CV</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <style>
+#fLeft {float: left; max-width: 60%; text-align: left;}
+#fRight {float: right; max-width: 40%; text-align: left;}
+#fRight img {margin: 20px;}
+#smallLink {font-size: 18px;}
+.whitebg {background-color: #fff; margin-top: 30% !important; padding: 15px !important; border-radius: 15px;}
+.altText {background-color: #fff; bottom: 30px; position: fixed; padding: 15px !important; border-radius: 5px;}
+section {height:100%;}
+.pullDown {height:auto;}
+.reveal h1, h2, h3, h4, h5 {text-transform: none !important;}
+</style>
+
+<h2 id="when-web-crawling-backfires">When Web Crawling Backfires?</h2>
+<p><br /></p>
+<h5 id="gregory-wiedeman">Gregory Wiedeman</h5>
+<h5 id="university-archivist">University Archivist</h5>
+<h5 id="university-at-albany-suny">University at Albany, SUNY</h5>
+<h5 id="-gregwiedeman"><img alt="Twitter logo" src="img-saa16/twitter.png" style="margin: -5px; background: none; border: none; box-shadow: none;" width="45px" /> @GregWiedeman</h5>
+
+<hr />
+
+<h3 id="web-archives-at-ualbany">Web Archives at UAlbany</h3>
+
+<ul>
+  <li>Archive-It partner</li>
+  <li>Crawling albany.edu since 2013</li>
+  <li>NY State Politics since 2016
+    <ul>
+      <li>Extension of physical collecting</li>
+    </ul>
+  </li>
+  <li>Some Experimenting</li>
+  <li>No known active use<!-- .element: class="fragment" data-fragment-index="1" --></li>
+</ul>
+
+<hr />
+
+<h3 id="web-archives-at-ualbany-1">Web Archives at UAlbany</h3>
+
+<ul>
+  <li>We have and want to build collections on NY State politics and public policy</li>
+  <li>Rockefeller College of Public Affairs &amp; Policy</li>
+  <li>No real existing relationship</li>
+  <li>Faculty member who researches right-wing extremist networks on the web
+    <ul>
+      <li>wget –recursive and TBs of raw html</li>
+      <li>Trouble with some sites</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="appraising-a-racist-website">Appraising a Racist Website</h3>
+
+<ul>
+  <li>Purposely document conflicting views
+    <ul>
+      <li>Conservative Party of NYS</li>
+      <li>Ernest Van Den Haag</li>
+    </ul>
+  </li>
+  <li>Listening to at-risk groups</li>
+  <li>Is conservatism underdocumented?
+    <ul>
+      <li>Maybe in quantity, but not in research value</li>
+      <li>Content-wise this is garbage</li>
+      <li>Underdocumented records are not on the web</li>
+    </ul>
+  </li>
+  <li>SPLC already adding to Wayback</li>
+  <li>Can directly aid research</li>
+</ul>
+
+<hr />
+
+<h3 id="crawling-a-racist-website">Crawling a Racist Website</h3>
+
+<ul>
+  <li>Recursively appending garbage to URLs?</li>
+  <li>Millions of docs</li>
+  <li>Bad wordpress plugins?</li>
+  <li>obfuscation or incompetence?</li>
+</ul>
+
+<p><img alt="Crawl hosts report with 1,849,670 out of scope documents." src="img/scopingHosts.png" /></p>
+
+<hr />
+
+<pre><code>
+"/mejs." 
+"/ADSENSE/" 
+"/groups/" 
+"/friends/" 
+"/favorites/" 
+"/mentions/" 
+"/notifications/" 
+"/messages/" 
+"/settings/" 
+"/Captions/" 
+"/js/index.php" 
+"/audio/" 
+"/video/" 
+"/profile/" 
+"/eventEmitter/" 
+"/get-style-property/" 
+"/doc-ready/" 
+"/matches-selector/" 
+"/fizzy-ui-utils/" 
+"/outlayer/" 
+"/isotope/" 
+"/masonry/" 
+"/layout-modes/" 
+"?mode=list" 
+"?mode=grid" 
+"/wp/v2/" 
+"/circle.background"
+</code></pre>
+
+<hr />
+
+<h3 id="things-to-think-about">Things to think about</h3>
+
+<ul>
+  <li>Do they sell ads? Am I funding them?
+    <ul>
+      <li>Turn off add blocker</li>
+      <li>Is scopeing them effective?</li>
+    </ul>
+  </li>
+  <li>Why is it appending numbers as params?
+<br />
+link/to/image.jpg?pas=20312538471902072133</li>
+</ul>
+
+<hr />
+
+<h3 id="breaking-things">Breaking things</h3>
+
+<ul>
+  <li>Crawls didn’t get user activity pages</li>
+  <li>Tried to crawl just that section</li>
+  <li>Suddenly required login for major parts of site<!-- .element: class="fragment" data-fragment-index="1" -->
+    <ul>
+      <li>is that good?<!-- .element: class="fragment" data-fragment-index="2" -->
+  &lt;/br&gt;</li>
+    </ul>
+  </li>
+  <li>“I might have made your research data impossible to get, but here’s a WARC you don’t know how to use.”<!-- .element: class="fragment" data-fragment-index="3" --></li>
+</ul>
+
+<hr />
+
+<h3 id="web-archives-and-oppositional-collecting">Web Archives and Oppositional Collecting</h3>
+
+<ul>
+  <li>I think there are underdocumented things
+    <ul>
+      <li>How racist or other ideas affect political power?</li>
+      <li>Are these records on the public web?</li>
+    </ul>
+  </li>
+  <li>Web Archives are extremely limited for this type of collecting</li>
+  <li>Broader questions about collecting and power</li>
+</ul>
+
+<hr />
+
+<h3 id="when-web-crawling-backfires-1">When Web Crawling Backfires?</h3>
+<p><br /></p>
+
+<h5 id="gregory-wiedeman-1">Gregory Wiedeman</h5>
+<h5 id="university-archivist-1">University Archivist</h5>
+<h5 id="university-at-albany-suny-1">University at Albany, SUNY</h5>
+<h5 id="-gregwiedeman-1"><img alt="Twitter logo" src="img-saa16/twitter.png" style="margin: -5px; background: none; border: none; box-shadow: none;" width="45px" /> @GregWiedeman</h5>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:gwiedeman@albany.edu">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/gregwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/gwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy; Gregory Wiedeman 2019
+        </p>
+        <p class="copyright text-muted">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+
+</body>
+
+</html>
