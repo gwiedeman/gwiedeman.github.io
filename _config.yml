@@ -88,6 +88,10 @@ defaults:
     values:
       background: '/assets/images/2019-04-25_13-04-26-0.JPG'
   - scope:
+      path: "presentations"
+    values:
+      background: '/assets/images/2019-04-26 09-42-43-0.JPG'
+  - scope:
       path: "/code"
     values:
       background: '/assets/images/2019-04-25 12-50-04-0.JPG'

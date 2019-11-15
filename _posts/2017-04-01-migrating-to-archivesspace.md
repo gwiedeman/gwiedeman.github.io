@@ -178,11 +178,11 @@ There are some caveats here. There are a bunch of decisions you make while writi
 
 * Finally, the single search bar on a white background was really boring, so I wrote a quick script that updates the background to [Bing's image of the day](http://www.bing.com/gallery/) [API](http://stackoverflow.com/questions/10639914/is-there-a-way-to-get-bings-photo-of-the-day).
 
-![](findit.png)
+![](/slides/img/findit.png)
 
 * Another workflow issue we found was how tedious it could be to enter in individual containers for large accessions. Say we got a new collection of 50 boxes. ASpace makes you create each of these boxes, which is good, but very tedious. So I basically used the same framework as Find-it, figure our how to get ASpace to [accept Cross-Origin post requests](https://github.com/UAlbanyArchives/as-cors), and made a single-page box uploader. Now we can just list new boxes in these fields with our old-style shelf coordinates, and a bunch of JavaScript will create and assign all these new top containers to a resource.
 
-![](boxes.png)
+![](/slides/img/boxes.png)
 
 * The last request I got from out staff was for creating container list inventories. We use undergraduate student assistants to do most of this data entry work, and we found that ASpace rapid data entry would require a good amount of training for our students who work few hours with a really high turnover rate.
 
