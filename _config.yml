@@ -23,7 +23,7 @@ author: Gregory Wiedeman
 email: gwiedeman@albany.edu
 description: >- # this means to ignore newlines until "baseurl:"
   I'm an archivist who works to make information more accessible.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "gwiedeman.github.io" # the subpath of your site, e.g. /blog
 #url: "http://gregwiedeman.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: gregwiedeman
 github_username:  gwiedeman
