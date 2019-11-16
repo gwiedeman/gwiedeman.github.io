@@ -150,7 +150,7 @@
       <li>
         <p>Simple For/Return:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   for $player in doc("national.xml")/LEAGUE/PLAYER
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   for $player in doc("national.xml")/LEAGUE/PLAYER
    return $player
 </code></pre></div>        </div>
       </li>
@@ -160,13 +160,13 @@
       <li>
         <p>Declare variable in prolog:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   declare variable $xml := doc (‘national.xml');
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   declare variable $xml := doc (‘national.xml');
 </code></pre></div>        </div>
       </li>
       <li>
         <p>Let</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   let $qualify := 500
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   let $qualify := 500
 </code></pre></div>        </div>
       </li>
       <li>Order by
@@ -174,14 +174,14 @@
           <li>
             <p>Return player names  in order of AB</p>
 
-            <p><code class="highlighter-rouge">
+            <p><code class="language-plaintext highlighter-rouge">
     order by $player/AB descending
    </code></p>
           </li>
           <li>
             <p>difference between integers and strings</p>
 
-            <p><code class="highlighter-rouge">
+            <p><code class="language-plaintext highlighter-rouge">
     order by $player/NAME
    </code></p>
           </li>
@@ -189,7 +189,7 @@
           <li>
             <p>Which players led the league in SO?</p>
 
-            <p><code class="highlighter-rouge">
+            <p><code class="language-plaintext highlighter-rouge">
     order by number($player/SO) descending
    </code></p>
           </li>
@@ -201,7 +201,7 @@
           <li>
             <p>Return players with over  500 AB</p>
 
-            <p><code class="highlighter-rouge">
+            <p><code class="language-plaintext highlighter-rouge">
     where $player/AB &gt; 500
     where $player/AB &gt;= $qualify
    </code></p>
@@ -209,7 +209,7 @@
           <li>use of operators</li>
         </ul>
       </li>
-      <li>Comments <code class="highlighter-rouge">(: comments :)</code>
+      <li>Comments <code class="language-plaintext highlighter-rouge">(: comments :)</code>
         <ul>
           <li>Comment out qualifying for the batting title</li>
         </ul>
@@ -219,7 +219,7 @@
           <li>
             <p>How many players play in the league?</p>
 
-            <p><code class="highlighter-rouge">
+            <p><code class="language-plaintext highlighter-rouge">
     let $number := count($xml/LEAGUE/PLAYER)
     return $number
    </code></p>
@@ -227,7 +227,7 @@
           <li>
             <p>How many home runs were his last season?</p>
 
-            <p><code class="highlighter-rouge">
+            <p><code class="language-plaintext highlighter-rouge">
     let $number := sum($xml/LEAGUE/PLAYER)
     return $number
    </code></p>
@@ -239,7 +239,7 @@
           <li>
             <p>Return the names of players who hit more than 25 home runs</p>
 
-            <p><code class="highlighter-rouge">
+            <p><code class="language-plaintext highlighter-rouge">
     for $player in doc("national.xml")/LEAGUE/PLAYER
     return
         if ($player/HR &gt;= 25)
@@ -255,7 +255,7 @@
           <li>
             <p>Need a root node just like an XML file</p>
 
-            <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    for $player in doc("national.xml")/LEAGUE/PLAYER
+            <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    for $player in doc("national.xml")/LEAGUE/PLAYER
     let $qualify := 500
     where $player/AB &gt; $qualify
     order by number($player/AVG) descending
@@ -269,7 +269,7 @@
 * return only the data not nodes
         
 </code></pre></div>            </div>
-            <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;name&gt;{data($player/NAME)}&lt;/name&gt;
+            <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;name&gt;{data($player/NAME)}&lt;/name&gt;
 &lt;average&gt;{data($player/AVG)}&lt;/average&gt;
 ```
 </code></pre></div>            </div>
@@ -277,7 +277,7 @@
           <li>
             <p>Return with one element per batter</p>
 
-            <p><code class="highlighter-rouge">
+            <p><code class="language-plaintext highlighter-rouge">
     &lt;batter avg="{data($player/AVG)}"&gt;{data($player/NAME)}&lt;/batter&gt;
     }&lt;/leaders&gt;
    </code></p>
@@ -292,7 +292,7 @@
             <p>```
     <leaders>{</leaders></p>
 
-            <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for $player in doc("national.xml")/LEAGUE/PLAYER
+            <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for $player in doc("national.xml")/LEAGUE/PLAYER
 let $qualify := 500
 where $player/AB &gt; $qualify
 order by number($player/AVG) descending
@@ -313,22 +313,22 @@ return
       <li>
         <p>Return an HTML table of qualified leaders(AB&lt;500) that lists: NAME, AVG, HR, SO/BB, WAR sort by SO/BB</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   xquery version "3.0";
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   xquery version "3.0";
    declare variable $xml := collection('baseball');
 
-   <span class="nt">&lt;html&gt;</span>
-   <span class="nt">&lt;head&gt;</span>
-     <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"table.css"</span><span class="nt">/&gt;</span>
-   <span class="nt">&lt;/head&gt;</span>
-   <span class="nt">&lt;body&gt;</span> 
-   <span class="nt">&lt;table&gt;</span>
-   <span class="nt">&lt;tr&gt;</span>
-     <span class="nt">&lt;th&gt;</span>Name<span class="nt">&lt;/th&gt;</span>
-     <span class="nt">&lt;th&gt;</span>AVG<span class="nt">&lt;/th&gt;</span>
-     <span class="nt">&lt;th&gt;</span>HR<span class="nt">&lt;/th&gt;</span>
-     <span class="nt">&lt;th&gt;</span>K/BB<span class="nt">&lt;/th&gt;</span>
-     <span class="nt">&lt;th&gt;</span>WAR<span class="nt">&lt;/th&gt;</span>
-   <span class="nt">&lt;/tr&gt;</span>
+   &lt;html&gt;
+   &lt;head&gt;
+     &lt;link rel="stylesheet" type="text/css" href="table.css"/&gt;
+   &lt;/head&gt;
+   &lt;body&gt; 
+   &lt;table&gt;
+   &lt;tr&gt;
+     &lt;th&gt;Name&lt;/th&gt;
+     &lt;th&gt;AVG&lt;/th&gt;
+     &lt;th&gt;HR&lt;/th&gt;
+     &lt;th&gt;K/BB&lt;/th&gt;
+     &lt;th&gt;WAR&lt;/th&gt;
+   &lt;/tr&gt;
    {
           
    for $player in $xml/LEAGUE/PLAYER
@@ -339,17 +339,17 @@ return
    let $ktowalk := $walk div $k
    order by $ktowalk descending
    return
-     <span class="nt">&lt;tr&gt;</span>
-       <span class="nt">&lt;td&gt;</span>{data($player/NAME)}<span class="nt">&lt;/td&gt;</span>
-       <span class="nt">&lt;td&gt;</span>{data($player/AVG)}<span class="nt">&lt;/td&gt;</span>
-       <span class="nt">&lt;td&gt;</span>{data($player/HR)}<span class="nt">&lt;/td&gt;</span>
-       <span class="nt">&lt;td&gt;</span>{data($ktowalk)}<span class="nt">&lt;/td&gt;</span>
-       <span class="nt">&lt;td&gt;</span>{data($player/WAR)}<span class="nt">&lt;/td&gt;</span>
-     <span class="nt">&lt;/tr&gt;</span>
+     &lt;tr&gt;
+       &lt;td&gt;{data($player/NAME)}&lt;/td&gt;
+       &lt;td&gt;{data($player/AVG)}&lt;/td&gt;
+       &lt;td&gt;{data($player/HR)}&lt;/td&gt;
+       &lt;td&gt;{data($ktowalk)}&lt;/td&gt;
+       &lt;td&gt;{data($player/WAR)}&lt;/td&gt;
+     &lt;/tr&gt;
 
-   }<span class="nt">&lt;/table&gt;</span>
-   <span class="nt">&lt;/body&gt;</span>
-   <span class="nt">&lt;/html&gt;</span>
+   }&lt;/table&gt;
+   &lt;/body&gt;
+   &lt;/html&gt;
 </code></pre></div>        </div>
 
         <ul>

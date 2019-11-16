@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-11-15T18:54:39-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Greg Wiedeman</title><subtitle>I'm an archivist who works to make information more accessible.</subtitle><author><name>Gregory Wiedeman</name></author><entry><title type="html">UAlbany Arclight Update and Outlook</title><link href="http://localhost:4000/2018/11/19/arclight-update.html" rel="alternate" type="text/html" title="UAlbany Arclight Update and Outlook" /><published>2018-11-19T00:00:00-05:00</published><updated>2018-11-19T00:00:00-05:00</updated><id>http://localhost:4000/2018/11/19/arclight-update</id><content type="html" xml:base="http://localhost:4000/2018/11/19/arclight-update.html"></content><author><name>Gregory Wiedeman</name></author><summary type="html"></summary></entry><entry><title type="html">Migrating to ArchivesSpace at UAlbany</title><link href="http://localhost:4000/2017/04/01/migrating-to-archivesspace.html" rel="alternate" type="text/html" title="Migrating to ArchivesSpace at UAlbany" /><published>2017-04-01T00:00:00-04:00</published><updated>2017-04-01T00:00:00-04:00</updated><id>http://localhost:4000/2017/04/01/migrating-to-archivesspace</id><content type="html" xml:base="http://localhost:4000/2017/04/01/migrating-to-archivesspace.html">&lt;p&gt;This is an overview our ArchivesSpace migration process and descriptions of the code used. Hopefully this rather long-winded description helps document our processes and thinking.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-11-15T19:13:49-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Greg Wiedeman</title><subtitle>I'm an archivist who works to make information more accessible.</subtitle><author><name>Gregory Wiedeman</name></author><entry><title type="html">UAlbany Arclight Update and Outlook</title><link href="http://localhost:4000/2018/11/19/arclight-update.html" rel="alternate" type="text/html" title="UAlbany Arclight Update and Outlook" /><published>2018-11-19T00:00:00-05:00</published><updated>2018-11-19T00:00:00-05:00</updated><id>http://localhost:4000/2018/11/19/arclight-update</id><content type="html" xml:base="http://localhost:4000/2018/11/19/arclight-update.html"></content><author><name>Gregory Wiedeman</name></author><summary type="html"></summary></entry><entry><title type="html">Migrating to ArchivesSpace at UAlbany</title><link href="http://localhost:4000/2017/04/01/migrating-to-archivesspace.html" rel="alternate" type="text/html" title="Migrating to ArchivesSpace at UAlbany" /><published>2017-04-01T00:00:00-04:00</published><updated>2017-04-01T00:00:00-04:00</updated><id>http://localhost:4000/2017/04/01/migrating-to-archivesspace</id><content type="html" xml:base="http://localhost:4000/2017/04/01/migrating-to-archivesspace.html">&lt;p&gt;This is an overview our ArchivesSpace migration process and descriptions of the code used. Hopefully this rather long-winded description helps document our processes and thinking.&lt;/p&gt;
 
 &lt;p&gt;Overall, my strategy was to import everything twice. Once we got most of our data into ASpace, I let our staff have a free run of the data to get comfortable with the application. We maintained our previous data stores as masters, and staff could create, edit, and delete ASpace data as much as they wanted. When we were done testing and I was comfortable with all the migration scripts, we cleared out all the data and made a clean import.&lt;/p&gt;
 
 &lt;h2 id=&quot;clean-up-ead-files-for-the-archivesspace-importer&quot;&gt;Clean-up EAD files for the ArchivesSpace importer&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;importFix.py
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;importFix.py
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;Step one was getting all of our EAD data reformatted so they would all easily import into ASpace. I wrote &lt;code class=&quot;highlighter-rouge&quot;&gt;importFix.py&lt;/code&gt; to make duplicate copies of all of our EAD XML files while stripping out and cleaning any issues that I found would cause errors during import. An example issue was that ASpace didn’t want extent units stored in an attribute like 
-  &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;extent unit=&quot;cubic ft.&quot;&amp;gt;21&amp;lt;/extent&amp;gt;&lt;/code&gt; Instead, it wanted &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;extent&amp;gt;21 cubic ft.&amp;lt;/extent&amp;gt;&lt;/code&gt;&lt;/p&gt;
+    &lt;p&gt;Step one was getting all of our EAD data reformatted so they would all easily import into ASpace. I wrote &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;importFix.py&lt;/code&gt; to make duplicate copies of all of our EAD XML files while stripping out and cleaning any issues that I found would cause errors during import. An example issue was that ASpace didn’t want extent units stored in an attribute like 
+  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;extent unit=&quot;cubic ft.&quot;&amp;gt;21&amp;lt;/extent&amp;gt;&lt;/code&gt; Instead, it wanted &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;extent&amp;gt;21 cubic ft.&amp;lt;/extent&amp;gt;&lt;/code&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;We had been using an internal semantic ID system, but we wanted to get rid of these and rely on the ASpace ref_IDs instead, so the script also removes all the @id attributes in &lt;c01&gt;, &lt;c02&gt;, etc.&lt;/c02&gt;&lt;/c01&gt;&lt;/p&gt;
@@ -21,25 +21,25 @@
     &lt;p&gt;While we had employed a lot of rule-based validation to ensure standardization. There were other issues, like ASpace understood that 1988-03-30/1981-01-01 was an invalid date, but our validation script did not.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;the script also identified components with empty &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;unittitle&amp;gt;&lt;/code&gt; tags, etc., so I could get a list of these issues prior to import. Once I had identified the most common problems, this was much easier than having background jobs keep failing halfway through.&lt;/p&gt;
+    &lt;p&gt;the script also identified components with empty &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;unittitle&amp;gt;&lt;/code&gt; tags, etc., so I could get a list of these issues prior to import. Once I had identified the most common problems, this was much easier than having background jobs keep failing halfway through.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;This was a tedious process with lots of trial and error that took almost 2 complete days. I had to re-import a bunch of times, so I wrote &lt;code class=&quot;highlighter-rouge&quot;&gt;deleteRepoRecords.py&lt;/code&gt; to delete all resource records in ASpace (obviously use cautiously).&lt;/p&gt;
+    &lt;p&gt;This was a tedious process with lots of trial and error that took almost 2 complete days. I had to re-import a bunch of times, so I wrote &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;deleteRepoRecords.py&lt;/code&gt; to delete all resource records in ASpace (obviously use cautiously).&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;The feedback from ASpace on import issues can be really frustrating. It does not give you feedback on the EAD file that was the culprit, but points you to the new native ASpace record that was never actually created. You have to dig a bit in the log to find the EAD filename. Since I has stripped out our IDs, I was only left with the ASpace ref_id which is not helpful at all in finding individual components among our EAD jungle, so I had to rely on the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;unittitle&amp;gt;&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;unitdate&amp;gt;&lt;/code&gt; strings.&lt;/p&gt;
+    &lt;p&gt;The feedback from ASpace on import issues can be really frustrating. It does not give you feedback on the EAD file that was the culprit, but points you to the new native ASpace record that was never actually created. You have to dig a bit in the log to find the EAD filename. Since I has stripped out our IDs, I was only left with the ASpace ref_id which is not helpful at all in finding individual components among our EAD jungle, so I had to rely on the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;unittitle&amp;gt;&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;unitdate&amp;gt;&lt;/code&gt; strings.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;You’ll see feedback like, “there’s an issue in note[7].” It takes a while to figure out that note[7] means &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;physdesc&amp;gt;&lt;/code&gt;, etc.&lt;/p&gt;
+    &lt;p&gt;You’ll see feedback like, “there’s an issue in note[7].” It takes a while to figure out that note[7] means &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;physdesc&amp;gt;&lt;/code&gt;, etc.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;We only have one real import incompatibility with  ASpace, and that was only one EAD file where 7,800 lines of the 13,000 line file was one gigantic &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;chronlist&amp;gt;&lt;/code&gt;. ASpace rightly denied this garbage, so we just pulled it out of the finding aid and maybe it will become a part of a web exhibit some day.&lt;/p&gt;
+    &lt;p&gt;We only have one real import incompatibility with  ASpace, and that was only one EAD file where 7,800 lines of the 13,000 line file was one gigantic &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;chronlist&amp;gt;&lt;/code&gt;. ASpace rightly denied this garbage, so we just pulled it out of the finding aid and maybe it will become a part of a web exhibit some day.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;We still had a some messy data when you checked the controlled values lists, but these were few enough that it was easier to identify and clean these issues after the migration.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;At the end of this process, &lt;code class=&quot;highlighter-rouge&quot;&gt;importFix.py&lt;/code&gt; allowed us to keep creating and maintaining our EAD files in our current systems, but also let me quickly create ASpace-friendly versions when I need to.&lt;/p&gt;
+    &lt;p&gt;At the end of this process, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;importFix.py&lt;/code&gt; allowed us to keep creating and maintaining our EAD files in our current systems, but also let me quickly create ASpace-friendly versions when I need to.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -51,15 +51,15 @@
     &lt;p&gt;When I wrote the delete resources script I discovered that working with the API is awesome, but I was also repeatedly calling the same API requests. There is no complete Python library for the ArchivesSpace API, so most people make calls manually with &lt;a href=&quot;http://docs.python-requests.org/en/master/&quot;&gt;requests&lt;/a&gt;. Artefactual labs also has a &lt;a href=&quot;https://github.com/artefactual-labs/agentarchives&quot;&gt;basic library&lt;/a&gt; for this, but it doesn’t do a lot for you and still involves manually dealing with a lot of JSON in a way that I didn’t find intuitive. Basically, I wanted to iterate though the ASpace data as easily as lxml loops though XML data. This often involves multiple API calls for a single function.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;During the course of the migration I started writing a bunch of functions that manage the API behind the scenes. This was I can quickly iterate though collections with &lt;code class=&quot;highlighter-rouge&quot;&gt;getResources()&lt;/code&gt;, collection arrangement with &lt;code class=&quot;highlighter-rouge&quot;&gt;getTree()&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;getChildren()&lt;/code&gt; and even find a collection by its identifier with &lt;code class=&quot;highlighter-rouge&quot;&gt;getResourceID()&lt;/code&gt;, or a location by its title string with &lt;code class=&quot;highlighter-rouge&quot;&gt;findLocations()&lt;/code&gt;. Its also handy to have some blank objects at your fingertips, like with &lt;code class=&quot;highlighter-rouge&quot;&gt;makeArchObj()&lt;/code&gt;, so you can create new archival objects without knowing exactly what JSON ASpace needs.&lt;/p&gt;
+    &lt;p&gt;During the course of the migration I started writing a bunch of functions that manage the API behind the scenes. This was I can quickly iterate though collections with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getResources()&lt;/code&gt;, collection arrangement with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getTree()&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getChildren()&lt;/code&gt; and even find a collection by its identifier with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getResourceID()&lt;/code&gt;, or a location by its title string with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;findLocations()&lt;/code&gt;. Its also handy to have some blank objects at your fingertips, like with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;makeArchObj()&lt;/code&gt;, so you can create new archival objects without knowing exactly what JSON ASpace needs.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;There’s also some debugging tools I use all time. &lt;code class=&quot;highlighter-rouge&quot;&gt;pp()&lt;/code&gt; pretty prints an object to the console as JSON, &lt;code class=&quot;highlighter-rouge&quot;&gt;fields()&lt;/code&gt; lists all the keys in an object, and &lt;code class=&quot;highlighter-rouge&quot;&gt;serializeOutput()&lt;/code&gt; writes objects to your filesystem as .json files.&lt;/p&gt;
+    &lt;p&gt;There’s also some debugging tools I use all time. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pp()&lt;/code&gt; pretty prints an object to the console as JSON, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fields()&lt;/code&gt; lists all the keys in an object, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;serializeOutput()&lt;/code&gt; writes objects to your filesystem as .json files.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;The library uses &lt;a href=&quot;https://pypi.python.org/pypi/easydict/&quot;&gt;easydict&lt;/a&gt; to make objects out of the JSON, so you can call it with dot notation (&lt;code class=&quot;highlighter-rouge&quot;&gt;print collection.title&lt;/code&gt;). Writing this library enabled me from rewriting the same code, or finding that script I used last week to steal some lines from. Its really cool to be able to do this:&lt;/p&gt;
+    &lt;p&gt;The library uses &lt;a href=&quot;https://pypi.python.org/pypi/easydict/&quot;&gt;easydict&lt;/a&gt; to make objects out of the JSON, so you can call it with dot notation (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;print collection.title&lt;/code&gt;). Writing this library enabled me from rewriting the same code, or finding that script I used last week to steal some lines from. Its really cool to be able to do this:&lt;/p&gt;
 
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  from archives_tools import aspace as AS
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  from archives_tools import aspace as AS
     
   session = AS.getSession()
   repo = &quot;2&quot;
@@ -78,7 +78,7 @@
 &lt;p&gt;There are some caveats here. There are a bunch of decisions you make while writing these that I kind of made arbitrarily. It’s probably more complex than it has to be. Ideally, this would be more a a communally-driven effort based on a wider set of needs and perspectives. The code is completely open, so if nothing else, I guess this could provide an example of what a Python library for ASpace might look like. I’m going to try and complete the documentation soon, and if anyone has suggestions I’d really like to hear them. If the community moves to a different approach, I’ll work to update all of our processes to match the consensus, since it will be better than what I can come up with on my own.&lt;/p&gt;
 
 &lt;h2 id=&quot;import-collection-level-records&quot;&gt;Import collection-level records&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;migrateCollections.py
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;migrateCollections.py
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ul&gt;
@@ -98,12 +98,12 @@
     &lt;p&gt;Yet, with this spreadsheet I could use &lt;a href=&quot;https://openpyxl.readthedocs.io/en/default/&quot;&gt;a Python library for .xslx files&lt;/a&gt; to import some basic resource records into ASpace. While they wouldn’t be DACS-compliant, we could still export this basic data to our public access system, and link them to accession records we’ll import later.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;migrateCollections.py&lt;/code&gt; iterates though the spreadsheet and uses the aspace library to post new resource records in ASpace.&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;migrateCollections.py&lt;/code&gt; iterates though the spreadsheet and uses the aspace library to post new resource records in ASpace.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;migrating-accessions&quot;&gt;Migrating Accessions&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;migrateAccessions.py
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;migrateAccessions.py
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ul&gt;
@@ -111,13 +111,13 @@
     &lt;p&gt;For accessions I asked the Library’s awesome database person Krishna for help. Our old “CMS” was a .asp web application which, from what I can tell, used an old SQL server for its database. I needed something that I could loop though with Python so I asked him to export some CSVs.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Once he made the first export we noticed some problems. First there were a lot of commas in some of the fields, so we had to use a different delimiter. The other problem was there was a bunch of carriage returns that use the same character as the csv new line, so we had to escape all these prior to the export. I tried fixing it with a Python script by counting the number of fields in each row and piecing it back together humpty-dumpty-style, but I never want to do something that frustrating again. Luckily with a little time, Krishna was able to escape them before export and use pipes (&lt;code class=&quot;highlighter-rouge&quot;&gt;|&lt;/code&gt;) as the delimiter.&lt;/p&gt;
+    &lt;p&gt;Once he made the first export we noticed some problems. First there were a lot of commas in some of the fields, so we had to use a different delimiter. The other problem was there was a bunch of carriage returns that use the same character as the csv new line, so we had to escape all these prior to the export. I tried fixing it with a Python script by counting the number of fields in each row and piecing it back together humpty-dumpty-style, but I never want to do something that frustrating again. Luckily with a little time, Krishna was able to escape them before export and use pipes (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;|&lt;/code&gt;) as the delimiter.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Once I was able to loop through the table with all the accessions, I met with Jodi and Melissa, some of our other archivists, to identify which fields were still held useful data and how to map them to ASpace accession records. Honestly, we threw out half the data because it was useless, but we were able to reclaim all the accession dates, descriptions, and extents.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;We had a handful of issues that had to be edited manually. Even though the system returned an error if you forgot to enter an accession number, there were a bunch of records without numbers or records without numbers. &lt;code class=&quot;highlighter-rouge&quot;&gt;checkAccessions.py&lt;/code&gt; identified these issues, but we had to go look at each record and try to parse out what happened. The good thing was the data did include a last updated timestamp, which helped a lot.&lt;/p&gt;
+    &lt;p&gt;We had a handful of issues that had to be edited manually. Even though the system returned an error if you forgot to enter an accession number, there were a bunch of records without numbers or records without numbers. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;checkAccessions.py&lt;/code&gt; identified these issues, but we had to go look at each record and try to parse out what happened. The good thing was the data did include a last updated timestamp, which helped a lot.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Of course the first time I tried this I opened the CSV file in Excel it unhelpfully decided to reformat all of the timestamps and drop all the trailing zeros. Good thing I kept a backup file. Since it was only a handful I ended up doing the edits in a text editor, just to be safe.&lt;/p&gt;
@@ -126,7 +126,7 @@
     &lt;p&gt;The cool thing was that the collection IDs were really standardized, so we could easily match them up with the resource records we just created. We just had to convert APAP-312 to apap312, which is a piece of cake with Python’s string methods.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;The aspace library really came in handy here. Two functions, &lt;code class=&quot;highlighter-rouge&quot;&gt;makeExtent()&lt;/code&gt; and  &lt;code class=&quot;highlighter-rouge&quot;&gt;makeDate()&lt;/code&gt; just add extents and dates to any ASpace JSON object. This worked with accessions just as it did with resources.&lt;/p&gt;
+    &lt;p&gt;The aspace library really came in handy here. Two functions, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;makeExtent()&lt;/code&gt; and  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;makeDate()&lt;/code&gt; just add extents and dates to any ASpace JSON object. This worked with accessions just as it did with resources.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;The extent was just an uncontrolled string field. Considering this, we had used the field very consistently, but of course there were a bunch of typos or oddly worded unit descriptions. I cleaned up the vast bulk of these issues with Python’s string methods, but there were still some “long-tail” issues that didn’t seem to be worth spending hours on. After all, we haven’t needed real machine-readable accession extents yet, and its not publicly-visible data.&lt;/p&gt;
@@ -135,12 +135,12 @@
     &lt;p&gt;For now I just allowed a new extent type “uncontrolled,” and threw the whole field in the number field. We can just fix these one by one as we come across them. I guess I could have dumped the CSV into OpenRefine, but I can also come back later and export a new CSV with the API if we need to clean these up further.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;After running &lt;code class=&quot;highlighter-rouge&quot;&gt;migrateAccessions.py&lt;/code&gt;, we had accession records and collection descriptions in the same place for the first time. I was really wonderful seeing those Related Accessions and Related Resources links pop up in ASpace.&lt;/p&gt;
+    &lt;p&gt;After running &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;migrateAccessions.py&lt;/code&gt;, we had accession records and collection descriptions in the same place for the first time. I was really wonderful seeing those Related Accessions and Related Resources links pop up in ASpace.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;locations&quot;&gt;Locations&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	migrateLocations.py
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	migrateLocations.py
 	exportContainers.py
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -160,7 +160,7 @@
   &lt;li&gt;
     &lt;p&gt;The location field we had was really messy. This is one extreme real-world example:&lt;/p&gt;
 
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  H-16-3-1/H-16-2-3,(last shelf has microfilm and CDs with images used for LUNA); 
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  H-16-3-1/H-16-2-3,(last shelf has microfilm and CDs with images used for LUNA); 
   G-8-1-1/G-8-2-1; G-17-3-2/G-17-3-1; G-17-4-1/G-17-4-7; G-10-4-1/G-10-4-3;
   G-10-5-1/G-10-5-8;C-12-2-1/C-12-2-5; C-12-1-2/-12-1-3; SB 17 - o-15 (bound
   copies of Civil Service Leader digitized by Hudson Micro and returned in 
@@ -174,7 +174,7 @@
   &lt;li&gt;
     &lt;p&gt;So that collection has a bunch of top containers, how do I assign that mess to them? Well this collection in particular is currently being, well, &lt;em&gt;reworked&lt;/em&gt;, but for everything else we had to standardize the data into one format, basically:&lt;/p&gt;
 
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  G-4-2-3/G-4-2-7 (whatever note here); J-3-3-5 (second location here); I-7-3-6
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  G-4-2-3/G-4-2-7 (whatever note here); J-3-3-5 (second location here); I-7-3-6
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;
@@ -190,13 +190,13 @@
     &lt;p&gt;ASpace does let you have previous locations though, but it requires an end date, and the location record to have a temporary label. We decided to have a temporary “collection_level” label and setting the end date to 2999-01-01, and hope that we weren’t creating an insurmountable Y3K problem.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Doing it this way meant a lot of work with the API, because we had to find every top container assigned to each collection, translate &lt;code class=&quot;highlighter-rouge&quot;&gt;G-17-3-8&lt;/code&gt; to a ASpace location record, find that record, update that location record to be temporary, and update the top_container record to add each location. This is exactly what &lt;code class=&quot;highlighter-rouge&quot;&gt;migrateLocations.py&lt;/code&gt; does, and with the library it only takes 200 lines of code.&lt;/p&gt;
+    &lt;p&gt;Doing it this way meant a lot of work with the API, because we had to find every top container assigned to each collection, translate &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;G-17-3-8&lt;/code&gt; to a ASpace location record, find that record, update that location record to be temporary, and update the top_container record to add each location. This is exactly what &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;migrateLocations.py&lt;/code&gt; does, and with the library it only takes 200 lines of code.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;So that means if a collection-level location was &lt;code class=&quot;highlighter-rouge&quot;&gt;C-24-2-1/C-24-3-8&lt;/code&gt; (16 shelves), every box in that collection (probably about 40-50 boxes) would be linked to each of those 16 locations.&lt;/p&gt;
+    &lt;p&gt;So that means if a collection-level location was &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;C-24-2-1/C-24-3-8&lt;/code&gt; (16 shelves), every box in that collection (probably about 40-50 boxes) would be linked to each of those 16 locations.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;For larger collections, this would be a bit unwieldy, so the plan is to list individual shelves for larger collections now, and do the rest over time. &lt;code class=&quot;highlighter-rouge&quot;&gt;exportContainers.py&lt;/code&gt; helps with this. It makes a .xlsx spreadsheet for each collection that lists every top container and its URI. So we have a directory of spreadsheet files for each collection like apap101.xlsx. We can list the shelf coordinates for each box in that spreadsheet in our same format (&lt;code class=&quot;highlighter-rouge&quot;&gt;K-2-2-3&lt;/code&gt;) and use the API to update each top container record over time. Now whenever we’re working with a collection we can fix this problem one by one.&lt;/p&gt;
+    &lt;p&gt;For larger collections, this would be a bit unwieldy, so the plan is to list individual shelves for larger collections now, and do the rest over time. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;exportContainers.py&lt;/code&gt; helps with this. It makes a .xlsx spreadsheet for each collection that lists every top container and its URI. So we have a directory of spreadsheet files for each collection like apap101.xlsx. We can list the shelf coordinates for each box in that spreadsheet in our same format (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;K-2-2-3&lt;/code&gt;) and use the API to update each top container record over time. Now whenever we’re working with a collection we can fix this problem one by one.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Finally, ASpace comes with some really cool features like container profiles and shelf profiles, but they’re not mandatory. We decided it wasn’t worth it yet to measure each shelf, but we hope to do this over time in the next couple of years.&lt;/p&gt;
@@ -275,7 +275,7 @@
 &lt;h2 id=&quot;migration-days&quot;&gt;Migration Day(s)&lt;/h2&gt;
 
 &lt;h3 id=&quot;ead-import&quot;&gt;EAD import&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;importFix.py
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;importFix.py
 checkEAD.py
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
@@ -284,13 +284,13 @@ checkEAD.py
     &lt;p&gt;When migration day came, we dumped the database, deleted the index, and started from scratch. I had Krishna export new CSVs from our old system with any updated records that were made since the previous export. By this point the plan was that migration scripts were done and tested and everything would go relatively seamlessly. I was hoping to get everything imported in a day or so, and minimize the downtime when staff were not allowed to make updates.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;When it came time for the EAD import, some recent EADs/updated had happened, and I still got 2 minor errors for about 630 EADs, so I didn’t actually get the Holy Grail of a perfect EAD import. &lt;code class=&quot;highlighter-rouge&quot;&gt;1963-0923&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;1904-01/1903-07&lt;/code&gt; are not valid dates and ArchivesSpace, but these were easy fixes.&lt;/p&gt;
+    &lt;p&gt;When it came time for the EAD import, some recent EADs/updated had happened, and I still got 2 minor errors for about 630 EADs, so I didn’t actually get the Holy Grail of a perfect EAD import. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1963-0923&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1904-01/1903-07&lt;/code&gt; are not valid dates and ArchivesSpace, but these were easy fixes.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;One thing I had noticed during the first time was than when you import a large amount of EADs, it takes the index awhile to catch up. ASpace still told me I had only 465 resources instead of 633, but that soon updated to 503. Yet, in about an hour I was still missing 29 collections. I assumed that this was still the index, but I quickly wrote checkEAD.py to see how many collections I could access though the API and I was still missing 29.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;It turned out that two import jobs had actually failed, but ASpace listed them as Complete for some reason. One issue was when we changed an ID and there was an eadid conflict, and the other issue was that I totally forgot about that huge &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;chronlist&amp;gt;&lt;/code&gt; that failed the first time.&lt;/p&gt;
+    &lt;p&gt;It turned out that two import jobs had actually failed, but ASpace listed them as Complete for some reason. One issue was when we changed an ID and there was an eadid conflict, and the other issue was that I totally forgot about that huge &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;chronlist&amp;gt;&lt;/code&gt; that failed the first time.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;These were easy fixes but the lesson here is always test your imports and don’t trust the index.&lt;/p&gt;
@@ -301,20 +301,20 @@ checkEAD.py
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;clean-resource-identifiers&quot;&gt;Clean Resource Identifiers&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fixNam.py
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fixNam.py
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;For collection identifiers we had been unsing the prefix &lt;code class=&quot;highlighter-rouge&quot;&gt;nam_&lt;/code&gt; which is our OCLC repository ID or something, but we decided that this was overtly complex and not useful, so we decided to drop these late in the migration planning. While the &lt;code class=&quot;highlighter-rouge&quot;&gt;importFix.py&lt;/code&gt; script was written to clear the &lt;code class=&quot;highlighter-rouge&quot;&gt;nam_&lt;/code&gt; prefix from the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;ead&amp;gt; @id&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;eadid&amp;gt;&lt;/code&gt;, but I forgot to do this to the collection-level &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;unitid&amp;gt;&lt;/code&gt;. Unfortunately I found out the hard way that this is what ASpace ends up using as the &lt;code class=&quot;highlighter-rouge&quot;&gt;id_0&lt;/code&gt;, so I whipped up &lt;code class=&quot;highlighter-rouge&quot;&gt;fixNam.py&lt;/code&gt; to strip this post-import rather than start the process over again.&lt;/li&gt;
+  &lt;li&gt;For collection identifiers we had been unsing the prefix &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nam_&lt;/code&gt; which is our OCLC repository ID or something, but we decided that this was overtly complex and not useful, so we decided to drop these late in the migration planning. While the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;importFix.py&lt;/code&gt; script was written to clear the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nam_&lt;/code&gt; prefix from the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;ead&amp;gt; @id&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;eadid&amp;gt;&lt;/code&gt;, but I forgot to do this to the collection-level &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;unitid&amp;gt;&lt;/code&gt;. Unfortunately I found out the hard way that this is what ASpace ends up using as the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id_0&lt;/code&gt;, so I whipped up &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fixNam.py&lt;/code&gt; to strip this post-import rather than start the process over again.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;collection-level-spreadsheet-import&quot;&gt;Collection-level spreadsheet import&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;migrateCollections.py
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;migrateCollections.py
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;Importing the basic collection-level records from the spreadsheet went fairly well. I realized that we also needed a normalized name for each collection in the resource records somewhere. For example, the “Office of Career and Professional Development Records” needed to be accessible somewhere as “Career and Professional Development, Office of; Records” so it would be alphabetized correctly in our front end. So, I added a few lines in &lt;code class=&quot;highlighter-rouge&quot;&gt;migrateCollections.py&lt;/code&gt; that adds these normal names in the Finding Aid title field.&lt;/p&gt;
+    &lt;p&gt;Importing the basic collection-level records from the spreadsheet went fairly well. I realized that we also needed a normalized name for each collection in the resource records somewhere. For example, the “Office of Career and Professional Development Records” needed to be accessible somewhere as “Career and Professional Development, Office of; Records” so it would be alphabetized correctly in our front end. So, I added a few lines in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;migrateCollections.py&lt;/code&gt; that adds these normal names in the Finding Aid title field.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;One annoying thing was that after I posted all the spreadsheet records, the index was a bit slow to update. I was all set to migrate the accessions, but to match them up with the resource records, I had to use the index to search for matching id_0 fields. However, within an hour or so suddenly ASpace had updated the index, and I was all set.&lt;/p&gt;
@@ -323,12 +323,12 @@ checkEAD.py
     &lt;p&gt;ASpace told me I had 904 resources, which was curiously two more than we had in our master list. I assumed we failed to update our master list for two EADs and I imported them from the spreadsheet as well.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;To confirm all the collections, I wrote &lt;code class=&quot;highlighter-rouge&quot;&gt;checkCollections.py&lt;/code&gt; to see what was up. It turned out that when we had updated that ID we still had a duplicate EAD file floating around, and another recent collection had an EAD file but was never entered in to the spreadsheet. These issues were easily fixed and all our collections were done.&lt;/p&gt;
+    &lt;p&gt;To confirm all the collections, I wrote &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;checkCollections.py&lt;/code&gt; to see what was up. It turned out that when we had updated that ID we still had a duplicate EAD file floating around, and another recent collection had an EAD file but was never entered in to the spreadsheet. These issues were easily fixed and all our collections were done.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;accessions-and-locations&quot;&gt;Accessions and Locations&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;migrateAccesions.py
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;migrateAccesions.py
 checkAccessions.py
 migrateLocations.py
 checkLocations.py
@@ -336,15 +336,15 @@ checkLocations.py
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;The accessions and locations went easy without any issues. This time I wrote &lt;code class=&quot;highlighter-rouge&quot;&gt;checkAccessions.py&lt;/code&gt; to find all the accession issues from last time around, and everything went nicely.&lt;/p&gt;
+    &lt;p&gt;The accessions and locations went easy without any issues. This time I wrote &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;checkAccessions.py&lt;/code&gt; to find all the accession issues from last time around, and everything went nicely.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Some of the locations had been updated since the last import, so &lt;code class=&quot;highlighter-rouge&quot;&gt;checkLocations.py&lt;/code&gt; verifies that these locations are indeed in ArchivesSpace, prior to running the import scripts.&lt;/p&gt;
+    &lt;p&gt;Some of the locations had been updated since the last import, so &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;checkLocations.py&lt;/code&gt; verifies that these locations are indeed in ArchivesSpace, prior to running the import scripts.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;export-scripts&quot;&gt;Export Scripts&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;exportPublicData.py
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;exportPublicData.py
 lastExport.txt
 exportConverter.py
 staticPages.py
@@ -355,20 +355,20 @@ staticPages.py
     &lt;p&gt;Once we had migrated all of our data into ArchivesSpace, it was time to set up scheduled exports and connect everything with our public access system that consists of XTF and a sets of static pages.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;Rockefeller’s &lt;a href=&quot;https://github.com/RockefellerArchiveCenter/asExportIncremental&quot;&gt;asExportIncremental.py&lt;/a&gt; is a good source for how to do export EADs from ASpace incrementally. I followed the same basic idea, but omitted the MODS exports, and simplified it a bit into &lt;code class=&quot;highlighter-rouge&quot;&gt;exportPublicData.py&lt;/code&gt;. I integrated the same API call into the &lt;a href=&quot;https://github.com/UAlbanyArchives/archives_tools&quot;&gt;aspace library&lt;/a&gt; as &lt;code class=&quot;highlighter-rouge&quot;&gt;getResourcesSince()&lt;/code&gt; which takes a POSIX timestamp. Instead of using Pickle I just wrote the last export time to a text file called &lt;code class=&quot;highlighter-rouge&quot;&gt;lastExport.txt&lt;/code&gt;.&lt;/p&gt;
+    &lt;p&gt;Rockefeller’s &lt;a href=&quot;https://github.com/RockefellerArchiveCenter/asExportIncremental&quot;&gt;asExportIncremental.py&lt;/a&gt; is a good source for how to do export EADs from ASpace incrementally. I followed the same basic idea, but omitted the MODS exports, and simplified it a bit into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;exportPublicData.py&lt;/code&gt;. I integrated the same API call into the &lt;a href=&quot;https://github.com/UAlbanyArchives/archives_tools&quot;&gt;aspace library&lt;/a&gt; as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getResourcesSince()&lt;/code&gt; which takes a POSIX timestamp. Instead of using Pickle I just wrote the last export time to a text file called &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lastExport.txt&lt;/code&gt;.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;ASpace’s EAD exports didn’t exactly match up with what we had been using in XTF. You can change these exports with a plugin, but I found it easier to both make some changes in our XTF XSLT files, and write a quick &lt;code class=&quot;highlighter-rouge&quot;&gt;exportConverter.py&lt;/code&gt; script with lxml.&lt;/p&gt;
+    &lt;p&gt;ASpace’s EAD exports didn’t exactly match up with what we had been using in XTF. You can change these exports with a plugin, but I found it easier to both make some changes in our XTF XSLT files, and write a quick &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;exportConverter.py&lt;/code&gt; script with lxml.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;exportPublicData.py&lt;/code&gt; loops though all the resources modified since the last export and only exports records that are published. Since we still have a bunch of resources that only have really simple collection-level descriptions, I didn’t want to export EADs and PDFs for these, so I just exported the important information to a pipe delimited CSV.&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;exportPublicData.py&lt;/code&gt; loops though all the resources modified since the last export and only exports records that are published. Since we still have a bunch of resources that only have really simple collection-level descriptions, I didn’t want to export EADs and PDFs for these, so I just exported the important information to a pipe delimited CSV.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;I has always envisioned the ASpace API as completely replacing our spreadsheet that generates the static browse pages for our public access system. Yet, I didn’t want to 
 export all that data over and over again, only make incremental updates like the EAD exports. Since my original static pages scripts were designed to loop though a spreadsheet, shifting to CSVs wasn’t very difficult. I also didn’t want to spend a lot of time changing things since we have some longer-term plans to export this data into a web framework.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;exportPublicData.py&lt;/code&gt; updates this CSV data for modified collections as it exports EAD XML files. It then uses Python’s &lt;a href=&quot;https://docs.python.org/3/library/subprocess.html&quot;&gt;subprocess&lt;/a&gt; module to call git commands and version these exports and pushes them to &lt;a href=&quot;https://github.com/UAlbanyArchives/collections&quot;&gt;Github&lt;/a&gt;. It then copies new EAD files to our &lt;a href=&quot;http://meg.library.albany.edu:8080/archive/search?keyword=&amp;amp;browse-all=yes&quot;&gt;public XTF instance&lt;/a&gt;. Finally, it calls &lt;code class=&quot;highlighter-rouge&quot;&gt;staticPages.py&lt;/code&gt; to create all of the &lt;a href=&quot;http://library.albany.edu/speccoll/findaids/eresources/static/apap.html&quot;&gt;static&lt;/a&gt; &lt;a href=&quot;http://library.albany.edu/speccoll/findaids/eresources/static/alpha.html&quot;&gt;browse&lt;/a&gt; &lt;a href=&quot;http://library.albany.edu/speccoll/findaids/eresources/static/subjects.html&quot;&gt;pages&lt;/a&gt;.&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;exportPublicData.py&lt;/code&gt; updates this CSV data for modified collections as it exports EAD XML files. It then uses Python’s &lt;a href=&quot;https://docs.python.org/3/library/subprocess.html&quot;&gt;subprocess&lt;/a&gt; module to call git commands and version these exports and pushes them to &lt;a href=&quot;https://github.com/UAlbanyArchives/collections&quot;&gt;Github&lt;/a&gt;. It then copies new EAD files to our &lt;a href=&quot;http://meg.library.albany.edu:8080/archive/search?keyword=&amp;amp;browse-all=yes&quot;&gt;public XTF instance&lt;/a&gt;. Finally, it calls &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;staticPages.py&lt;/code&gt; to create all of the &lt;a href=&quot;http://library.albany.edu/speccoll/findaids/eresources/static/apap.html&quot;&gt;static&lt;/a&gt; &lt;a href=&quot;http://library.albany.edu/speccoll/findaids/eresources/static/alpha.html&quot;&gt;browse&lt;/a&gt; &lt;a href=&quot;http://library.albany.edu/speccoll/findaids/eresources/static/subjects.html&quot;&gt;pages&lt;/a&gt;.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;I had some encoding errors that were a pain to fix, so I ended up writing these scripts for only Python 3+.&lt;/p&gt;

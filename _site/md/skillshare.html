@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Greg Wiedeman
+  </title>
+
+  <meta name="description" content="I&#39;m an archivist who works to make information more accessible.">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/md/skillshare.html">
+  <link rel="alternate" type="application/rss+xml" title="Greg Wiedeman" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Greg Wiedeman</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/writing">Writing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/presentations">presentations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/code">Code</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cv">CV</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <p>##Automating Web Archives Records in ASpace</p>
+
+<p>####Gregory Wiedeman
+####University Archivist
+####University at Albany, SUNY</p>
+
+<p>http://gwiedeman.github.io/presentations/slides/skillshare.html
+http://bit.ly/2dGviYp</p>
+
+<hr />
+
+<h2 id="web-crawls-are-archives-too">Web crawls are Archives too!</h2>
+
+<ul>
+  <li>UAlbany Web Archiving program with Archive-It since 2013</li>
+  <li>Mission of preserving permanent public records available only online</li>
+  <li>No real public access or use</li>
+</ul>
+
+<hr />
+
+<h2 id="web-crawls-are-archives-too-1">Web crawls are Archives too!</h2>
+
+<ul>
+  <li>Web collections have paper equivalents</li>
+  <li>Bound Course Bulletins, 1845-2014</li>
+  <li>http://www.albany.edu/undergraduate_bulletin/</li>
+  <li>http://www.albany.edu/english/under_course_schedules.php</li>
+  <li>http://www.albany.edu/informationstudies/ist_courses.php</li>
+</ul>
+
+<hr />
+
+<h2 id="web-crawling-is-different">Web crawling is different</h2>
+
+<ul>
+  <li>Process of web crawling is completely separate from archival description</li>
+  <li>Crawls all of albany.edu</li>
+  <li>New pages collected monthly or even daily</li>
+  <li>Complex acquisition process</li>
+  <li>Difficult to convey provenance</li>
+</ul>
+
+<hr />
+
+<h2 id="automate-aspace-records-with-apis">Automate ASpace Records with APIs</h2>
+
+<ul>
+  <li>Arrange and describe online archival records in ASpace, just like paper</li>
+  <li>Use ASpace and Archive-It APIs to update extents, dates, notes</li>
+  <li>You can use Archive-It collections or anything collected by the Internet Archive</li>
+</ul>
+
+<hr />
+
+<h2 id="internet-archive-and-archive-it-cdx-api">Internet Archive and Archive-It CDX API</h2>
+
+<ul>
+  <li>CDX servers used for Wayback Machine
+    <ul>
+      <li>for each capture:
+        <ul>
+          <li>timestamp</li>
+          <li>Warc reference</li>
+          <li>mime type</li>
+          <li>http response</li>
+          <li>hash</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>http://wayback.archive-it.org/3308/timemap/cdx?url=http://www.albany.edu/undergraduate_bulletin/</li>
+  <li>https://web.archive.org/cdx/search/cdx?url=http://www.albany.edu/undergraduate_bulletin/</li>
+</ul>
+
+<hr />
+
+<h2 id="setup">Setup</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/UAlbanyArchives/ASpace_WebArchives
+cd ASpace_WebArchives
+nano webArchives.ini
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[config_data]
+Username: admin
+Password: admin
+Backend_URL: http://localhost:8089
+Paginated_Results: 100
+Update_Parents: True
+Date_Expressions: True
+
+[custom_labels]
+Web_Extents: Captures
+Web_Dates_Label: creation
+Publish_Notes: True
+Archive-It_Acqinfo: Acquisition of Web Archives with Archive-It
+InternetArchive_Acqinfo: Web Archives from General Internet Archive Collections
+WARC_Label: Access to WARC Files
+ArchiveIT_Object_Title: Access Web Pages stored in University Collections
+InternetArchive_Object_Title: Access Web Pages stored in the Intenet Archive
+
+[error_email]
+sendErrorEmail: False
+sender: dummyEmail@gmail.com
+pw: ****************
+receiver: yourEmail@university.edu
+emailHost: smtp.gmail.com
+port: 587
+</code></pre></div></div>
+<ul>
+  <li>Put Web_Extents in Controlled values (Extent Extent Type)</li>
+</ul>
+
+<hr />
+
+<h2 id="setup-1">Setup</h2>
+
+<ul>
+  <li>Notes controlled by pipe delimited CSV</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nano webArchivesData.csv
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Collection|Use|Acquisition notes|
+Internet Archive|true|This data is not held by UAlbany, but within the Internet Archive's collections. The UAlbany web archiving program has contributed to the Internet Archive's collections since 2013, but has no control over their acquisition processes.|
+3308|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|Surface-level crawling of www.albany.edu is performed daily which should includes most top-level webpages. Separate targeted crawls of every albany.edu subdomain are performed monthly to attempt to gather all content. This includes: www.albany.edu, www.rna.albany.edu, www.ctg.albany.edu, www.ualbanysports.com, www.albany.edu/rockefeller, www.albany.edu/cela, www.albany.edu/asrc, m.albany.edu, library.albany.edu, events.albany.edu, cstar.cestm.albany.edu, csda.albany.edu, and alumni.albany.edu
+6372|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
+6915|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
+7082|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
+7081|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
+6916|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
+7801|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
+7802|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
+6918|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
+6917|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
+5793|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
+5967|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
+6832|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
+6913|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
+6914|true|Web crawling is managed through the Internet Archive's Archive-It service. This page includes links to both the university's collection and the Internet Archive's public collection.|
+WARC|true|Researchers interested in data analysis with web archives may request a WARC file. WARC files are very large and difficult to work with. Your request may take time to process, and we may be unable to deliver your request remotely. Please consult an archivist if you are interested in advanced research with web archives.|
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="arrange-and-describe-in-aspace">Arrange and Describe in ASpace</h2>
+
+<ul>
+  <li>Any archival object can be from web archives!</li>
+  <li>Resource must have a phystech note with content “Web Archives”</li>
+  <li>Archival object and all parent objects must be Other Level, Web Archives</li>
+  <li>Two external documents notes
+    <ul>
+      <li>Status: active, initial, or inactive</li>
+      <li>URL: www.albany.edu/senate</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="resource-needs--note">Resource needs <phystech> note</phystech></h3>
+
+<p><img src="img-ss/phystech.png" /></p>
+
+<hr />
+
+<h3 id="archival-object-level-web-archives">Archival Object level Web Archives</h3>
+
+<p><img src="img-ss/otherLevel.png" /></p>
+
+<hr />
+
+<h3 id="two-external-document-notes">Two external document notes</h3>
+
+<p><img src="img-ss/externalDocs.png" /></p>
+
+<hr />
+
+<h2 id="make-sure-requests-is-installed">Make sure requests is installed</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install requests
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python
+&gt;&gt;&gt;import requests
+&gt;&gt;&gt;exit()
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="run-webarchivespy">Run webArchives.py</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python webArchives.py
+Looking for Web Archives Records in M.E. Grenander Department of Special Collections &amp; Archives
+Requesting resource results page 1 of 1
+found Web Archives in resource ---&gt; The Pride Center of the Capital Region Records
+        Updating record for The Pride Center of the Capital Region Website, 2011-02-03 - 2016-10-07
+                Updating resource...
+                Updating digital objects...
+                Posting updated archival object back to ASpace...
+found and updated 1 web archives resource in 38 total resources.
+</code></pre></div></div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:gwiedeman@albany.edu">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/gregwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/gwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy; Gregory Wiedeman 2019
+        </p>
+        <p class="copyright text-muted">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+
+</body>
+
+</html>

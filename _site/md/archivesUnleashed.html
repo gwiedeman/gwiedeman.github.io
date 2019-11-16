@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Providing Basic Access to Web Archives Provenance Data - Greg Wiedeman
+    
+  </title>
+
+  <meta name="description" content="I&#39;m an archivist who works to make information more accessible.">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/md/archivesUnleashed.html">
+  <link rel="alternate" type="application/rss+xml" title="Greg Wiedeman" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Greg Wiedeman</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/writing">Writing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/presentations">presentations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/code">Code</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cv">CV</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <h2 id="providing-basic-access-to-web-archives-provenance-data">Providing Basic Access to Web Archives Provenance Data</h2>
+
+<p><a href="http://www.gregwiedeman.com">Gregory</a> <a href="https://twitter.com/GregWiedeman">Wiedeman</a></p>
+
+<p>University Archivist</p>
+
+<p><a href="http://library.albany.edu/archive/">University at Albany, SUNY</a></p>
+
+<p>Archives Unleashed London</p>
+
+<hr />
+
+<h2 id="ualbany-preserves-public-records-on-the-web">UAlbany Preserves Public Records on the Web</h2>
+
+<ul>
+  <li>Public University</li>
+  <li>State records laws mandate permanent retention of certain records</li>
+  <li>Web archives preserve these records in their original form</li>
+</ul>
+
+<hr />
+
+<!-- .slide: data-background="img/undergradBulletin.png" -->
+
+<hr />
+
+<h2 id="where-do-web-archives-come-from">Where do Web Archives Come From?</h2>
+
+<ul>
+  <li>Archives document and maintain provenance</li>
+  <li>Users need provenance to frame their research question</li>
+  <li>Our Web Archives are captured from Archive-It
+    <ul>
+      <li>Collection process is complex and opaque</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="archive-it-partner-data-api">Archive-It Partner Data API</h2>
+
+<ul>
+  <li>Part of the Archive-It 5.0 web application
+    <ul>
+      <li>Selects seeds, schedules crawls, applies scoping rules</li>
+    </ul>
+  </li>
+  <li>Archive-It partners can query this applications data with REST API</li>
+</ul>
+
+<hr />
+
+<h2 id="what-does-the-partner-data-api-contain">What does the Partner Data API contain?</h2>
+
+<ul>
+  <li>Type of crawl</li>
+  <li>Unique ID</li>
+  <li>Crawl result</li>
+  <li>Crawl start, end time</li>
+  <li>Recurrence</li>
+  <li>Extent, data &amp; docs captured</li>
+  <li>Docs queued</li>
+</ul>
+
+<hr />
+
+<pre>
+<code>
+requesting https://partner.archive-it.org/api/crawl_job?account=652&amp;id=304464
+[
+  {
+    "time_limit": 259200, 
+    "current_kb_rate": 0.0, 
+    "test_crawl_state_changed_by": null, 
+    "test_crawl_state": null, 
+    "thread_count": 0, 
+    "download_failures": 4, 
+    "patch_for_qa_job": null, 
+    "recurrence_type": "MONTHLY", 
+    "pdfs_only": false, 
+    "uid": "20170601204939320", 
+    "id": 304464, 
+    "last_resumption": null, 
+    "description": "jobId=304464, recurrence=MONTHLY, maxDuration=259200, maxDocumentCount=null, isTestCrawl=false, isPatchCrawl=false, oneTimeSubtype=null, seedCount=3, accountId=652, accountType=SUBSCRIBER, organizationName=\"University at Albany SUNY\", collectionId=7082, collectionName=\"Environmental Advocates of New York\", collectionPublic=true", 
+    "discovered_count": 83184, 
+    "queued_count": 55809, 
+    "warc_revisit_count": 1786, 
+    "doc_rate": 0.11, 
+    "port": 6440, 
+    "novel_count": 25582, 
+    "total_data_in_kbs": 1572427, 
+    "byte_limit": null, 
+    "original_start_date": "2017-06-01T20:49:39Z", 
+    "kb_rate": 6.0, 
+    "test": false, 
+    "crawl_stop_requested": null, 
+    "type": "MONTHLY", 
+    "job_name": "7082-20170601204939320", 
+    "processing_end_date": "2017-06-04T23:51:23Z", 
+    "status": "FINISHED_TIME_LIMIT", 
+    "document_limit": null, 
+    "end_date": "2017-06-04T20:50:40Z", 
+    "warc_url_count": 27366, 
+    "collection": 7082, 
+    "current_doc_rate": 0.0, 
+    "host": "wbgrp-crawl028.us.archive.org", 
+    "warc_compressed_bytes": 557584792, 
+    "scheduled_crawl_event": 1034693, 
+    "warc_uncompressed_bytes": 1665551622, 
+    "downloaded_count": 27375, 
+    "workflow_step": 100, 
+    "account": 652, 
+    "duplicate_count": 1793, 
+    "resumption_count": 0, 
+    "elapsed_ms": 259236635, 
+    "url": "https://localhost:6440/engine/job/7082-20170601204939320", 
+    "duplicate_bytes": 312923523, 
+    "novel_bytes": 1297242545, 
+    "start_date": "2017-06-01T20:49:39Z", 
+    "warc_content_bytes": 1297242964
+  }
+]
+
+</code>
+</pre>
+
+<hr />
+
+<h2 id="what-can-we-do-with-this-data">What can we do with this data?</h2>
+
+<ul>
+  <li>Put it in a finding aid</li>
+  <li>Hopefully machine-readable in the future</li>
+</ul>
+
+<p><a href="http://meg.library.albany.edu:8080/archive/view?docId=apap362.xml#d89704e6c986cfb2dc803ba05d298eb3">http://meg.library.albany.edu:8080/archive/view?docId=apap362.xml#d89704e6c986cfb2dc803ba05d298eb3</a></p>
+
+<hr />
+
+<h2 id="providing-basic-access-to-web-archives-provenance-data-1">Providing Basic Access to Web Archives Provenance Data</h2>
+
+<p><a href="http://www.github.com/UAlbanyArchives/describingWebArchives">http://www.github.com/UAlbanyArchives/describingWebArchives</a></p>
+
+<ul>
+  <li>Sample scripts</li>
+  <li>Command Line query tool</li>
+  <li>Working script to automate provenance data into ArchivesSpace through API</li>
+</ul>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:gwiedeman@albany.edu">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/gregwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/gwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy; Gregory Wiedeman 2019
+        </p>
+        <p class="copyright text-muted">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+
+</body>
+
+</html>

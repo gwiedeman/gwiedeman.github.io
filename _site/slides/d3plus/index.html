@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Greg Wiedeman
+  </title>
+
+  <meta name="description" content="I&#39;m an archivist who works to make information more accessible.">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/slides/d3plus/">
+  <link rel="alternate" type="application/rss+xml" title="Greg Wiedeman" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Greg Wiedeman</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/writing">Writing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/presentations">presentations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/code">Code</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cv">CV</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <p><a href="https://www.npmjs.org/package/d3plus"><img src="http://img.shields.io/npm/v/d3plus.svg?style=flat-square" alt="NPM Release" /></a>
+<a href="https://david-dm.org/alexandersimoes/d3plus"><img src="http://img.shields.io/david/alexandersimoes/d3plus.svg?style=flat-square" alt="Dependency Status" /></a>
+<a href="https://david-dm.org/alexandersimoes/d3plus#info=devDependencies"><img src="http://img.shields.io/david/dev/alexandersimoes/d3plus.svg?style=flat-square" alt="Dependency Status" /></a>
+<a href="https://www.npmjs.org/package/d3plus"><img src="http://img.shields.io/npm/dm/d3plus.svg?style=flat-square" alt="NPM Downloads" /></a>
+<a href="http://opensource.org/licenses/MIT"><img src="http://img.shields.io/npm/l/d3plus.svg?style=flat-square" alt="License" /></a></p>
+
+<p><img src="https://raw.githubusercontent.com/alexandersimoes/d3plus/gh-pages/assets/img/facebook.jpg" /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><a href="https://d3plus.org/examples/basic/32517cfde67270c99092/"><img src="https://gist.githubusercontent.com/davelandry/32517cfde67270c99092/raw/thumbnail.png" width="120px" /><br />Bar Charts</a></th>
+      <th style="text-align: center"><a href="https://d3plus.org/examples/basic/9029130/"><img src="https://gist.githubusercontent.com/davelandry/9029130/raw/thumbnail.png" width="120px" /><br />Tree Maps</a></th>
+      <th style="text-align: center"><a href="https://d3plus.org/examples/basic/9029781/"><img src="https://gist.githubusercontent.com/davelandry/9029781/raw/thumbnail.png" width="120px" /><br />Scatter Plots</a></th>
+      <th style="text-align: center"><a href="https://d3plus.org/examples/basic/9029462/"><img src="https://gist.githubusercontent.com/davelandry/9029462/raw/thumbnail.png" width="120px" /><br />Stacked Areas</a></th>
+      <th style="text-align: center"><a href="https://d3plus.org/examples/basic/9037371/"><img src="https://gist.githubusercontent.com/davelandry/9037371/raw/thumbnail.png" width="120px" /><br />Line Plots</a></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><a href="https://d3plus.org/examples/basic/9042919/"><img src="https://gist.githubusercontent.com/davelandry/9042919/raw/thumbnail.png" width="120px" /><br /><strong>Networks</strong></a></td>
+      <td style="text-align: center"><a href="https://d3plus.org/examples/basic/78018ce8c3787d4e30d9/"><img src="https://gist.githubusercontent.com/davelandry/78018ce8c3787d4e30d9/raw/thumbnail.png" width="120px" /><br /><strong>Box Plots</strong></a></td>
+      <td style="text-align: center"><a href="https://d3plus.org/examples/basic/33fc382f1f1913682ec1/"><img src="https://gist.githubusercontent.com/davelandry/33fc382f1f1913682ec1/raw/thumbnail.png" width="120px" /><br /><strong>Pie Charts</strong></a></td>
+      <td style="text-align: center"><a href="https://d3plus.org/examples/basic/9042807/"><img src="https://gist.githubusercontent.com/davelandry/9042807/raw/thumbnail.png" width="120px" /><br /><strong>Geo Maps</strong></a></td>
+      <td style="text-align: center"><a href="https://d3plus.org/examples/basic/b197f489fb0fc2093fee/"><img src="https://gist.githubusercontent.com/davelandry/b197f489fb0fc2093fee/raw/thumbnail.png" width="120px" /><br /><strong>Bubbles</strong></a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>A javascript library that extends the popular <a href="http://d3js.org">D3.js</a> to enable fast and beautiful visualizations.</p>
+
+<h3 id="helpful-links">Helpful Links</h3>
+<ul>
+  <li><a href="https://d3plus.org/blog/getting-started/2014/06/12/getting-started-1/">Getting Started</a></li>
+  <li><a href="https://d3plus.org/examples/">Live Examples</a></li>
+  <li><a href="https://github.com/alexandersimoes/d3plus/wiki">Documentation</a></li>
+  <li><a href="https://github.com/alexandersimoes/d3plus/issues?state=open">Bug Reporting</a></li>
+  <li><a href="https://groups.google.com/forum/#!forum/d3plus">Google Group Discussions</a></li>
+  <li><a href="https://docs.google.com/spreadsheets/d/1JPFkLTDqnF3azUU2ssWs_M918Rr1mXIR-Flh8ccjYlo/edit#gid=0">Help with the Localization</a></li>
+</ul>
+
+<h3 id="development-environment">Development Environment</h3>
+
+<p>Clone the repo:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/alexandersimoes/d3plus.git
+</code></pre></div></div>
+
+<p>Move into that directory:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>d3plus
+</code></pre></div></div>
+
+<p>Install the dependencies:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span>
+</code></pre></div></div>
+
+<p>Run the gulp process:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gulp
+</code></pre></div></div>
+
+<p>Gulp will run a server on your local machine at port 4000, and whenever you change a source file it will re-compile d3plus.js and reload your browser!</p>
+
+<p>Additionally, the gulp process watches for any files in a directory titles “/tests”. If you place all of your test .html files in a directory of that name, the gulp process will also detect any file changes and refresh the browser.</p>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:gwiedeman@albany.edu">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/gregwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/gwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy; Gregory Wiedeman 2019
+        </p>
+        <p class="copyright text-muted">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+
+</body>
+
+</html>
