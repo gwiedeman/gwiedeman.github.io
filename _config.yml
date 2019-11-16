@@ -30,7 +30,7 @@ github_username:  gwiedeman
 
 # Build settings
 #theme: minima
-theme: jekyll-theme-clean-blog
+#theme: jekyll-theme-clean-blog
 plugins:
   - jekyll-feed
   - jekyll-sitemap
