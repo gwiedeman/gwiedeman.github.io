@@ -1,279 +1,374 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!DOCTYPE html>
 
-        <title>Advanced - Python and ArchivesSnake for Archivists</title>
-        <link rel="stylesheet" href="./css/reveal.css">
-        <link rel="stylesheet" href="./css/theme/serif.css" id="theme">
-        <link rel="stylesheet" href="./css/highlight/zenburn.css">
-        <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print">
+<html>
 
+<head>
 
-    </head>
-    <body>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <div class="reveal">
-            <div class="slides"><section  data-markdown><script type="text/template">
-
-## Python and ArchivesSnake for Archivists
-
-### Part 5: Advanced
-</script></section><section  data-markdown><script type="text/template">
-### Updating ArchivesSpace Records
-
-* When you edit ArchivesSnake objects, you are not editing the data in ArchivesSpace
-* Need to POST updates back to ArchivesSpace
-* Soon it will be easy!
-    * `collection.save()`
-* Now it's more challenging, need to use ArchivesSnake Client layer
-* Need to get and edit JSON
-</script></section><section  data-markdown><script type="text/template">
-### Code for Updating Now
-
-```python
-from asnake.aspace import ASpace
-from asnake.client import ASnakeClient
-client = ASnakeClient()
-client.authorize()
-
-aspace = ASpace()
-repo = aspace.repositories(2)
-
-file = repo.archival_objects(520)
-print (file.title)
-
-fileJson = file.json()
-fileJson["title"] = file.title.upper()
-print (fileJson["title"])
-
-update = client.post(file.uri, json=fileJson)
-print (update)
-```
-</script></section><section  data-markdown><script type="text/template">
-### Updating a Collection Note
-
-```python
-from asnake.aspace import ASpace
-from asnake.client import ASnakeClient
-client = ASnakeClient()
-client.authorize()
-
-aspace = ASpace()
-repo = aspace.repositories(2)
-
-collection = repo.resources(134)
-collectJson = collection.json()
-
-for note in collectJson["notes"]:
-    if note["type"] == "scopecontent":
-        for subnote in note["subnotes"]:
-            print (subnote)
-```
-</script></section><section  data-markdown><script type="text/template">
-### Updating a Collection Note
-
-```python
-from asnake.aspace import ASpace
-from asnake.client import ASnakeClient
-client = ASnakeClient()
-client.authorize()
-
-aspace = ASpace()
-repo = aspace.repositories(2)
-
-collection = repo.resources(134)
-collectJson = collection.json()
-
-for note in collectJson["notes"]:
-    if note["type"] == "scopecontent":
-        for subnote in note["subnotes"]:
-            subnote["content"] = "My new Note is very, very short."
-            
-update = client.post(collectJson["uri"], json=collectJson)
-print (update.status_code)
-```
-</script></section><section  data-markdown><script type="text/template">
-### File Paths in Python Scripts
-
-* Unix-style paths: `/home/username/folder`
-* Windows-style paths: `C:\Users\Username\Documents`
-* UNC Paths: `\\Server\folder`
-* `\` is for escaping special characters
-
-```python
-unixPath = "/home/username/folder"
-windowsPath = "C:\\Users\\Username\\Documents"
-uncPath = "\\\\Server\\folder"
-
-```
-</script></section><section  data-markdown><script type="text/template">
-### Python OS Module
-
-* Read and edit folders and files
-
-```python
-import os
-
-startDir = "C:\\Users\\Greg"
-
-for folder in os.listdir(startDir):
-
-    if folder == "myFolder":
-        folderPath = os.path.join(startDir, folder)
-        
-        for file in folderPath:
-            filePath = os.path.join(folderPath, file)
-            
-            if os.path.isfile(filePath):
-                if file.endswith(".txt"):
-                    print (file)
-```
-</script></section><section  data-markdown><script type="text/template">
-### Reading Text from a File
-
-```python
-import os
-
-textFile = "C:\\Users\\Greg\\myFile.txt"
-
-file = open(textFile, "r")
-text = file.read()
-
-print (text)
-
-file.close()
-```
-</script></section><section  data-markdown><script type="text/template">
-### Serialize ArchivesSpace Data
-
-```python
-import json
-from asnake.aspace import ASpace
-
-aspace = ASpace()
-repo = aspace.repositories(2)
-
-collection = repo.resources(134)
-collectJson = collection.json()
-
-myFile = "C:\\Users\\Greg\\output.json"
-file = open(myFile, "w")
-
-file.write(json.dumps(collectJson, indent=4))
-
-file.close()
-```
-</script></section><section  data-markdown><script type="text/template">
-### Serialize ASpace Data to CSV
-
-```python
-import os
-import csv
-from asnake.aspace import ASpace
-
-aspace = ASpace()
-repo = aspace.repositories(2)
-
-startDir = "C:\\Users\\Greg"
-csvFile = os.path.join(startDir, "mySheet.csv")
-
-sheet = []
-for collection in repo.resources:
-    row = []
+  <title>
+    Advanced - Python and ArchivesSnake for Archivists - Greg Wiedeman
     
-    id = collection.id_0
-    title = collection.title
-    row.append(id)
-    row.append(title)
-    
-    for date in collection.dates:
-        if date.end:
-            row.append(date.begin + "/" + date.end)
-        else:
-            row.append(date.begin)
+  </title>
+
+  <meta name="description" content="I&#39;m an archivist who works to make information more accessible.">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/workshop/advanced.html">
+  <link rel="alternate" type="application/rss+xml" title="Greg Wiedeman" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Greg Wiedeman</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/writing">Writing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/presentations">presentations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/code">Code</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cv">CV</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <h2 id="python-and-archivessnake-for-archivists">Python and ArchivesSnake for Archivists</h2>
+
+<h3 id="part-5-advanced">Part 5: Advanced</h3>
+
+<hr />
+
+<h3 id="updating-archivesspace-records">Updating ArchivesSpace Records</h3>
+
+<ul>
+  <li>When you edit ArchivesSnake objects, you are not editing the data in ArchivesSpace</li>
+  <li>Need to POST updates back to ArchivesSpace</li>
+  <li>Soon it will be easy!
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">collection.save()</code></li>
+    </ul>
+  </li>
+  <li>Now it’s more challenging, need to use ArchivesSnake Client layer</li>
+  <li>Need to get and edit JSON</li>
+</ul>
+
+<hr />
+
+<h3 id="code-for-updating-now">Code for Updating Now</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">asnake.aspace</span> <span class="kn">import</span> <span class="n">ASpace</span>
+<span class="kn">from</span> <span class="nn">asnake.client</span> <span class="kn">import</span> <span class="n">ASnakeClient</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">ASnakeClient</span><span class="p">()</span>
+<span class="n">client</span><span class="o">.</span><span class="n">authorize</span><span class="p">()</span>
+
+<span class="n">aspace</span> <span class="o">=</span> <span class="n">ASpace</span><span class="p">()</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">aspace</span><span class="o">.</span><span class="n">repositories</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">file</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">archival_objects</span><span class="p">(</span><span class="mi">520</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="nb">file</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+
+<span class="n">fileJson</span> <span class="o">=</span> <span class="nb">file</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">fileJson</span><span class="p">[</span><span class="s">"title"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">file</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">fileJson</span><span class="p">[</span><span class="s">"title"</span><span class="p">])</span>
+
+<span class="n">update</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="nb">file</span><span class="o">.</span><span class="n">uri</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">fileJson</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">update</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="updating-a-collection-note">Updating a Collection Note</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">asnake.aspace</span> <span class="kn">import</span> <span class="n">ASpace</span>
+<span class="kn">from</span> <span class="nn">asnake.client</span> <span class="kn">import</span> <span class="n">ASnakeClient</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">ASnakeClient</span><span class="p">()</span>
+<span class="n">client</span><span class="o">.</span><span class="n">authorize</span><span class="p">()</span>
+
+<span class="n">aspace</span> <span class="o">=</span> <span class="n">ASpace</span><span class="p">()</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">aspace</span><span class="o">.</span><span class="n">repositories</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">collection</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">resources</span><span class="p">(</span><span class="mi">134</span><span class="p">)</span>
+<span class="n">collectJson</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">note</span> <span class="ow">in</span> <span class="n">collectJson</span><span class="p">[</span><span class="s">"notes"</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">note</span><span class="p">[</span><span class="s">"type"</span><span class="p">]</span> <span class="o">==</span> <span class="s">"scopecontent"</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">subnote</span> <span class="ow">in</span> <span class="n">note</span><span class="p">[</span><span class="s">"subnotes"</span><span class="p">]:</span>
+            <span class="k">print</span> <span class="p">(</span><span class="n">subnote</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="updating-a-collection-note-1">Updating a Collection Note</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">asnake.aspace</span> <span class="kn">import</span> <span class="n">ASpace</span>
+<span class="kn">from</span> <span class="nn">asnake.client</span> <span class="kn">import</span> <span class="n">ASnakeClient</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">ASnakeClient</span><span class="p">()</span>
+<span class="n">client</span><span class="o">.</span><span class="n">authorize</span><span class="p">()</span>
+
+<span class="n">aspace</span> <span class="o">=</span> <span class="n">ASpace</span><span class="p">()</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">aspace</span><span class="o">.</span><span class="n">repositories</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">collection</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">resources</span><span class="p">(</span><span class="mi">134</span><span class="p">)</span>
+<span class="n">collectJson</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">note</span> <span class="ow">in</span> <span class="n">collectJson</span><span class="p">[</span><span class="s">"notes"</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">note</span><span class="p">[</span><span class="s">"type"</span><span class="p">]</span> <span class="o">==</span> <span class="s">"scopecontent"</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">subnote</span> <span class="ow">in</span> <span class="n">note</span><span class="p">[</span><span class="s">"subnotes"</span><span class="p">]:</span>
+            <span class="n">subnote</span><span class="p">[</span><span class="s">"content"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"My new Note is very, very short."</span>
+            
+<span class="n">update</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">collectJson</span><span class="p">[</span><span class="s">"uri"</span><span class="p">],</span> <span class="n">json</span><span class="o">=</span><span class="n">collectJson</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">update</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="file-paths-in-python-scripts">File Paths in Python Scripts</h3>
+
+<ul>
+  <li>Unix-style paths: <code class="language-plaintext highlighter-rouge">/home/username/folder</code></li>
+  <li>Windows-style paths: <code class="language-plaintext highlighter-rouge">C:\Users\Username\Documents</code></li>
+  <li>UNC Paths: <code class="language-plaintext highlighter-rouge">\\Server\folder</code></li>
+  <li><code class="language-plaintext highlighter-rouge">\</code> is for escaping special characters</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">unixPath</span> <span class="o">=</span> <span class="s">"/home/username/folder"</span>
+<span class="n">windowsPath</span> <span class="o">=</span> <span class="s">"C:</span><span class="se">\\</span><span class="s">Users</span><span class="se">\\</span><span class="s">Username</span><span class="se">\\</span><span class="s">Documents"</span>
+<span class="n">uncPath</span> <span class="o">=</span> <span class="s">"</span><span class="se">\\\\</span><span class="s">Server</span><span class="se">\\</span><span class="s">folder"</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="python-os-module">Python OS Module</h3>
+
+<ul>
+  <li>Read and edit folders and files</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">startDir</span> <span class="o">=</span> <span class="s">"C:</span><span class="se">\\</span><span class="s">Users</span><span class="se">\\</span><span class="s">Greg"</span>
+
+<span class="k">for</span> <span class="n">folder</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">startDir</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">folder</span> <span class="o">==</span> <span class="s">"myFolder"</span><span class="p">:</span>
+        <span class="n">folderPath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">startDir</span><span class="p">,</span> <span class="n">folder</span><span class="p">)</span>
         
-file = open(csvFile, "w")
-writer = csv.writer(file)
-writer.writerows(sheet)
-file.close()
-```
-</script></section><section  data-markdown><script type="text/template">
-### Resources
+        <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">folderPath</span><span class="p">:</span>
+            <span class="n">filePath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">folderPath</span><span class="p">,</span> <span class="nb">file</span><span class="p">)</span>
+            
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">filePath</span><span class="p">):</span>
+                <span class="k">if</span> <span class="nb">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s">".txt"</span><span class="p">):</span>
+                    <span class="k">print</span> <span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+</code></pre></div></div>
 
-* Search and use Stack Overflow answers!
-* [This Repo!](https://github.com/gwiedeman/IntroPythonASnake)
-* [ArchivesSnake Wiki](https://github.com/archivesspace-labs/ArchivesSnake/wiki)
-    * [ArchivesSnake Getting Started Guide](https://github.com/archivesspace-labs/ArchivesSnake/wiki/Getting-Started-Guide)
-    * [ArchivesSnake Commonly Used Objects](https://github.com/archivesspace-labs/ArchivesSnake/wiki/Commonly-Used-Objects
-* [ArchivesSpace API Workshop](https://github.com/archivesspace/api-training
-* [API Overview Video - Valerie Addonizio](https://www.youtube.com/watch?v=NUtuQ-LqAr4)
-* Archives Data Slack: shoes-untied.slack.com (Ask for an invite!)
-* [ArchivesSpace API docs](https://archivesspace.github.io/archivesspace/api/)
-</script></section><section  data-markdown><script type="text/template">
-## Python and ArchivesSnake for Archivists
+<hr />
 
-[Part 1: Introduction](introduction.html)
+<h3 id="reading-text-from-a-file">Reading Text from a File</h3>
 
-[Part 2: Syntax](syntax.html)
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span>
 
-[Part 3: Data](data.html)
+<span class="n">textFile</span> <span class="o">=</span> <span class="s">"C:</span><span class="se">\\</span><span class="s">Users</span><span class="se">\\</span><span class="s">Greg</span><span class="se">\\</span><span class="s">myFile.txt"</span>
 
-[Part 4: Challenges](challenges.html)
+<span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">textFile</span><span class="p">,</span> <span class="s">"r"</span><span class="p">)</span>
+<span class="n">text</span> <span class="o">=</span> <span class="nb">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
-[Part 5: Advanced](advanced.html)
-</script></section></div>
-        </div>
+<span class="k">print</span> <span class="p">(</span><span class="n">text</span><span class="p">)</span>
 
-        <script src="./lib/js/head.min.js"></script>
-        <script src="./js/reveal.js"></script>
+<span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div></div>
 
-        <script>
-            function extend() {
-              var target = {};
-              for (var i = 0; i < arguments.length; i++) {
-                var source = arguments[i];
-                for (var key in source) {
-                  if (source.hasOwnProperty(key)) {
-                    target[key] = source[key];
-                  }
-                }
-              }
-              return target;
-            }
+<hr />
 
-            // Optional libraries used to extend on reveal.js
-            var deps = [
-              { src: './lib/js/classList.js', condition: function() { return !document.body.classList; } },
-              { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
-              { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
-              { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-              { src: './plugin/zoom-js/zoom.js', async: true },
-              { src: './plugin/notes/notes.js', async: true },
-              { src: './plugin/math/math.js', async: true }
-            ];
+<h3 id="serialize-archivesspace-data">Serialize ArchivesSpace Data</h3>
 
-            // default options to init reveal.js
-            var defaultOptions = {
-              controls: true,
-              progress: true,
-              history: true,
-              center: true,
-              transition: 'default', // none/fade/slide/convex/concave/zoom
-              dependencies: deps
-            };
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">asnake.aspace</span> <span class="kn">import</span> <span class="n">ASpace</span>
 
-            // options from URL query string
-            var queryOptions = Reveal.getQueryHash() || {};
+<span class="n">aspace</span> <span class="o">=</span> <span class="n">ASpace</span><span class="p">()</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">aspace</span><span class="o">.</span><span class="n">repositories</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
-            var options = {"transition":"fade"};
-            options = extend(defaultOptions, options, queryOptions);
-        </script>
+<span class="n">collection</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">resources</span><span class="p">(</span><span class="mi">134</span><span class="p">)</span>
+<span class="n">collectJson</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="n">myFile</span> <span class="o">=</span> <span class="s">"C:</span><span class="se">\\</span><span class="s">Users</span><span class="se">\\</span><span class="s">Greg</span><span class="se">\\</span><span class="s">output.json"</span>
+<span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">myFile</span><span class="p">,</span> <span class="s">"w"</span><span class="p">)</span>
+
+<span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">collectJson</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="serialize-aspace-data-to-csv">Serialize ASpace Data to CSV</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">from</span> <span class="nn">asnake.aspace</span> <span class="kn">import</span> <span class="n">ASpace</span>
+
+<span class="n">aspace</span> <span class="o">=</span> <span class="n">ASpace</span><span class="p">()</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">aspace</span><span class="o">.</span><span class="n">repositories</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">startDir</span> <span class="o">=</span> <span class="s">"C:</span><span class="se">\\</span><span class="s">Users</span><span class="se">\\</span><span class="s">Greg"</span>
+<span class="n">csvFile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">startDir</span><span class="p">,</span> <span class="s">"mySheet.csv"</span><span class="p">)</span>
+
+<span class="n">sheet</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">collection</span> <span class="ow">in</span> <span class="n">repo</span><span class="o">.</span><span class="n">resources</span><span class="p">:</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">id_0</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">title</span>
+    <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+    <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">collection</span><span class="o">.</span><span class="n">dates</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">date</span><span class="o">.</span><span class="n">end</span><span class="p">:</span>
+            <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">begin</span> <span class="o">+</span> <span class="s">"/"</span> <span class="o">+</span> <span class="n">date</span><span class="o">.</span><span class="n">end</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">begin</span><span class="p">)</span>
+        
+<span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">csvFile</span><span class="p">,</span> <span class="s">"w"</span><span class="p">)</span>
+<span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">sheet</span><span class="p">)</span>
+<span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="resources">Resources</h3>
+
+<ul>
+  <li>Search and use Stack Overflow answers!</li>
+  <li><a href="https://github.com/gwiedeman/IntroPythonASnake">This Repo!</a></li>
+  <li><a href="https://github.com/archivesspace-labs/ArchivesSnake/wiki">ArchivesSnake Wiki</a>
+    <ul>
+      <li><a href="https://github.com/archivesspace-labs/ArchivesSnake/wiki/Getting-Started-Guide">ArchivesSnake Getting Started Guide</a></li>
+      <li><a href="https://github.com/archivesspace-labs/ArchivesSnake/wiki/Commonly-Used-Objects">ArchivesSnake Commonly Used Objects</a></li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/archivesspace/api-training">ArchivesSpace API Workshop</a></li>
+  <li><a href="https://www.youtube.com/watch?v=NUtuQ-LqAr4">API Overview Video - Valerie Addonizio</a></li>
+  <li>Archives Data Slack: shoes-untied.slack.com</li>
+  <li><a href="https://archivesspace.github.io/archivesspace/api/">ArchivesSpace API docs</a></li>
+</ul>
+
+<hr />
+
+<h2 id="python-and-archivessnake-for-archivists-1">Python and ArchivesSnake for Archivists</h2>
+
+<p><a href="/workshop/introduction.html">Part 1: Introduction</a></p>
+
+<p><a href="/workshop/syntax.html">Part 2: Syntax</a></p>
+
+<p><a href="/workshop/data.html">Part 3: Data</a></p>
+
+<p><a href="/workshop/challenges.html">Part 4: Challenges</a></p>
+
+<p><a href="/workshop/advanced.html">Part 5: Advanced</a></p>
 
 
-        <script>
-            Reveal.initialize(options);
-        </script>
-    </body>
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:gwiedeman@albany.edu">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/gregwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/gwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy; Gregory Wiedeman 2019
+        </p>
+        <p class="copyright text-muted">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+
+</body>
+
 </html>

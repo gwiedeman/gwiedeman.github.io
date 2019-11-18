@@ -1,5 +1,5 @@
 ---
-title: Description and Access in the University Archives
+title: Description and Acquisitions in the University Archives
 date: 2019-11-11
 event: IST 656 Archives & Manuscripts
 link: archivesManuscripts2019.html

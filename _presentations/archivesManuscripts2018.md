@@ -1,5 +1,5 @@
 ---
-title: University Archives in Practice at UAlbany
+title: Description and Access in the University Archives
 date: 2018-10-09
 event: IST 656 Archives & Manuscripts
 link: archivesManuscripts2018.html

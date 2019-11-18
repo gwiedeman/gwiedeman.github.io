@@ -44,7 +44,14 @@ layout: default
         {% endif %}
 
         {% if page.link %}
-          <a href="{{ page.link | prepend: site.baseurl | replace: '//', '/' }}""><button name="button" class="btn btn-success btn-lg" onclick="{{ page.link }}">
+          {% if page.link contains '://' %}
+            {% assign fullurl = page.link %}
+          {% else %}
+            {% assign rooturl = "/slides/" | prepend: site.baseurl | replace: '//', '/' %}
+            {% assign fullurl = page.link | prepend: rooturl %}
+          {% endif %}
+
+          <a href="{{ fullurl }}"><button name="button" class="btn btn-success btn-lg" onclick="{{ fullurl }}">
           {% if page.journal %}
             {{ page.journal }}
           {% else %}
@@ -54,7 +61,13 @@ layout: default
         {% endif %}
 
         {% if page.pdf %}
-          <a href="{{ page.pdf | prepend: site.baseurl | replace: '//', '/'}}""><button name="button" class="btn btn-danger btn-lg" onclick="{{ page.pdf }}">
+          {% if page.pdf contains '://' %}
+            {% assign fullpdf = page.pdf %}
+          {% else %}
+            {% assign rootpdf = "/slides/" | prepend: site.baseurl | replace: '//', '/' %}
+            {% assign fullpdf = page.pdf | prepend: rootpdf %}
+          {% endif %}
+          <a href="{{ fullpdf }}"><button name="button" class="btn btn-danger btn-lg" onclick="{{ fullpdf }}">
             <i class="fas fa-file-pdf"></i>
           PDF</button></a>
         {% endif %}

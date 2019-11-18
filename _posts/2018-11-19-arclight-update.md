@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  'UAlbany Arclight Update and Outlook'
+title:  'UAlbany ArcLight Update and Outlook'
 link: https://docs.google.com/document/d/1SOTOJb1FZPeuNyfchEpGFa7u1sgl0DtJwqNP2X44J5c
 link_label: Google Doc
 pdf: /assets/arclightUpdate.pdf
