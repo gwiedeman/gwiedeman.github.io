@@ -64,8 +64,7 @@ layout: default
           {% if page.pdf contains '://' %}
             {% assign fullpdf = page.pdf %}
           {% else %}
-            {% assign rootpdf = "/slides/" | prepend: site.baseurl | replace: '//', '/' %}
-            {% assign fullpdf = page.pdf | prepend: rootpdf %}
+            {% assign fullpdf = page.pdf | prepend: site.baseurl | replace: '//', '/' %}
           {% endif %}
           <a href="{{ fullpdf }}"><button name="button" class="btn btn-danger btn-lg" onclick="{{ fullpdf }}">
             <i class="fas fa-file-pdf"></i>
