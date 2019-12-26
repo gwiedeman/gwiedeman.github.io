@@ -1,258 +1,143 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<html>
-
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <title>
-    Challenges - Python and ArchivesSnake for Archivists - Greg Wiedeman
-    
-  </title>
-
-  <meta name="description" content="I&#39;m an archivist who works to make information more accessible.">
-
-  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
-
-  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
-
-  <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/workshop/challenges.html">
-  <link rel="alternate" type="application/rss+xml" title="Greg Wiedeman" href="/feed.xml">
-
-</head>
+        <title>Challenges - Python and ArchivesSnake for Archivists</title>
+        <link rel="stylesheet" href="./css/reveal.css">
+        <link rel="stylesheet" href="./css/theme/serif.css" id="theme">
+        <link rel="stylesheet" href="./css/highlight/zenburn.css">
+        <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print">
 
 
-<body>
+    </head>
+    <body>
 
-  <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-  <div class="container">
-    <a class="navbar-brand" href="/">Greg Wiedeman</a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      Menu
-      <i class="fa fa-bars"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/writing">Writing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/presentations">presentations</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/code">Code</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/cv">CV</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+        <div class="reveal">
+            <div class="slides"><section  data-markdown><script type="text/template">
 
-  <h2 id="python-and-archivessnake-for-archivists">Python and ArchivesSnake for Archivists</h2>
+## Python and ArchivesSnake for Archivists
 
-<h3 id="part-4-challenges">Part 4: Challenges</h3>
+### Part 4: Challenges
+</script></section><section  data-markdown><script type="text/template">
+### Help
 
-<hr />
+* [Syntax](https://github.com/gwiedeman/IntroPythonASnake/blob/master/syntax.md)
+* [Data](https://github.com/gwiedeman/IntroPythonASnake/blob/master/data.md)
+* [ArchivesSnake Commonly Used Objects](https://github.com/archivesspace-labs/ArchivesSnake/wiki/Commonly-Used-Objects)
+</script></section><section  data-markdown><script type="text/template">
+### Challenge 1: Counting Files
 
-<h3 id="help">Help</h3>
+* Hint: try `collection = repo.resources(number)`
+* How many files are in a collection?
+* Try a resource with series, etc.
+</script></section><section  data-markdown><script type="text/template">
 
-<ul>
-  <li><a href="https://github.com/gwiedeman/IntroPythonASnake/blob/master/syntax.md">Syntax</a></li>
-  <li><a href="https://github.com/gwiedeman/IntroPythonASnake/blob/master/data.md">Data</a></li>
-  <li><a href="https://github.com/archivesspace-labs/ArchivesSnake/wiki/Commonly-Used-Objects">ArchivesSnake Commonly Used Objects</a></li>
-</ul>
+### Challenge 2: Total Extent
 
-<hr />
+* How many cubic feet are in the repository?
+* There may be different types: `cubic feet` and `cubic ft.`
+</script></section><section  data-markdown><script type="text/template">
+### Challenge 3: Restrictions
 
-<h3 id="challenge-1-counting-files">Challenge 1: Counting Files</h3>
+* Do any files in a collection have access restrictions?
+    * get a list of `ref_id`s and titles
+* Is there odd or inconsistent language in notes?
+* How many collections have access restrictions?
+* try `.resource(157)` or `.resource(120)` if you can't find any
 
-<ul>
-  <li>Hint: try <code class="language-plaintext highlighter-rouge">collection = repo.resources(number)</code></li>
-  <li>How many files are in a collection?</li>
-  <li>Try a resource with series, etc.</li>
-</ul>
+</script></section><section  data-markdown><script type="text/template">
+### Challenge 4: Bad Data
 
-<hr />
+* Do any folder titles start or end with spaces?
+* Can you find abbreviations?
+* Inconsistent hyphen usage?
+* Can you find old HTML special characters?
+    * [HTML Special Characters](https://www.html.am/reference/html-special-characters.cfm)
+* Test code on one resource
+    * Once it works, apply to all
+    </script></section><section  data-markdown><script type="text/template">
+### Challenge 5: Subjects
 
-<h3 id="challenge-2-total-extent">Challenge 2: Total Extent</h3>
+* Can you find duplicate subject records?
+* try `for subject in repo.subjects`
+* Get a list URIs of duplicates
+</script></section><section  data-markdown><script type="text/template">
+### Challenge 6: DACS notes
 
-<ul>
-  <li>How many cubic feet are in the repository?</li>
-  <li>There may be different types: <code class="language-plaintext highlighter-rouge">cubic feet</code> and <code class="language-plaintext highlighter-rouge">cubic ft.</code></li>
-</ul>
+* Which Collections do not have DACS minimum notes?
+* Test code on one resource
+    * Once it works, apply to all
+* Use [DACS Single-level Required](https://www2.archivists.org/standards/DACS/part_I/chapter_1)
 
-<hr />
+</script></section><section  data-markdown><script type="text/template">
+### Challenge 7: Boxes
 
-<h3 id="challenge-3-restrictions">Challenge 3: Restrictions</h3>
+* How many oversized boxes are in a collection?
+* Are the the labeles uniform?
+    * `oversized`
+    * `Oversized`
+    * `Oversize`
+* Try `top_container.reify()` when you get `{"ref: "/repositories/2/top_containers/54"}`
+</script></section><section  data-markdown><script type="text/template">
+### Challenge 8: Choose you own adventure
 
-<ul>
-  <li>Do any files in a collection have access restrictions?
-    <ul>
-      <li>get a list of <code class="language-plaintext highlighter-rouge">ref_id</code>s and titles</li>
-    </ul>
-  </li>
-  <li>Is there odd or inconsistent language in notes?</li>
-  <li>How many collections have access restrictions?</li>
-  <li>try <code class="language-plaintext highlighter-rouge">.resource(157)</code> or <code class="language-plaintext highlighter-rouge">.resource(120)</code> if you can’t find any</li>
-</ul>
+</script></section><section  data-markdown><script type="text/template">
+## Python and ArchivesSnake for Archivists
 
-<hr />
+[Part 5: Advanced](advanced.html)
+</script></section></div>
+        </div>
 
-<h3 id="challenge-4-bad-data">Challenge 4: Bad Data</h3>
+        <script src="./lib/js/head.min.js"></script>
+        <script src="./js/reveal.js"></script>
 
-<ul>
-  <li>Do any folder titles start or end with spaces?</li>
-  <li>Can you find abbreviations?</li>
-  <li>Inconsistent hyphen usage?</li>
-  <li>Can you find old HTML special characters?
-    <ul>
-      <li><a href="https://www.html.am/reference/html-special-characters.cfm">HTML Special Characters</a></li>
-    </ul>
-  </li>
-  <li>Test code on one resource
-    <ul>
-      <li>Once it works, apply to all</li>
-    </ul>
-  </li>
-</ul>
+        <script>
+            function extend() {
+              var target = {};
+              for (var i = 0; i < arguments.length; i++) {
+                var source = arguments[i];
+                for (var key in source) {
+                  if (source.hasOwnProperty(key)) {
+                    target[key] = source[key];
+                  }
+                }
+              }
+              return target;
+            }
 
-<hr />
+            // Optional libraries used to extend on reveal.js
+            var deps = [
+              { src: './lib/js/classList.js', condition: function() { return !document.body.classList; } },
+              { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+              { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+              { src: './plugin/zoom-js/zoom.js', async: true },
+              { src: './plugin/notes/notes.js', async: true },
+              { src: './plugin/math/math.js', async: true }
+            ];
 
-<h3 id="challenge-5-subjects">Challenge 5: Subjects</h3>
+            // default options to init reveal.js
+            var defaultOptions = {
+              controls: true,
+              progress: true,
+              history: true,
+              center: true,
+              transition: 'default', // none/fade/slide/convex/concave/zoom
+              dependencies: deps
+            };
 
-<ul>
-  <li>Can you find duplicate subject records?</li>
-  <li>try <code class="language-plaintext highlighter-rouge">for subject in repo.subjects</code></li>
-  <li>Get a list URIs of duplicates</li>
-</ul>
+            // options from URL query string
+            var queryOptions = Reveal.getQueryHash() || {};
 
-<hr />
-
-<h3 id="challenge-6-dacs-notes">Challenge 6: DACS notes</h3>
-
-<ul>
-  <li>Which Collections do not have DACS minimum notes?</li>
-  <li>Test code on one resource
-    <ul>
-      <li>Once it works, apply to all</li>
-    </ul>
-  </li>
-  <li>Use <a href="https://www2.archivists.org/standards/DACS/part_I/chapter_1">DACS Single-level Required</a></li>
-</ul>
-
-<hr />
-
-<h3 id="challenge-7-boxes">Challenge 7: Boxes</h3>
-
-<ul>
-  <li>How many oversized boxes are in a collection?</li>
-  <li>Are the the labeles uniform?
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">oversized</code></li>
-      <li><code class="language-plaintext highlighter-rouge">Oversized</code></li>
-      <li><code class="language-plaintext highlighter-rouge">Oversize</code></li>
-    </ul>
-  </li>
-  <li>Try <code class="language-plaintext highlighter-rouge">top_container.reify()</code> when you get <code class="language-plaintext highlighter-rouge">{"ref: "/repositories/2/top_containers/54"}</code></li>
-</ul>
-
-<hr />
-
-<h3 id="challenge-8-choose-you-own-adventure">Challenge 8: Choose you own adventure</h3>
-
-<hr />
-
-<h2 id="python-and-archivessnake-for-archivists-1">Python and ArchivesSnake for Archivists</h2>
-
-<p><a href="/workshop/advanced.html">Part 5: Advanced</a></p>
+            var options = {"transition":"fade"};
+            options = extend(defaultOptions, options, queryOptions);
+        </script>
 
 
-  <!-- Footer -->
-
-<hr>
-
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <ul class="list-inline text-center">
-          
-          <li class="list-inline-item">
-            <a href="mailto:gwiedeman@albany.edu">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          
-          
-          <li class="list-inline-item">
-            <a href="https://twitter.com/gregwiedeman">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          <li class="list-inline-item">
-            <a href="https://github.com/gwiedeman">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-        <p class="copyright text-muted">
-          Copyright &copy; Gregory Wiedeman 2019
-        </p>
-        <p class="copyright text-muted">
-          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
-        </p>
-      </div>
-    </div>
-  </div>
-</footer>
-
-  <script src="/assets/vendor/jquery/jquery.min.js"></script>
-<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
-
-<script src="/assets/scripts.js"></script>
-
-
-
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', '');
-</script>
-
-
-
-</body>
-
+        <script>
+            Reveal.initialize(options);
+        </script>
+    </body>
 </html>
