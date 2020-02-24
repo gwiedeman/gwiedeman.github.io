@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>CAA Unconference</title>
+    <link rel="stylesheet" href="./css/reveal.css" />
+    <link rel="stylesheet" href="./css/theme/night.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+    <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+<style>
+#fLeft {float: left; max-width: 50%;}
+#fRight {float: right; max-width: 50%;}
+#smallLink {font-size: 18px;}
+.whitebg {background-color: #fff; margin-top: 30% !important; padding: 15px !important; border-radius: 15px;}
+h1, h2, h3, h4, h5 {text-transform: capitalize !important;}
+</style>
+
+# Welcome
+## Capital Area Archivists
+### 2020 Spring Unconference
+
+[archives.albany.edu/caa](https://archives.albany.edu/caa)
+</script></section><section  data-markdown><script type="text/template">
+### Super low-barrier space to learn and share
+
+* Low-budget
+* Participant-Driven!
+* Contributor session ideas
+</script></section><section  data-markdown><script type="text/template">
+## Agenda
+
+* Announce session ideas
+* Set schedule
+    * 3 sessions slots
+    * 2-3 concurrent sessions
+    * 15 minute breaks 
+    * Wrapup at the end
+</script></section><section  data-markdown><script type="text/template">
+## Where things are
+
+* Standish Room
+    * here
+* Conference Room
+    * in special collections down the hall
+* Back Room
+    * behind this room
+</script></section><section  data-markdown><script type="text/template">
+### Critical Images: Altering the Past
+#### Sheri Sarnoff, Amanda Partridge, Miles Lawlor
+</script></section><section  data-markdown><script type="text/template">
+### Capital Region Alliance for Response (CapNYAFR)
+#### John Diefenderfer
+</script></section><section  data-markdown><script type="text/template">
+### How do we do that? Implementing Web Systems in Archives
+#### Gregory Wiedeman, Mark Wolfe
+</script></section><section  data-markdown><script type="text/template">
+### I was told there would be no Public Speaking: Outreach and Archives
+#### Michael Maloney
+</script></section><section  data-markdown><script type="text/template">
+### Time to Write
+#### Jenifer Monger
+</script></section><section  data-markdown><script type="text/template">
+### Archivists & Librarians: Digital Selections in Web-Scale Discovery Tool Implementations?
+#### Brenden McCarthy
+</script></section><section  data-markdown><script type="text/template">
+### Collection Development and Acquisition 
+#### Brian Keough
+</script></section><section  data-markdown><script type="text/template">
+### Schedule Setting
+
+[archives.albany.edu/schedule](https://archives.albany.edu/schedule)
+
+</script></section></div>
+    </div>
+
+    <script src="./js/reveal.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // Optional libraries used to extend on reveal.js
+      var deps = [
+        { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: './plugin/zoom-js/zoom.js', async: true },
+        { src: './plugin/notes/notes.js', async: true },
+        { src: './plugin/math/math.js', async: true }
+      ];
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        dependencies: deps
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal.getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"fade"}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>

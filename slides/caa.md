@@ -79,10 +79,12 @@ h1, h2, h3, h4, h5 {text-transform: capitalize !important;}
 
 ---
 
-### 
-####
+### Collection Development and Acquisition 
+#### Brian Keough
 
 ---
 
-###
-####
+### Schedule Setting
+
+[archives.albany.edu/schedule](https://archives.albany.edu/schedule)
+
