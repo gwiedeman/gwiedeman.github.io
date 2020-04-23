@@ -189,10 +189,11 @@ for collection in repo.resources:
     row.append(title)
     
     for date in collection.dates:
-        if date.end:
+        if "end" in dir(date):
             row.append(date.begin + "/" + date.end)
         else:
             row.append(date.begin)
+    sheet.append(row)
         
 file = open(csvFile, "w")
 writer = csv.writer(file)
