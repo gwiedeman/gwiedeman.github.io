@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Integrating ArchivesSpace and ArcLight</title>
+    <link rel="stylesheet" href="./css/reveal.css" />
+    <link rel="stylesheet" href="./css/theme/serif.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+    <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+<style>
+#fLeft {float: left; max-width: 50%;}
+#fRight {float: right; max-width: 50%;}
+#smallLink {font-size: 18px;}
+.whitebg {background-color: #fff; margin-top: 30% !important; padding: 15px !important; border-radius: 15px;}
+</style>
+
+## Integrating ArchivesSpace and ArcLight
+
+Gregory Wiedeman<br/>
+University Archivist<br/>
+University at Albany, SUNY
+</script></section><section  data-markdown><script type="text/template">
+### Integrating ASpace and ArcLight
+
+* Why we're using ASpace and ArcLight
+	* Usability experimentation
+	* Intergrations principles
+	* 
+* What does it look like?
+	* 
+* How the connections work
+	* Technical details
+* The bigger picture
+	* What does archival discovery look like?
+</script></section><section  data-markdown><script type="text/template">
+## Why we're using ASpace and ArcLight
+
+<div id="fLeft">
+<ul>
+<li>Archives usability is bad</li>
+<li>Single point of discovery</li>
+<li>Need experimentation, iteration</li>
+</ul>
+</div>
+<div id="fRight">
+<video width="100%" height="100%" autoplay controls>
+  <source src="scroll.webm" type="video/webm">
+</video>
+</div>
+</script></section><section  data-markdown><script type="text/template">
+### Integrations Principles
+
+* Boilerplate implementations
+* Separation of concerns
+	* Do one thing
+* Networks of open systems
+</script></section><section  data-markdown><script type="text/template">
+### Why not ASpace PUI?
+
+* Complexity for development
+* Includes both Archivist and User functionality
+* Customizations often affect other functions
+* Harder to intergrate user experience with other systems
+</script></section><section  data-markdown><script type="text/template">
+### Why ArcLight
+
+* Public-data only
+* Only presents Solr data
+* Open API useful
+* Familiar technology
+</script></section><section  data-markdown><script type="text/template">
+## What does this look like?
+
+* [Resource in ASpace](https://aspace.library.albany.edu/resources/390)
+* [Collection in ArcLight](https://archives.albany.edu/description/catalog/ua200)
+* Digital Object in Hyrax
+</script></section><section  data-markdown><script type="text/template">
+## How do the connections work?
+
+* Overnight or manual EAD export
+* Index shell script
+* Hyrax upload?
+</script></section><section  data-markdown><script type="text/template">
+## Next steps
+
+* Moar ArchivesSnake
+* Indexing from OAI feed?
+</script></section><section  data-markdown><script type="text/template">
+### The Bigger Picture
+
+* We need a discovery system for digital objects based on archival principles
+	* Description for discovery
+	* Object for discovery, description for context
+* Might not be a single system
+</script></section><section  data-markdown><script type="text/template">
+## Integrating ArchivesSpace and ArcLight
+
+Gregory Wiedeman<br/>
+University Archivist<br/>
+University at Albany, SUNY</script></section></div>
+    </div>
+
+    <script src="./js/reveal.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // Optional libraries used to extend on reveal.js
+      var deps = [
+        { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: './plugin/zoom-js/zoom.js', async: true },
+        { src: './plugin/notes/notes.js', async: true },
+        { src: './plugin/math/math.js', async: true }
+      ];
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        dependencies: deps
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal.getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"fade"}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
