@@ -98,7 +98,7 @@ University at Albany, SUNY
 
 ### How do the connections work?
 
-<img src="https://raw.githubusercontent.com/UAlbanyArchives/ArchivesSpace-ArcLight-Workflow/master/img/overnightScripts.png" />
+<img src="https://raw.githubusercontent.com/UAlbanyArchives/ArchivesSpace-ArcLight-Workflow/master/img/overnightScripts.png" alt="Diagram showing how ArchivesSpace connects to ArcLight and Hyrax." />
 
 ---
 
@@ -166,7 +166,7 @@ University at Albany, SUNY
 	* Object for discovery, description for context
 	* Single experience, multiple systems
 
-<img src="img/integrateContext.png" />
+<img src="img/integrateContext.png" alt="Example from ArcLight demo of digital object in context"/>
 
 ---
 
