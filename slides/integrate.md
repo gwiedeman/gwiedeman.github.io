@@ -9,11 +9,21 @@ revealOptions:
 #smallLink {font-size: 18px;}
 .whitebg {background-color: #fff; margin-top: 30% !important; padding: 15px !important; border-radius: 15px;}
 .reveal section img {border: none;}
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+	font-family: "Montserrat", Roboto , sans-serif;
+	text-transform: initial;
+	font-weight: bold;
+}
 </style>
 
 ## Integrating ArchivesSpace and ArcLight
 
-[gregwiedeman.com/slides/integrate.html](https://gregwiedeman.com/slides/aspaceIntergrations.html)
+[gregwiedeman.com/slides/integrate.html](https://gregwiedeman.com/slides/integrate.html)
 
 Gregory Wiedeman<br/>
 University Archivist<br/>
