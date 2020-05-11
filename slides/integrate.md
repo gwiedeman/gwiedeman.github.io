@@ -21,7 +21,7 @@ revealOptions:
 }
 .wrap{
 position:relative;
-  height:50vh;
+  height:30vh;
   border-left:15px solid #000;
   padding:5vh 20px;
 }
@@ -42,14 +42,6 @@ Gregory Wiedeman<br/>
 University Archivist<br/>
 University at Albany, SUNY
 
----
-
-### Integrating ASpace and ArcLight
-
-* Why we're using ASpace and ArcLight
-* What does it look like?
-* How the connections work
-* The bigger picture
 
 ---
 
@@ -72,11 +64,49 @@ University at Albany, SUNY
 
 ### Things to try!
 
+* A single point of discovery
 * Use archival description for discovery of online content
 	* Digitized material
 	* Born-digital
 	* Without item-level description
-* A single point of discovery
+
+---
+
+### The Bigger Picture
+
+<div id="fLeft">
+<div class="wrap">
+  <svg class="arrow down" viewbox="0 0 7 10">
+    <path d="M3.5 10 L7 0 Q3.5 3 0 0z"/>
+  </svg>
+</div>
+</div>
+<div style="float:left">
+	<ul>
+	<li>Collection Context</li>
+		<ul>
+			<li>Series Context</li>
+				<ul>
+					<li>File record</li>
+					<ul>
+						<li>Digital object</li>
+						<ul>
+							<li>Automated metadata</li>
+							<li>Timestamps</li>
+							<li>Extracted entities</li>
+						</ul>
+					</ul>
+				</ul>
+		</ul>
+	</ul>
+</div>
+<div id="fRight">
+<div class="wrap">
+  <svg class="arrow up" viewbox="0 0 7 10">
+    <path d="M3.5 0 L7 10 Q3.5 7 0 10z"/>
+  </svg>
+</div>
+</div>
 
 ---
 
@@ -91,9 +121,10 @@ University at Albany, SUNY
 
 ### Integrations Principles
 
-* Boilerplate implementations
 * Separation of concerns
 	* Do one thing
+* Boilerplate implementations
+	* Try to keep integeration outside of systems
 * Networks of open systems
 
 ---
@@ -139,12 +170,12 @@ University at Albany, SUNY
 
 ### What does this look like?
 
-* [Resource in ASpace](https://aspace.library.albany.edu/resources/390)
+* Resource in ASpace
 * [Collection in ArcLight](https://archives.albany.edu/description/catalog/ua200)
 	* Individual levels
 	* Blacklight features like facets
 * [Single point of discovery](https://archives.albany.edu/)
-* [DAO in ASpace](https://aspace.library.albany.edu/digital_objects/20032)
+* DAO in ASpace
 * [Digital Object in Hyrax](https://archives.albany.edu/concern/daos/6d56zx17z)
 * Two-way client-side integration
  
@@ -152,21 +183,13 @@ University at Albany, SUNY
 
 ### Digital Object Upload
 
-
 * Upload a [Commencement Program](https://archives.albany.edu/description/catalog/ua935)
 * [Documentation](https://wiki.albany.edu/display/SCA/Uploading+Digital+Objects+to+Hyrax)
+
 
 ---
 
 ### Limitations
-
-* Takes some customization
-* Hyrax, and all repositories are challenging
-* Usability Issues
-
----
-
-### Usability Issues
 
 <video width="100%" height="100%" autoplay controls>
   <source src="scroll.webm" type="video/webm">
@@ -180,132 +203,9 @@ University at Albany, SUNY
 * [UAlbany ArcLight Update and Outlook](https://gregwiedeman.com/2018/11/19/arclight-update.html)
 * [UAlbany ArcLight Usability Analysis](https://docs.google.com/document/d/1etPr-b1B13nwuDa0eXgKrYXFAzZ5vvYJ_NS7VmbrBxI/edit)
 * Addressed during [ArcLight Phase II work cycle](https://library.stanford.edu/blogs/digital-library-blog/2017/06/arclight-mvp-work-cycle-completed)
+* [UM Bentley Feedback](https://docs.google.com/document/d/1HN5CLUFuFJ1m37KgFQ2w3LBZbuz5E0YzRE3_v42_nIg)
+* Could add new design features to ASpace PUI
 
----
-
-### The Bigger Picture
-
-* We need a discovery system for digital objects based on archival principles
-	* Description for discovery
-	* Object for discovery, description for context
-	* Single experience, multiple systems
-
----
-
-### The Bigger Picture
-
-<div id="fLeft">
-<div class="wrap" style="border-color:#002b36;">
-  <svg class="arrow down" viewbox="0 0 7 10" style="display:none;">
-    <path d="M3.5 10 L7 0 Q3.5 3 0 0z"/>
-  </svg>
-</div>
-</div>
-<div style="float:inline-start">
-	<ul>
-	<li>Collection Context</li>
-		<ul>
-			<li>Series Context</li>
-				<ul>
-					<li>File record</li>
-					<ul>
-						<li>Digital object</li>
-						<ul>
-							<li>Automated metadata</li>
-							<li>Timestamps</li>
-							<li>Extracted entities</li>
-							<li>More</li>
-						</ul>
-					</ul>
-				</ul>
-		</ul>
-	</ul>
-</div>
-<div id="fRight">
-<div class="wrap" style="border-color:#002b36;">
-  <svg class="arrow up" viewbox="0 0 7 10" style="display:none;">
-    <path d="M3.5 0 L7 10 Q3.5 7 0 10z"/>
-  </svg>
-</div>
-</div>
-
----
-
-### The Bigger Picture
-
-<div id="fLeft">
-<div class="wrap">
-  <svg class="arrow down" viewbox="0 0 7 10">
-    <path d="M3.5 10 L7 0 Q3.5 3 0 0z"/>
-  </svg>
-</div>
-</div>
-<div style="float:inline-start">
-	<ul>
-	<li>Collection Context</li>
-		<ul>
-			<li>Series Context</li>
-				<ul>
-					<li>File record</li>
-					<ul>
-						<li>Digital object</li>
-						<ul>
-							<li>Automated metadata</li>
-							<li>Timestamps</li>
-							<li>Extracted entities</li>
-							<li>More</li>
-						</ul>
-					</ul>
-				</ul>
-		</ul>
-	</ul>
-</div>
-<div id="fRight">
-<div class="wrap" style="border-color:#002b36;">
-  <svg class="arrow up" viewbox="0 0 7 10" style="display:none;">
-    <path d="M3.5 0 L7 10 Q3.5 7 0 10z"/>
-  </svg>
-</div>
-</div>
-
----
-
-### The Bigger Picture
-
-<div id="fLeft">
-<div class="wrap">
-  <svg class="arrow down" viewbox="0 0 7 10">
-    <path d="M3.5 10 L7 0 Q3.5 3 0 0z"/>
-  </svg>
-</div>
-</div>
-<div style="float:inline-start">
-	<ul>
-	<li>Collection Context</li>
-		<ul>
-			<li>Series Context</li>
-				<ul>
-					<li>File record</li>
-					<ul>
-						<li>Digital object</li>
-						<ul>
-							<li>Automated metadata</li>
-							<li>Timestamps</li>
-							<li>Extracted entities</li>
-							<li>More</li>
-						</ul>
-					</ul>
-				</ul>
-		</ul>
-	</ul>
-</div>
-<div id="fRight">
-<div class="wrap">
-  <svg class="arrow up" viewbox="0 0 7 10">
-    <path d="M3.5 0 L7 10 Q3.5 7 0 10z"/>
-  </svg>
-</div>
-</div>
 
 ---
 
