@@ -19,6 +19,19 @@ revealOptions:
 	text-transform: initial;
 	font-weight: bold;
 }
+.wrap{
+position:relative;
+  height:50vh;
+  border-left:15px solid #000;
+  padding:5vh 20px;
+}
+.arrow {
+  position:absolute;
+  left:-43px;
+  width: 70px;
+  bottom: -20px;
+}
+.up{top:-20px;}
 </style>
 
 ## Integrating ArchivesSpace and ArcLight
@@ -87,12 +100,23 @@ University at Albany, SUNY
 
 ### Why ArcLight
 
-* Does one thing
-	* Only presents Solr data
-	* Public-data only
-* Built for archival principles
-* Familiar technology
-* Open API is useful
+<div id="fLeft">
+<ul>
+<li>Does one thing</li>
+	<ul>
+	<li>presents Solr data</li>
+	<li>Public-data only</li>
+	</ul>
+<li>Built for aggregate description</li>
+<li>Familiar technology</li>
+<li>Open API is useful</li>
+</ul>
+</div>
+<div id="fRight">
+	<a href="https://archives.albany.edu/description/catalog/apap298"><img src="img/arclight.png" alt="Screenshot of ArcLight." /></a>
+
+</div>
+
 
 ---
 
@@ -166,11 +190,126 @@ University at Albany, SUNY
 	* Object for discovery, description for context
 	* Single experience, multiple systems
 
-<img src="img/integrateContext.png" alt="Example from ArcLight demo of digital object in context"/>
+---
+
+### The Bigger Picture
+
+<div id="fLeft">
+<div class="wrap" style="border-color:#002b36;">
+  <svg class="arrow down" viewbox="0 0 7 10" style="display:none;">
+    <path d="M3.5 10 L7 0 Q3.5 3 0 0z"/>
+  </svg>
+</div>
+</div>
+<div style="float:inline-start">
+	<ul>
+	<li>Collection Context</li>
+		<ul>
+			<li>Series Context</li>
+				<ul>
+					<li>File record</li>
+					<ul>
+						<li>Digital object</li>
+						<ul>
+							<li>Automated metadata</li>
+							<li>Timestamps</li>
+							<li>Extracted entities</li>
+							<li>More</li>
+						</ul>
+					</ul>
+				</ul>
+		</ul>
+	</ul>
+</div>
+<div id="fRight">
+<div class="wrap" style="border-color:#002b36;">
+  <svg class="arrow up" viewbox="0 0 7 10" style="display:none;">
+    <path d="M3.5 0 L7 10 Q3.5 7 0 10z"/>
+  </svg>
+</div>
+</div>
 
 ---
 
-###  [Integrating ArchivesSpace and ArcLight](gregwiedeman.com/slides/aspaceIntergrations.html)
+### The Bigger Picture
+
+<div id="fLeft">
+<div class="wrap">
+  <svg class="arrow down" viewbox="0 0 7 10">
+    <path d="M3.5 10 L7 0 Q3.5 3 0 0z"/>
+  </svg>
+</div>
+</div>
+<div style="float:inline-start">
+	<ul>
+	<li>Collection Context</li>
+		<ul>
+			<li>Series Context</li>
+				<ul>
+					<li>File record</li>
+					<ul>
+						<li>Digital object</li>
+						<ul>
+							<li>Automated metadata</li>
+							<li>Timestamps</li>
+							<li>Extracted entities</li>
+							<li>More</li>
+						</ul>
+					</ul>
+				</ul>
+		</ul>
+	</ul>
+</div>
+<div id="fRight">
+<div class="wrap" style="border-color:#002b36;">
+  <svg class="arrow up" viewbox="0 0 7 10" style="display:none;">
+    <path d="M3.5 0 L7 10 Q3.5 7 0 10z"/>
+  </svg>
+</div>
+</div>
+
+---
+
+### The Bigger Picture
+
+<div id="fLeft">
+<div class="wrap">
+  <svg class="arrow down" viewbox="0 0 7 10">
+    <path d="M3.5 10 L7 0 Q3.5 3 0 0z"/>
+  </svg>
+</div>
+</div>
+<div style="float:inline-start">
+	<ul>
+	<li>Collection Context</li>
+		<ul>
+			<li>Series Context</li>
+				<ul>
+					<li>File record</li>
+					<ul>
+						<li>Digital object</li>
+						<ul>
+							<li>Automated metadata</li>
+							<li>Timestamps</li>
+							<li>Extracted entities</li>
+							<li>More</li>
+						</ul>
+					</ul>
+				</ul>
+		</ul>
+	</ul>
+</div>
+<div id="fRight">
+<div class="wrap">
+  <svg class="arrow up" viewbox="0 0 7 10">
+    <path d="M3.5 0 L7 10 Q3.5 7 0 10z"/>
+  </svg>
+</div>
+</div>
+
+---
+
+###  Integrating ArchivesSpace and ArcLight
 
 * [Single Point of Discovery](https://archives.albany.edu)
 * [ArcLight](https://archives.albany.edu/description/)
