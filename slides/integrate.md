@@ -50,8 +50,8 @@ University at Albany, SUNY
 <div id="fLeft">
 <ul>
 <li>Archives usability is poor</li>
-<li>Multiple points of discovery</li>
 <li>Need experimentation, iteration</li>
+<li>Repository implementation</li>
 </ul>
 </div>
 <div id="fRight">
