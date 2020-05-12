@@ -92,6 +92,7 @@ University at Albany, SUNY
 						<li>Digital object</li>
 						<ul>
 							<li>Automated metadata</li>
+							<li>OCR</li>
 							<li>Timestamps</li>
 							<li>Extracted entities</li>
 						</ul>
