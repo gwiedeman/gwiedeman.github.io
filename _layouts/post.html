@@ -60,6 +60,23 @@ layout: default
           </button></a>
         {% endif %}
 
+        {% if page.link2 %}
+          {% if page.link2 contains '://' %}
+            {% assign fullurl2 = page.link2 %}
+          {% else %}
+            {% assign rooturl2 = "/slides/" | prepend: site.baseurl | replace: '//', '/' %}
+            {% assign fullurl2 = page.link2 | prepend: rooturl2 %}
+          {% endif %}
+          <a href="{{ fullurl2 }}"><button name="button" class="btn btn-success btn-lg" onclick="{{ fullurl }}">
+          {% if page.link_label2 %}
+            {{ page.link_label2 }}
+          {% else %}
+            Link
+          {% endif %}
+          </button></a>
+
+        {% endif %}
+
         {% if page.pdf %}
           {% if page.pdf contains '://' %}
             {% assign fullpdf = page.pdf %}
