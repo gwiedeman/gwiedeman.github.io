@@ -1,8 +1,19 @@
----
-title: From EAD to a Common Data Model
-revealOptions:
-    transition: 'fade'
----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>From EAD to a Common Data Model</title>
+    <link rel="stylesheet" href="./css/reveal.css" />
+    <link rel="stylesheet" href="./css/theme/league.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+    <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
 <style>
 .fLeft {float: left; max-width: 50%;}
 .fRight {float: right; max-width: 50%;}
@@ -42,9 +53,7 @@ position:relative;
 Gregory Wiedeman<br/>
 University Archivist<br/>
 University at Albany, SUNY
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ### My experience with EAD
 
 * Learned technology by hand-encoding EAD
@@ -52,17 +61,13 @@ University at Albany, SUNY
 * Work with ASpace, ArcLight, Hyrax/Samvera
 * Manage traditional archival processes
 * EmpireADC advisor
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ### The Promise of EAD
 
 > "An encoding standard would guarantee that the machine-readable finding aids created today would be usable tomorrow!"
 
 Daniel V. Pitti, "The Berkeley Finding Aid Project," 1994 [http://archive1.village.virginia.edu/dvp4c/arlpap.htm](http://archive1.village.virginia.edu/dvp4c/arlpap.htm)
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ### One Common Format
 
 * Structure your archival description
@@ -70,9 +75,7 @@ Daniel V. Pitti, "The Berkeley Finding Aid Project," 1994 [http://archive1.villa
 * Easily move data between systems
 
 We need to give up on this dream <!-- .element: class="fragment" data-fragment-index="1" -->
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ### Archival systems still limited
 
 * ArchivesSpace and other successful tools
@@ -81,9 +84,7 @@ We need to give up on this dream <!-- .element: class="fragment" data-fragment-i
 * Funding and sustainability are challenges
 
 As the data structure standard, EAD defines how systems work with archival description <!-- .element: class="fragment" data-fragment-index="1" -->
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ### Hard to build systems with EAD
 
 * Variability
@@ -94,9 +95,7 @@ As the data structure standard, EAD defines how systems work with archival descr
 * EAD3 is incremental improvement, adds more variability
 	* `<languagedeclaration>`
 	* `<unitdatestructured>`
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ### EAD is a Lossy Medium
 
 * EAD does not have strict rules
@@ -104,48 +103,36 @@ As the data structure standard, EAD defines how systems work with archival descr
 * EmpireADC example:
 
 <img class="whitebg" src="img/ead2021-lossyMedium.png" alt="Diagram showing data transfer from an Archipelago-based form tool with strict rules, to EAD without strict rules, then to ArcLight with strict rules." />
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ### Date Problems
 
 <img src="img/ead2021-aspaceDate.jpg" alt="Example of Dates in ArchivesSpace with three Type options, Bulk, Inclusive, or Single."/>
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 * EAD2002:
 	* TYPE – not required. May be used to specify whether the date is “bulk” or “inclusive.”
 * EAD3:
 	* @unitdatetype – not required. Use to record whether the unit dates are bulk or inclusive. Possible values: bulk, inclusive.
 	
 ASpace exported `<unitdate>` without `@type`
-	
----
-
+	</script></section><section  data-markdown><script type="text/template">
 ### Date types in ArcLight
 
 * Combines dates to Solr field: `normalized_title_ssm`
 
 <img src="img/ead2021-arclightDate.jpg" alt="Screenshot from ArcLight showing how it also combines dates into one field for display." />
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ### ArcLight Bug
 
 * Originally assumed one date
 * then expected `@type="inclusive"` or `@type="bulk"`
 
 General Administrative Files, 1965-1966, 1978-1990, 1963, 1994, undated
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ### Date Problems
 
 * Misunderstanding between tools
 * EAD does not clearly define the structure of dates
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ### EAD is Limiting for Aggregators
 
 * "Raw" EAD is challenging to index
@@ -155,9 +142,7 @@ General Administrative Files, 1965-1966, 1978-1990, 1963, 1994, undated
 * Aggregators need to rely on consistent EAD
 	* ArchivesSpace
 	* EmpireADC using Archipelago-based "form tool"
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ### From XML format to Data Model
 
 <div class="fLeft">
@@ -169,15 +154,11 @@ General Administrative Files, 1965-1966, 1978-1990, 1963, 1994, undated
 <div class="fRight">
 	<img class="whitebg" src="img/dataModel.gif" alt="Example diagram of a data model." />
 </div>
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ### Data Model: A Set of Rules
 
 <img class="whitebg" src="img/ead2021-dateModel.png" alt="Example data model for dates. A component may have multiple dates, each of which has fields with specific rules." />
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ### Expressed in JSON
 
 ```
@@ -189,9 +170,7 @@ General Administrative Files, 1965-1966, 1978-1990, 1963, 1994, undated
   "label": "creation"
 }
 ```
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ### Expressed in EAD2002
 
 ```
@@ -199,9 +178,7 @@ General Administrative Files, 1965-1966, 1978-1990, 1963, 1994, undated
 	1958 May 31-1960 June 2
 </unitdate>
 ```
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ### Expressed in EAD3
 
 ```
@@ -214,9 +191,7 @@ General Administrative Files, 1965-1966, 1978-1990, 1963, 1994, undated
 	</dateset>
 </unitdatestructured>
 ```
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ### Serialization is easier
 
 * Let the developers deal with that
@@ -227,15 +202,11 @@ General Administrative Files, 1965-1966, 1978-1990, 1963, 1994, undated
 	<extent>32 cubic ft.</extent>
 	<extent units="cubic ft.">32</extent>
 	```
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ### Thinking in Abstractions
 
 <img src="img/exampleDataModel.png" alt="Example of a high level data model for archival description. This exercise may foster important conversations about how archival data should be structured." />
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ### More inclusive approach
 
 * Lowers cost of systems and integration
@@ -243,13 +214,61 @@ General Administrative Files, 1965-1966, 1978-1990, 1963, 1994, undated
 	* Google Forms
 	* Spreadsheets
 * Allows broader professional participation
-
----
-
+</script></section><section  data-markdown><script type="text/template">
 ## From EAD to a Common Data Model
 
 [gregwiedeman.com/slides/EAD2021.html](https://gregwiedeman.com/slides/EAD2021.html)
 
 Gregory Wiedeman<br/>
 University Archivist<br/>
-University at Albany, SUNY
+University at Albany, SUNY</script></section></div>
+    </div>
+
+    <script src="./js/reveal.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // Optional libraries used to extend on reveal.js
+      var deps = [
+        { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: './plugin/zoom-js/zoom.js', async: true },
+        { src: './plugin/notes/notes.js', async: true },
+        { src: './plugin/math/math.js', async: true }
+      ];
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        dependencies: deps
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal.getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"fade"}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
