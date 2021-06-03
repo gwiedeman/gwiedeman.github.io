@@ -68,7 +68,7 @@ University at Albany, SUNY
 
 Daniel V. Pitti, "The Berkeley Finding Aid Project," 1994 [http://archive1.village.virginia.edu/dvp4c/arlpap.htm](http://archive1.village.virginia.edu/dvp4c/arlpap.htm)
 </script></section><section  data-markdown><script type="text/template">
-### One Common Format
+### One Final Format
 
 * Structure your archival description
 * Preservation format, future-proof
@@ -104,35 +104,6 @@ As the data structure standard, EAD defines how systems work with archival descr
 
 <img class="whitebg" src="img/ead2021-lossyMedium.png" alt="Diagram showing data transfer from an Archipelago-based form tool with strict rules, to EAD without strict rules, then to ArcLight with strict rules." />
 </script></section><section  data-markdown><script type="text/template">
-### Date Problems
-
-<img src="img/ead2021-aspaceDate.jpg" alt="Example of Dates in ArchivesSpace with three Type options, Bulk, Inclusive, or Single."/>
-</script></section><section  data-markdown><script type="text/template">
-* EAD2002:
-	* TYPE – not required. May be used to specify whether the date is “bulk” or “inclusive.”
-* EAD3:
-	* @unitdatetype – not required. Use to record whether the unit dates are bulk or inclusive. Possible values: bulk, inclusive.
-	
-ASpace exported `<unitdate>` without `@type`
-	</script></section><section  data-markdown><script type="text/template">
-### Date types in ArcLight
-
-* Combines dates to Solr field: `normalized_title_ssm`
-
-<img src="img/ead2021-arclightDate.jpg" alt="Screenshot from ArcLight showing how it also combines dates into one field for display." />
-</script></section><section  data-markdown><script type="text/template">
-### ArcLight Bug
-
-* Originally assumed one date
-* then expected `@type="inclusive"` or `@type="bulk"`
-
-General Administrative Files, 1965-1966, 1978-1990, 1963, 1994, undated
-</script></section><section  data-markdown><script type="text/template">
-### Date Problems
-
-* Misunderstanding between tools
-* EAD does not clearly define the structure of dates
-</script></section><section  data-markdown><script type="text/template">
 ### EAD is Limiting for Aggregators
 
 * "Raw" EAD is challenging to index
@@ -154,6 +125,36 @@ General Administrative Files, 1965-1966, 1978-1990, 1963, 1994, undated
 <div class="fRight">
 	<img class="whitebg" src="img/dataModel.gif" alt="Example diagram of a data model." />
 </div>
+</script></section><section  data-markdown><script type="text/template">
+### Date Problems
+
+<img src="img/ead2021-aspaceDate.jpg" alt="Example of Dates in ArchivesSpace with three Type options, Bulk, Inclusive, or Single."/>
+</script></section><section  data-markdown><script type="text/template">
+* EAD2002:
+	* TYPE – not required. May be used to specify whether the date is “bulk” or “inclusive.”
+* EAD3:
+	* @unitdatetype – not required. Use to record whether the unit dates are bulk or inclusive. Possible values: bulk, inclusive.
+	
+ASpace exported "single" `<unitdate>` without `@type`
+	</script></section><section  data-markdown><script type="text/template">
+### Date types in ArcLight
+
+* Combines dates to Solr field: `normalized_title_ssm`
+
+<img src="img/ead2021-arclightDate.jpg" alt="Screenshot from ArcLight showing how it also combines dates into one field for display." />
+</script></section><section  data-markdown><script type="text/template">
+### ArcLight Bug
+
+* Originally assumed one date
+* then expected `@type="inclusive"` or `@type="bulk"`
+
+General Administrative Files, 1965-1966, 1978-1990, 1963, 1994, undated
+</script></section><section  data-markdown><script type="text/template">
+### Date Problems
+
+* Misunderstanding between tools
+* EAD does not clearly define the structure of dates
+
 </script></section><section  data-markdown><script type="text/template">
 ### Data Model: A Set of Rules
 
@@ -194,21 +195,24 @@ General Administrative Files, 1965-1966, 1978-1990, 1963, 1994, undated
 </script></section><section  data-markdown><script type="text/template">
 ### Serialization is easier
 
-* Let the developers deal with that
-* Rely on common conventions
-	* EAD2002, EAD3, JSON, RiC-Ontology
-	* Use of EAD already relies on conventions
-	```
-	<extent>32 cubic ft.</extent>
-	<extent units="cubic ft.">32</extent>
-	```
+* Let the technologists deal with that
+* Rely on common conventions for implementations
+	* EAD2002
+	* EAD3
+	* JSON
+	* Records in Context ontology (RiC-O)
+	* Spreadsheets
 </script></section><section  data-markdown><script type="text/template">
-### Thinking in Abstractions
+### EAD already relies on conventions
 
-<img src="img/exampleDataModel.png" alt="Example of a high level data model for archival description. This exercise may foster important conversations about how archival data should be structured." />
+```
+<extent>32 cubic ft.</extent>
+<extent units="cubic ft.">32</extent>
+```
 </script></section><section  data-markdown><script type="text/template">
 ### More inclusive approach
 
+* Migtation will be required at some point
 * Lowers cost of systems and integration
 * Allows new possibilities for small repositories
 	* Google Forms

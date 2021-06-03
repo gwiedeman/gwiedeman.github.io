@@ -42,3 +42,9 @@
 * Opaque process
 
 <img src="img/ead2021-ric.jpg" />
+
+---
+
+### Thinking in Abstractions
+
+<img src="img/exampleDataModel.png" alt="Example of a high level data model for archival description. This exercise may foster important conversations about how archival data should be structured." />
