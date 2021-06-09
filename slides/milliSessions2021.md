@@ -82,7 +82,7 @@ University at Albany, SUNY
 
 ---
 
-### Bibliographic-style metadata
+### Bibliographic-style systems
 
 * Digital Asset Management Systems (DAMS)
 * Institutional Repositories (IR)
@@ -112,7 +112,8 @@ University at Albany, SUNY
 * Browse and search description
 * Display full archival hierarchy
 * Describes aggregates
-* May link to content
+* May link to digital content
+* Connect analog and digtial materials
 * [Temple University example](https://library.temple.edu/finding_aids)
 
 ---
