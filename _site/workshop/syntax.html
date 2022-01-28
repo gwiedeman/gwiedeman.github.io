@@ -1,408 +1,541 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!DOCTYPE html>
 
-        <title>Syntax - Python and ArchivesSnake for Archivists</title>
-        <link rel="stylesheet" href="./css/reveal.css">
-        <link rel="stylesheet" href="./css/theme/serif.css" id="theme">
-        <link rel="stylesheet" href="./css/highlight/zenburn.css">
-        <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print">
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Syntax - Python and ArchivesSnake for Archivists - Greg Wiedeman
+    
+  </title>
+
+  <meta name="description" content="I&#39;m an archivist who works to make information more accessible.">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/workshop/syntax.html">
+  <link rel="alternate" type="application/rss+xml" title="Greg Wiedeman" href="/feed.xml">
+
+</head>
 
 
-    </head>
-    <body>
+<body>
 
-        <div class="reveal">
-            <div class="slides"><section  data-markdown><script type="text/template">
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Greg Wiedeman</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/writing">Writing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/presentations">presentations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/code">Code</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cv">CV</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-## Python and ArchivesSnake for Archivists
+  <h2 id="python-and-archivessnake-for-archivists">Python and ArchivesSnake for Archivists</h2>
 
-### Part 2: Syntax
-</script></section><section  data-markdown><script type="text/template">
-### Comments
+<h3 id="part-2-syntax">Part 2: Syntax</h3>
 
+<hr />
 
-```python
+<h3 id="comments">Comments</h3>
 
-# anything on line after a hash
-
-"""
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1"># anything on line after a hash
+</span>
+<span class="s">"""
 For multi-line comments,
 use three quotes.
 
 For explanations, etc.
-"""
+"""</span>
 
-```
-</script></section><section  data-markdown><script type="text/template">
-### test.py
+</code></pre></div></div>
 
-```python
-from asnake.aspace import ASpace
+<hr />
 
-#aspace = ASpace()
+<h3 id="testpy">test.py</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">asnake.aspace</span> <span class="kn">import</span> <span class="n">ASpace</span>
+
+<span class="c1">#aspace = ASpace()
 #repo = aspace.repositories(2)
+</span>
+<span class="c1">#print (repo)
+</span></code></pre></div></div>
 
-#print (repo)
-```
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">python test.py</code></li>
+</ul>
 
-* `python test.py`
-</script></section><section  data-markdown><script type="text/template">
-### Print
+<hr />
 
-* Sends information to the console
-* `print ("Hello!")`
-* `print("This works too.")`
-</script></section><section  data-markdown><script type="text/template">
-### test.py
+<h3 id="print">Print</h3>
 
-```python
-from asnake.aspace import ASpace
+<ul>
+  <li>Sends information to the console</li>
+  <li><code class="language-plaintext highlighter-rouge">print ("Hello!")</code></li>
+  <li><code class="language-plaintext highlighter-rouge">print("This works too.")</code></li>
+</ul>
 
-#aspace = ASpace()
+<hr />
+
+<h3 id="testpy-1">test.py</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">asnake.aspace</span> <span class="kn">import</span> <span class="n">ASpace</span>
+
+<span class="c1">#aspace = ASpace()
 #repo = aspace.repositories(2)
+</span>
+<span class="c1">#print (repo)
+</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">"Hello!"</span><span class="p">)</span>
 
-#print (repo)
+<span class="k">print</span><span class="p">(</span><span class="s">"This works too."</span><span class="p">)</span>
+</code></pre></div></div>
 
-print ("Hello!")
+<hr />
 
-print("This works too.")
-```
-</script></section><section  data-markdown><script type="text/template">
-### White space
+<h3 id="white-space">White space</h3>
 
-* Python uses white space
-    * Line breaks (hit enter)
-    * tabs
-    * spaces
-* Cleaner code
-* Will not run if formatted incorrectly
-</script></section><section  data-markdown><script type="text/template">
-### Variables
+<ul>
+  <li>Python uses white space
+    <ul>
+      <li>Line breaks (hit enter)</li>
+      <li>tabs</li>
+      <li>spaces</li>
+    </ul>
+  </li>
+  <li>Cleaner code</li>
+  <li>Will not run if formatted incorrectly</li>
+</ul>
 
-` myVariable1 = "some text"`
+<hr />
 
-* Any alphanumeric  word
-* Don't start with number (0-9) or underscore (_)
-* Python will remember it until the end of the script
-</script></section><section  data-markdown><script type="text/template">
-### Variables
+<h3 id="variables">Variables</h3>
 
-```python
-from asnake.aspace import ASpace
+<p><code class="language-plaintext highlighter-rouge"> myVariable1 = "some text"</code></p>
 
-#aspace = ASpace()
+<ul>
+  <li>Any alphanumeric  word</li>
+  <li>Don’t start with number (0-9) or underscore (_)</li>
+  <li>Python will remember it until the end of the script</li>
+</ul>
+
+<hr />
+
+<h3 id="variables-1">Variables</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">asnake.aspace</span> <span class="kn">import</span> <span class="n">ASpace</span>
+
+<span class="c1">#aspace = ASpace()
 #repo = aspace.repositories(2)
+</span>
+<span class="c1">#print (repo)
+</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s">"Hello!"</span>
 
-#print (repo)
+<span class="k">print</span> <span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</code></pre></div></div>
+<hr />
 
-message = "Hello!"
+<h3 id="variables-2">Variables</h3>
 
-print (message)
-```</script></section><section  data-markdown><script type="text/template">
-### Variables
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">asnake.aspace</span> <span class="kn">import</span> <span class="n">ASpace</span>
 
-```python
-from asnake.aspace import ASpace
-
-#aspace = ASpace()
+<span class="c1">#aspace = ASpace()
 #repo = aspace.repositories(2)
+</span>
+<span class="c1">#print (repo)
+</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s">"Hello!"</span>
 
-#print (repo)
+<span class="k">print</span> <span class="p">(</span><span class="n">message</span><span class="p">)</span>
 
-message = "Hello!"
+<span class="k">print</span> <span class="p">(</span><span class="n">message2</span><span class="p">)</span>
+</code></pre></div></div>
 
-print (message)
+<hr />
 
-print (message2)
-```
-</script></section><section  data-markdown><script type="text/template">
-### Basic Data Types
+<h3 id="basic-data-types">Basic Data Types</h3>
 
-* Strings: `"This is a string"`
-* Integers: `24`
-* Floats: `24.5`
-* Booleans: `True` or `False`
-* Check with `type("this is a string")`
-</script></section><section  data-markdown><script type="text/template">
-### Basic Data Types
+<ul>
+  <li>Strings: <code class="language-plaintext highlighter-rouge">"This is a string"</code></li>
+  <li>Integers: <code class="language-plaintext highlighter-rouge">24</code></li>
+  <li>Floats: <code class="language-plaintext highlighter-rouge">24.5</code></li>
+  <li>Booleans: <code class="language-plaintext highlighter-rouge">True</code> or <code class="language-plaintext highlighter-rouge">False</code></li>
+  <li>Check with <code class="language-plaintext highlighter-rouge">type("this is a string")</code></li>
+</ul>
 
-```python
-from asnake.aspace import ASpace
+<hr />
 
-#aspace = ASpace()
+<h3 id="basic-data-types-1">Basic Data Types</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">asnake.aspace</span> <span class="kn">import</span> <span class="n">ASpace</span>
+
+<span class="c1">#aspace = ASpace()
 #repo = aspace.repositories(2)
+</span>
+<span class="c1">#print (repo)
+</span>
+<span class="n">myString</span> <span class="o">=</span> <span class="s">"This is a string of text"</span>
 
-#print (repo)
+<span class="n">myInteger</span> <span class="o">=</span> <span class="mi">57</span>
 
-myString = "This is a string of text"
+<span class="n">stringNumber</span> <span class="o">=</span> <span class="s">"57"</span>
 
-myInteger = 57
+<span class="n">myFloat</span> <span class="o">=</span> <span class="mf">23.5</span>
 
-stringNumber = "57"
+<span class="n">skyIsBlue</span> <span class="o">=</span> <span class="bp">True</span>
 
-myFloat = 23.5
+<span class="k">print</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">myString</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">myInteger</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">stringNumber</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">myFloat</span><span class="p">))</span>
+<span class="k">print</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">skyIsBlue</span><span class="p">))</span>
+</code></pre></div></div>
 
-skyIsBlue = True
+<hr />
 
-print (type(myString))
-print (type(myInteger))
-print (type(stringNumber))
-print (type(myFloat))
-print (type(skyIsBlue))
-```
-</script></section><section  data-markdown><script type="text/template">
-### Math with Operators
+<h3 id="math-with-operators">Math with Operators</h3>
 
-* Operators: `+` `-` `*` `/`
+<ul>
+  <li>Operators: <code class="language-plaintext highlighter-rouge">+</code> <code class="language-plaintext highlighter-rouge">-</code> <code class="language-plaintext highlighter-rouge">*</code> <code class="language-plaintext highlighter-rouge">/</code></li>
+</ul>
 
-```python
-from asnake.aspace import ASpace
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">asnake.aspace</span> <span class="kn">import</span> <span class="n">ASpace</span>
 
-#aspace = ASpace()
+<span class="c1">#aspace = ASpace()
 #repo = aspace.repositories(2)
+</span>
+<span class="c1">#print (repo)
+</span>
+<span class="n">myInteger</span> <span class="o">=</span> <span class="mi">57</span>
 
-#print (repo)
+<span class="n">stringNumber</span> <span class="o">=</span> <span class="s">"57"</span>
 
-myInteger = 57
+<span class="n">myFloat</span> <span class="o">=</span> <span class="mf">23.5</span>
 
-stringNumber = "57"
+<span class="n">answer</span> <span class="o">=</span> <span class="n">myInteger</span> <span class="o">+</span> <span class="n">myFloat</span>
 
-myFloat = 23.5
+<span class="k">print</span> <span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+</code></pre></div></div>
 
-answer = myInteger + myFloat
+<hr />
 
-print (answer)
-```
-</script></section><section  data-markdown><script type="text/template">
-### Math with Operators
+<h3 id="math-with-operators-1">Math with Operators</h3>
 
-```python
-from asnake.aspace import ASpace
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">asnake.aspace</span> <span class="kn">import</span> <span class="n">ASpace</span>
 
-#aspace = ASpace()
+<span class="c1">#aspace = ASpace()
 #repo = aspace.repositories(2)
+</span>
+<span class="c1">#print (repo)
+</span>
+<span class="n">myInteger</span> <span class="o">=</span> <span class="mi">57</span>
 
-#print (repo)
+<span class="n">stringNumber</span> <span class="o">=</span> <span class="s">"57"</span>
 
-myInteger = 57
+<span class="n">myFloat</span> <span class="o">=</span> <span class="mf">23.5</span>
 
-stringNumber = "57"
+<span class="n">answer</span> <span class="o">=</span> <span class="n">myInteger</span> <span class="o">*</span> <span class="n">myFloat</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+<span class="n">answer2</span> <span class="o">=</span> <span class="n">stringNumber</span> <span class="o">+</span> <span class="n">myFloat</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">answer2</span><span class="p">)</span>
+</code></pre></div></div>
 
-myFloat = 23.5
+<hr />
 
-answer = myInteger * myFloat
-print (answer)
-answer2 = stringNumber + myFloat
-print (answer2)
-```
-</script></section><section  data-markdown><script type="text/template">
-### Changing Data Types
+<h3 id="changing-data-types">Changing Data Types</h3>
 
-* Change to string with `str()`
-* Change to integer with `int()`
-* Change to float with `float()`
-</script></section><section  data-markdown><script type="text/template">
-### Changing Data Types
+<ul>
+  <li>Change to string with <code class="language-plaintext highlighter-rouge">str()</code></li>
+  <li>Change to integer with <code class="language-plaintext highlighter-rouge">int()</code></li>
+  <li>Change to float with <code class="language-plaintext highlighter-rouge">float()</code></li>
+</ul>
 
-```python
-from asnake.aspace import ASpace
+<hr />
 
-#aspace = ASpace()
+<h3 id="changing-data-types-1">Changing Data Types</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">asnake.aspace</span> <span class="kn">import</span> <span class="n">ASpace</span>
+
+<span class="c1">#aspace = ASpace()
 #repo = aspace.repositories(2)
+</span>
+<span class="c1">#print (repo)
+</span>
+<span class="n">myInteger</span> <span class="o">=</span> <span class="mi">57</span>
 
-#print (repo)
+<span class="n">stringNumber</span> <span class="o">=</span> <span class="s">"57"</span>
 
-myInteger = 57
+<span class="n">myFloat</span> <span class="o">=</span> <span class="mf">23.5</span>
 
-stringNumber = "57"
+<span class="n">answer</span> <span class="o">=</span> <span class="n">myInteger</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">stringNumber</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">stringNumber</span><span class="p">))</span>
+</code></pre></div></div>
 
-myFloat = 23.5
+<hr />
 
-answer = myInteger + int(stringNumber)
-print (answer)
-print (float(stringNumber))
-```
-</script></section><section  data-markdown><script type="text/template">
-### ArchivesSpace Data!
+<h3 id="archivesspace-data">ArchivesSpace Data!</h3>
 
-* Get repository name as a string
+<ul>
+  <li>Get repository name as a string</li>
+</ul>
 
-```python
-from asnake.aspace import ASpace
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">asnake.aspace</span> <span class="kn">import</span> <span class="n">ASpace</span>
 
-aspace = ASpace()
-repo = aspace.repositories(2)
+<span class="n">aspace</span> <span class="o">=</span> <span class="n">ASpace</span><span class="p">()</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">aspace</span><span class="o">.</span><span class="n">repositories</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
-title = repo.name
+<span class="n">title</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">name</span>
 
-print (title)
-```
-</script></section><section  data-markdown><script type="text/template">
-### Concatenating Strings
+<span class="k">print</span> <span class="p">(</span><span class="n">title</span><span class="p">)</span>
+</code></pre></div></div>
 
-* Use `+` to join strings together
+<hr />
 
-```python
-from asnake.aspace import ASpace
+<h3 id="concatenating-strings">Concatenating Strings</h3>
 
-aspace = ASpace()
-repo = aspace.repositories(2)
-title = repo.name
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">+</code> to join strings together</li>
+</ul>
 
-print ("Repository Title: " + title)
-```
-</script></section><section  data-markdown><script type="text/template">
-### Concatenating Strings
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">asnake.aspace</span> <span class="kn">import</span> <span class="n">ASpace</span>
 
-* You cannot concatenate strings and integers
+<span class="n">aspace</span> <span class="o">=</span> <span class="n">ASpace</span><span class="p">()</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">aspace</span><span class="o">.</span><span class="n">repositories</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">title</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">name</span>
 
-```python
-from asnake.aspace import ASpace
+<span class="k">print</span> <span class="p">(</span><span class="s">"Repository Title: "</span> <span class="o">+</span> <span class="n">title</span><span class="p">)</span>
+</code></pre></div></div>
 
-aspace = ASpace()
-repo = aspace.repositories(2)
-title = repo.name
+<hr />
 
-myCount = 25
+<h3 id="concatenating-strings-1">Concatenating Strings</h3>
 
-print ("The " + title + " is the " + myCount + "th repository")
-```
-</script></section><section  data-markdown><script type="text/template">
-### Concatenating Strings
+<ul>
+  <li>You cannot concatenate strings and integers</li>
+</ul>
 
-* Use `str()`
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">asnake.aspace</span> <span class="kn">import</span> <span class="n">ASpace</span>
 
-```python
-from asnake.aspace import ASpace
+<span class="n">aspace</span> <span class="o">=</span> <span class="n">ASpace</span><span class="p">()</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">aspace</span><span class="o">.</span><span class="n">repositories</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">title</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">name</span>
 
-aspace = ASpace()
-repo = aspace.repositories(2)
-title = repo.name
+<span class="n">myCount</span> <span class="o">=</span> <span class="mi">25</span>
 
-myCount = 25
+<span class="k">print</span> <span class="p">(</span><span class="s">"The "</span> <span class="o">+</span> <span class="n">title</span> <span class="o">+</span> <span class="s">" is the "</span> <span class="o">+</span> <span class="n">myCount</span> <span class="o">+</span> <span class="s">"th repository"</span><span class="p">)</span>
+</code></pre></div></div>
 
-print ("The " + title + " is the " + str(myCount) + "th repository")
-```
-</script></section><section  data-markdown><script type="text/template">
-### String Methods
+<hr />
 
-* Get 5th character: `title[4]`
-* Get 5th-8th characters: `title[4:7]`
-* Length of string: `len(title)`
-* Strip whitespace: `title.strip()`
-* Uppercase: `title.upper()`
-* Lowercase: `title.lower()`
-* Replace characters: `title.replace("&", "and")`
-</script></section><section  data-markdown><script type="text/template">
-### String Methods
+<h3 id="concatenating-strings-2">Concatenating Strings</h3>
 
-```python
-from asnake.aspace import ASpace
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">str()</code></li>
+</ul>
 
-aspace = ASpace()
-repo = aspace.repositories(2)
-title = repo.name
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">asnake.aspace</span> <span class="kn">import</span> <span class="n">ASpace</span>
 
-print (title[5])
-print (title[5:14])
-print (len(title))
+<span class="n">aspace</span> <span class="o">=</span> <span class="n">ASpace</span><span class="p">()</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">aspace</span><span class="o">.</span><span class="n">repositories</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">title</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">name</span>
 
-extras = "   " + title + "\n\n"
-print (extras)
-print (extras.strip())
+<span class="n">myCount</span> <span class="o">=</span> <span class="mi">25</span>
 
-print (title.upper())
-print (title.lower())
-```
-</script></section><section  data-markdown><script type="text/template">
-### String Methods
+<span class="k">print</span> <span class="p">(</span><span class="s">"The "</span> <span class="o">+</span> <span class="n">title</span> <span class="o">+</span> <span class="s">" is the "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">myCount</span><span class="p">)</span> <span class="o">+</span> <span class="s">"th repository"</span><span class="p">)</span>
+</code></pre></div></div>
 
-* Replace characters:
-    * `title.replace("&", "and")`
-* Starts with: `title.startswith()`
-* Ends with: `title.endswith()`
-</script></section><section  data-markdown><script type="text/template">
-### String Methods
+<hr />
 
-```python
-from asnake.aspace import ASpace
+<h3 id="string-methods">String Methods</h3>
 
-aspace = ASpace()
-repo = aspace.repositories(2)
-title = repo.name
+<ul>
+  <li>Get 5th character: <code class="language-plaintext highlighter-rouge">title[4]</code></li>
+  <li>Get 5th-8th characters: <code class="language-plaintext highlighter-rouge">title[4:7]</code></li>
+  <li>Length of string: <code class="language-plaintext highlighter-rouge">len(title)</code></li>
+  <li>Strip whitespace: <code class="language-plaintext highlighter-rouge">title.strip()</code></li>
+  <li>Uppercase: <code class="language-plaintext highlighter-rouge">title.upper()</code></li>
+  <li>Lowercase: <code class="language-plaintext highlighter-rouge">title.lower()</code></li>
+  <li>Replace characters: <code class="language-plaintext highlighter-rouge">title.replace("&amp;", "and")</code></li>
+</ul>
 
-changed = title.replace("&", "and")
+<hr />
 
-print (title.startswith("api"))
-escaped = title.replace(".", "")
-print (escaped.lower())
-print (escaped.lower().startswith("api"))
+<h3 id="string-methods-1">String Methods</h3>
 
-print (changed)
-```
-</script></section><section  data-markdown><script type="text/template">
-## Explore Strings
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">asnake.aspace</span> <span class="kn">import</span> <span class="n">ASpace</span>
 
-Cheatsheet:
+<span class="n">aspace</span> <span class="o">=</span> <span class="n">ASpace</span><span class="p">()</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">aspace</span><span class="o">.</span><span class="n">repositories</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">title</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">name</span>
 
-[https://github.com/gwiedeman/IntroPythonASnake/blob/master/syntax.md](https://github.com/gwiedeman/IntroPythonASnake/blob/master/syntax.md)
-</script></section><section  data-markdown><script type="text/template">
-## Python and ArchivesSnake for Archivists
+<span class="k">print</span> <span class="p">(</span><span class="n">title</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">title</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">14</span><span class="p">])</span>
+<span class="k">print</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">title</span><span class="p">))</span>
 
-[Part 3: Data](data.html)</script></section></div>
-        </div>
+<span class="n">extras</span> <span class="o">=</span> <span class="s">"   "</span> <span class="o">+</span> <span class="n">title</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n\n</span><span class="s">"</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">extras</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">extras</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 
-        <script src="./lib/js/head.min.js"></script>
-        <script src="./js/reveal.js"></script>
+<span class="k">print</span> <span class="p">(</span><span class="n">title</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">title</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+</code></pre></div></div>
 
-        <script>
-            function extend() {
-              var target = {};
-              for (var i = 0; i < arguments.length; i++) {
-                var source = arguments[i];
-                for (var key in source) {
-                  if (source.hasOwnProperty(key)) {
-                    target[key] = source[key];
-                  }
-                }
-              }
-              return target;
-            }
+<hr />
 
-            // Optional libraries used to extend on reveal.js
-            var deps = [
-              { src: './lib/js/classList.js', condition: function() { return !document.body.classList; } },
-              { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
-              { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
-              { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-              { src: './plugin/zoom-js/zoom.js', async: true },
-              { src: './plugin/notes/notes.js', async: true },
-              { src: './plugin/math/math.js', async: true }
-            ];
+<h3 id="string-methods-2">String Methods</h3>
 
-            // default options to init reveal.js
-            var defaultOptions = {
-              controls: true,
-              progress: true,
-              history: true,
-              center: true,
-              transition: 'default', // none/fade/slide/convex/concave/zoom
-              dependencies: deps
-            };
+<ul>
+  <li>Replace characters:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">title.replace("&amp;", "and")</code></li>
+    </ul>
+  </li>
+  <li>Starts with: <code class="language-plaintext highlighter-rouge">title.startswith()</code></li>
+  <li>Ends with: <code class="language-plaintext highlighter-rouge">title.endswith()</code></li>
+</ul>
 
-            // options from URL query string
-            var queryOptions = Reveal.getQueryHash() || {};
+<hr />
 
-            var options = {"transition":"fade"};
-            options = extend(defaultOptions, options, queryOptions);
-        </script>
+<h3 id="string-methods-3">String Methods</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">asnake.aspace</span> <span class="kn">import</span> <span class="n">ASpace</span>
+
+<span class="n">aspace</span> <span class="o">=</span> <span class="n">ASpace</span><span class="p">()</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">aspace</span><span class="o">.</span><span class="n">repositories</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">title</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">name</span>
+
+<span class="n">changed</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"&amp;"</span><span class="p">,</span> <span class="s">"and"</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="p">(</span><span class="n">title</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">"me"</span><span class="p">))</span>
+<span class="n">escaped</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"."</span><span class="p">,</span> <span class="s">""</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">escaped</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+<span class="k">print</span> <span class="p">(</span><span class="n">escaped</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">"me"</span><span class="p">))</span>
+
+<span class="k">print</span> <span class="p">(</span><span class="n">changed</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="explore-strings">Explore Strings</h2>
+
+<p>Cheatsheet:</p>
+
+<p><a href="https://github.com/gwiedeman/IntroPythonASnake/blob/master/syntax.md">https://github.com/gwiedeman/IntroPythonASnake/blob/master/syntax.md</a></p>
+
+<hr />
+
+<h2 id="python-and-archivessnake-for-archivists-1">Python and ArchivesSnake for Archivists</h2>
+
+<p><a href="/workshop/data.html">Part 3: Data</a></p>
 
 
-        <script>
-            Reveal.initialize(options);
-        </script>
-    </body>
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:gwiedeman@albany.edu">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/gregwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/gwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy; Gregory Wiedeman 2022
+        </p>
+        <p class="copyright text-muted">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+
+</body>
+
 </html>

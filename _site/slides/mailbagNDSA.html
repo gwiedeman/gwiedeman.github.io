@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Mailbag - Greg Wiedeman
+    
+  </title>
+
+  <meta name="description" content="I&#39;m an archivist who works to make information more accessible.">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/slides/mailbagNDSA.html">
+  <link rel="alternate" type="application/rss+xml" title="Greg Wiedeman" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Greg Wiedeman</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/writing">Writing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/presentations">presentations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/code">Code</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cv">CV</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <style>
+.fLeft {float: left; max-width: 50%;}
+.fRight {float: right; max-width: 50%;}
+#smallLink {font-size: 18px;}
+.whitebg {background-color: #fff; margin-top: 30% !important; padding: 15px !important; border-radius: 15px;}
+.reveal section img {border: none;}
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+	font-family: "Montserrat", Roboto , sans-serif;
+	text-transform: initial;
+	font-weight: bold;
+}
+.wrap{
+position:relative;
+  height:30vh;
+  border-left:15px solid #000;
+  padding:5vh 20px;
+}
+.arrow {
+  position:absolute;
+  left:-43px;
+  width: 70px;
+  bottom: -20px;
+}
+.up{top:-20px;}
+.slide-background-content{background-size:contain!important;}
+</style>
+
+<h2 id="mailbag">Mailbag</h2>
+<h3 id="a-stable-package-for-email-with-multiple-masters">A Stable Package for Email with Multiple Masters</h3>
+
+<p><a href="https://archives.albany.edu/mailbag/">https://archives.albany.edu/mailbag/</a></p>
+
+<p>Gregory Wiedeman<br />
+University Archivist<br />
+University at Albany, SUNY</p>
+
+<hr />
+
+<h3 id="email-preservation">Email Preservation</h3>
+
+<ul>
+  <li>No single master format for email
+    <ul>
+      <li>MBOX/EML don’t preserve external content</li>
+      <li>PST are similar and proprietary</li>
+      <li>PDFs do not preserve structure</li>
+      <li>Not all emails are static documents</li>
+    </ul>
+  </li>
+  <li>Not many open source processing tools usable for archivists</li>
+</ul>
+
+<hr />
+
+<p><img src="img/emailImage.png" alt="2017 Email from Joe Crowley with embeded image of article calling him a rising star. The link is an expired redirect." /></p>
+
+<hr />
+
+<p><img src="img/email404.png" alt="2016 Email from Chuck Schumer displaying a 404 error where an image might be." /></p>
+
+<hr />
+
+<h2 id="multiple-master-formats">Multiple Master Formats</h2>
+
+<ul>
+  <li>MBOX/EML preserves structure as data</li>
+  <li>PDF preserves document and allows for easy access</li>
+  <li>WARC preserves interactivity</li>
+</ul>
+
+<hr />
+
+<h2 id="a-stable-package">A Stable Package</h2>
+
+<div class="fLeft">
+<ul>
+<li>BagIt</li>
+  <ul>
+  <li>Widely used</li>
+  <li>Validates fixity</li>
+  <li>Uses filesystem for structure</li>
+  </ul>
+<li>Interoperable</li>
+  <ul>
+  <li>ePADD</li>
+  <li>RATOM</li>
+  </ul>
+</ul>
+</div>
+<div class="fRight">
+Mailbag Specification
+ <img src="img/mailbagSpec.png" alt="Diagram of a Mailbag, including a space for MBOX/EML files, PDF files, and Web Archives with metadata in bag-info.txt" />
+</div>
+
+<hr />
+
+<h3 id="email-processing-for-archivists">Email Processing for Archivists</h3>
+
+<ul>
+  <li>Easy packaging near-to-capture</li>
+  <li>Existing tools are challenging for archivists
+    <ul>
+      <li>Python email libraries</li>
+      <li>Batch PDF creation from email</li>
+      <li>Web Archives capture</li>
+    </ul>
+  </li>
+  <li>mailbag Python library</li>
+  <li>Command Line utility</li>
+  <li>Basic GUI with Gooey</li>
+</ul>
+
+<hr />
+
+<!-- .slide: data-background="img/mailbag.png" -->
+
+<p>Note: Diagram of Mailbag, showing inputs from IMAP, MBOX/EML and PST and outputs like reporting header information, exporting PDFs and repaying WARC files.</p>
+
+<hr />
+
+<h2 id="mailbag-1">Mailbag</h2>
+<h3 id="a-stable-package-for-email-with-multiple-masters-1">A Stable Package for Email with Multiple Masters</h3>
+
+<p><a href="https://archives.albany.edu/mailbag/">https://archives.albany.edu/mailbag/</a></p>
+
+<p>Gregory Wiedeman<br />
+University Archivist<br />
+University at Albany, SUNY</p>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:gwiedeman@albany.edu">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/gregwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/gwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy; Gregory Wiedeman 2022
+        </p>
+        <p class="copyright text-muted">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+
+</body>
+
+</html>

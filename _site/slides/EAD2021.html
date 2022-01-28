@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    From EAD to a Common Data Model - Greg Wiedeman
+    
+  </title>
+
+  <meta name="description" content="I&#39;m an archivist who works to make information more accessible.">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/slides/EAD2021.html">
+  <link rel="alternate" type="application/rss+xml" title="Greg Wiedeman" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Greg Wiedeman</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/writing">Writing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/presentations">presentations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/code">Code</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cv">CV</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <style>
+.fLeft {float: left; max-width: 50%;}
+.fRight {float: right; max-width: 50%;}
+#smallLink {font-size: 18px;}
+.whitebg {background-color: #fff; padding: 30px !important;}
+.reveal section img {border: none; background: rgb(255, 255, 255, 1);}
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+	font-family: "Montserrat", Roboto , sans-serif;
+	text-transform: initial;
+	font-weight: bold;
+}
+.wrap{
+position:relative;
+  height:30vh;
+  border-left:15px solid #000;
+  padding:5vh 20px;
+}
+.arrow {
+  position:absolute;
+  left:-43px;
+  width: 70px;
+  bottom: -20px;
+}
+.up{top:-20px;}
+.slide-background-content{background-size:contain!important;}
+</style>
+
+<h2 id="from-ead-to-a-common-data-model">From EAD to a Common Data Model</h2>
+
+<p><a href="https://gregwiedeman.com/slides/EAD2021.html">gregwiedeman.com/slides/EAD2021.html</a></p>
+
+<p>Gregory Wiedeman<br />
+University Archivist<br />
+University at Albany, SUNY</p>
+
+<hr />
+
+<h3 id="my-experience-with-ead">My experience with EAD</h3>
+
+<ul>
+  <li>Learned technology by hand-encoding EAD</li>
+  <li>Built tools to work with EAD</li>
+  <li>Work with ASpace, ArcLight, Hyrax/Samvera</li>
+  <li>Manage traditional archival processes</li>
+  <li>EmpireADC advisor</li>
+</ul>
+
+<hr />
+
+<h3 id="the-promise-of-ead">The Promise of EAD</h3>
+
+<blockquote>
+  <p>“An encoding standard would guarantee that the machine-readable finding aids created today would be usable tomorrow!”</p>
+</blockquote>
+
+<p>Daniel V. Pitti, “The Berkeley Finding Aid Project,” 1994 <a href="http://archive1.village.virginia.edu/dvp4c/arlpap.htm">http://archive1.village.virginia.edu/dvp4c/arlpap.htm</a></p>
+
+<hr />
+
+<h3 id="one-final-format">One Final Format</h3>
+
+<ul>
+  <li>Structure your archival description</li>
+  <li>Preservation format, future-proof</li>
+  <li>Easily move data between systems</li>
+</ul>
+
+<p>We need to give up on this dream <!-- .element: class="fragment" data-fragment-index="1" --></p>
+
+<hr />
+
+<h3 id="archival-systems-still-limited">Archival systems still limited</h3>
+
+<ul>
+  <li>ArchivesSpace and other successful tools</li>
+  <li>Front-end usability is still a problem</li>
+  <li>No archival system to manage digital objects</li>
+  <li>Funding and sustainability are challenges</li>
+</ul>
+
+<p>As the data structure standard, EAD defines how systems work with archival description <!-- .element: class="fragment" data-fragment-index="1" --></p>
+
+<hr />
+
+<h3 id="hard-to-build-systems-with-ead">Hard to build systems with EAD</h3>
+
+<ul>
+  <li>Variability
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">&lt;unitdate&gt;</code> within <code class="language-plaintext highlighter-rouge">&lt;unittitle&gt;</code></li>
+    </ul>
+  </li>
+  <li>Mixed content
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">&lt;languagenote&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;title&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;date&gt;</code>, etc.</li>
+    </ul>
+  </li>
+  <li>Designed with document in mind</li>
+  <li>EAD3 is incremental improvement, adds more variability
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">&lt;languagedeclaration&gt;</code></li>
+      <li><code class="language-plaintext highlighter-rouge">&lt;unitdatestructured&gt;</code></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="ead-is-a-lossy-medium">EAD is a Lossy Medium</h3>
+
+<ul>
+  <li>EAD does not have strict rules</li>
+  <li>“Migration” problems</li>
+  <li>EmpireADC example:</li>
+</ul>
+
+<p><img class="whitebg" src="img/ead2021-lossyMedium.png" alt="Diagram showing data transfer from an Archipelago-based form tool with strict rules, to EAD without strict rules, then to ArcLight with strict rules." /></p>
+
+<hr />
+
+<h3 id="ead-is-limiting-for-aggregators">EAD is Limiting for Aggregators</h3>
+
+<ul>
+  <li>“Raw” EAD is challenging to index
+    <ul>
+      <li>Hand-encoded</li>
+      <li>Custom authoring tools</li>
+    </ul>
+  </li>
+  <li>Requires skilled labor to normalize</li>
+  <li>Aggregators need to rely on consistent EAD
+    <ul>
+      <li>ArchivesSpace</li>
+      <li>EmpireADC using Archipelago-based “form tool”</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="from-xml-format-to-data-model">From XML format to Data Model</h3>
+
+<div class="fLeft">
+	<ul>
+		<li>Accept that description will live in multiple formats and systems</li>
+		<li>Standardize data structure, not format</li>
+	</ul>
+</div>
+<div class="fRight">
+	<img class="whitebg" src="img/dataModel.gif" alt="Example diagram of a data model." />
+</div>
+
+<hr />
+
+<h3 id="date-problems">Date Problems</h3>
+
+<p><img src="img/ead2021-aspaceDate.jpg" alt="Example of Dates in ArchivesSpace with three Type options, Bulk, Inclusive, or Single." /></p>
+
+<hr />
+
+<ul>
+  <li>EAD2002:
+    <ul>
+      <li>TYPE – not required. May be used to specify whether the date is “bulk” or “inclusive.”</li>
+    </ul>
+  </li>
+  <li>EAD3:
+    <ul>
+      <li>@unitdatetype – not required. Use to record whether the unit dates are bulk or inclusive. Possible values: bulk, inclusive.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>ASpace exported “single” <code class="language-plaintext highlighter-rouge">&lt;unitdate&gt;</code> without <code class="language-plaintext highlighter-rouge">@type</code></p>
+
+<hr />
+
+<h3 id="date-types-in-arclight">Date types in ArcLight</h3>
+
+<ul>
+  <li>Combines dates to Solr field: <code class="language-plaintext highlighter-rouge">normalized_title_ssm</code></li>
+</ul>
+
+<p><img src="img/ead2021-arclightDate.jpg" alt="Screenshot from ArcLight showing how it also combines dates into one field for display." /></p>
+
+<hr />
+
+<h3 id="arclight-bug">ArcLight Bug</h3>
+
+<ul>
+  <li>Originally assumed one date</li>
+  <li>then expected <code class="language-plaintext highlighter-rouge">@type="inclusive"</code> or <code class="language-plaintext highlighter-rouge">@type="bulk"</code></li>
+</ul>
+
+<p>General Administrative Files, 1965-1966, 1978-1990, 1963, 1994, undated</p>
+
+<hr />
+
+<h3 id="date-problems-1">Date Problems</h3>
+
+<ul>
+  <li>Misunderstanding between tools</li>
+  <li>EAD does not clearly define the structure of dates</li>
+</ul>
+
+<hr />
+
+<h3 id="data-model-a-set-of-rules">Data Model: A Set of Rules</h3>
+
+<p><img class="whitebg" src="img/ead2021-dateModel.png" alt="Example data model for dates. A component may have multiple dates, each of which has fields with specific rules." /></p>
+
+<hr />
+
+<h3 id="expressed-in-json">Expressed in JSON</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  "expression": "1958 May 31-1960 June 2",
+  "begin": "1958-05-31",
+  "end": "1960-06-02",
+  "date_type": "inclusive",
+  "label": "creation"
+}
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="expressed-in-ead2002">Expressed in EAD2002</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;unitdate label="creation" type="inclusive" normal="1958-05-31/1960-06-02"&gt;
+	1958 May 31-1960 June 2
+&lt;/unitdate&gt;
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="expressed-in-ead3">Expressed in EAD3</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;unitdatestructured label="creation" unitdatetype="inclusive"&gt;
+	&lt;dateset&gt;
+		&lt;daterange&gt;
+			&lt;fromdate standarddate="1958-05-31"&gt;1958 May 31&lt;/fromdate&gt;
+			&lt;todate standarddate="1960-06-02"&gt;1960 June 2&lt;/todate&gt;
+		&lt;/daterange&gt;
+	&lt;/dateset&gt;
+&lt;/unitdatestructured&gt;
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="serialization-is-easier">Serialization is easier</h3>
+
+<ul>
+  <li>Let the technologists deal with that</li>
+  <li>Rely on common conventions for implementations
+    <ul>
+      <li>EAD2002</li>
+      <li>EAD3</li>
+      <li>JSON</li>
+      <li>Records in Context ontology (RiC-O)</li>
+      <li>Spreadsheets</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="ead-already-relies-on-conventions">EAD already relies on conventions</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;extent&gt;32 cubic ft.&lt;/extent&gt;
+&lt;extent units="cubic ft."&gt;32&lt;/extent&gt;
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="more-inclusive-approach">More inclusive approach</h3>
+
+<ul>
+  <li>Migtation will be required at some point</li>
+  <li>Lowers cost of systems and integration</li>
+  <li>Allows new possibilities for small repositories
+    <ul>
+      <li>Google Forms</li>
+      <li>Spreadsheets</li>
+    </ul>
+  </li>
+  <li>Allows broader professional participation</li>
+</ul>
+
+<hr />
+
+<h2 id="from-ead-to-a-common-data-model-1">From EAD to a Common Data Model</h2>
+
+<p><a href="https://gregwiedeman.com/slides/EAD2021.html">gregwiedeman.com/slides/EAD2021.html</a></p>
+
+<p>Gregory Wiedeman<br />
+University Archivist<br />
+University at Albany, SUNY</p>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:gwiedeman@albany.edu">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/gregwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/gwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy; Gregory Wiedeman 2022
+        </p>
+        <p class="copyright text-muted">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+
+</body>
+
+</html>

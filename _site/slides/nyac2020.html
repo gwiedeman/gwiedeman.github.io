@@ -1,20 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <title>Didn’t we do this already? Better ways of thinking and doing “finding aid” aggregation</title>
-    <link rel="stylesheet" href="./css/reveal.css" />
-    <link rel="stylesheet" href="./css/theme/moon.css" id="theme" />
-    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
-    <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print" />
+<html>
 
-  </head>
-  <body>
-    <div class="reveal">
-      <div class="slides"><section  data-markdown><script type="text/template">
-<style>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Didn’t we do this already? Better ways of thinking and doing “finding aid” aggregation - Greg Wiedeman
+    
+  </title>
+
+  <meta name="description" content="I&#39;m an archivist who works to make information more accessible.">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/slides/nyac2020.html">
+  <link rel="alternate" type="application/rss+xml" title="Greg Wiedeman" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Greg Wiedeman</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/writing">Writing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/presentations">presentations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/code">Code</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cv">CV</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <style>
 #fLeft {float: left; max-width: 50%;}
 #fRight {float: right; max-width: 50%;}
 #smallLink {font-size: 18px;}
@@ -45,133 +91,222 @@ position:relative;
 .up{top:-20px;}
 </style>
 
-## Didn’t we do this already? <!-- .element: style="font-size: 77px;" -->
-#### Better ways of thinking and doing “finding aid” aggregation
+<h2 id="didnt-we-do-this-already-">Didn’t we do this already? <!-- .element: style="font-size: 77px;" --></h2>
+<h4 id="better-ways-of-thinking-and-doing-finding-aid-aggregation">Better ways of thinking and doing “finding aid” aggregation</h4>
 
+<p>Gregory Wiedeman<br />
+University Archivist<br />
+University at Albany, SUNY</p>
 
-Gregory Wiedeman<br/>
-University Archivist<br/>
-University at Albany, SUNY
-</script></section><section  data-markdown><script type="text/template">
-### Archival Aggregation
+<hr />
 
-* [Towards a National Finding Aid Network (NAFAN)](https://confluence.ucop.edu/display/NAFAN)
-	* ["Finding Aid Aggregation at a Crossroads"](https://escholarship.org/uc/item/5sp13112)
-* [EmpireADC](https://www.empireadc.org/) in New York
-* [Records in Context (RiC)](https://www.ica.org/en/records-in-contexts-ric-a-standard-for-archival-description-presentation-congress-2016)
-</script></section><section  data-markdown><script type="text/template">
-### Records in Context (RiC)
+<h3 id="archival-aggregation">Archival Aggregation</h3>
 
-* International Council on Archives (ICA)
-* Experts Group on Archival Description (EGAD)
-	* ISAD(G) which is basis for DACS
-	* ISAAR(CPF) which is basis for EAC-CPF <!-- .element: class="fragment" -->
-	* ISDF <!-- .element: class="fragment" -->
-	* ISDIAH <!-- .element: class="fragment" -->
-</script></section><section  data-markdown><script type="text/template">
-### Records in Context (RiC)
+<ul>
+  <li><a href="https://confluence.ucop.edu/display/NAFAN">Towards a National Finding Aid Network (NAFAN)</a>
+    <ul>
+      <li><a href="https://escholarship.org/uc/item/5sp13112">“Finding Aid Aggregation at a Crossroads”</a></li>
+    </ul>
+  </li>
+  <li><a href="https://www.empireadc.org/">EmpireADC</a> in New York</li>
+  <li><a href="https://www.ica.org/en/records-in-contexts-ric-a-standard-for-archival-description-presentation-congress-2016">Records in Context (RiC)</a></li>
+</ul>
 
-* Description as Linked Data Graph
-* Unify descriptive standards
-	* ISAD(G), ISAAR(CPF), ISDF, ISDIAH
-* [RiC Conceptual Model (RiC-CM)](https://www.ica.org/en/egad-ric-conceptual-model)
-	* [TS-DACS comments](https://docs.google.com/document/d/1XoQmrT-kdj5fCKNcg0umghsWFORrKRf7rMsB4OsnY5o)
-* [RiC Ontology (RiC-O)](https://www.ica.org/en/records-in-contexts-ontology)
-	* [TS-DACS comments](https://docs.google.com/document/d/1sDHmtz3bgC207CO7pO8AhRtz3CYqwAByo3zgkLparHM)
-* [Artefactual comments](https://groups.google.com/forum/#!topic/ica-atom-users/QwSor7OQ90U)
-</script></section><section  data-markdown><script type="text/template">
-### Archival Aggregation
+<hr />
 
-* Bring together description across repositories
-* Enable discovery in new ways
-</script></section><section  data-markdown><script type="text/template">
-## Didn't we already do this? <!-- .element: style="font-size: 77px;" -->
-</script></section><section  data-markdown><script type="text/template">
-### EAD and Regional Aggregators
+<h3 id="records-in-context-ric">Records in Context (RiC)</h3>
 
-* [Online Archive of California (OAC)](https://oac.cdlib.org/)
-* [Texas Archival Resources Online](https://legacy.lib.utexas.edu/taro/)
-* [Archives West](http://archiveswest.orbiscascade.org/)
-* [Virginia Heritage](https://vaheritage.org/)
-* ...
-</script></section><section  data-markdown><script type="text/template">
-### DPLA
+<ul>
+  <li>International Council on Archives (ICA)</li>
+  <li>Experts Group on Archival Description (EGAD)
+    <ul>
+      <li>ISAD(G) which is basis for DACS</li>
+      <li>ISAAR(CPF) which is basis for EAC-CPF <!-- .element: class="fragment" --></li>
+      <li>ISDF <!-- .element: class="fragment" --></li>
+      <li>ISDIAH <!-- .element: class="fragment" --></li>
+    </ul>
+  </li>
+</ul>
 
-* [Digital Public Library of America](https://dp.la/)
-	* Hub system ([NY Hertiage](https://nyheritage.org/))
+<hr />
 
-<img data-cite="https://web.archive.org/web/20130503145528/https://dp.la/" src="img/dpla.png" alt="Screenshot of DPLA in 2013" />
-</script></section><section  data-markdown><script type="text/template">
-### MARC-AMC
+<h3 id="records-in-context-ric-1">Records in Context (RiC)</h3>
 
-* MARC-AMC and APPM
-* RLIN and OCLC Networks
-* WorldCat
+<ul>
+  <li>Description as Linked Data Graph</li>
+  <li>Unify descriptive standards
+    <ul>
+      <li>ISAD(G), ISAAR(CPF), ISDF, ISDIAH</li>
+    </ul>
+  </li>
+  <li><a href="https://www.ica.org/en/egad-ric-conceptual-model">RiC Conceptual Model (RiC-CM)</a>
+    <ul>
+      <li><a href="https://docs.google.com/document/d/1XoQmrT-kdj5fCKNcg0umghsWFORrKRf7rMsB4OsnY5o">TS-DACS comments</a></li>
+    </ul>
+  </li>
+  <li><a href="https://www.ica.org/en/records-in-contexts-ontology">RiC Ontology (RiC-O)</a>
+    <ul>
+      <li><a href="https://docs.google.com/document/d/1sDHmtz3bgC207CO7pO8AhRtz3CYqwAByo3zgkLparHM">TS-DACS comments</a></li>
+    </ul>
+  </li>
+  <li><a href="https://groups.google.com/forum/#!topic/ica-atom-users/QwSor7OQ90U">Artefactual comments</a></li>
+</ul>
 
-<img width="600px" src="img/rlin-marc.png" alt="Paper titled 'Autmation in the Archives: RLIN and the Archives and Manuscript Control Format' by David Weinberg" />
-</script></section><section  data-markdown><script type="text/template">
-### NHPRC Guide (1961)
+<hr />
 
-* Philip Hamer, <i>Guide to Manuscript and Archival Materials in the United States</i>
+<h3 id="archival-aggregation-1">Archival Aggregation</h3>
 
-<img width="400px" src="img/nhprc.png" alt="Cover of the NHPRC Guide to Manuscript and Archival Materials in the United States">
-</script></section><section  data-markdown><script type="text/template">
-### NUC-MC
+<ul>
+  <li>Bring together description across repositories</li>
+  <li>Enable discovery in new ways</li>
+</ul>
 
-* National Union Catalog of Manuscript Collections
-* LC Rules for Descriptive Cataloging in the Library of Congress: Manuscripts (1954)
+<hr />
 
-<img src="img/nucmc.png" alt="Screenshot of NUC-MC" />
-</script></section><section  data-markdown><script type="text/template">
-### We keep reinventing the wheel
+<h2 id="didnt-we-already-do-this-">Didn’t we already do this? <!-- .element: style="font-size: 77px;" --></h2>
 
-* Lack of sustainable efforts <!-- .element: class="fragment" -->
-* Based on specific outputs or tools <!-- .element: class="fragment" -->
-	* Published guides
-	* Catalog records and Bibliographic networks
-	* EAD and XTF
-	* --> Linked Data <!-- .element: class="fragment" -->
-</script></section><section  data-markdown><script type="text/template">
-### We need to stop combining description storage and display 
+<hr />
 
-* "Finding Aid" is not a helpful concept
-</script></section><section  data-markdown><script type="text/template">
-## We need a common data model
+<h3 id="ead-and-regional-aggregators">EAD and Regional Aggregators</h3>
 
-Will allow us to present description in different views, formats, outputs as they change over time
-</script></section><section  data-markdown><script type="text/template">
-## "Migration issues"
+<ul>
+  <li><a href="https://oac.cdlib.org/">Online Archive of California (OAC)</a></li>
+  <li><a href="https://legacy.lib.utexas.edu/taro/">Texas Archival Resources Online</a></li>
+  <li><a href="http://archiveswest.orbiscascade.org/">Archives West</a></li>
+  <li><a href="https://vaheritage.org/">Virginia Heritage</a></li>
+  <li>…</li>
+</ul>
 
-(These are usually data issues) <!-- .element: class="fragment" data-fragment-index="1" -->
+<hr />
 
-* "Does this tool import [EAD, MODS, etc.]?" <!-- .element: class="fragment" data-fragment-index="2" -->
-* Giving up on standard formats somewhat <!-- .element: class="fragment" data-fragment-index="2" -->
-* The data model is more important <!-- .element: class="fragment" data-fragment-index="2" -->
-</script></section><section  data-markdown><script type="text/template">
-### What is a common data model?
+<h3 id="dpla">DPLA</h3>
 
-* Abstract
-	* not tied to any specific format or system
-* Strict
-	* compartmentalizes information in sets of elements
-* Structures
-	* defines the relationships between elements
-</script></section><section  data-markdown><script type="text/template">
-#### Portland Common Data Model (PCDM)
+<ul>
+  <li><a href="https://dp.la/">Digital Public Library of America</a>
+    <ul>
+      <li>Hub system (<a href="https://nyheritage.org/">NY Hertiage</a>)</li>
+    </ul>
+  </li>
+</ul>
 
-<img style="background-color:#fff;" src="img/pcdm.png" alt="The basic PCDM model" />
-</script></section><section  data-markdown><script type="text/template">
-### No more of this nonsense
+<p><img data-cite="https://web.archive.org/web/20130503145528/https://dp.la/" src="img/dpla.png" alt="Screenshot of DPLA in 2013" /></p>
 
-<img src="img/badData.png" alt="Image of poorly-encoded extent in EAD." />
+<hr />
 
-[This is actually the first language example in the EAD tag library](https://www.loc.gov/ead/tglib/elements/langmaterial.html) <!-- .element: class="fragment" -->
+<h3 id="marc-amc">MARC-AMC</h3>
 
-</script></section><section  data-markdown><script type="text/template">
-### ArchivesSpace Data Model
+<ul>
+  <li>MARC-AMC and APPM</li>
+  <li>RLIN and OCLC Networks</li>
+  <li>WorldCat</li>
+</ul>
 
-```
-{
+<p><img width="600px" src="img/rlin-marc.png" alt="Paper titled 'Autmation in the Archives: RLIN and the Archives and Manuscript Control Format' by David Weinberg" /></p>
+
+<hr />
+
+<h3 id="nhprc-guide-1961">NHPRC Guide (1961)</h3>
+
+<ul>
+  <li>Philip Hamer, <i>Guide to Manuscript and Archival Materials in the United States</i></li>
+</ul>
+
+<p><img width="400px" src="img/nhprc.png" alt="Cover of the NHPRC Guide to Manuscript and Archival Materials in the United States" /></p>
+
+<hr />
+
+<h3 id="nuc-mc">NUC-MC</h3>
+
+<ul>
+  <li>National Union Catalog of Manuscript Collections</li>
+  <li>LC Rules for Descriptive Cataloging in the Library of Congress: Manuscripts (1954)</li>
+</ul>
+
+<p><img src="img/nucmc.png" alt="Screenshot of NUC-MC" /></p>
+
+<hr />
+
+<h3 id="we-keep-reinventing-the-wheel">We keep reinventing the wheel</h3>
+
+<ul>
+  <li>Lack of sustainable efforts <!-- .element: class="fragment" --></li>
+  <li>Based on specific outputs or tools <!-- .element: class="fragment" -->
+    <ul>
+      <li>Published guides</li>
+      <li>Catalog records and Bibliographic networks</li>
+      <li>EAD and XTF</li>
+      <li>–&gt; Linked Data <!-- .element: class="fragment" --></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="we-need-to-stop-combining-description-storage-and-display">We need to stop combining description storage and display</h3>
+
+<ul>
+  <li>“Finding Aid” is not a helpful concept</li>
+</ul>
+
+<hr />
+
+<h2 id="we-need-a-common-data-model">We need a common data model</h2>
+
+<p>Will allow us to present description in different views, formats, outputs as they change over time</p>
+
+<hr />
+
+<h2 id="migration-issues">“Migration issues”</h2>
+
+<p>(These are usually data issues) <!-- .element: class="fragment" data-fragment-index="1" --></p>
+
+<ul>
+  <li>“Does this tool import [EAD, MODS, etc.]?” <!-- .element: class="fragment" data-fragment-index="2" --></li>
+  <li>Giving up on standard formats somewhat <!-- .element: class="fragment" data-fragment-index="2" --></li>
+  <li>The data model is more important <!-- .element: class="fragment" data-fragment-index="2" --></li>
+</ul>
+
+<hr />
+
+<h3 id="what-is-a-common-data-model">What is a common data model?</h3>
+
+<ul>
+  <li>Abstract
+    <ul>
+      <li>not tied to any specific format or system</li>
+    </ul>
+  </li>
+  <li>Strict
+    <ul>
+      <li>compartmentalizes information in sets of elements</li>
+    </ul>
+  </li>
+  <li>Structures
+    <ul>
+      <li>defines the relationships between elements</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h4 id="portland-common-data-model-pcdm">Portland Common Data Model (PCDM)</h4>
+
+<p><img style="background-color:#fff;" src="img/pcdm.png" alt="The basic PCDM model" /></p>
+
+<hr />
+
+<h3 id="no-more-of-this-nonsense">No more of this nonsense</h3>
+
+<p><img src="img/badData.png" alt="Image of poorly-encoded extent in EAD." /></p>
+
+<p><a href="https://www.loc.gov/ead/tglib/elements/langmaterial.html">This is actually the first language example in the EAD tag library</a> <!-- .element: class="fragment" --></p>
+
+<hr />
+
+<h3 id="archivesspace-data-model">ArchivesSpace Data Model</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
   "expression": "1927-2000",
   "begin": "1927",
   "end": "2000",
@@ -179,17 +314,18 @@ Will allow us to present description in different views, formats, outputs as the
   "label": "creation",
   "jsonmodel_type": "date"
 }
-```
-```
-{
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
   "number": "44.4",
   "portion": "whole",
   "extent_type": "cubic ft.",
   "jsonmodel_type": "extent"
 }
-```
-</script></section><section  data-markdown><script type="text/template">
-#### You can still have narrative description
+</code></pre></div></div>
+
+<hr />
+
+<h4 id="you-can-still-have-narrative-description">You can still have narrative description</h4>
 
 <div id="fLeft">
 	<img src="img/aspaceLang1.png" alt="Example of language notes in ArchivesSpace before and after v2.7.0. The update allows for both structured and unstructured description." />
@@ -200,88 +336,133 @@ Will allow us to present description in different views, formats, outputs as the
 	After v2.7.0
 </div>
 
+<hr />
 
-</script></section><section  data-markdown><script type="text/template">
-### There are good ideas in RiC!
+<h3 id="there-are-good-ideas-in-ric">There are good ideas in RiC!</h3>
 
-* Description as a linked graph
-* Function authorities
+<ul>
+  <li>Description as a linked graph</li>
+  <li>Function authorities</li>
+</ul>
 
-I wish it tried to do less and the URIs were an afterthought.
-</script></section><section  data-markdown><script type="text/template">
-### There are good ideas from description theory
+<p>I wish it tried to do less and the URIs were an afterthought.</p>
 
-* Current practices fail to document the impact of archivists and their decisions on collections
-* Michelle Light and Tom Hyry, ["Colophons and Annotations: New Directions for the Finding Aid," The American Archivist 65(2) (Fall/Winter 2002)](https://americanarchivist.org/doi/10.17723/aarc.65.2.l3h27j5x8716586q)
-</script></section><section  data-markdown><script type="text/template">
-### What this could look like
+<hr />
 
-<img src="img/exampleDataModel.png" alt="An example of what an archival data model could look like.">
-</script></section><section  data-markdown><script type="text/template">
-### Common archival data model
+<h3 id="there-are-good-ideas-from-description-theory">There are good ideas from description theory</h3>
 
-* Will not solve all problems
-* Makes everything more cost effective
-* Easier to make aggregation efforts sustainable
-* Allows for multiple displays/formats/outputs
-* Gives more archivists a say
-* Can empower small repositories without big tools
-	* Lydia Lucas, ["Efficient Finding Aids: Developing a System for Control of Archives and Manuscripts," The American Archivist 44(1) (Winter 1981)](https://americanarchivist.org/doi/abs/10.17723/aarc.44.1.3u63r01w75m5p268)
-</script></section><section  data-markdown><script type="text/template">
-### Didn’t we do this already? <!-- .element: style="font-size: 77px;" -->
-#### Better ways of thinking and doing “finding aid” aggregation
+<ul>
+  <li>Current practices fail to document the impact of archivists and their decisions on collections</li>
+  <li>Michelle Light and Tom Hyry, <a href="https://americanarchivist.org/doi/10.17723/aarc.65.2.l3h27j5x8716586q">“Colophons and Annotations: New Directions for the Finding Aid,” The American Archivist 65(2) (Fall/Winter 2002)</a></li>
+</ul>
+
+<hr />
+
+<h3 id="what-this-could-look-like">What this could look like</h3>
+
+<p><img src="img/exampleDataModel.png" alt="An example of what an archival data model could look like." /></p>
+
+<hr />
+
+<h3 id="common-archival-data-model">Common archival data model</h3>
+
+<ul>
+  <li>Will not solve all problems</li>
+  <li>Makes everything more cost effective</li>
+  <li>Easier to make aggregation efforts sustainable</li>
+  <li>Allows for multiple displays/formats/outputs</li>
+  <li>Gives more archivists a say</li>
+  <li>Can empower small repositories without big tools
+    <ul>
+      <li>Lydia Lucas, <a href="https://americanarchivist.org/doi/abs/10.17723/aarc.44.1.3u63r01w75m5p268">“Efficient Finding Aids: Developing a System for Control of Archives and Manuscripts,” The American Archivist 44(1) (Winter 1981)</a></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="didnt-we-do-this-already--1">Didn’t we do this already? <!-- .element: style="font-size: 77px;" --></h3>
+<h4 id="better-ways-of-thinking-and-doing-finding-aid-aggregation-1">Better ways of thinking and doing “finding aid” aggregation</h4>
+
+<p>Gregory Wiedeman<br />
+University Archivist<br />
+University at Albany, SUNY</p>
 
 
-Gregory Wiedeman<br/>
-University Archivist<br/>
-University at Albany, SUNY</script></section></div>
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:gwiedeman@albany.edu">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/gregwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/gwiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy; Gregory Wiedeman 2022
+        </p>
+        <p class="copyright text-muted">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+        </p>
+      </div>
     </div>
+  </div>
+</footer>
 
-    <script src="./js/reveal.js"></script>
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
 
-    <script>
-      function extend() {
-        var target = {};
-        for (var i = 0; i < arguments.length; i++) {
-          var source = arguments[i];
-          for (var key in source) {
-            if (source.hasOwnProperty(key)) {
-              target[key] = source[key];
-            }
-          }
-        }
-        return target;
-      }
-
-      // Optional libraries used to extend on reveal.js
-      var deps = [
-        { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
-        { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
-        { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-        { src: './plugin/zoom-js/zoom.js', async: true },
-        { src: './plugin/notes/notes.js', async: true },
-        { src: './plugin/math/math.js', async: true }
-      ];
-
-      // default options to init reveal.js
-      var defaultOptions = {
-        controls: true,
-        progress: true,
-        history: true,
-        center: true,
-        transition: 'default', // none/fade/slide/convex/concave/zoom
-        dependencies: deps
-      };
-
-      // options from URL query string
-      var queryOptions = Reveal.getQueryHash() || {};
-
-      var options = extend(defaultOptions, {"transition":"fade"}, queryOptions);
-    </script>
+<script src="/assets/scripts.js"></script>
 
 
-    <script>
-      Reveal.initialize(options);
-    </script>
-  </body>
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+
+</body>
+
 </html>
