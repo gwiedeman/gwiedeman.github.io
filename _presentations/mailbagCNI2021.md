@@ -2,7 +2,7 @@
 title: 'Mailbag: A Stable Package for Email with Multiple Masters'
 date: 2021-03-15
 event: Coalition for Networked Information (CNI) Spring Meeting (remote)
-link: https://docs.google.com/presentation/d/1oTvLFYlnGkWpQv_l3bDNo9kLAzQK2j7GorcbAdGuBco/present#slide=id.gbde23a9806_0_3
+link: 2021CNISpring.pdf
 ---
 Overview of of the Mailbag Project which aims to draft a specification and create an open source tool for preserving email archives using multiple formats, such as MBOX, PDF, and WARC.
 

@@ -2,7 +2,7 @@
 title: 'The Mailbag Project and Building Digital Preservation Tools Around Filesystems'
 date: 2021-12-06
 event: Coalition for Networked Information (CNI) Fall Meeting (remote)
-link: https://docs.google.com/presentation/d/1KG3ZwnFrDHhQVJdhE1XGMvhy11_OQvOqrPBwOmcpJ2s
+link: https://docs.google.com/presentation/d/1KG3ZwnFrDHhQVJdhE1XGMvhy11_OQvOqrPBwOmcpJ2s/present
 ---
 
 CNI project update on the Mailbag project and how specifications and filesystems can bridge artificial divides in digital preservation labor
