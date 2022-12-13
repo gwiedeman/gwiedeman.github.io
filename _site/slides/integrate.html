@@ -1,66 +1,20 @@
 <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-<html>
+    <title>Integrating ArchivesSpace and ArcLight</title>
+    <link rel="stylesheet" href="./css/reveal.css" />
+    <link rel="stylesheet" href="./css/theme/moon.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+    <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print" />
 
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <title>
-    Integrating ArchivesSpace and ArcLight - Greg Wiedeman
-    
-  </title>
-
-  <meta name="description" content="I&#39;m an archivist who works to make information more accessible.">
-
-  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
-
-  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
-
-  <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/slides/integrate.html">
-  <link rel="alternate" type="application/rss+xml" title="Greg Wiedeman" href="/feed.xml">
-
-</head>
-
-
-<body>
-
-  <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-  <div class="container">
-    <a class="navbar-brand" href="/">Greg Wiedeman</a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      Menu
-      <i class="fa fa-bars"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/writing">Writing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/presentations">presentations</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/code">Code</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/cv">CV</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-  <style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+<style>
 #fLeft {float: left; max-width: 50%;}
 #fRight {float: right; max-width: 50%;}
 #smallLink {font-size: 18px;}
@@ -91,54 +45,43 @@ position:relative;
 .up{top:-20px;}
 </style>
 
-<h2 id="integrating-archivesspace-and-arclight">Integrating ArchivesSpace and ArcLight</h2>
+## Integrating ArchivesSpace and ArcLight
 
-<p><a href="https://gregwiedeman.com/slides/integrate.html">gregwiedeman.com/slides/integrate.html</a></p>
+[gregwiedeman.com/slides/integrate.html](https://gregwiedeman.com/slides/integrate.html)
 
-<p>Gregory Wiedeman<br />
-University Archivist<br />
-University at Albany, SUNY</p>
+Gregory Wiedeman<br/>
+University Archivist<br/>
+University at Albany, SUNY
 
-<hr />
-
-<h3 id="why-use-aspace-and-arclight">Why use ASpace and ArcLight</h3>
+</script></section><section  data-markdown><script type="text/template">
+### Why use ASpace and ArcLight
 
 <div id="fLeft">
 <ul>
 <li>Archives usability is poor</li>
 <li>Need experimentation, iteration</li>
-<li>Repository implementation</li>
 </ul>
 </div>
 <div id="fRight">
-<video width="100%" height="100%" autoplay="" controls="">
-  <source src="scroll.webm" type="video/webm" />
+<video width="100%" height="100%" autoplay controls>
+  <source src="scroll.webm" type="video/webm">
 </video>
 </div>
+</script></section><section  data-markdown><script type="text/template">
+### Things to try!
 
-<hr />
-
-<h3 id="things-to-try">Things to try!</h3>
-
-<ul>
-  <li>A single point of discovery</li>
-  <li>Use archival description for discovery of online content
-    <ul>
-      <li>Digitized material</li>
-      <li>Born-digital</li>
-      <li>Without item-level description</li>
-    </ul>
-  </li>
-</ul>
-
-<hr />
-
-<h3 id="the-bigger-picture">The Bigger Picture</h3>
+* A single point of discovery
+* Use archival description for discovery of online content
+	* Digitized material
+	* Born-digital
+	* Without item-level description
+</script></section><section  data-markdown><script type="text/template">
+### The Bigger Picture
 
 <div id="fLeft">
 <div class="wrap">
   <svg class="arrow down" viewbox="0 0 7 10">
-    <path d="M3.5 10 L7 0 Q3.5 3 0 0z" />
+    <path d="M3.5 10 L7 0 Q3.5 3 0 0z"/>
   </svg>
 </div>
 </div>
@@ -165,43 +108,27 @@ University at Albany, SUNY</p>
 <div id="fRight">
 <div class="wrap">
   <svg class="arrow up" viewbox="0 0 7 10">
-    <path d="M3.5 0 L7 10 Q3.5 7 0 10z" />
+    <path d="M3.5 0 L7 10 Q3.5 7 0 10z"/>
   </svg>
 </div>
 </div>
+</script></section><section  data-markdown><script type="text/template">
+### Why not ASpace PUI?
 
-<hr />
+* Complex for development
+* Includes both Archivist and User functionality
+* Customizations often affect other functions
+* ASpace is great for data intergration, but challenging to intergrate user experience with other systems
+</script></section><section  data-markdown><script type="text/template">
+### Integrations Principles
 
-<h3 id="why-not-aspace-pui">Why not ASpace PUI?</h3>
-
-<ul>
-  <li>Complex for development</li>
-  <li>Includes both Archivist and User functionality</li>
-  <li>Customizations often affect other functions</li>
-  <li>ASpace is great for data intergration, but challenging to intergrate user experience with other systems</li>
-</ul>
-
-<hr />
-
-<h3 id="integrations-principles">Integrations Principles</h3>
-
-<ul>
-  <li>Separation of concerns
-    <ul>
-      <li>Do one thing</li>
-    </ul>
-  </li>
-  <li>Boilerplate implementations
-    <ul>
-      <li>Try to keep integeration outside of systems</li>
-    </ul>
-  </li>
-  <li>Networks of open systems</li>
-</ul>
-
-<hr />
-
-<h3 id="why-arclight">Why ArcLight</h3>
+* Separation of concerns
+	* Do one thing
+* Boilerplate implementations
+	* Try to keep integeration outside of systems
+* Networks of open systems
+</script></section><section  data-markdown><script type="text/template">
+### Why ArcLight
 
 <div id="fLeft">
 <ul>
@@ -220,166 +147,111 @@ University at Albany, SUNY</p>
 
 </div>
 
-<hr />
+</script></section><section  data-markdown><script type="text/template">
+### How do the connections work?
 
-<h3 id="how-do-the-connections-work">How do the connections work?</h3>
+<img src="https://raw.githubusercontent.com/UAlbanyArchives/ArchivesSpace-ArcLight-Workflow/master/img/overnightScripts.png" alt="Diagram showing how ArchivesSpace connects to ArcLight and Hyrax." />
+</script></section><section  data-markdown><script type="text/template">
+### How do the connections work?
 
-<p><img src="https://raw.githubusercontent.com/UAlbanyArchives/ArchivesSpace-ArcLight-Workflow/master/img/overnightScripts.png" alt="Diagram showing how ArchivesSpace connects to ArcLight and Hyrax." /></p>
+* [ASpace-ArcLight workflow](https://github.com/UAlbanyArchives/ArchivesSpace-ArcLight-Workflow)
+	* Overnight or manual EAD export
+	* Uses ArchivesSnake!
+	* Index shell script
+	* [Documentation](https://wiki.albany.edu/display/SCA/Overnight+Export+and+Indexing+Scripts)
+* [Collections Github repo](https://github.com/UAlbanyArchives/collections)
+</script></section><section  data-markdown><script type="text/template">
+### What does this look like?
 
-<hr />
+* Resource in ASpace
+* [Collection in ArcLight](https://archives.albany.edu/description/catalog/ua200)
+	* Individual levels
+	* Blacklight features like facets
+* [Single point of discovery](https://archives.albany.edu/)
+* DAO in ASpace
+* [Digital Object in Hyrax](https://archives.albany.edu/concern/daos/6d56zx17z)
+* Two-way client-side integration
+ </script></section><section  data-markdown><script type="text/template">
+### Digital Object Upload
 
-<h3 id="how-do-the-connections-work-1">How do the connections work?</h3>
+* Upload a [Commencement Program](https://archives.albany.edu/description/catalog/ua935)
+* [Documentation](https://wiki.albany.edu/display/SCA/Uploading+Digital+Objects+to+Hyrax)
 
-<ul>
-  <li><a href="https://github.com/UAlbanyArchives/ArchivesSpace-ArcLight-Workflow">ASpace-ArcLight workflow</a>
-    <ul>
-      <li>Overnight or manual EAD export</li>
-      <li>Uses ArchivesSnake!</li>
-      <li>Index shell script</li>
-      <li><a href="https://wiki.albany.edu/display/SCA/Overnight+Export+and+Indexing+Scripts">Documentation</a></li>
-    </ul>
-  </li>
-  <li><a href="https://github.com/UAlbanyArchives/collections">Collections Github repo</a></li>
-</ul>
+</script></section><section  data-markdown><script type="text/template">
+### Limitations
 
-<hr />
+<video width="100%" height="100%" autoplay controls>
+  <source src="scroll.webm" type="video/webm">
+</video></script></section><section  data-markdown><script type="text/template">
+### Usability Issues
 
-<h3 id="what-does-this-look-like">What does this look like?</h3>
+* [Tabs! Context! Loops!](https://archives.albany.edu/description/catalog/ua500)
+* [Collections/Digital Selections](https://archives.albany.edu/search/)
+* [UAlbany ArcLight Update and Outlook](https://gregwiedeman.com/2018/11/19/arclight-update.html)
+* [UAlbany ArcLight Usability Analysis](https://docs.google.com/document/d/1etPr-b1B13nwuDa0eXgKrYXFAzZ5vvYJ_NS7VmbrBxI/edit)
+* Addressed during [ArcLight Phase II work cycle](https://library.stanford.edu/blogs/digital-library-blog/2017/06/arclight-mvp-work-cycle-completed)
+* [UM Bentley Feedback](https://docs.google.com/document/d/1HN5CLUFuFJ1m37KgFQ2w3LBZbuz5E0YzRE3_v42_nIg)
+* Could add new design features to ASpace PUI
 
-<ul>
-  <li>Resource in ASpace</li>
-  <li><a href="https://archives.albany.edu/description/catalog/ua200">Collection in ArcLight</a>
-    <ul>
-      <li>Individual levels</li>
-      <li>Blacklight features like facets</li>
-    </ul>
-  </li>
-  <li><a href="https://archives.albany.edu/">Single point of discovery</a></li>
-  <li>DAO in ASpace</li>
-  <li><a href="https://archives.albany.edu/concern/daos/6d56zx17z">Digital Object in Hyrax</a></li>
-  <li>Two-way client-side integration</li>
-</ul>
+</script></section><section  data-markdown><script type="text/template">
+###  Integrating ArchivesSpace and ArcLight
 
-<hr />
+* [Single Point of Discovery](https://archives.albany.edu)
+* [ArcLight](https://archives.albany.edu/description/)
+* [Hyrax](https://archives.albany.edu/catalog)
+* [Documentation Site](https://wiki.albany.edu/pages/viewpage.action?pageId=80544001)
 
-<h3 id="digital-object-upload">Digital Object Upload</h3>
-
-<ul>
-  <li>Upload a <a href="https://archives.albany.edu/description/catalog/ua935">Commencement Program</a></li>
-  <li><a href="https://wiki.albany.edu/display/SCA/Uploading+Digital+Objects+to+Hyrax">Documentation</a></li>
-</ul>
-
-<hr />
-
-<h3 id="limitations">Limitations</h3>
-
-<video width="100%" height="100%" autoplay="" controls="">
-  <source src="scroll.webm" type="video/webm" />
-</video>
-<hr />
-
-<h3 id="usability-issues">Usability Issues</h3>
-
-<ul>
-  <li><a href="https://archives.albany.edu/description/catalog/ua500">Tabs! Context! Loops!</a></li>
-  <li><a href="https://archives.albany.edu/search/">Collections/Digital Selections</a></li>
-  <li><a href="https://gregwiedeman.com/2018/11/19/arclight-update.html">UAlbany ArcLight Update and Outlook</a></li>
-  <li><a href="https://docs.google.com/document/d/1etPr-b1B13nwuDa0eXgKrYXFAzZ5vvYJ_NS7VmbrBxI/edit">UAlbany ArcLight Usability Analysis</a></li>
-  <li>Addressed during <a href="https://library.stanford.edu/blogs/digital-library-blog/2017/06/arclight-mvp-work-cycle-completed">ArcLight Phase II work cycle</a></li>
-  <li><a href="https://docs.google.com/document/d/1HN5CLUFuFJ1m37KgFQ2w3LBZbuz5E0YzRE3_v42_nIg">UM Bentley Feedback</a></li>
-  <li>Could add new design features to ASpace PUI</li>
-</ul>
-
-<hr />
-
-<h3 id="integrating-archivesspace-and-arclight-1">Integrating ArchivesSpace and ArcLight</h3>
-
-<ul>
-  <li><a href="https://archives.albany.edu">Single Point of Discovery</a></li>
-  <li><a href="https://archives.albany.edu/description/">ArcLight</a></li>
-  <li><a href="https://archives.albany.edu/catalog">Hyrax</a></li>
-  <li><a href="https://wiki.albany.edu/pages/viewpage.action?pageId=80544001">Documentation Site</a></li>
-</ul>
-
-<p>Gregory Wiedeman<br />
-University Archivist<br />
-University at Albany, SUNY</p>
-
-
-  <!-- Footer -->
-
-<hr>
-
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <ul class="list-inline text-center">
-          
-          <li class="list-inline-item">
-            <a href="mailto:gwiedeman@albany.edu">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          
-          
-          <li class="list-inline-item">
-            <a href="https://twitter.com/gregwiedeman">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          <li class="list-inline-item">
-            <a href="https://github.com/gwiedeman">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-        <p class="copyright text-muted">
-          Copyright &copy; Gregory Wiedeman 2022
-        </p>
-        <p class="copyright text-muted">
-          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
-        </p>
-      </div>
+Gregory Wiedeman<br/>
+University Archivist<br/>
+University at Albany, SUNY
+</script></section></div>
     </div>
-  </div>
-</footer>
 
-  <script src="/assets/vendor/jquery/jquery.min.js"></script>
-<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+    <script src="./js/reveal.js"></script>
 
-<script src="/assets/scripts.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // Optional libraries used to extend on reveal.js
+      var deps = [
+        { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: './plugin/zoom-js/zoom.js', async: true },
+        { src: './plugin/notes/notes.js', async: true },
+        { src: './plugin/math/math.js', async: true }
+      ];
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        dependencies: deps
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal.getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"fade"}, queryOptions);
+    </script>
 
 
-
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', '');
-</script>
-
-
-
-</body>
-
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
 </html>

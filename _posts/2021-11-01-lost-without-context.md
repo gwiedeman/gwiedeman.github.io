@@ -6,7 +6,7 @@ link: https://stacks.stanford.edu/file/druid:gg453cv6438/LTWHandbook.pdf#page=59
 author: 'Jodi Allison-Bunnell, Maureen Cresci Callahan, Gretchen Gueguen, John Kunze, Krystyna K. Matusiak, and Gregory Wiedeman'
 ---
 
-This is the group contribution I facilitated for the [Lighting the Way Working Meeting](https://exhibits.stanford.edu/lightingtheway/feature/working-meeting-spring-2021), published in Matienzo, Mark A. & Handel, Dinah, eds. [The Lighting the Way Handbook: Case Studies, Guidelines, and Emergent Futures for Archival Discovery and Delivery](https://purl.stanford.edu/gg453cv6438) (November 2021).
+This is the group contribution I facilitated for the [Lighting the Way Working Meeting](https://exhibits.stanford.edu/lightingtheway/feature/working-meeting-spring-2021), published in Matienzo, M.A. & Handel, Dinah, eds. [The Lighting the Way Handbook: Case Studies, Guidelines, and Emergent Futures for Archival Discovery and Delivery](https://purl.stanford.edu/gg453cv6438) (November 2021).
 
 The rest of the authors deserve credit for this article. I organized and facilitated our working meeting sessions and did some editing and small contributions to the piece.
 

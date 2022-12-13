@@ -1,272 +1,157 @@
 <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-<html>
+    <title>How do we do that? Implementing Web Systems in Archives</title>
+    <link rel="stylesheet" href="./css/reveal.css" />
+    <link rel="stylesheet" href="./css/theme/serif.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+    <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print" />
 
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <title>
-    How do we do that? Implementing Web Systems in Archives - Greg Wiedeman
-    
-  </title>
-
-  <meta name="description" content="I&#39;m an archivist who works to make information more accessible.">
-
-  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
-
-  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
-
-  <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/slides/caa2020.html">
-  <link rel="alternate" type="application/rss+xml" title="Greg Wiedeman" href="/feed.xml">
-
-</head>
-
-
-<body>
-
-  <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-  <div class="container">
-    <a class="navbar-brand" href="/">Greg Wiedeman</a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      Menu
-      <i class="fa fa-bars"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/writing">Writing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/presentations">presentations</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/code">Code</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/cv">CV</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-  <style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+<style>
 #fLeft {float: left; max-width: 50%;}
 #fRight {float: right; max-width: 50%;}
 #smallLink {font-size: 18px;}
 .whitebg {background-color: #fff; margin-top: 30% !important; padding: 15px !important; border-radius: 15px;}
 </style>
 
-<h2 id="how-do-we-do-that">How do we do that?</h2>
-<h3 id="implementing-web-systems-in-archives">Implementing Web Systems in Archives</h3>
+## How do we do that?
+### Implementing Web Systems in Archives
+
 
 <div id="fLeft">
-Gregory Wiedeman<br />
+Gregory Wiedeman<br/>
 University Archivist
 </div>
 <div id="fRight">
-Mark Wolfe<br />
+Mark Wolfe<br/>
 Curator of Digital Collections
 </div>
+</script></section><section  data-markdown><script type="text/template">
+## Systems Principles
 
-<hr />
+* Use one descriptive system (archival description!)
+* Build networks of systems and limit their use to what they are really good at
+* Computers don’t preserve bits, people preserve bits
+</script></section><section  data-markdown><script type="text/template">
+### Early Systems at UAlbany
 
-<h2 id="systems-principles">Systems Principles</h2>
+* Paper finding aids, abstracts, MARC
+* 2000: Static HTML files
+* 2000s: Collections Manager (accessions)
+* 2004: Photo Manager
+* 2008: LUNA for digital assets
+* 2010: Began EAD with XSLT stylesheets
+* 2014: Wrote XTF into CLIR Hidden Collections Grant
+    * Archivist got time to experiment
+</script></section><section  data-markdown><script type="text/template">
+## Current Systems
 
-<ul>
-  <li>Use one descriptive system (archival description!)</li>
-  <li>Build networks of systems and limit their use to what they are really good at</li>
-  <li>Computers don’t preserve bits, people preserve bits</li>
-</ul>
+* 2016: [ArchivesSpace](https://aspace.library.albany.edu/)
+    * [Find-It](https://archives.albany.edu/find-it/)
+    * [asInventory](https://github.com/UAlbanyArchives/asInventory)
+* 2019: Wrote [Hyrax](https://archives.albany.edu/catalog) into CLIR Digitization Grant
+* 2019: [ArcLight](https://archives.albany.edu/description/)
+</script></section><section  data-markdown><script type="text/template">
+## More details
 
-<hr />
+* [Documentation Site](https://archives.albany.edu)
+* [Github](https://github.com/UAlbanyArchives)
+</script></section><section  data-markdown><script type="text/template">
+### Challanges
 
-<h3 id="early-systems-at-ualbany">Early Systems at UAlbany</h3>
+* Usability
+* Maintenance
+* Repositories are complex
+* High technical bar for traditional tasks
+</script></section><section  data-markdown><script type="text/template">
+## How?
 
-<ul>
-  <li>Paper finding aids, abstracts, MARC</li>
-  <li>2000: Static HTML files</li>
-  <li>2000s: Collections Manager (accessions)</li>
-  <li>2004: Photo Manager</li>
-  <li>2008: LUNA for digital assets</li>
-  <li>2010: Began EAD with XSLT stylesheets</li>
-  <li>2014: Wrote XTF into CLIR Hidden Collections Grant
-    <ul>
-      <li>Archivist got time to experiment</li>
-    </ul>
-  </li>
-</ul>
+* Permanent staff with freedom to experiment
+* Admin access (or close to it)
+* On-campus data center
+* Grants and systems support and turnover
+* Keep tools simple
+* Acting as "Product Owner"
+</script></section><section  data-markdown><script type="text/template">
+## Lowering barriers
 
-<hr />
+* [EmpireADC](https://www.empireadc.org/) Consortium
+* [staticAid](https://hillelarnold.com/blog/2016/02/a-static-html-site-generator-for-archival-description/)
+* [ArchivesSnake](https://github.com/archivesspace-labs/ArchivesSnake)
+* [Oxford Common File Layout](https://ocfl.io/)
+</script></section><section  data-markdown><script type="text/template">
+### What is the need and role of web systems and archives?
+</script></section><section  data-markdown><script type="text/template">
+### What challenges are you facing?
+</script></section><section  data-markdown><script type="text/template">
+### What are some 15% solutions?
+</script></section><section  data-markdown><script type="text/template">
+## How do we do that?
+### Implementing Web Systems in Archives
 
-<h2 id="current-systems">Current Systems</h2>
-
-<ul>
-  <li>2016: <a href="https://aspace.library.albany.edu/">ArchivesSpace</a>
-    <ul>
-      <li><a href="https://archives.albany.edu/find-it/">Find-It</a></li>
-      <li><a href="https://github.com/UAlbanyArchives/asInventory">asInventory</a></li>
-    </ul>
-  </li>
-  <li>2019: Wrote <a href="https://archives.albany.edu/catalog">Hyrax</a> into CLIR Digitization Grant</li>
-  <li>2019: <a href="https://archives.albany.edu/description/">ArcLight</a></li>
-</ul>
-
-<hr />
-
-<h2 id="more-details">More details</h2>
-
-<ul>
-  <li><a href="https://archives.albany.edu">Documentation Site</a></li>
-  <li><a href="https://github.com/UAlbanyArchives">Github</a></li>
-</ul>
-
-<hr />
-
-<h3 id="challanges">Challanges</h3>
-
-<ul>
-  <li>Usability</li>
-  <li>Maintenance</li>
-  <li>Repositories are complex</li>
-  <li>High technical bar for traditional tasks</li>
-</ul>
-
-<hr />
-
-<h2 id="how">How?</h2>
-
-<ul>
-  <li>Permanent staff with freedom to experiment</li>
-  <li>Admin access (or close to it)</li>
-  <li>On-campus data center</li>
-  <li>Grants and systems support and turnover</li>
-  <li>Keep tools simple</li>
-  <li>Acting as “Product Owner”</li>
-</ul>
-
-<hr />
-
-<h2 id="lowering-barriers">Lowering barriers</h2>
-
-<ul>
-  <li><a href="https://www.empireadc.org/">EmpireADC</a> Consortium</li>
-  <li><a href="https://hillelarnold.com/blog/2016/02/a-static-html-site-generator-for-archival-description/">staticAid</a></li>
-  <li><a href="https://github.com/archivesspace-labs/ArchivesSnake">ArchivesSnake</a></li>
-  <li><a href="https://ocfl.io/">Oxford Common File Layout</a></li>
-</ul>
-
-<hr />
-
-<h3 id="what-is-the-need-and-role-of-web-systems-and-archives">What is the need and role of web systems and archives?</h3>
-
-<hr />
-
-<h3 id="what-challenges-are-you-facing">What challenges are you facing?</h3>
-
-<hr />
-
-<h3 id="what-are-some-15-solutions">What are some 15% solutions?</h3>
-
-<hr />
-
-<h2 id="how-do-we-do-that-1">How do we do that?</h2>
-<h3 id="implementing-web-systems-in-archives-1">Implementing Web Systems in Archives</h3>
 
 <div id="fLeft">
-Gregory Wiedeman<br />
+Gregory Wiedeman<br/>
 University Archivist
 </div>
 <div id="fRight">
-Mark Wolfe<br />
+Mark Wolfe<br/>
 Curator of Digital Collections
-</div>
-
-
-  <!-- Footer -->
-
-<hr>
-
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <ul class="list-inline text-center">
-          
-          <li class="list-inline-item">
-            <a href="mailto:gwiedeman@albany.edu">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          
-          
-          <li class="list-inline-item">
-            <a href="https://twitter.com/gregwiedeman">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          <li class="list-inline-item">
-            <a href="https://github.com/gwiedeman">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-        <p class="copyright text-muted">
-          Copyright &copy; Gregory Wiedeman 2022
-        </p>
-        <p class="copyright text-muted">
-          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
-        </p>
-      </div>
+</div></script></section></div>
     </div>
-  </div>
-</footer>
 
-  <script src="/assets/vendor/jquery/jquery.min.js"></script>
-<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+    <script src="./js/reveal.js"></script>
 
-<script src="/assets/scripts.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // Optional libraries used to extend on reveal.js
+      var deps = [
+        { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: './plugin/zoom-js/zoom.js', async: true },
+        { src: './plugin/notes/notes.js', async: true },
+        { src: './plugin/math/math.js', async: true }
+      ];
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        dependencies: deps
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal.getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"fade"}, queryOptions);
+    </script>
 
 
-
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', '');
-</script>
-
-
-
-</body>
-
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
 </html>

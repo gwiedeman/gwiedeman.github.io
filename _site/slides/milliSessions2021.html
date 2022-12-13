@@ -1,66 +1,20 @@
 <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-<html>
+    <title>Systems for Digital Archives</title>
+    <link rel="stylesheet" href="./css/reveal.css" />
+    <link rel="stylesheet" href="./css/theme/serif.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+    <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print" />
 
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <title>
-    Systems for Digital Archives - Greg Wiedeman
-    
-  </title>
-
-  <meta name="description" content="I&#39;m an archivist who works to make information more accessible.">
-
-  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
-
-  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
-
-  <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/slides/milliSessions2021.html">
-  <link rel="alternate" type="application/rss+xml" title="Greg Wiedeman" href="/feed.xml">
-
-</head>
-
-
-<body>
-
-  <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-  <div class="container">
-    <a class="navbar-brand" href="/">Greg Wiedeman</a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      Menu
-      <i class="fa fa-bars"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/writing">Writing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/presentations">presentations</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/code">Code</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/cv">CV</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-  <style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+<style>
 .fLeft {float: left; max-width: 50%;}
 .fRight {float: right; max-width: 50%;}
 #smallLink {font-size: 18px;}
@@ -92,256 +46,171 @@ position:relative;
 .slide-background-content{background-size:contain!important;}
 </style>
 
-<h2 id="systems-for-digital-archives">Systems for Digital Archives</h2>
+## Systems for Digital Archives
 
-<p><a href="https://gregwiedeman.com/slides/milliSessions2021.html">gregwiedeman.com/slides/milliSessions2021.html</a></p>
+[gregwiedeman.com/slides/milliSessions2021.html](https://gregwiedeman.com/slides/milliSessions2021.html)
 
-<p>Gregory Wiedeman<br />
-University Archivist<br />
-University at Albany, SUNY</p>
+Gregory Wiedeman<br/>
+University Archivist<br/>
+University at Albany, SUNY
+</script></section><section  data-markdown><script type="text/template">
+### Systems for Digital Archives
 
-<hr />
+* No one system
+* "Separation of Concerns"
 
-<h3 id="systems-for-digital-archives-1">Systems for Digital Archives</h3>
+<img class="" src="img/logos.png" alt="Logos from many different archival systems." />
 
-<ul>
-  <li>No one system</li>
-  <li>“Separation of Concerns”</li>
-</ul>
+</script></section><section  data-markdown><script type="text/template">
+### Different Descriptive Systems
 
-<p><img class="" src="img/logos.png" alt="Logos from many different archival systems." /></p>
+* Bibliographic
+* Archival
+</script></section><section  data-markdown><script type="text/template">
+### Bibliographic description
 
-<hr />
+* Library catalog
+* Traditionally rely on subject analysis
+* Search
+* Detailed metadata required
+	</script></section><section  data-markdown><script type="text/template">
 
-<h3 id="different-descriptive-systems">Different Descriptive Systems</h3>
+### Archival description
 
-<ul>
-  <li>Bibliographic</li>
-  <li>Archival</li>
-</ul>
+* [ISAD(G)](https://www.ica.org/en/isadg-general-international-standard-archival-description-second-edition)
+* [DACS in United States](https://saa-ts-dacs.github.io/dacs/06_part_I/02_chapter_01.html#requirements-for-multilevel-descriptions)
+* "finding aids"
+* Hierarchical, flexible metadata
+* Large volumes
+</script></section><section  data-markdown><script type="text/template">
+### Bibliographic-style systems
 
-<hr />
+* Digital Asset Management Systems (DAMS)
+* Institutional Repositories (IR)
+* "Digital Repositories"
+* Sometimes framed as preservation
+</script></section><section  data-markdown><script type="text/template">
+<a href="https://archives.albany.edu/catalog?f%5Bcollection_sim%5D%5B%5D=Campus+Construction+Collection&f%5Bresource_type_sim%5D%5B%5D=Image"><img src="img/milli-dams.jpg" alt="Screenshot of UAlbany's Hyrax repository as an example DAMS." /></a>
+</script></section><section  data-markdown><script type="text/template">
+### Example Open DAMS
 
-<h3 id="bibliographic-description">Bibliographic description</h3>
+* [DSpace](https://duraspace.org/dspace/) (Java)
+* [Islandora](https://islandora.ca/) (Drupal)
+* [Samvera](https://samvera.org/) (Ruby on Rails)
+	* formerly Hydra
+	* [Hyrax](https://hyrax.samvera.org/) (customizable)
+	* [Hyku](https://hyku.samvera.org/) (strict)
 
-<ul>
-  <li>Library catalog</li>
-  <li>Traditionally rely on subject analysis</li>
-  <li>Search</li>
-  <li>Detailed metadata required</li>
-</ul>
+</script></section><section  data-markdown><script type="text/template">
+### Systems for Archival Description
 
-<hr />
+* Browse and search description
+* Display full archival hierarchy
+* Describes aggregates
+* May link to digital content
+* Connect analog and digtial materials
+* [Temple University example](https://library.temple.edu/finding_aids)
+</script></section><section  data-markdown><script type="text/template">
+### Systems for Archival Description
 
-<h3 id="archival-description">Archival description</h3>
+* Management & Display
+	* [ArchivesSpace](https://archivesspace.org/)
+	* [Access to Memory (AtoM)](https://www.accesstomemory.org)
+* Display
+	* [ArcLight](https://library.stanford.edu/projects/arclight)
+	* [Encoded Archival Description (EAD)](https://www2.archivists.org/groups/technical-subcommittee-on-encoded-archival-standards-ts-eas/encoded-archival-description-ead) + XSLT
+</script></section><section  data-markdown><script type="text/template">
+### Archives Display Systems
 
-<ul>
-  <li><a href="https://www.ica.org/en/isadg-general-international-standard-archival-description-second-edition">ISAD(G)</a></li>
-  <li><a href="https://saa-ts-dacs.github.io/dacs/06_part_I/02_chapter_01.html#requirements-for-multilevel-descriptions">DACS in United States</a></li>
-  <li>“finding aids”</li>
-  <li>Hierarchical, flexible metadata</li>
-  <li>Large volumes</li>
-</ul>
+* [Archives at Yale](https://archives.yale.edu/repositories/resources) (ArchivesSpace)
+* [Duke Collection Guides](https://archives.lib.duke.edu/) (ArcLight customized)
+* [ArcLight Demo](https://arclight-demo.projectblacklight.org/) (ArcLight default)
 
-<hr />
+</script></section><section  data-markdown><script type="text/template">
+### Processing Systems
 
-<h3 id="bibliographic-style-systems">Bibliographic-style systems</h3>
+* [Archivematica](https://www.archivematica.org/) for born digital workflows
+* [BitCurator](https://bitcurator.net/) tools for disk imaging
+* [ePADD](https://library.stanford.edu/projects/epadd) for email processing
+* More tools than infrastructure
+</script></section><section  data-markdown><script type="text/template">
+### More Systems!
 
-<ul>
-  <li>Digital Asset Management Systems (DAMS)</li>
-  <li>Institutional Repositories (IR)</li>
-  <li>“Digital Repositories”</li>
-  <li>Sometimes framed as preservation</li>
-</ul>
+* Exhibition systems
+	* [Omeka](https://omeka.org/)
+	* [Spotlight](https://library.stanford.edu/research/spotlight)
+* Requests/ticket system
+* Payment processing system
 
-<hr />
-
-<p><a href="https://archives.albany.edu/catalog?f%5Bcollection_sim%5D%5B%5D=Campus+Construction+Collection&amp;f%5Bresource_type_sim%5D%5B%5D=Image"><img src="img/milli-dams.jpg" alt="Screenshot of UAlbany's Hyrax repository as an example DAMS." /></a></p>
-
-<hr />
-
-<h3 id="example-open-dams">Example Open DAMS</h3>
-
-<ul>
-  <li><a href="https://duraspace.org/dspace/">DSpace</a> (Java)</li>
-  <li><a href="https://islandora.ca/">Islandora</a> (Drupal)</li>
-  <li><a href="https://samvera.org/">Samvera</a> (Ruby on Rails)
-    <ul>
-      <li>formerly Hydra</li>
-      <li><a href="https://hyrax.samvera.org/">Hyrax</a> (customizable)</li>
-      <li><a href="https://hyku.samvera.org/">Hyku</a> (strict)</li>
-    </ul>
-  </li>
-</ul>
-
-<hr />
-
-<h3 id="systems-for-archival-description">Systems for Archival Description</h3>
-
-<ul>
-  <li>Browse and search description</li>
-  <li>Display full archival hierarchy</li>
-  <li>Describes aggregates</li>
-  <li>May link to digital content</li>
-  <li>Connect analog and digtial materials</li>
-  <li><a href="https://library.temple.edu/finding_aids">Temple University example</a></li>
-</ul>
-
-<hr />
-
-<h3 id="systems-for-archival-description-1">Systems for Archival Description</h3>
-
-<ul>
-  <li>Management &amp; Display
-    <ul>
-      <li><a href="https://archivesspace.org/">ArchivesSpace</a></li>
-      <li><a href="https://www.accesstomemory.org">Access to Memory (AtoM)</a></li>
-    </ul>
-  </li>
-  <li>Display
-    <ul>
-      <li><a href="https://library.stanford.edu/projects/arclight">ArcLight</a></li>
-      <li><a href="https://www2.archivists.org/groups/technical-subcommittee-on-encoded-archival-standards-ts-eas/encoded-archival-description-ead">Encoded Archival Description (EAD)</a> + XSLT</li>
-    </ul>
-  </li>
-</ul>
-
-<hr />
-
-<h3 id="archives-display-systems">Archives Display Systems</h3>
-
-<ul>
-  <li><a href="https://archives.yale.edu/repositories/resources">Archives at Yale</a> (ArchivesSpace)</li>
-  <li><a href="https://archives.lib.duke.edu/">Duke Collection Guides</a> (ArcLight customized)</li>
-  <li><a href="https://arclight-demo.projectblacklight.org/">ArcLight Demo</a> (ArcLight default)</li>
-</ul>
-
-<hr />
-
-<h3 id="processing-systems">Processing Systems</h3>
-
-<ul>
-  <li><a href="https://www.archivematica.org/">Archivematica</a> for born digital workflows</li>
-  <li><a href="https://bitcurator.net/">BitCurator</a> tools for disk imaging</li>
-  <li><a href="https://library.stanford.edu/projects/epadd">ePADD</a> for email processing</li>
-  <li>More tools than infrastructure</li>
-</ul>
-
-<hr />
-
-<h3 id="more-systems">More Systems!</h3>
-
-<ul>
-  <li>Exhibition systems
-    <ul>
-      <li><a href="https://omeka.org/">Omeka</a></li>
-      <li><a href="https://library.stanford.edu/research/spotlight">Spotlight</a></li>
-    </ul>
-  </li>
-  <li>Requests/ticket system</li>
-  <li>Payment processing system</li>
-</ul>
-
-<hr />
-
-<h3 id="making-connections">Making Connections</h3>
+</script></section><section  data-markdown><script type="text/template">
+### Making Connections
 
 <div class="fLeft">
 	<ul>
 		<li>Open APIs</li>
 		<li>User Experience (UX) design challenges</li>
-		<li><a href="https://archives.lib.duke.edu/?f%5Bhas_online_content_ssim%5D%5B%5D=online&amp;q=&amp;search_field=all_fields">Duke example</a></li>
+		<li><a href="https://archives.lib.duke.edu/?f%5Bhas_online_content_ssim%5D%5B%5D=online&q=&search_field=all_fields">Duke example</a></li>
 	</ul>
 </div>
 <div class="fRight">
 	<img src="https://raw.githubusercontent.com/UAlbanyArchives/ArchivesSpace-ArcLight-Workflow/master/img/overnightScripts.png" alt="Diagram showing connections between UAlbany's archival systems." />
 </div>
 
-<hr />
+</script></section><section  data-markdown><script type="text/template">
+## Systems for Digital Archives
 
-<h2 id="systems-for-digital-archives-2">Systems for Digital Archives</h2>
+[gregwiedeman.com/slides/milliSessions2021.html](https://gregwiedeman.com/slides/milliSessions2021.html)
 
-<p><a href="https://gregwiedeman.com/slides/milliSessions2021.html">gregwiedeman.com/slides/milliSessions2021.html</a></p>
-
-<p>Gregory Wiedeman<br />
-University Archivist<br />
-University at Albany, SUNY</p>
-
-
-  <!-- Footer -->
-
-<hr>
-
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <ul class="list-inline text-center">
-          
-          <li class="list-inline-item">
-            <a href="mailto:gwiedeman@albany.edu">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="far fa-envelope fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          
-          
-          <li class="list-inline-item">
-            <a href="https://twitter.com/gregwiedeman">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          
-          
-          
-          
-          <li class="list-inline-item">
-            <a href="https://github.com/gwiedeman">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-        <p class="copyright text-muted">
-          Copyright &copy; Gregory Wiedeman 2022
-        </p>
-        <p class="copyright text-muted">
-          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
-        </p>
-      </div>
+Gregory Wiedeman<br/>
+University Archivist<br/>
+University at Albany, SUNY</script></section></div>
     </div>
-  </div>
-</footer>
 
-  <script src="/assets/vendor/jquery/jquery.min.js"></script>
-<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+    <script src="./js/reveal.js"></script>
 
-<script src="/assets/scripts.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // Optional libraries used to extend on reveal.js
+      var deps = [
+        { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: './plugin/zoom-js/zoom.js', async: true },
+        { src: './plugin/notes/notes.js', async: true },
+        { src: './plugin/math/math.js', async: true }
+      ];
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        dependencies: deps
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal.getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"fade"}, queryOptions);
+    </script>
 
 
-
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', '');
-</script>
-
-
-
-</body>
-
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
 </html>
