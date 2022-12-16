@@ -30,6 +30,12 @@
 .highlight, .highlight .w {
   color: #93a1a1;
   background-color: #002b36;
+  padding: 10px;
+  margin-bottom: 0;
+}
+.highlight, .text {
+  color: #000;
+  background-color: #fff;
 }
 .highlight .err {
   color: #002b36;

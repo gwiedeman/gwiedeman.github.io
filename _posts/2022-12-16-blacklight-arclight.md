@@ -1,0 +1,78 @@
+---
+layout: post
+title:  'Why Blacklight and Arclight are Awesome'
+subtitle: 'They Let Us Design Digital Repositories Together'
+---
+
+Blacklight and Arclight might be my favorite tools right now.  They have many of the characteristics in tools and systems that I really enjoy: they do one thing well, they’re super extensible and customizable, and you feel like you have superpowers when you use them. Yet, what I’m really loving about them is how they are making me think about how we could design better access and discovery systems in libraries and archives, particularly for small and medium-sized institutions and regional consortiums. I think they have the potential to better match our systems to our skillsets and organizational structures by empowering librarians and archivists to design and manage digital repositories at a detailed technical level.
+
+When we think of digital repositories, we usually think of monolithic web applications. A system that your institution or consortium implements or pays to host that gives you a web form to upload files and enter metadata. Users see a search box on the front end that returns and displays digital objects and metadata. Hyrax. Hyku. Samvera. Islandora. DSpace. ContentDM. Bepress Digital Commons. Pick one. If you just need an Institutional Repository (IR) to host PDFs and make them discoverable, they’re great. Like any piece of software, when you ask them to do more than they’re designed for, you run into trouble. Chances are your library or archive has other digital assets with a variety of processing workflows and preservation needs beyond “it’s in Fedora.” 
+
+Digital repositories also <em><u>cost so much</u></em>, either literally or in developer time. I’ve implemented a lot of systems and digital repositories have easily been the most challenging. ArchivesSpace? No problem. Islandora? 😬.
+
+Repositories just have a lot going on under the hood. They save files to a file system (directly or through Fedora), often making multiple copies. They make thumbnails, extracting text with Apache Tika, OCR. Tools upon tools upon tools. Much of this isn’t complicated individually, but when you put all this collectively and orchestrate it from behind a web form it gets hard quick. What version does that middleware support? You probably need file versioning and that gets <em><u>really complicated</u></em>.
+
+Traditional monolithic digital repositories might be a fit if you have a department of developers and applications support folks with skills in a particular software stack, like Rails or Drupal. This is a <em><u>really small</u></em> portion of institutions in the US. I work in a (purportedly) ARL library at a (purportedly) R1 university. Even before the massive staff cuts we didn’t have anywhere near these resources. College and university archives are also likely to be much better funded than public archives. State and local archives probably have more important collecting scopes and do really impactful work, and really struggle providing access to digital materials. This is without even talking about community archives. For the vast majority of libraries and archives, you just pay a large hosting bill or membership fee and get the system you get, and that’s if you’re lucky enough to have a digital repository at all.
+
+Despite staff cuts throughout the profession, we still have a lot of great people working in libraries and archives, from the largest institutions to the one person in the county archives. They usually don’t work in code, but they can totally figure out how to make thumbnails of images and understand why this is useful. They usually have a really strong understanding of what a digital repository or other system is supposed to be doing, a much better understanding than developers do. A large part of building software is cross-domain communication. There’s a whole Systems Design discipline focused on developers asking questions and understanding the needs of practitioners. Navigating this boundary is one of the most challenging parts of software development. Instead of this solid line between developers and librarians and archivists, what if we built and managed our repository systems together? Not just by developing system requirements, but by having librarians and archivists directly organize and manage all the data.
+
+I think Blacklight and Arclight can make this happen. Both of these tools merely provide a front-end web interface for data stored in Apache Solr. They provide a search box to query Solr for results, provide facets and other limiters with buttons or drop downs, and show a page for each item. Once your data is in Solr, you can just edit what is essentially a config file in Blacklight or Arclight and tell it what fields your data has, what fields should be facets and what fields should display on the item pages. They have some customizable templates that affect what things look like and you need a basic understanding of Solr field types, but essentially that’s it. Arclight has some more complex templates as it's set up to display hierarchical archives data, but functionally it does the same thing. If you have a thumbnail URL in your data, you enter that field in the Blacklight config and it will display thumbnails. If you include a URL to a PDF or IIIF manifest in the Solr data and you can edit a template to display or download it.[^1]
+
+This means that if just we get our data into Solr, Blacklight or Arclight will provide access to it. And there are a number of ways to get data into Solr. You can use the [command line post tool]( https://solr.apache.org/guide/8_5/post-tool.html), or send it JSON data with [a curl POST request]( https://stackoverflow.com/questions/49353549/sending-json-data-to-solr-using-curl). There are libraries that send data to Solr for [Python](https://github.com/django-haystack/pysolr/), [Ruby]( https://github.com/rsolr/rsolr), and it looks like there’s a bunch for JavaScript. If Solr is configured for it, you can also send Solr office documents or PDFs and it will extract text from it, or you can use something like [Apache Tika](https://tika.apache.org/) to extract text and include it in the JSON you send to Solr. If our data is structured, consistent, and machine-actionable its relatively easy to build small utilities or workflow tools that read data and send it to Solr. This is not nothing and, along with supporting Blacklight or Arclight and Solr, still takes developer-time, but these challenges might be significantly easier than designing or even maintaining a system like Hyrax which wraps Blacklight and data management functionality in one much more complex application.
+
+So, from a technical level, separating out Solr and the front end access system from how data is managed should be quite feasible. This requires really consistent and effective file and data management in some kind of open system. This is really hard, but it’s also work that many librarians and archivists are great at. Most librarians and archivists are also constantly frustrated at the friction that our systems create and would jump at the chance to design data management systems if we can use tools they are already comfortable with.
+
+To this end, **I want to design digital repositories around spreadsheets. File systems. Google Drive.** These are all well-structured and open enough to be accessed by small utilities to read and POST data into Solr. This requires strong data models and detailed specifications that structure our data at a really granular level. Let’s build them together. I really like the [Bagit specification](https://www.rfc-editor.org/rfc/rfc8493), which inspired [Mailbag](https://archives.albany.edu/mailbag/spec/). I’ve also enjoyed using [jsonmodels]( https://github.com/jazzband/jsonmodels) for writing super-simple JSON data models, and I’m using it to write [a basic data model for digital objects and files in archival description](https://github.com/UAlbanyArchives/description_indexer/blob/dao-indexing/description_indexer/models/description.py). Maybe the filesystem specifications could be based on the [Oxford Common File Layout](https://ocfl.io/) (OCFL). Here’s a quick-and-dirty example of vaguely what I'm thinking based on Bagit:
+
+<div class="highlight">
+	<pre class="highlight text">
+		<code>
+  &lt;digital object&gt;/
+     |
+     -- metadata.yml
+     |
+     -- bag-info.txt
+     |
+     -- manifest-&lt;algorithm&gt;.txt
+     |
+     -- tagmanifest-&lt;algorithm&gt;.txt
+     |
+     +-- files/
+           |
+           +-- &lt;file&gt;/
+           |     -- content.txt
+           |     -- metadata.yml
+           |     -- thumbnail.jpg
+           |     +-- versions/
+           |             +-- &lt;version&gt;/
+           |     	 |      -- metadata.yml
+           |     	 |      -- &lt;access file&gt;.jpg
+           |             +-- &lt;version&gt;/
+           |     	        -- metadata.yml
+           |     	        -- &lt;original file&gt;.tif
+           +-- &lt;file&gt;/
+                 ...
+		</code>
+	</pre>
+</div>
+
+Essentially, this data controls what gets sent to Solr, which controls what is displayed and made accessible in Blacklight and Arclight. Which means **librarians and archivists can control our access systems by copying and pasting files and editing text files and spreadsheets.** We should start by ensuring that this work can be done manually, and then slowly build as-simple-as-possible tools and utilities to automate labor-intensive tasks. Maybe these are command line scripts, maybe they’re super simple Electron or Flask apps. [Jobson](https://github.com/adamkewley/jobson) looks cool. Need a web form to create objects? That could be an optional single page app. Using common tools like filesystems and spreadsheets that people use everyday outside of our profession makes it more likely that we could use or adapt a variety of workflow tools that may be developed for different purposes. This would ensure that our practices are extensible from small repositories that can still do the work manually to large institutions working at scale. This also puts us all on the same foundation making it more likely that tools and processes developed at larger repositories could actually benefit smaller archives.
+
+This model also fits regional consortiums that support small repositories well. We can index from a common layout in Google Drive! That could be a bit clunky, but feasible! Consortia can better host common large applications like Solr, Blacklight/Arclight, and image servers while local institutions manage their own data. If the data is structured and managed well enough according to a common specification, consortia can read (almost crawl?) and index the data from a couple different sources, including commercial cloud storage. This allows them to meet small archives wherever they are at. The reverse could also work too, as medium-sized archives could use tools or scripts to read their data and POST it into a consortia Solr.
+
+What I also like about this is that you also don’t need to be an instant expert to participate. When I started learning how to do this work, I was writing XML by hand. Now the grad students I work with only see the shiny web forms in ArchivesSpace or Hyrax. It’s has become so much harder to onboard new professionals and have them contribute to access in a meaningful way. A manual-first access system facilitates step-by-step learning where we can all start from the same foundation and adopt individual tools one-by-one over time.
+
+There are still major challenges here. Quality specifications and data models take a lot of community consensus-building. Validation is a concern, although we can build simple tools that allow librarians and archivists to validate and evaluate their own data. I also haven’t fully wrapped my head around how versioning might work in a way that accommodates my practical local examples, what OCFL is doing, and the spirit of [OAIS](https://en.wikipedia.org/wiki/Open_Archival_Information_System). How would we get access files to an image server? From a preservation risk perspective, it’s also easy to delete a lot manually. But read-only filesystems exist, and we should be able to design systems with substantial fault tolerance. I’d also argue that separating file and data management from complex monolithic tools also eliminates significant preservation risk. There are problems than would need to be addressed, but these are types of challenges that librarians and archivists are well equipped to take on in collaboration with technologists.
+
+Overall, I’m really intrigued with the design scope of Blacklight and Arclight because they make it possible for librarians, archivists, and technologists with a wide variety of expertise and experiences to design and build access systems together. If we use common, everyday tools like filesystems, text files, spreadsheets, network file shares, and commercial cloud storage for file and data management, librarians and archivists can take on this work, allowing them to be equal partners with technologists in building access systems for digital materials. 
+
+I think this would also better match this work with our organizational structures, as currently system design is often either too concentrated in technology departments, or design is done in practice by library leadership selecting vendors. I also think most libraries don’t have a good process of evaluating vendor services and base much of this on reputation and branding.[^2] Separating data management from digital repositories and using common tools could allow even smaller libraries and archives to retain full control of their data. There can be roles for vendors, but the path I am envisioning relegates them to individual tools. Hosting Solr or the front-end? Sure. A vendor OCR or transcription service? Sign me up. I’m sure vendors will fill in gaps and help with particularly painful processes.
+
+Designing access systems around filesystems and spreadsheets requires strong specifications and data models, which pushes this design work in small and medium-sized archives away from administrators (who have different skillsets) to practitioners—librarians, archivists, and technologists—who work directly with materials and core services. This work can then be done collaboratively and collectively, with everyone contributing their expertise. Let’s match our systems to our organizational strengths.
+
+
+### Notes
+
+[^1]: If you have some coding experience and want to try out Blacklight first-hand, [this tutorial](https://www.nopio.com/blog/create-search-application-blacklight/) was really helpful for me.
+
+[^2]: I feel like there’s this phenomenon in libraries where the technologists have too much power in how our systems and services work, so librarians and archivists in turn marginalize technologists in planning and policymaking. Now, I have heard about places where technologists were put in charge of a special collections department or academic library, which might be the darkest timeline, so some of this might be rational defense, but there’s also definitely a role for technologists in planning and policymaking!

@@ -14,6 +14,8 @@ background: '/assets/images/2019-04-27 08-38-16-0.JPG'
     <h2 class="post-title">{{ post.title }}</h2>
     {% if post.journal %}
     <h3 class="post-subtitle">in <i>{{ post.journal }}</i></h3>
+    {% elsif post.subtitle %}
+    <h3 class="post-subtitle"><i>{{ post.subtitle }}</i></h3>
     {% else %}
     {% endif %}
     {% if post.abstract %}
