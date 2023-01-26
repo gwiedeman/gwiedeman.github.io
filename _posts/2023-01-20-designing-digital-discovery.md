@@ -1,0 +1,7 @@
+---
+layout: post
+title:  'Designing Digital Discovery and Access Systems for Archival Description'
+journal: Code4Lib Journal, Issue 55
+link: https://journal.code4lib.org/articles/16963
+abstract: Archival description is often misunderstood by librarians, administrators, and technologists in ways that have seriously hindered the development of access and discovery systems. It is not widely understood that there is currently no off-the-shelf system that provides discovery and access to digital materials using archival methods. This article is an overview of the core differences between archival and bibliographic description, and discusses how to design access systems for born-digital and digitized materials using the affordances of archival metadata. It offers a custom indexer as a working example that adds the full text of digital content to an Arclight instance and argues that the extensibility of archival description makes it a perfect match for automated description. Finally, it argues that building archives-first discovery systems allows us to use our descriptive labor more thoughtfully, better enable digitization on demand, and overall make a larger volume of cultural heritage materials available online.
+---
