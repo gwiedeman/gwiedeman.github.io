@@ -37,7 +37,8 @@ position:relative;
 
 ## Hands-On Email Preservation with Mailbag
 
-[tinyurl.com/mailbagit](https://tinyurl.com/mailbagit)
+[gregwiedeman.com/slides/mailbagitHandsOn.html](hhttps://gregwiedeman.com/slides/mailbagitHandsOn.html)
+[tinyurl.com/mailbagit](https://tinyurl.com/mailbagit-workshop)
 
 Gregory Wiedeman<br/>
 University Archivist<br/>
@@ -479,7 +480,8 @@ Check out a WARC with [replayweb.page](https://replayweb.page/)!
 
 ## Hands-On Email Preservation with Mailbag
 
-[tinyurl.com/mailbagit](https://tinyurl.com/mailbagit)
+[gregwiedeman.com/slides/mailbagitHandsOn.html](hhttps://gregwiedeman.com/slides/mailbagitHandsOn.html)
+[tinyurl.com/mailbagit](https://tinyurl.com/mailbagit-workshop)
 
 Gregory Wiedeman<br/>
 University Archivist<br/>
