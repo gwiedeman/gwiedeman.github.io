@@ -37,7 +37,7 @@ position:relative;
 
 ## Hands-On Email Preservation with Mailbag
 
-[gregwiedeman.com/slides/mailbagitHandsOn.html](hhttps://gregwiedeman.com/slides/mailbagitHandsOn.html)
+[gregwiedeman.com/slides/mailbagitHandsOn.html](https://gregwiedeman.com/slides/mailbagitHandsOn.html)
 [tinyurl.com/mailbagit](https://tinyurl.com/mailbagit-workshop)
 
 Gregory Wiedeman<br/>
@@ -55,7 +55,7 @@ University at Albany, SUNY
 ### Email formats are problematic
 
 * MBOX, EML, PST, MSG
-  * Preserve email sufficently as structured data
+  * Preserve email as structured data
   * Missing data/rapidly decay
 * PDFs 
   * Preserves email well as a visual document
@@ -111,7 +111,7 @@ University at Albany, SUNY
 
 ## mailbagit docker setup
 
-Docker pull may take awhile (634 MB)
+Docker pull may take awhile (552 MB)
 
 ```
 docker pull ualbanyarchives/mailbagit
@@ -213,7 +213,7 @@ Check that mailbagit is installed:
   * msgs (a folder of .MSGs)
   * account.mbox
   * enron.pst
-* Colab users run "Get some sample data" and "Working directory setup"
+* Colab users run "Get some sample data"
 
 ---
 
@@ -358,9 +358,8 @@ Do a "dry run" first again
 mailbagit msgs -i msg -d eml html txt -m test2 -r
 ```
 
-```
-mailbagit msgs -i msg -d eml html txt -m test2
-```
+* Dry run still creates an error report
+* Take a look a the warnings report in `msgs/test2_warnings`
 
 ---
 
@@ -374,17 +373,57 @@ mailbagit msgs -i msg -d eml html txt -m test2
     * chrome
 * errors.csv
 * .txt file for each message with error and full stack trace
-    
+
+---
+
+
+### Lets try MSGs for real
+
+
+```
+mailbagit msgs -i msg -d eml html txt -m test2
+```
+
 ---
 
 ## PDFs require external dependencies
 
 * [wkhtmltopdf](https://wkhtmltopdf.org/)
   * `pdf`
-* Google Chrome (`chrome`, `chrome.exe`, or `google-chrome`)
+* [Google Chrome](https://www.google.com/chrome/) (`chrome`, `chrome.exe`, or `google-chrome`)
   * `pdf-chrome`
 * [More setup details](https://archives.albany.edu/mailbag/pdf/)
 
+---
+
+## Add to your PATH Windows
+
+Windows likely paths:
+```
+C:\Program Files\wkhtmltopdf\bin
+C:\Program Files\Google\Chrome\Application
+C:\Program Files (x86)\Google\Chrome\Application
+```
+
+---
+
+## Add to your PATH MacOS
+
+MacOS likely `/Applications/Google Chrome.app`
+```
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+```
+
+---
+
+## Testing PDF commands
+
+```
+wkhtmltopdf -V
+chrome
+chrome.exe
+google-chrome
+```
 ---
 
 ### Lets make some PDFs
@@ -411,14 +450,14 @@ mailbagit enron.pst -i pst -d eml html mbox -m test4
 ### Lets make some WARCs!
 
 ```
-mailbagit Inbox/ -i eml -d html warc -m test5
+mailbagit msgs -i msg -d eml html warc -m test5
 ```
 
 Check out a WARC with [replayweb.page](https://replayweb.page/)!
 
 ---
 
-### WARCs from mailbagit
+### How mailbagit makes WARCs
 
 * uses [warcio](https://github.com/webrecorder/warcio) and `requests`
 * For WARC-Target-URI uses "mailbag", Mailbag-Message-ID
@@ -430,7 +469,7 @@ Check out a WARC with [replayweb.page](https://replayweb.page/)!
 
 ---
 
-## How mailbagit makes WARCs
+## How mailbagit handles encoding
 
 * Bodies and headers
 * Tries listed encoding if present (and valid)
@@ -446,10 +485,11 @@ Check out a WARC with [replayweb.page](https://replayweb.page/)!
 ## Lossiness in derivatives
 
 * Most derivatives only contain part of the data
+* Most derivatives get written to/from [the mailbagit Model](https://github.com/UAlbanyArchives/mailbagit/blob/main/mailbagit/models.py)
 * EML and MBOX derivatives
   * tries to write complete object
-  * uses original encoding
   * only possible for EML/MBOX sources
+  * uses original encoding
   * sometimes fails due to encoding issues
     * raises warning and generates from Model
     
@@ -457,7 +497,6 @@ Check out a WARC with [replayweb.page](https://replayweb.page/)!
 
 ## EML / MBOX from Model
 
-* [mailbagit Model](https://github.com/UAlbanyArchives/mailbagit/blob/main/mailbagit/models.py)
 * Contains all headers, HTML and TXT bodies, attachments
 * Writes folder structure to X-Folder header
 * multipart/mixed
@@ -474,7 +513,7 @@ Check out a WARC with [replayweb.page](https://replayweb.page/)!
   * Gmail
   * Office365/Exchange
   * would require OAuth
-* Exclusions/filtering  
+* Exclusions/filtering
 
 ---
 
