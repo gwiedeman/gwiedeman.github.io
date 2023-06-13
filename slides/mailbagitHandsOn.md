@@ -38,7 +38,7 @@ position:relative;
 ## Hands-On Email Preservation with Mailbag
 
 [gregwiedeman.com/slides/mailbagitHandsOn.html](https://gregwiedeman.com/slides/mailbagitHandsOn.html)
-[tinyurl.com/mailbagit](https://tinyurl.com/mailbagit-workshop)
+[tinyurl.com/mailbagit-workshop](https://tinyurl.com/mailbagit-workshop)
 
 Gregory Wiedeman<br/>
 University Archivist<br/>
