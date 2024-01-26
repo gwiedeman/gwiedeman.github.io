@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>WARC your Email</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+<style>
+.fLeft {float: left; max-width: 50%;}
+.fRight {float: right; max-width: 50%;}
+#smallLink {font-size: 18px;}
+.whitebg {background-color: #fff; padding: 30px !important;}
+.reveal section img {border: none; background: rgb(255, 255, 255, 1);}
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: "Montserrat", Roboto , sans-serif;
+  text-transform: initial;
+  font-weight: bold;
+}
+.wrap {
+position:relative;
+  height:30vh;
+  border-left:15px solid #000;
+  padding:5vh 20px;
+}
+.arrow {
+  position:absolute;
+  left:-43px;
+  width: 70px;
+  bottom: -20px;
+}
+.up{top:-20px;}
+.slide-background-content{background-size:contain!important;}
+</style>
+
+## WARC your Email
+### How Web Archives Works for Email Preservation
+
+[gregwiedeman.com/slides/mailbag_coffee_chat.html](https://gregwiedeman.com/slides/mailbag_coffee_chat.html)
+
+Gregory Wiedeman<br/>
+University Archivist<br/>
+University at Albany, SUNY
+</script></section><section  data-markdown><script type="text/template">
+## WARC your Email
+### How Web Archives Works for Email Preservation
+
+* Challenges of Email Preservation
+* How WARCs address the issues
+* Mailbag specification
+* mailbagit tool
+* Google Colab demo
+</script></section><section  data-markdown><script type="text/template">
+## Project Origins
+
+* How can we document elections in New York?
+* 2016 pilot project to collect fundraising emails from federal-level incumbent candidates
+* 2018 expanded to state Senate and Assembly, Governor’s race
+* Signed up for email on candidate websites
+* Used Gmail account
+* MBOX file export with Google takeout 😀
+</script></section><section  data-markdown><script type="text/template">
+## Now what?
+
+* Tried processing MBOXs from 2016 and 2018 in 2019
+* Python scripts to extract HTML
+* Convert to PDF with wkhtmltopdf
+	* Pathways for email processing exist
+	* Challenging for archivists
+	* Requires custom code with many headaches
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/goodEmail.png" -->
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/goodEmail2.png" -->
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/badEmail1.png" -->
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/badEmail2.png" -->
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/badEmail5.png" -->
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/badEmail3.png" -->
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/badEmail4.png" -->
+</script></section><section  data-markdown><script type="text/template">
+[47.html](47.html)
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/noWayback.png" -->
+</script></section><section  data-markdown><script type="text/template">
+### Email Export files degrade over time
+
+* Do not include externally-hosted content
+	* Images
+	* CSS (potentially interactive)
+* Significant data loss 8 months later
+* Links to other web content
+* Email marketing software obfuscates URLs
+</script></section><section  data-markdown><script type="text/template">
+## The Problem
+
+> "As a very busy archivist, I would like to store this email I have, so that when I return to it later, all the data will be preserved in a structured way."
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background="img/emailFormats.png" -->
+</script></section><section  data-markdown><script type="text/template">
+### Email formats are problematic
+
+* MBOX, EML, PST, MSG
+  * Do not preserve external content 
+  * Rapidly decay
+  * Proprietary formats with limited open source support (PST, MSG)
+* All export formats have data structure limitations inherent in email, e.g. unspecified encoding
+</script></section><section  data-markdown><script type="text/template">
+### Email formats are problematic
+
+* PDFs 
+  * Preserves email well as a visual document
+	* Sufficent for many emails
+	* Not all emails are static documents
+	* Some clients support HTML5 Video 🤯
+  * Doesn't preserve structure for computational use
+</script></section><section  data-markdown><script type="text/template">
+## Web Archives for Email?
+
+* Email is of the web 🤔
+	* HTML and CSS
+	* Used in a type of browser
+* WARCs preserves visual document experience well
+* WARCs maintains email data structure
+* Can include additional metadata
+* Previously no tools or common practices
+
+</script></section><section  data-markdown><script type="text/template">
+## [Mailbag Project](https://archives.albany.edu/mailbag/)
+
+* 2022-2023 grant project
+	* [Project Team](https://archives.albany.edu/mailbag/about/)
+* Funded by [Email Archives: Building Capacity and Community](https://emailarchivesgrant.library.illinois.edu/) project (EA:BCC)
+</script></section><section  data-markdown><script type="text/template">
+## The Mailbag Approach
+
+* Multiple preservation formats
+	* MBOX + PDFs
+	* MBOX + PDFs + WARCs
+	* PST + EMLs  + PDFs
+	* PST + MBOX + PDFs + WARCs
+	* EML + PDFs + WARCs
+* Common package based on Bagit
+	* Maintain relationships
+	* Preserve actionability
+</script></section><section  data-markdown><script type="text/template">
+## Part 1: Mailbag specification
+
+* [Mailbag specification](https://archives.albany.edu/mailbag/spec/)
+  * Implementation-neutral extension [Bagit spec](https://datatracker.ietf.org/doc/html/rfc8493)
+  
+```
+<base directory>/
+     |
+     +-- bagit.txt
+     |
+     +-- bag-info.txt
+     |
+     +-- mailbag.csv
+     |
+     +-- manifest-<algorithm>.txt
+     |
+     +-- tagmanifest-<algorithm>.txt
+     |
+     +-- data/
+          |
+          +-- mbox/
+          |     +-- [payload files]
+          +-- pdf/
+          |     +-- [payload files]
+          +-- warc/
+          |     +-- [payload files]
+          +-- attachments/
+                +-- [Mailbag-Message-ID]/
+                |     -- attachments.csv
+                |     -- [payload files]
+                +-- [Mailbag-Message-ID]/
+                      -- attachments.csv
+                      -- [payload files]
+
+```
+  </script></section><section  data-markdown><script type="text/template">
+## Functional Specifications
+
+* Abstract documents that define what a tool does or how data is structured
+* Communication tool to more participatory design
+* Give practitioners a say!
+	* [Mailbag](https://github.com/UAlbanyArchives/mailbag-specification/blob/main/mailbag.md#52-bag-infotxt)
+	* [Bagit](https://datatracker.ietf.org/doc/html/rfc8493)
+	* [WARC](https://iipc.github.io/warc-specifications/specifications/warc-format/warc-1.1-annotated/)
+	* [Email](https://datatracker.ietf.org/doc/html/rfc2822)
+</script></section><section  data-markdown><script type="text/template">
+## Part 2: mailbagit tool
+
+* [Python utility](https://github.com/UAlbanyArchives/mailbagit)
+* Very basic GUI
+* Accessible "guided" path
+* Builds PDF, WARCs from common email formats
+</script></section><section  data-markdown><script type="text/template">
+## mailbagit setup
+
+* Overview of options and gotchas
+* Jupyter Notebook in Google Colab demo
+* [More Detailed workshop](https://gregwiedeman.com/slides/mailbagitDLF2022.html#/4)
+</script></section><section  data-markdown><script type="text/template">
+## mailbagit setup
+
+* [Python install with pip](https://archives.albany.edu/mailbag/python/)
+  * Some challenges on Windows
+* [Using Windows executables](https://archives.albany.edu/mailbag/exe/)
+	* need [admin rights](https://archives.albany.edu/mailbag/exe/#unblocking-mailbagitexe-and-mailbagit-guiexe)
+* [Docker images](https://archives.albany.edu/mailbag/docker/)
+</script></section><section  data-markdown><script type="text/template">
+## Python & pip install
+
+* install mailbagit with pip
+
+`pip install mailbagit`
+
+* For non-Windows users
+
+`pip install mailbagit[pst]`
+</script></section><section  data-markdown><script type="text/template">
+## Working with PSTs on Windows
+
+* Visual Studio Installer
+  * Community edition works
+* Need "Desktop development with C++"
+* And "VS 2019 C++ x64/x86 build tools"
+* Not always reliable
+* [Docs for this](https://archives.albany.edu/mailbag/python/#working-with-pst-files)
+</script></section><section  data-markdown><script type="text/template">
+## PDFs require external dependencies
+
+* [wkhtmltopdf](https://wkhtmltopdf.org/)
+  * `pdf`
+* [Google Chrome](https://www.google.com/chrome/) (`chrome`, `chrome.exe`, or `google-chrome`)
+  * `pdf-chrome`
+* [More setup details](https://archives.albany.edu/mailbag/pdf/)
+</script></section><section  data-markdown><script type="text/template">
+## Google Colab mailbagit setup
+
+* Go to [colab.research.google.com](https://colab.research.google.com/)
+* Load from Github
+* Enter the Github URL: https://github.com/UAlbanyArchives/mailbagit-workshop
+* Select the "mailbagit_workshop.ipynb" notebook
+</script></section><section  data-markdown><script type="text/template">
+## Google Colab mailbagit setup
+
+![Screenshot showing how to load the workshop notebook in Google Colab.](img/mailbag-colab-notebook.png)
+</script></section><section  data-markdown><script type="text/template">
+## What mailbagit does
+
+* Takes email export files
+  * PST, MBOX, MSG, EML
+  * Single files or directory of files
+  * "companion" files option
+* Packages them into a mailbag
+* Creates derivative files
+  * TXT, HTML, EML, MBOX
+  * PDF, PDF-chrome, WARC
+</script></section><section  data-markdown><script type="text/template">
+### Speed
+
+* Things that are fast
+  * MBOX, EML sources
+  * TXT, HTML, EML, MBOX derivatives
+* Things that are slow
+  * PST, MSG sources
+  * PDF, WARC derivatives
+</script></section><section  data-markdown><script type="text/template">
+## CLI Options
+
+* -r --dry-run
+* -k --keep
+* --css path/to/styles.css
+* -c --compress zip
+* -f --companion_files
+</script></section><section  data-markdown><script type="text/template">
+## CLI Options
+
+* --capture-date
+* --capture-agent
+* --capture-agent-version
+* Most bagit-python options
+  * --processes
+  * Checksums, --md5, --sha512
+  * --source-organization
+  * not -quiet, -validate, -fast
+</script></section><section  data-markdown><script type="text/template">
+## Privacy & Security concerns
+
+* [Email trackers](https://archives.albany.edu/mailbag/concerns/#email-trackers)
+  * PDF and WARC derivatives ping all URLs
+* [File inclusions](https://archives.albany.edu/mailbag/concerns/#file-inclusions-in-pdfs-and-warcs)
+
+</script></section><section  data-markdown><script type="text/template">
+## mailbagit error reports
+
+* external to mailbag
+* created on -r --dry-run
+  * more errors will show without dry-run
+  * errors from subprocesses
+    * wkhtmltopdf
+    * chrome
+* errors.csv
+* .txt file for each message with error and full stack trace
+
+</script></section><section  data-markdown><script type="text/template">
+### Lets make some WARCs!
+
+```
+mailbagit msgs -i msg -d eml html warc -m test5 -k
+```
+
+Check out a WARC with [replayweb.page](https://replayweb.page/)!
+</script></section><section  data-markdown><script type="text/template">
+### How mailbagit makes WARCs
+
+* [mailbagit WARC module](https://github.com/UAlbanyArchives/mailbagit/blob/main/mailbagit/derivatives/warc.py)
+	* Extensible! You can make your own plugin
+* WARCs and PDFs use a common [HTML extract and formatting process](https://github.com/UAlbanyArchives/mailbagit/blob/main/mailbagit/helper/derivative.py#L50)
+	* wraps partial html
+	* Adds a table of basic headers
+* Serves HTML locally with [http.server](https://docs.python.org/3/library/http.server.html)
+* uses [warcio](https://github.com/webrecorder/warcio) and `requests` to write WARCs
+* Writes attachments as response records
+* -l, --external-links option will include \<a\> links
+</script></section><section  data-markdown><script type="text/template">
+### How mailbagit makes WARCs
+
+* WARC-Target-URI
+  * uses "mailbag" and Mailbag-Message-ID
+  * "http://mailbag/11/body.html"
+* body.html response record
+* adds headers to [WARC metadata record](https://iipc.github.io/warc-specifications/specifications/warc-format/warc-1.1-annotated/#metadata)
+	* not used by replayweb.page
+* headers duplicated in headers.json response record
+* [More documentation](https://archives.albany.edu/mailbag/warcs)
+</script></section><section  data-markdown><script type="text/template">
+## How mailbagit handles encoding
+
+* Bodies and headers
+* Tries listed encoding if present (and valid)
+* Tries chardetect
+  * raises warning if successful
+  * raises error if failed
+* replaces errors with listed encoding
+* Writes derivatives as UTF-8
+  * except EML/MBOX
+</script></section><section  data-markdown><script type="text/template">
+## Lossiness in derivatives
+
+* Most derivatives only contain part of the data
+* Most derivatives get written to/from [the mailbagit Model](https://github.com/UAlbanyArchives/mailbagit/blob/main/mailbagit/models.py)
+* EML and MBOX derivatives
+  * tries to write complete object
+  * only possible for EML/MBOX sources
+  * uses original encoding
+  * sometimes fails due to encoding issues
+    * raises warning and generates from Model
+    </script></section><section  data-markdown><script type="text/template">
+### WARCs for Email Preservation
+
+* Preserves external content and data structure
+* Can include attachments
+* Useful for emails that may have more dynamic content
+* No real established practices
+	* use WARC-Target-URI
+	* Metadata record
+* WARCs are getting easier to use
+	* [replayweb.page](https://replayweb.page/)
+	* [WACZ](https://specs.webrecorder.net/wacz/1.1.1/)
+</script></section><section  data-markdown><script type="text/template">
+## WARC your Email
+### How Web Archives Works for Email Preservation
+
+[gregwiedeman.com/slides/mailbag_coffee_chat.html](https://gregwiedeman.com/slides/mailbag_coffee_chat.html)
+
+Gregory Wiedeman<br/>
+University Archivist<br/>
+University at Albany, SUNY</script></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"fade"}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
