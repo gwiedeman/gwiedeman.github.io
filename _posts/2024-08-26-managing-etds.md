@@ -3,7 +3,7 @@ layout: post
 title:  'How we manage our ETDs at UAlbany'
 ---
 
-My colleague, Emily Kilcer, and I are publishing an article about our multi-year effort to better steward electronic theses and dissertations (ETDs) at UAlbany. This post is a supplement that dives deeper into the technical details.
+My colleague, Emily Kilcer, and I [published an article about our multi-year effort to better steward electronic theses and dissertations (ETDs) at UAlbany](https://dc.etsu.edu/jgl/vol2/iss1/14/). This post is a supplement that dives deeper into the technical details.
 
 The Libraries have long been responsible for preserving master’s theses and doctoral dissertations from students, and from the 1960s to 2008 preservation copies were bound and preserved physically in the University Archives. In 2008 the Graduate School switched to born-digital submissions using ProQuest’s ETD administrator which charged students fees for baseline and (usually unnecessary) optional services. As a graduate student, I paid ProQuest to make my thesis openly available without a paywall.[^1] Currently this fee is $95, but I remember it being more than that, which might just tell you how significant that is for a graduate student. Around the same time I was graduating in 2013, the University Libraries started an open access repository with similar affordances. So, we were requiring students to pay a vendor for a service that we were also providing for free. The Libraries were only given a microfilm copy and ProQuest’s subscription service ~~monopolized~~ managed access.
 

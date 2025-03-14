@@ -1,0 +1,8 @@
+---
+layout: post
+title:  'How We Stopped Charging Students to Submit ETDs: Case Study of a Five-Year Odyssey'
+journal: Journal of Graduate Librarianship, Vol. 2, Issue 1 (2024)
+link: https://elischolar.library.yale.edu/jcas/vol6/iss1/31
+author: Emily Kilcer and Gregory Wiedeman
+abstract: In 2019, the Graduate School at the University at Albany, State University of New York wrote to the University Libraries about the processing of archival copies of electronic theses and dissertations (ETDs), hoping to reduce or eliminate deposit fees for authors. Interested library faculty and staff self-assembled into a project team and found that the university’s switch in 2008 to a born-digital submission workflow provided by an external vendor was deeply flawed as a service, and unnecessarily costly to student authors. Later, in 2013, the Libraries established an open access institutional repository (IR), which had the potential to support a much-improved ETD service to students and researchers; however, the Libraries did not initially consider using the IR to support the ETD service. This case study of the Libraries’ problematic ETD program, and the (eventually) successful path to addressing its issues using our IR, revealed longstanding issues with the Libraries’ organizational communication and resource environment that we continue to grapple with. We hope our example can help academic libraries improve their ETD services and workflows, and identify and mitigate similar organizational issues.
+---

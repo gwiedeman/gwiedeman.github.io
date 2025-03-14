@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  'Describing Web Archives: A Computer-Assisted Approach'
-journal: Journal of Contemporary Archival Studies, Vol. 6
+journal: Journal of Contemporary Archival Studies, Vol. 6 (2019)
 link: https://elischolar.library.yale.edu/jcas/vol6/iss1/31
 abstract: Currently, web archives are challenging for users to discover and use. Many archives and libraries are actively collecting web archives, but description in this area has been dominated by bibliographic approaches, which do not connect web archives to existing description or contextual information, and have often resulted in format-based silos. This is primarily because web archiving tools such as Archive-It arrange materials by seeds and groups of seeds, which reflect the complex technical process of web crawling or web recording, and are often not very meaningful to users or helpful for discovery. This article makes the case for arranging and describing web archives in meaningful aggregates according to established standards—showing how archival practices allow archivists to arrange the diversity of web content according to their common forms and functions while empowering them to be creative with their time and thoughtful with their labor. It provides a path to exposing important provenance information to users and demonstrates an existing proof of concept. Finally, it outlines a possible integration between ArchivesSpace and Archive-It that is feasible to implement for many archives and would automate the repetitive parts of creating and updating description for new web crawls.
 ---
