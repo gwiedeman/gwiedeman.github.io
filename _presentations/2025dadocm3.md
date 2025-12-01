@@ -1,7 +1,7 @@
 ---
 title: 'Delivering Archives and Digital Objects: a Conceptual Model (DadoCM)'
-date: 2025-05-21
-event: TS-DACS & TS-EAS
-link: https://docs.google.com/presentation/d/1ddd2kH0TZvD984bQV1sw2bF4E3t9IGFs7tWC-LgEwco/edit?usp=sharing
+date: 2025-07-15
+event: DadoCM Community Call
+link: https://docs.google.com/presentation/d/17NYEJlqADSSyGzL5L_ygbvMJ5Kus7tb-YDV8k-U4f3c/edit?usp=sharing
 ---
-Slides for an overview of DadoCM I gave to standards groups including TS-EAS and TS-DACS.
+Slides the DadoCM Community call.
