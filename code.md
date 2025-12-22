@@ -10,8 +10,8 @@ background: '/assets/images/2019-04-23 15-26-16-0.JPG'
     {% for project in site.code %}
     <a href="{{ project.link }}"><div class="card text-white card-primary mb-3" style="width: 18rem;">
 	  <div class="card-body">
-	    <h5 class="card-title">{{ project.title }}</h5>
-	    <h6 class="card-subtitle mb-2">{{ project.code }}</h6>
+	    <h2 class="h5 card-title">{{ project.title }}</h2>
+	    <h3 class="h6 card-subtitle mb-2">{{ project.code }}</h3>
 	    <p class="card-text">{{ project.content | remove: '<p>' | remove: '</p>' }}</p>
 	  </div>
 	</div>
