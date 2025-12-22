@@ -9,3 +9,28 @@
   color: #117a8b !important;
   border-color: #117a8b !important;
 }
+
+.btn-success {
+  color: #ffffff;
+  background-color: #1e7e34;
+  border-color: #1c7430;
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.open > .dropdown-toggle.btn-success {
+  background-color: #19692c;
+  border-color: #155d27;
+  color: #ffffff;
+}
+
+.btn-success:disabled,
+.btn-success.disabled,
+fieldset:disabled .btn-success {
+  background-color: #1e7e34;
+  border-color: #1c7430;
+  color: #ffffff;
+  opacity: 0.65;
+}
