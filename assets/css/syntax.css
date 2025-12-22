@@ -6,12 +6,12 @@
   }
 }
 .card-primary {
-  background-color: #0085A1;
-  border-color: #0085A1; }
+  background-color: #006a80;
+  border-color: #006a80; }
   .card-primary:hover, .btn-primary:focus, .btn-primary:active {
     color: #fff;
-    background-color: #00657b !important;
-    border-color: #00657b !important; }
+    background-color: #00505f !important;
+    border-color: #00505f !important; }
 
 .card-columns {
   column-count: 4;

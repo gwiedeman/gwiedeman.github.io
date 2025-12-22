@@ -19,12 +19,12 @@ background: '/assets/images/2019-04-27 08-38-16-0.JPG'
     {% else %}
     {% endif %}
     {% if post.abstract %}
-    <h4 class="h5 post-subtitle">{{ post.abstract | strip_html | truncatewords: 25 }}</h4>
+    <h3 class="h5 post-subtitle">{{ post.abstract | strip_html | truncatewords: 25 }}</h3>
     {% else %}
-    <h4 class="h5 post-subtitle">{{ post.excerpt | strip_html | truncatewords: 25 }}</h4>
+    <h3 class="h5 post-subtitle">{{ post.excerpt | strip_html | truncatewords: 25 }}</h3>
     {% endif %}
   </a>
-  <p class="post-meta" role="text">
+  <p class="post-meta">
     {% if post.author %}Written by {{ post.author }} &middot; {% else %}{% endif %}
       {{ post.date | date: '%Y %B' }}
   </p>
