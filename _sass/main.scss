@@ -1,6 +1,11 @@
 .active {
   color: green;
 }
-.post-preview > .post-meta {
-  color: #495057 !important;
+.btn-outline-info {
+  color: #117a8b !important;
+  border-color: #117a8b !important;
+}
+.btn-outline-info.disabled{
+  color: #117a8b !important;
+  border-color: #117a8b !important;
 }
