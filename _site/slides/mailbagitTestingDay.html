@@ -1,20 +1,66 @@
 <!DOCTYPE html>
+
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <title>mailbagit Virtual Testing Day</title>
-    <link rel="stylesheet" href="./css/reveal.css" />
-    <link rel="stylesheet" href="./css/theme/black.css" id="theme" />
-    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
-    <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print" />
+<head>
 
-  </head>
-  <body>
-    <div class="reveal">
-      <div class="slides"><section  data-markdown><script type="text/template">
-<style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    mailbagit Virtual Testing Day - Greg Wiedeman
+    
+  </title>
+
+  <meta name="description" content="I&#39;m an archivist who works to make information more accessible.">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="canonical" href="http://0.0.0.0:4000/slides/mailbagitTestingDay.html">
+  <link rel="alternate" type="application/rss+xml" title="Greg Wiedeman" href="/feed.xml">
+  <link rel="stylesheet" href="/assets/main.css">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Greg Wiedeman</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/writing">Writing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/presentations">presentations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/code">Code</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cv">CV</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <style>
 .fLeft {float: left; max-width: 50%;}
 .fRight {float: right; max-width: 50%;}
 #smallLink {font-size: 18px;}
@@ -46,251 +92,374 @@ position:relative;
 .slide-background-content{background-size:contain!important;}
 </style>
 
-## Mailbagit Virtual Testing Day
+<h2 id="mailbagit-virtual-testing-day">Mailbagit Virtual Testing Day</h2>
 
-[gregwiedeman.com/slides/mailbagitTestingDay.html](https://gregwiedeman.com/slides/mailbagitTestingDay.html)
+<p><a href="https://gregwiedeman.com/slides/mailbagitTestingDay.html">gregwiedeman.com/slides/mailbagitTestingDay.html</a></p>
 
-Gregory Wiedeman<br/>
-Mark Wolfe<br/>
-University at Albany, SUNY
-</script></section><section  data-markdown><script type="text/template">
-## Goals
+<p>Gregory Wiedeman<br />
+Mark Wolfe<br />
+University at Albany, SUNY</p>
 
-* Structured testing time
-	* Finding bugs
-	* Testing on more varied datasets
-* Help/debugging of install issues
-* User testing
-	* Learn a bit about use cases/goals
-	* User feedback/questions 
-* Community building
-</script></section><section  data-markdown><script type="text/template">
-## Introductions
+<hr />
 
-Tell us who you are and describe your work or interest in Mailbag.
-</script></section><section  data-markdown><script type="text/template">
-## Setup Mailbagit
+<h2 id="goals">Goals</h2>
 
-* [Python install](https://www.python.org/downloads/)
-* Windows executables
-* Docker
-</script></section><section  data-markdown><script type="text/template">
-## Where are we at?
+<ul>
+  <li>Structured testing time
+    <ul>
+      <li>Finding bugs</li>
+      <li>Testing on more varied datasets</li>
+    </ul>
+  </li>
+  <li>Help/debugging of install issues</li>
+  <li>User testing
+    <ul>
+      <li>Learn a bit about use cases/goals</li>
+      <li>User feedback/questions</li>
+    </ul>
+  </li>
+  <li>Community building</li>
+</ul>
 
-* How many are comfortable with the command line?
-* What OS are you using?
-* Do you have a v3.7+ python install?
-	* Or are using Windows with permissions?
-	* Or have Docker?
-</script></section><section  data-markdown><script type="text/template">
-## Python & pip install
+<hr />
 
-* [Python installed](https://www.python.org/downloads/)
-	* v3.7+
-* Do I have pip?
+<h2 id="introductions">Introductions</h2>
 
-`pip -V` or `pip3 -V`
+<p>Tell us who you are and describe your work or interest in Mailbag.</p>
 
-* If you need pip:
+<hr />
 
-`python -m ensurepip --upgrade`
-</script></section><section  data-markdown><script type="text/template">
-## Setting up a virtualenv
+<h2 id="setup-mailbagit">Setup Mailbagit</h2>
 
-```
-pip install pipenv
+<ul>
+  <li><a href="https://www.python.org/downloads/">Python install</a></li>
+  <li>Windows executables</li>
+  <li>Docker</li>
+</ul>
+
+<hr />
+
+<h2 id="where-are-we-at">Where are we at?</h2>
+
+<ul>
+  <li>How many are comfortable with the command line?</li>
+  <li>What OS are you using?</li>
+  <li>Do you have a v3.7+ python install?
+    <ul>
+      <li>Or are using Windows with permissions?</li>
+      <li>Or have Docker?</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="python--pip-install">Python &amp; pip install</h2>
+
+<ul>
+  <li><a href="https://www.python.org/downloads/">Python installed</a>
+    <ul>
+      <li>v3.7+</li>
+    </ul>
+  </li>
+  <li>Do I have pip?</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">pip -V</code> or <code class="language-plaintext highlighter-rouge">pip3 -V</code></p>
+
+<ul>
+  <li>If you need pip:</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">python -m ensurepip --upgrade</code></p>
+
+<hr />
+
+<h2 id="setting-up-a-virtualenv">Setting up a virtualenv</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install pipenv
 pipenv shell
-```
+</code></pre></div></div>
 
-You may need:
+<p>You may need:</p>
 
-```
-pip3 install pipenv
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip3 install pipenv
 python -m pip install pipenv
 python3 -m pip install pipenv
-```
-</script></section><section  data-markdown><script type="text/template">
-## Installing `mailbagit`
+</code></pre></div></div>
 
-* install mailbagit with pip
+<hr />
 
-`pip install mailbagit`
+<h2 id="installing-mailbagit">Installing <code class="language-plaintext highlighter-rouge">mailbagit</code></h2>
 
-* For non-Windows users
+<ul>
+  <li>install mailbagit with pip</li>
+</ul>
 
-`pip install mailbagit[pst]`
-</script></section><section  data-markdown><script type="text/template">
-## Working with PSTs on Windows
+<p><code class="language-plaintext highlighter-rouge">pip install mailbagit</code></p>
 
-* Visual Studio Installer
-	* Community edition works
-* Need "Desktop development with C++"
-* And "VS 2019 C++ x64/x86 build tools"
-</script></section><section  data-markdown><script type="text/template">
-## `mailbagit` command
+<ul>
+  <li>For non-Windows users</li>
+</ul>
 
-`mailbagit -h`
-</script></section><section  data-markdown><script type="text/template">
-## Installing the GUI
+<p><code class="language-plaintext highlighter-rouge">pip install mailbagit[pst]</code></p>
 
-`pip install mailbagit[gui]`
+<hr />
 
-* This may break on Linux distros
-* Install a [specific wxPython first](https://archives.albany.edu/mailbag/python/#mailbagit-gui-on-ubuntu)
-</script></section><section  data-markdown><script type="text/template">
-## Running the GUI
+<h2 id="working-with-psts-on-windows">Working with PSTs on Windows</h2>
 
-`mailbagit-gui`
+<ul>
+  <li>Visual Studio Installer
+    <ul>
+      <li>Community edition works</li>
+    </ul>
+  </li>
+  <li>Need “Desktop development with C++”</li>
+  <li>And “VS 2019 C++ x64/x86 build tools”</li>
+</ul>
 
-* `mailbagit-gui.py`
+<hr />
 
-```
-from mailbagit import gui
+<h2 id="mailbagit-command"><code class="language-plaintext highlighter-rouge">mailbagit</code> command</h2>
+
+<p><code class="language-plaintext highlighter-rouge">mailbagit -h</code></p>
+
+<hr />
+
+<h2 id="installing-the-gui">Installing the GUI</h2>
+
+<p><code class="language-plaintext highlighter-rouge">pip install mailbagit[gui]</code></p>
+
+<ul>
+  <li>This may break on Linux distros</li>
+  <li>Install a <a href="https://archives.albany.edu/mailbag/python/#mailbagit-gui-on-ubuntu">specific wxPython first</a></li>
+</ul>
+
+<hr />
+
+<h2 id="running-the-gui">Running the GUI</h2>
+
+<p><code class="language-plaintext highlighter-rouge">mailbagit-gui</code></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">mailbagit-gui.py</code></li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from mailbagit import gui
 gui()
-```
+</code></pre></div></div>
 
-* `python mailbagit-gui.py`
-</script></section><section  data-markdown><script type="text/template">
-## Running Windows Executables
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">python mailbagit-gui.py</code></li>
+</ul>
 
-* Download them from the [v0.2.1 release on Github](https://github.com/UAlbanyArchives/mailbagit/releases/tag/v0.2.1)
-* [Unblock executables from Defender SmartScreen](https://archives.albany.edu/mailbag/exe/#unblocking-mailbagitexe-and-mailbagit-guiexe)
-</script></section><section  data-markdown><script type="text/template">
-## PDF dependancies
+<hr />
 
-* [wkhtmltopdf](https://wkhtmltopdf.org/downloads.html) and [chrome](https://www.google.com/chrome/) --headless
-* in PATH:
-	* wkhtmltopdf
-	* wkhtmltopdf.exe
-	* google-chrome
-	* chrome
-	* chrome.exe
-</script></section><section  data-markdown><script type="text/template">
-## Running on Docker
+<h2 id="running-windows-executables">Running Windows Executables</h2>
 
-```
-docker pull ualbanyarchives/mailbagit
+<ul>
+  <li>Download them from the <a href="https://github.com/UAlbanyArchives/mailbagit/releases/tag/v0.2.1">v0.2.1 release on Github</a></li>
+  <li><a href="https://archives.albany.edu/mailbag/exe/#unblocking-mailbagitexe-and-mailbagit-guiexe">Unblock executables from Defender SmartScreen</a></li>
+</ul>
+
+<hr />
+
+<h2 id="pdf-dependancies">PDF dependancies</h2>
+
+<ul>
+  <li><a href="https://wkhtmltopdf.org/downloads.html">wkhtmltopdf</a> and <a href="https://www.google.com/chrome/">chrome</a> –headless</li>
+  <li>in PATH:
+    <ul>
+      <li>wkhtmltopdf</li>
+      <li>wkhtmltopdf.exe</li>
+      <li>google-chrome</li>
+      <li>chrome</li>
+      <li>chrome.exe</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="running-on-docker">Running on Docker</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker pull ualbanyarchives/mailbagit
 docker run -it ualbanyarchives/mailbagit:latest
-```
-</script></section><section  data-markdown><script type="text/template">
-## What mailbagit does
+</code></pre></div></div>
 
-* Takes email export files
-	* PST, MBOX, MSG, EML
-	* Single files or directory of files
-	* "companion" files option
-* Packages them into a mailbag
-* Creates derivative files
-	* TXT, HTML, EML, MBOX
-	* PDF, PDF-chrome, WARC
-</script></section><section  data-markdown><script type="text/template">
-## Options
+<hr />
 
-* -r --dry-run
-* --css path/to/styles.css
-* -c --compress zip
-* -f --companion_files
-</script></section><section  data-markdown><script type="text/template">
-## Additional options
+<h2 id="what-mailbagit-does">What mailbagit does</h2>
 
-* --capture-date
-* --capture-agent
-* --capture-agent-version
-* Most bagit-python options
-	* --processes
-	* Checksums, --md5, --sha512
-	* --source-organization
-	* not -log, -quiet, -validate, -fast
-</script></section><section  data-markdown><script type="text/template">
-# Email data
+<ul>
+  <li>Takes email export files
+    <ul>
+      <li>PST, MBOX, MSG, EML</li>
+      <li>Single files or directory of files</li>
+      <li>“companion” files option</li>
+    </ul>
+  </li>
+  <li>Packages them into a mailbag</li>
+  <li>Creates derivative files
+    <ul>
+      <li>TXT, HTML, EML, MBOX</li>
+      <li>PDF, PDF-chrome, WARC</li>
+    </ul>
+  </li>
+</ul>
 
-[https://archives.albany.edu/patron/vtd-sample-data.zip](https://archives.albany.edu/patron/vtd-sample-data.zip) (202MB)
+<hr />
 
-[https://archives.albany.edu/patron/vtd-sample-data-small.zip](https://archives.albany.edu/patron/vtd-sample-data-small.zip) (28MB)
-</script></section><section  data-markdown><script type="text/template">
-# Email data
+<h2 id="options">Options</h2>
 
-* Inbox (directory of 331 .eml)
-* msg (directory of 20 .msg)
-* account.mbox (large)
-* allfacstaff.pst (large)
-* enron.pst (small)
-</script></section><section  data-markdown><script type="text/template">
-### Speed
+<ul>
+  <li>-r –dry-run</li>
+  <li>–css path/to/styles.css</li>
+  <li>-c –compress zip</li>
+  <li>-f –companion_files</li>
+</ul>
 
-* Things that are fast
-	* MBOX, EML sources
-	* TXT, HTML, EML, MBOX derivatives
-* Things that are slow
-	* PST, MSG sources
-	* PDF, WARC derivatives
-</script></section><section  data-markdown><script type="text/template">
-## Privacy & Security concerns
+<hr />
 
-* Email trackers
-* PDF and WARC derivatives ping all URLs
-* File inclusions
-</script></section><section  data-markdown><script type="text/template">
-## Jupyter Notebooks
+<h2 id="additional-options">Additional options</h2>
 
+<ul>
+  <li>–capture-date</li>
+  <li>–capture-agent</li>
+  <li>–capture-agent-version</li>
+  <li>Most bagit-python options
+    <ul>
+      <li>–processes</li>
+      <li>Checksums, –md5, –sha512</li>
+      <li>–source-organization</li>
+      <li>not -log, -quiet, -validate, -fast</li>
+    </ul>
+  </li>
+</ul>
 
+<hr />
 
-</script></section><section  data-markdown><script type="text/template">
-### Try a "dry run":
-```
-mailbagit account.mbox -i mbox -d html eml -m test1 -r
-```
-### Try it for real:
-```
-mailbagit account.mbox -i mbox -d html eml -m test1
-```
-</script></section><section  data-markdown><script type="text/template">
-## Logging
+<h1 id="email-data">Email data</h1>
 
-Windows Powershell:
-```
-$env:MAILBAGIT_LOG_LEVEL="info"
-```
+<p><a href="https://archives.albany.edu/patron/vtd-sample-data.zip">https://archives.albany.edu/patron/vtd-sample-data.zip</a> (202MB)</p>
 
-Posix:
-```
-export MAILBAGIT_LOG_LEVEL=debug
-```
-</script></section><section  data-markdown><script type="text/template">
-### Try some MSG files
+<p><a href="https://archives.albany.edu/patron/vtd-sample-data-small.zip">https://archives.albany.edu/patron/vtd-sample-data-small.zip</a> (28MB)</p>
 
-Do a "dry run" first again
-```
-mailbagit msgs -i msg -d eml html txt -m test2 -r
-```
+<hr />
 
-```
-mailbagit msgs -i msg -d eml html txt -m test2
-```
-</script></section><section  data-markdown><script type="text/template">
-## Mailbagit error reports
+<h1 id="email-data-1">Email data</h1>
 
-* external to mailbag
-* created on -r --dry-run
-	* more errors will show without dry-run
-	* errors from subprocesses
-		* wkhtmltopdf
-		* chrome
-* errors.csv
-* .txt file for each message with error and full stack trace
-</script></section><section  data-markdown><script type="text/template">
-## What's in a mailbag?
+<ul>
+  <li>Inbox (directory of 331 .eml)</li>
+  <li>msg (directory of 20 .msg)</li>
+  <li>account.mbox (large)</li>
+  <li>allfacstaff.pst (large)</li>
+  <li>enron.pst (small)</li>
+</ul>
 
-* bagit.txt, manifiests
-* bag-info.txt
-* mailbag.csv
-* data (payload)
-</script></section><section  data-markdown><script type="text/template">
-## bag-info.txt
+<hr />
 
-```
-Bag-Size: 34 MB
-Bag-Software-Agent: bagit.py v1.8.1 <https://github.com/LibraryOfCongress/bagit-python>
+<h3 id="speed">Speed</h3>
+
+<ul>
+  <li>Things that are fast
+    <ul>
+      <li>MBOX, EML sources</li>
+      <li>TXT, HTML, EML, MBOX derivatives</li>
+    </ul>
+  </li>
+  <li>Things that are slow
+    <ul>
+      <li>PST, MSG sources</li>
+      <li>PDF, WARC derivatives</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="privacy--security-concerns">Privacy &amp; Security concerns</h2>
+
+<ul>
+  <li>Email trackers</li>
+  <li>PDF and WARC derivatives ping all URLs</li>
+  <li>File inclusions</li>
+</ul>
+
+<hr />
+
+<h2 id="jupyter-notebooks">Jupyter Notebooks</h2>
+
+<hr />
+
+<h3 id="try-a-dry-run">Try a “dry run”:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mailbagit account.mbox -i mbox -d html eml -m test1 -r
+</code></pre></div></div>
+<h3 id="try-it-for-real">Try it for real:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mailbagit account.mbox -i mbox -d html eml -m test1
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="logging">Logging</h2>
+
+<p>Windows Powershell:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$env:MAILBAGIT_LOG_LEVEL="info"
+</code></pre></div></div>
+
+<p>Posix:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export MAILBAGIT_LOG_LEVEL=debug
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="try-some-msg-files">Try some MSG files</h3>
+
+<p>Do a “dry run” first again</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mailbagit msgs -i msg -d eml html txt -m test2 -r
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mailbagit msgs -i msg -d eml html txt -m test2
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="mailbagit-error-reports">Mailbagit error reports</h2>
+
+<ul>
+  <li>external to mailbag</li>
+  <li>created on -r –dry-run
+    <ul>
+      <li>more errors will show without dry-run</li>
+      <li>errors from subprocesses
+        <ul>
+          <li>wkhtmltopdf</li>
+          <li>chrome</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>errors.csv</li>
+  <li>.txt file for each message with error and full stack trace</li>
+</ul>
+
+<hr />
+
+<h2 id="whats-in-a-mailbag">What’s in a mailbag?</h2>
+
+<ul>
+  <li>bagit.txt, manifiests</li>
+  <li>bag-info.txt</li>
+  <li>mailbag.csv</li>
+  <li>data (payload)</li>
+</ul>
+
+<hr />
+
+<h2 id="bag-infotxt">bag-info.txt</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bag-Size: 34 MB
+Bag-Software-Agent: bagit.py v1.8.1 &lt;https://github.com/LibraryOfCongress/bagit-python&gt;
 Bag-Type: Mailbag
 Bagging-Date: 2022-05-26
 Bagging-Timestamp: 2022-05-26T16:15:48
@@ -309,12 +478,13 @@ Payload-Oxum: 36529495.87
 WARC-Agent: warcio
 WARC-Agent-Version: 1.7.4
 
-```
-</script></section><section  data-markdown><script type="text/template">
-## mailbag.csv headers
+</code></pre></div></div>
 
-```
-Error
+<hr />
+
+<h2 id="mailbagcsv-headers">mailbag.csv headers</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error
 Mailbag-Message-ID
 Message-ID
 Original-File
@@ -328,170 +498,265 @@ Cc
 Bcc
 Subject
 Content-Type
-```
-</script></section><section  data-markdown><script type="text/template">
-## data (payload)
+</code></pre></div></div>
 
-* attachments
-	* [Mailbag-Message-ID]
-		* attachments.csv
-		* test.pdf
-* pst
-	* export.pst
-* eml
-	* 
-* pdf
-		
-</script></section><section  data-markdown><script type="text/template">
-### Lets make some PDFs
+<hr />
 
-Dry run:
-```
-mailbagit msgs/ -i msg -d eml pdf -m test3 -r
-```
+<h2 id="data-payload">data (payload)</h2>
 
-```
-mailbagit msgs/ -i msg -d eml pdf -m test3
-```
-</script></section><section  data-markdown><script type="text/template">
-### Lets do the same, but with Chrome
+<ul>
+  <li>attachments
+    <ul>
+      <li>[Mailbag-Message-ID]
+        <ul>
+          <li>attachments.csv</li>
+          <li>test.pdf</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>pst
+    <ul>
+      <li>export.pst</li>
+    </ul>
+  </li>
+  <li>eml
+    <ul>
+      <li></li>
+    </ul>
+  </li>
+  <li>pdf</li>
+</ul>
 
-```
-mailbagit msgs/ -i msg -d eml pdf-chrome -m test4
-```
-</script></section><section  data-markdown><script type="text/template">
-### Try a PST
+<hr />
 
-```
-mailbagit enron.pst -i pst -d eml pdf html mbox -m test5
-```
-</script></section><section  data-markdown><script type="text/template">
-### Lets include some WARCs
+<h3 id="lets-make-some-pdfs">Lets make some PDFs</h3>
 
-```
-mailbagit Inbox/ -i eml -d html warc -m test6
-```
-</script></section><section  data-markdown><script type="text/template">
-## How mailbagit handles encoding
+<p>Dry run:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mailbagit msgs/ -i msg -d eml pdf -m test3 -r
+</code></pre></div></div>
 
-* Bodies and headers
-* Tries listed encoding if present (and valid)
-* Tries chardetect
-	* raises warning if successful
-	* raises error if failed
-* replaces errors with listed encoding
-* Writes derivatives as "UTF-8"
-	* except EML/MBOX
-</script></section><section  data-markdown><script type="text/template">
-## Lossiness in derivatives
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mailbagit msgs/ -i msg -d eml pdf -m test3
+</code></pre></div></div>
 
-* Most derivatives only contain part of the data
-* EML and MBOX derivatives
-	* tries to write complete object
-	* uses original encoding
-	* only possible for EML/MBOX sources
-	* sometimes fails due to encoding issues
-		* raises warning and generates from Model
-		</script></section><section  data-markdown><script type="text/template">
-## EML / MBOX from Model
+<hr />
 
-* [mailbagit Model](https://github.com/UAlbanyArchives/mailbagit/blob/main/mailbagit/models.py)
-* Contains all headers, HTML and TXT bodies, attachments
-* Writes folder structure to X-Folder header
-* multipart/mixed
-	* multipart/alternative (text/plain if present)
-	* multipart/alternative (text/html if present)
-	* application/pdf (application/octet-stream if missing)
-	</script></section><section  data-markdown><script type="text/template">
-## WARC derivatives
+<h3 id="lets-do-the-same-but-with-chrome">Lets do the same, but with Chrome</h3>
 
-* Now only includes HTML
-* WARC data and structure TBD
-	* Will include headers
-	* should include attachments
-	* might include option for links
-</script></section><section  data-markdown><script type="text/template">
-## Undecided issues 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mailbagit msgs/ -i msg -d eml pdf-chrome -m test4
+</code></pre></div></div>
 
-* [empty PST folders](https://github.com/UAlbanyArchives/mailbagit/issues/117)
-* Warnings for incorrect encoding listed, but successful decode?
-* Distribution challenges
-	* GUI and exe barriers
-* WARCs
-</script></section><section  data-markdown><script type="text/template">
-## Future Questions
+<hr />
 
-* Packaging from IMAP
-* Packaging over APIs
-	* Gmail
-	* Office365/Exchange
-	* would require OAuth
-* Exclusions/filtering	
-* Would you like to see more data-centric output?
+<h3 id="try-a-pst">Try a PST</h3>
 
-</script></section><section  data-markdown><script type="text/template">
-### Retrospective if time
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mailbagit enron.pst -i pst -d eml pdf html mbox -m test5
+</code></pre></div></div>
 
-[Jamboard](https://jamboard.google.com/d/1Fc64zlP4rouDzNTt8WvgXdLfc0mBPdCNvHcihyCq0bQ/viewer)
-</script></section><section  data-markdown><script type="text/template">
-### Bonus: A big PST
+<hr />
 
-Try a dry run first:
-```
-mailbagit allfacstaff.pst -i pst -d eml mbox html pdf -m test7 -r
-```
+<h3 id="lets-include-some-warcs">Lets include some WARCs</h3>
 
-```
-mailbagit allfacstaff.pst -i pst -d eml mbox html pdf -m test7
-```
-</script></section></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mailbagit Inbox/ -i eml -d html warc -m test6
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="how-mailbagit-handles-encoding">How mailbagit handles encoding</h2>
+
+<ul>
+  <li>Bodies and headers</li>
+  <li>Tries listed encoding if present (and valid)</li>
+  <li>Tries chardetect
+    <ul>
+      <li>raises warning if successful</li>
+      <li>raises error if failed</li>
+    </ul>
+  </li>
+  <li>replaces errors with listed encoding</li>
+  <li>Writes derivatives as “UTF-8”
+    <ul>
+      <li>except EML/MBOX</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="lossiness-in-derivatives">Lossiness in derivatives</h2>
+
+<ul>
+  <li>Most derivatives only contain part of the data</li>
+  <li>EML and MBOX derivatives
+    <ul>
+      <li>tries to write complete object</li>
+      <li>uses original encoding</li>
+      <li>only possible for EML/MBOX sources</li>
+      <li>sometimes fails due to encoding issues
+        <ul>
+          <li>raises warning and generates from Model</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="eml--mbox-from-model">EML / MBOX from Model</h2>
+
+<ul>
+  <li><a href="https://github.com/UAlbanyArchives/mailbagit/blob/main/mailbagit/models.py">mailbagit Model</a></li>
+  <li>Contains all headers, HTML and TXT bodies, attachments</li>
+  <li>Writes folder structure to X-Folder header</li>
+  <li>multipart/mixed
+    <ul>
+      <li>multipart/alternative (text/plain if present)</li>
+      <li>multipart/alternative (text/html if present)</li>
+      <li>application/pdf (application/octet-stream if missing)</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="warc-derivatives">WARC derivatives</h2>
+
+<ul>
+  <li>Now only includes HTML</li>
+  <li>WARC data and structure TBD
+    <ul>
+      <li>Will include headers</li>
+      <li>should include attachments</li>
+      <li>might include option for links</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="undecided-issues">Undecided issues</h2>
+
+<ul>
+  <li><a href="https://github.com/UAlbanyArchives/mailbagit/issues/117">empty PST folders</a></li>
+  <li>Warnings for incorrect encoding listed, but successful decode?</li>
+  <li>Distribution challenges
+    <ul>
+      <li>GUI and exe barriers</li>
+    </ul>
+  </li>
+  <li>WARCs</li>
+</ul>
+
+<hr />
+
+<h2 id="future-questions">Future Questions</h2>
+
+<ul>
+  <li>Packaging from IMAP</li>
+  <li>Packaging over APIs
+    <ul>
+      <li>Gmail</li>
+      <li>Office365/Exchange</li>
+      <li>would require OAuth</li>
+    </ul>
+  </li>
+  <li>Exclusions/filtering</li>
+  <li>Would you like to see more data-centric output?</li>
+</ul>
+
+<hr />
+
+<h3 id="retrospective-if-time">Retrospective if time</h3>
+
+<p><a href="https://jamboard.google.com/d/1Fc64zlP4rouDzNTt8WvgXdLfc0mBPdCNvHcihyCq0bQ/viewer">Jamboard</a></p>
+
+<hr />
+
+<h3 id="bonus-a-big-pst">Bonus: A big PST</h3>
+
+<p>Try a dry run first:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mailbagit allfacstaff.pst -i pst -d eml mbox html pdf -m test7 -r
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mailbagit allfacstaff.pst -i pst -d eml mbox html pdf -m test7
+</code></pre></div></div>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:gwiedeman@albany.edu" aria-label="Email Gregory Wiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x" aria-hidden="true"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse" aria-hidden="true"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/gregwiedeman" aria-label="Twitter">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x" aria-hidden="true"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse" aria-hidden="true"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/gwiedeman" aria-label="GitHub">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x" aria-hidden="true"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse" aria-hidden="true"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy; Gregory Wiedeman 2025
+        </p>
+        <p class="copyright text-muted">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+        </p>
+      </div>
     </div>
+  </div>
+</footer>
 
-    <script src="./js/reveal.js"></script>
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
 
-    <script>
-      function extend() {
-        var target = {};
-        for (var i = 0; i < arguments.length; i++) {
-          var source = arguments[i];
-          for (var key in source) {
-            if (source.hasOwnProperty(key)) {
-              target[key] = source[key];
-            }
-          }
-        }
-        return target;
-      }
-
-      // Optional libraries used to extend on reveal.js
-      var deps = [
-        { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
-        { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
-        { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-        { src: './plugin/zoom-js/zoom.js', async: true },
-        { src: './plugin/notes/notes.js', async: true },
-        { src: './plugin/math/math.js', async: true }
-      ];
-
-      // default options to init reveal.js
-      var defaultOptions = {
-        controls: true,
-        progress: true,
-        history: true,
-        center: true,
-        transition: 'default', // none/fade/slide/convex/concave/zoom
-        dependencies: deps
-      };
-
-      // options from URL query string
-      var queryOptions = Reveal.getQueryHash() || {};
-
-      var options = extend(defaultOptions, {"transition":"fade"}, queryOptions);
-    </script>
+<script src="/assets/scripts.js"></script>
 
 
-    <script>
-      Reveal.initialize(options);
-    </script>
-  </body>
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+
+</body>
+
 </html>

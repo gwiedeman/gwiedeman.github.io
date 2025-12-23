@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Hands-On Email Preservation with Mailbag - Greg Wiedeman
+    
+  </title>
+
+  <meta name="description" content="I&#39;m an archivist who works to make information more accessible.">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="canonical" href="http://0.0.0.0:4000/slides/mailbagitHandsOn.html">
+  <link rel="alternate" type="application/rss+xml" title="Greg Wiedeman" href="/feed.xml">
+  <link rel="stylesheet" href="/assets/main.css">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Greg Wiedeman</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/writing">Writing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/presentations">presentations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/code">Code</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cv">CV</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <style>
+.fLeft {float: left; max-width: 50%;}
+.fRight {float: right; max-width: 50%;}
+#smallLink {font-size: 18px;}
+.whitebg {background-color: #fff; padding: 30px !important;}
+.reveal section img {border: none; background: rgb(255, 255, 255, 1);}
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: "Montserrat", Roboto , sans-serif;
+  text-transform: initial;
+  font-weight: bold;
+}
+.wrap {
+position:relative;
+  height:30vh;
+  border-left:15px solid #000;
+  padding:5vh 20px;
+}
+.arrow {
+  position:absolute;
+  left:-43px;
+  width: 70px;
+  bottom: -20px;
+}
+.up{top:-20px;}
+.slide-background-content{background-size:contain!important;}
+</style>
+
+<h2 id="hands-on-email-preservation-with-mailbag">Hands-On Email Preservation with Mailbag</h2>
+
+<p><a href="https://gregwiedeman.com/slides/mailbagitHandsOn.html">gregwiedeman.com/slides/mailbagitHandsOn.html</a>
+<a href="https://tinyurl.com/mailbagit-workshop">tinyurl.com/mailbagit-workshop</a></p>
+
+<p>Gregory Wiedeman<br />
+University Archivist<br />
+University at Albany, SUNY</p>
+
+<hr />
+
+<h2 id="the-problem">The Problem</h2>
+
+<blockquote>
+  <p>“As a very busy archivist, I would like to store this email I have, so that when I return to it later, all the data will be preserved in a structured way.”</p>
+</blockquote>
+
+<hr />
+
+<h3 id="email-formats-are-problematic">Email formats are problematic</h3>
+
+<ul>
+  <li>MBOX, EML, PST, MSG
+    <ul>
+      <li>Preserve email as structured data</li>
+      <li>Missing data/rapidly decay</li>
+    </ul>
+  </li>
+  <li>PDFs
+    <ul>
+      <li>Preserves email well as a visual document</li>
+      <li>Bad for computational use</li>
+    </ul>
+  </li>
+  <li>WARC files
+    <ul>
+      <li>Preserves visual document experience well</li>
+      <li>Maintains data structure</li>
+      <li>Hard to use/low support for email</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="what-is-mailbag">What is Mailbag?</h2>
+
+<ul>
+  <li><a href="https://archives.albany.edu/mailbag/spec/">Mailbag specification</a>
+    <ul>
+      <li>extension of Bagit spec</li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/UAlbanyArchives/mailbagit">Mailbagit tool</a>
+    <ul>
+      <li>Python utility</li>
+      <li>Very basic GUI</li>
+      <li>Accessible “guided” path</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="mailbagit-setup">Mailbagit setup</h2>
+
+<ul>
+  <li>Python install with pip
+    <ul>
+      <li>Some issues on Windows</li>
+    </ul>
+  </li>
+  <li>Using Windows executables</li>
+  <li><a href="https://archives.albany.edu/mailbag/docker/">Docker images</a></li>
+  <li>Notebook in Google Colab</li>
+</ul>
+
+<hr />
+
+<h2 id="choose-your-adventure">Choose your adventure</h2>
+
+<ul>
+  <li>Not comfortable with the command line?
+    <ul>
+      <li>Use Google Colab notebook</li>
+      <li>Can try Windows exe if admin rights</li>
+    </ul>
+  </li>
+  <li>MacOS/Linux
+    <ul>
+      <li>Any v3.7+ python install or Docker</li>
+    </ul>
+  </li>
+  <li>Windows
+    <ul>
+      <li>Docker/WSL recommended</li>
+      <li>Python v3.7-3.10 (PSTs may not work)</li>
+    </ul>
+  </li>
+  <li>No Docker? need wkhtmltopdf or Chrome for PDFs</li>
+</ul>
+
+<hr />
+
+<h2 id="where-are-we-at">Where are we at?</h2>
+
+<ul>
+  <li>Install method?</li>
+  <li>OS for Python installs?</li>
+</ul>
+
+<hr />
+
+<h2 id="mailbagit-docker-setup">mailbagit docker setup</h2>
+
+<p>Docker pull may take awhile (552 MB)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker pull ualbanyarchives/mailbagit
+wget https://archives.albany.edu/mailbag/docker-compose.yml
+docker compose run mailbagit
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="without-docker-compose">Without docker-compose</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run -it --mount type=bind,source="path/to/data",target=/data ualbanyarchives/mailbagit:latest
+docker run -it --mount type=bind,source="C:\Users\Me\path\to\data",target=/data ualbanyarchives/mailbagit:latest
+&gt; cd /data
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="running-windows-executables">Running Windows Executables</h2>
+
+<ul>
+  <li>Download them from the <a href="https://github.com/UAlbanyArchives/mailbagit/releases/tag/v0.5.0">v0.5.0 release on Github</a></li>
+  <li><a href="https://archives.albany.edu/mailbag/exe/#unblocking-mailbagitexe-and-mailbagit-guiexe">Unblock executables from Defender SmartScreen</a></li>
+</ul>
+
+<hr />
+
+<h2 id="python--pip-install">Python &amp; pip install</h2>
+
+<ul>
+  <li><a href="https://www.python.org/downloads/">Python v3.7+ installed</a>
+    <ul>
+      <li>Python v3.7-3.10 on Windows</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/slides/img/pythonpath.png" alt="Screenshot showing to click the checkbox to add Python to PATH." /></p>
+
+<hr />
+
+<h2 id="python--pip-install-1">Python &amp; pip install</h2>
+
+<ul>
+  <li><a href="https://www.python.org/downloads/">Python v3.7+ installed</a>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">python -V</code> or <code class="language-plaintext highlighter-rouge">python3 -V</code></li>
+    </ul>
+  </li>
+  <li>Do I have pip?</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">pip -V</code> or <code class="language-plaintext highlighter-rouge">pip3 -V</code></p>
+
+<ul>
+  <li>If you need pip:</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">python -m ensurepip --upgrade</code></p>
+
+<hr />
+
+<h2 id="python--pip-install-2">Python &amp; pip install</h2>
+
+<ul>
+  <li>install mailbagit with pip</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">pip install mailbagit</code></p>
+
+<ul>
+  <li>For non-Windows users</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">pip install mailbagit[pst]</code></p>
+
+<hr />
+
+<h2 id="working-with-psts-on-windows">Working with PSTs on Windows</h2>
+
+<ul>
+  <li>Visual Studio Installer
+    <ul>
+      <li>Community edition works</li>
+    </ul>
+  </li>
+  <li>Need “Desktop development with C++”</li>
+  <li>And “VS 2019 C++ x64/x86 build tools”</li>
+  <li><a href="https://archives.albany.edu/mailbag/python/#working-with-pst-files">Docs for this</a></li>
+</ul>
+
+<hr />
+
+<h2 id="google-colab-mailbagit-setup">Google Colab Mailbagit setup</h2>
+
+<ul>
+  <li>Go to <a href="https://colab.research.google.com/">colab.research.google.com</a></li>
+  <li>Load from Github</li>
+  <li>Enter the Github URL: https://github.com/UAlbanyArchives/mailbagit-workshop</li>
+  <li>Select the “mailbagit_workshop.ipynb” notebook</li>
+</ul>
+
+<hr />
+
+<h2 id="google-colab-mailbagit-setup-1">Google Colab Mailbagit setup</h2>
+
+<p><img src="/slides/img/mailbag-colab-notebook.png" alt="Screenshot showing how to load the workshop notebook in Google Colab." /></p>
+
+<hr />
+
+<p>Check that mailbagit is installed:</p>
+
+<p><code class="language-plaintext highlighter-rouge">mailbagit -v</code></p>
+
+<hr />
+
+<h2 id="sample-data">Sample Data</h2>
+
+<ul>
+  <li><a href="https://archives.albany.edu/static/mailbagWorkshopData.zip">https://archives.albany.edu/static/mailbagWorkshopData.zip</a></li>
+  <li>extract to working directory
+    <ul>
+      <li>Inbox (a folder of .EMLs)</li>
+      <li>msgs (a folder of .MSGs)</li>
+      <li>account.mbox</li>
+      <li>enron.pst</li>
+    </ul>
+  </li>
+  <li>Colab users run “Get some sample data”</li>
+</ul>
+
+<hr />
+
+<h2 id="what-mailbagit-does">What mailbagit does</h2>
+
+<ul>
+  <li>Takes email export files
+    <ul>
+      <li>PST, MBOX, MSG, EML</li>
+      <li>Single files or directory of files</li>
+      <li>“companion” files option</li>
+    </ul>
+  </li>
+  <li>Packages them into a mailbag</li>
+  <li>Creates derivative files
+    <ul>
+      <li>TXT, HTML, EML, MBOX</li>
+      <li>PDF, PDF-chrome, WARC</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="speed">Speed</h3>
+
+<ul>
+  <li>Things that are fast
+    <ul>
+      <li>MBOX, EML sources</li>
+      <li>TXT, HTML, EML, MBOX derivatives</li>
+    </ul>
+  </li>
+  <li>Things that are slow
+    <ul>
+      <li>PST, MSG sources</li>
+      <li>PDF, WARC derivatives</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="cli-options">CLI Options</h2>
+
+<ul>
+  <li>-r –dry-run</li>
+  <li>–css path/to/styles.css</li>
+  <li>-c –compress zip</li>
+  <li>-f –companion_files</li>
+</ul>
+
+<hr />
+
+<h2 id="cli-options-1">CLI Options</h2>
+
+<ul>
+  <li>–capture-date</li>
+  <li>–capture-agent</li>
+  <li>–capture-agent-version</li>
+  <li>Most bagit-python options
+    <ul>
+      <li>–processes</li>
+      <li>Checksums, –md5, –sha512</li>
+      <li>–source-organization</li>
+      <li>not -quiet, -validate, -fast</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="privacy--security-concerns">Privacy &amp; Security concerns</h2>
+
+<ul>
+  <li><a href="https://archives.albany.edu/mailbag/concerns/#email-trackers">Email trackers</a>
+    <ul>
+      <li>PDF and WARC derivatives ping all URLs</li>
+    </ul>
+  </li>
+  <li><a href="https://archives.albany.edu/mailbag/concerns/#file-inclusions-in-pdfs-and-warcs">File inclusions</a></li>
+</ul>
+
+<hr />
+
+<h3 id="try-a-dry-run">Try a “dry run”:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mailbagit account.mbox -i mbox -d html eml -m test1 -r
+</code></pre></div></div>
+<h3 id="try-it-for-real">Try it for real:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mailbagit account.mbox -i mbox -d html eml -m test1
+</code></pre></div></div>
+<hr />
+
+<h2 id="whats-in-a-mailbag">What’s in a mailbag?</h2>
+
+<ul>
+  <li>bagit.txt, manifiests</li>
+  <li>bag-info.txt</li>
+  <li>mailbag.csv</li>
+  <li>data (payload)</li>
+</ul>
+
+<hr />
+
+<h2 id="bag-infotxt">bag-info.txt</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bag-Size: 34 MB
+Bag-Software-Agent: bagit.py v1.8.1 &lt;https://github.com/LibraryOfCongress/bagit-python&gt;
+Bag-Type: Mailbag
+Bagging-Date: 2022-05-26
+Bagging-Timestamp: 2022-05-26T16:15:48
+EML-Agent: email
+EML-Agent-Version: 3.9.12
+External-Identifier: adeb0ab6-59b8-494c-be6a-de066f5c8f23
+MSG-Agent: extract_msg
+MSG-Agent-Version: 0.30.12
+Mailbag-Agent: mailbagit
+Mailbag-Agent-Version: 0.2.1
+Mailbag-Source: msg
+Original-Included: True
+PDF-Agent: wkhtmltopdf
+PDF-Agent-Version: wkhtmltopdf 0.12.6 (with patched qt)
+Payload-Oxum: 36529495.87
+WARC-Agent: warcio
+WARC-Agent-Version: 1.7.4
+
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="mailbagcsv-headers">mailbag.csv headers</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error
+Mailbag-Message-ID
+Message-ID
+Original-File
+Message-Path
+Derivatives-Path
+Attachments (int)
+Date
+From
+To
+Cc
+Bcc
+Subject
+Content-Type
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="data-payload">data (payload)</h2>
+
+<ul>
+  <li>attachments
+    <ul>
+      <li>[Mailbag-Message-ID]
+        <ul>
+          <li>attachments.csv</li>
+          <li>test.pdf</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>mbox
+    <ul>
+      <li>account.mbox</li>
+    </ul>
+  </li>
+  <li>eml</li>
+  <li>html</li>
+</ul>
+
+<hr />
+
+<h3 id="try-some-msg-files">Try some MSG files</h3>
+
+<p>Do a “dry run” first again</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mailbagit msgs -i msg -d eml html txt -m test2 -r
+</code></pre></div></div>
+
+<ul>
+  <li>Dry run still creates an error report</li>
+  <li>Take a look a the warnings report in <code class="language-plaintext highlighter-rouge">msgs/test2_warnings</code></li>
+</ul>
+
+<hr />
+
+<h2 id="mailbagit-error-reports">Mailbagit error reports</h2>
+
+<ul>
+  <li>external to mailbag</li>
+  <li>created on -r –dry-run
+    <ul>
+      <li>more errors will show without dry-run</li>
+      <li>errors from subprocesses
+        <ul>
+          <li>wkhtmltopdf</li>
+          <li>chrome</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>errors.csv</li>
+  <li>.txt file for each message with error and full stack trace</li>
+</ul>
+
+<hr />
+
+<h3 id="lets-try-msgs-for-real">Lets try MSGs for real</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mailbagit msgs -i msg -d eml html txt -m test2
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="pdfs-require-external-dependencies">PDFs require external dependencies</h2>
+
+<ul>
+  <li><a href="https://wkhtmltopdf.org/">wkhtmltopdf</a>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">pdf</code></li>
+    </ul>
+  </li>
+  <li><a href="https://www.google.com/chrome/">Google Chrome</a> (<code class="language-plaintext highlighter-rouge">chrome</code>, <code class="language-plaintext highlighter-rouge">chrome.exe</code>, or <code class="language-plaintext highlighter-rouge">google-chrome</code>)
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">pdf-chrome</code></li>
+    </ul>
+  </li>
+  <li><a href="https://archives.albany.edu/mailbag/pdf/">More setup details</a></li>
+</ul>
+
+<hr />
+
+<h2 id="add-to-your-path-windows">Add to your PATH Windows</h2>
+
+<p>Windows likely paths:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\Program Files\wkhtmltopdf\bin
+C:\Program Files\Google\Chrome\Application
+C:\Program Files (x86)\Google\Chrome\Application
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="add-to-your-path-macos">Add to your PATH MacOS</h2>
+
+<p>MacOS likely <code class="language-plaintext highlighter-rouge">/Applications/Google Chrome.app</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="testing-pdf-commands">Testing PDF commands</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wkhtmltopdf -V
+chrome
+chrome.exe
+google-chrome
+</code></pre></div></div>
+<hr />
+
+<h3 id="lets-make-some-pdfs">Lets make some PDFs</h3>
+
+<p>With wkhtmltopdf:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mailbagit msgs/ -i msg -d eml pdf -m test3
+</code></pre></div></div>
+<p>With Chrome:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mailbagit msgs/ -i msg -d eml pdf-chrome -m test3
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="try-a-pst">Try a PST</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mailbagit enron.pst -i pst -d eml html mbox -m test4
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="lets-make-some-warcs">Lets make some WARCs!</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mailbagit msgs -i msg -d eml html warc -m test5
+</code></pre></div></div>
+
+<p>Check out a WARC with <a href="https://replayweb.page/">replayweb.page</a>!</p>
+
+<hr />
+
+<h3 id="how-mailbagit-makes-warcs">How mailbagit makes WARCs</h3>
+
+<ul>
+  <li>uses <a href="https://github.com/webrecorder/warcio">warcio</a> and <code class="language-plaintext highlighter-rouge">requests</code></li>
+  <li>For WARC-Target-URI uses “mailbag”, Mailbag-Message-ID
+    <ul>
+      <li>“http://mailbag/11/body.html”</li>
+    </ul>
+  </li>
+  <li>body.html response record</li>
+  <li>headers.json response record</li>
+  <li>duplicated in metadata record not used by replayweb.page</li>
+  <li>includes attachments</li>
+</ul>
+
+<hr />
+
+<h2 id="how-mailbagit-handles-encoding">How mailbagit handles encoding</h2>
+
+<ul>
+  <li>Bodies and headers</li>
+  <li>Tries listed encoding if present (and valid)</li>
+  <li>Tries chardetect
+    <ul>
+      <li>raises warning if successful</li>
+      <li>raises error if failed</li>
+    </ul>
+  </li>
+  <li>replaces errors with listed encoding</li>
+  <li>Writes derivatives as “UTF-8”
+    <ul>
+      <li>except EML/MBOX</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="lossiness-in-derivatives">Lossiness in derivatives</h2>
+
+<ul>
+  <li>Most derivatives only contain part of the data</li>
+  <li>Most derivatives get written to/from <a href="https://github.com/UAlbanyArchives/mailbagit/blob/main/mailbagit/models.py">the mailbagit Model</a></li>
+  <li>EML and MBOX derivatives
+    <ul>
+      <li>tries to write complete object</li>
+      <li>only possible for EML/MBOX sources</li>
+      <li>uses original encoding</li>
+      <li>sometimes fails due to encoding issues
+        <ul>
+          <li>raises warning and generates from Model</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="eml--mbox-from-model">EML / MBOX from Model</h2>
+
+<ul>
+  <li>Contains all headers, HTML and TXT bodies, attachments</li>
+  <li>Writes folder structure to X-Folder header</li>
+  <li>multipart/mixed
+    <ul>
+      <li>multipart/alternative (text/plain if present)</li>
+      <li>multipart/alternative (text/html if present)</li>
+      <li>application/pdf (application/octet-stream if missing)</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="future-questions">Future Questions</h2>
+
+<ul>
+  <li>Packaging from IMAP</li>
+  <li>Packaging over APIs
+    <ul>
+      <li>Gmail</li>
+      <li>Office365/Exchange</li>
+      <li>would require OAuth</li>
+    </ul>
+  </li>
+  <li>Exclusions/filtering</li>
+</ul>
+
+<hr />
+
+<h2 id="hands-on-email-preservation-with-mailbag-1">Hands-On Email Preservation with Mailbag</h2>
+
+<p><a href="hhttps://gregwiedeman.com/slides/mailbagitHandsOn.html">gregwiedeman.com/slides/mailbagitHandsOn.html</a>
+<a href="https://tinyurl.com/mailbagit-workshop">tinyurl.com/mailbagit</a></p>
+
+<p>Gregory Wiedeman<br />
+University Archivist<br />
+University at Albany, SUNY</p>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:gwiedeman@albany.edu" aria-label="Email Gregory Wiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x" aria-hidden="true"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse" aria-hidden="true"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/gregwiedeman" aria-label="Twitter">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x" aria-hidden="true"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse" aria-hidden="true"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/gwiedeman" aria-label="GitHub">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x" aria-hidden="true"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse" aria-hidden="true"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy; Gregory Wiedeman 2025
+        </p>
+        <p class="copyright text-muted">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+
+</body>
+
+</html>

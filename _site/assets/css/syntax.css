@@ -6,12 +6,12 @@
   }
 }
 .card-primary {
-  background-color: #0085A1;
-  border-color: #0085A1; }
+  background-color: #006a80;
+  border-color: #006a80; }
   .card-primary:hover, .btn-primary:focus, .btn-primary:active {
     color: #fff;
-    background-color: #00657b !important;
-    border-color: #00657b !important; }
+    background-color: #00505f !important;
+    border-color: #00505f !important; }
 
 .card-columns {
   column-count: 4;
@@ -108,4 +108,32 @@
 }
 .highlight .ss {
   color: #859900;
+}
+
+.btn-success {
+  color: #ffffff !important;
+  background-color: #1e7e34 !important;
+  border-color: #1c7430 !important;
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active {
+  background-color: #19692c !important;
+  border-color: #155d27 !important;
+  color: #ffffff !important;
+}
+
+.btn-success:disabled,
+.btn-success.disabled {
+  background-color: #1e7e34 !important;
+  border-color: #1c7430 !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+.btn.disabled,
+.btn:disabled {
+  opacity: 1 !important;
 }

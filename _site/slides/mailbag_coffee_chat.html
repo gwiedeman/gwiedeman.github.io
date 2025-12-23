@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    WARC your Email - Greg Wiedeman
+    
+  </title>
+
+  <meta name="description" content="I&#39;m an archivist who works to make information more accessible.">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="canonical" href="http://0.0.0.0:4000/slides/mailbag_coffee_chat.html">
+  <link rel="alternate" type="application/rss+xml" title="Greg Wiedeman" href="/feed.xml">
+  <link rel="stylesheet" href="/assets/main.css">
+
+</head>
+
+
+<body>
+
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">Greg Wiedeman</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/writing">Writing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/presentations">presentations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/code">Code</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cv">CV</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <style>
+.fLeft {float: left; max-width: 50%;}
+.fRight {float: right; max-width: 50%;}
+#smallLink {font-size: 18px;}
+.whitebg {background-color: #fff; padding: 30px !important;}
+.reveal section img {border: none; background: rgb(255, 255, 255, 1);}
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: "Montserrat", Roboto , sans-serif;
+  text-transform: initial;
+  font-weight: bold;
+}
+.wrap {
+position:relative;
+  height:30vh;
+  border-left:15px solid #000;
+  padding:5vh 20px;
+}
+.arrow {
+  position:absolute;
+  left:-43px;
+  width: 70px;
+  bottom: -20px;
+}
+.up{top:-20px;}
+.slide-background-content{background-size:contain!important;}
+</style>
+
+<h2 id="warc-your-email">WARC your Email</h2>
+<h3 id="how-web-archives-works-for-email-preservation">How Web Archives Works for Email Preservation</h3>
+
+<p><a href="https://gregwiedeman.com/slides/mailbag_coffee_chat.html">gregwiedeman.com/slides/mailbag_coffee_chat.html</a></p>
+
+<p>Gregory Wiedeman<br />
+University Archivist<br />
+University at Albany, SUNY</p>
+
+<hr />
+
+<h2 id="warc-your-email-1">WARC your Email</h2>
+<h3 id="how-web-archives-works-for-email-preservation-1">How Web Archives Works for Email Preservation</h3>
+
+<ul>
+  <li>Challenges of Email Preservation</li>
+  <li>How WARCs address the issues</li>
+  <li>Mailbag specification</li>
+  <li>mailbagit tool</li>
+  <li>Google Colab demo</li>
+</ul>
+
+<hr />
+
+<h2 id="project-origins">Project Origins</h2>
+
+<ul>
+  <li>How can we document elections in New York?</li>
+  <li>2016 pilot project to collect fundraising emails from federal-level incumbent candidates</li>
+  <li>2018 expanded to state Senate and Assembly, Governor’s race</li>
+  <li>Signed up for email on candidate websites</li>
+  <li>Used Gmail account</li>
+  <li>MBOX file export with Google takeout 😀</li>
+</ul>
+
+<hr />
+
+<h2 id="now-what">Now what?</h2>
+
+<ul>
+  <li>Tried processing MBOXs from 2016 and 2018 in 2019</li>
+  <li>Python scripts to extract HTML</li>
+  <li>Convert to PDF with wkhtmltopdf
+    <ul>
+      <li>Pathways for email processing exist</li>
+      <li>Challenging for archivists</li>
+      <li>Requires custom code with many headaches</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<!-- .slide: data-background="img/goodEmail.png" -->
+
+<hr />
+
+<!-- .slide: data-background="img/goodEmail2.png" -->
+
+<hr />
+
+<!-- .slide: data-background="img/badEmail1.png" -->
+
+<hr />
+
+<!-- .slide: data-background="img/badEmail2.png" -->
+
+<hr />
+
+<!-- .slide: data-background="img/badEmail5.png" -->
+
+<hr />
+
+<!-- .slide: data-background="img/badEmail3.png" -->
+
+<hr />
+
+<!-- .slide: data-background="img/badEmail4.png" -->
+
+<hr />
+
+<p><a href="/slides/47.html">47.html</a></p>
+
+<hr />
+
+<!-- .slide: data-background="img/noWayback.png" -->
+
+<hr />
+
+<h3 id="email-export-files-degrade-over-time">Email Export files degrade over time</h3>
+
+<ul>
+  <li>Do not include externally-hosted content
+    <ul>
+      <li>Images</li>
+      <li>CSS (potentially interactive)</li>
+    </ul>
+  </li>
+  <li>Significant data loss 8 months later</li>
+  <li>Links to other web content</li>
+  <li>Email marketing software obfuscates URLs</li>
+</ul>
+
+<hr />
+
+<h2 id="the-problem">The Problem</h2>
+
+<blockquote>
+  <p>“As a very busy archivist, I would like to store this email I have, so that when I return to it later, all the data will be preserved in a structured way.”</p>
+</blockquote>
+
+<hr />
+
+<!-- .slide: data-background="img/emailFormats.png" -->
+
+<hr />
+
+<h3 id="email-formats-are-problematic">Email formats are problematic</h3>
+
+<ul>
+  <li>MBOX, EML, PST, MSG
+    <ul>
+      <li>Do not preserve external content</li>
+      <li>Rapidly decay</li>
+      <li>Proprietary formats with limited open source support (PST, MSG)</li>
+    </ul>
+  </li>
+  <li>All export formats have data structure limitations inherent in email, e.g. unspecified encoding</li>
+</ul>
+
+<hr />
+
+<h3 id="email-formats-are-problematic-1">Email formats are problematic</h3>
+
+<ul>
+  <li>PDFs
+    <ul>
+      <li>Preserves email well as a visual document
+        <ul>
+          <li>Sufficent for many emails</li>
+          <li>Not all emails are static documents</li>
+          <li>Some clients support HTML5 Video 🤯</li>
+        </ul>
+      </li>
+      <li>Doesn’t preserve structure for computational use</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="web-archives-for-email">Web Archives for Email?</h2>
+
+<ul>
+  <li>Email is of the web 🤔
+    <ul>
+      <li>HTML and CSS</li>
+      <li>Used in a type of browser</li>
+    </ul>
+  </li>
+  <li>WARCs preserves visual document experience well</li>
+  <li>WARCs maintains email data structure</li>
+  <li>Can include additional metadata</li>
+  <li>Previously no tools or common practices</li>
+</ul>
+
+<hr />
+
+<h2 id="mailbag-project"><a href="https://archives.albany.edu/mailbag/">Mailbag Project</a></h2>
+
+<ul>
+  <li>2022-2023 grant project
+    <ul>
+      <li><a href="https://archives.albany.edu/mailbag/about/">Project Team</a></li>
+    </ul>
+  </li>
+  <li>Funded by <a href="https://emailarchivesgrant.library.illinois.edu/">Email Archives: Building Capacity and Community</a> project (EA:BCC)</li>
+</ul>
+
+<hr />
+
+<h2 id="the-mailbag-approach">The Mailbag Approach</h2>
+
+<ul>
+  <li>Multiple preservation formats
+    <ul>
+      <li>MBOX + PDFs</li>
+      <li>MBOX + PDFs + WARCs</li>
+      <li>PST + EMLs  + PDFs</li>
+      <li>PST + MBOX + PDFs + WARCs</li>
+      <li>EML + PDFs + WARCs</li>
+    </ul>
+  </li>
+  <li>Common package based on Bagit
+    <ul>
+      <li>Maintain relationships</li>
+      <li>Preserve actionability</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="part-1-mailbag-specification">Part 1: Mailbag specification</h2>
+
+<ul>
+  <li><a href="https://archives.albany.edu/mailbag/spec/">Mailbag specification</a>
+    <ul>
+      <li>Implementation-neutral extension <a href="https://datatracker.ietf.org/doc/html/rfc8493">Bagit spec</a></li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;base directory&gt;/
+     |
+     +-- bagit.txt
+     |
+     +-- bag-info.txt
+     |
+     +-- mailbag.csv
+     |
+     +-- manifest-&lt;algorithm&gt;.txt
+     |
+     +-- tagmanifest-&lt;algorithm&gt;.txt
+     |
+     +-- data/
+          |
+          +-- mbox/
+          |     +-- [payload files]
+          +-- pdf/
+          |     +-- [payload files]
+          +-- warc/
+          |     +-- [payload files]
+          +-- attachments/
+                +-- [Mailbag-Message-ID]/
+                |     -- attachments.csv
+                |     -- [payload files]
+                +-- [Mailbag-Message-ID]/
+                      -- attachments.csv
+                      -- [payload files]
+
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="functional-specifications">Functional Specifications</h2>
+
+<ul>
+  <li>Abstract documents that define what a tool does or how data is structured</li>
+  <li>Communication tool to more participatory design</li>
+  <li>Give practitioners a say!
+    <ul>
+      <li><a href="https://github.com/UAlbanyArchives/mailbag-specification/blob/main/mailbag.md#52-bag-infotxt">Mailbag</a></li>
+      <li><a href="https://datatracker.ietf.org/doc/html/rfc8493">Bagit</a></li>
+      <li><a href="https://iipc.github.io/warc-specifications/specifications/warc-format/warc-1.1-annotated/">WARC</a></li>
+      <li><a href="https://datatracker.ietf.org/doc/html/rfc2822">Email</a></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="part-2-mailbagit-tool">Part 2: mailbagit tool</h2>
+
+<ul>
+  <li><a href="https://github.com/UAlbanyArchives/mailbagit">Python utility</a></li>
+  <li>Very basic GUI</li>
+  <li>Accessible “guided” path</li>
+  <li>Builds PDF, WARCs from common email formats</li>
+</ul>
+
+<hr />
+
+<h2 id="mailbagit-setup">mailbagit setup</h2>
+
+<ul>
+  <li>Overview of options and gotchas</li>
+  <li>Jupyter Notebook in Google Colab demo</li>
+  <li><a href="https://gregwiedeman.com/slides/mailbagitDLF2022.html#/4">More Detailed workshop</a></li>
+</ul>
+
+<hr />
+
+<h2 id="mailbagit-setup-1">mailbagit setup</h2>
+
+<ul>
+  <li><a href="https://archives.albany.edu/mailbag/python/">Python install with pip</a>
+    <ul>
+      <li>Some challenges on Windows</li>
+    </ul>
+  </li>
+  <li><a href="https://archives.albany.edu/mailbag/exe/">Using Windows executables</a>
+    <ul>
+      <li>need <a href="https://archives.albany.edu/mailbag/exe/#unblocking-mailbagitexe-and-mailbagit-guiexe">admin rights</a></li>
+    </ul>
+  </li>
+  <li><a href="https://archives.albany.edu/mailbag/docker/">Docker images</a></li>
+</ul>
+
+<hr />
+
+<h2 id="python--pip-install">Python &amp; pip install</h2>
+
+<ul>
+  <li>install mailbagit with pip</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">pip install mailbagit</code></p>
+
+<ul>
+  <li>For non-Windows users</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">pip install mailbagit[pst]</code></p>
+
+<hr />
+
+<h2 id="working-with-psts-on-windows">Working with PSTs on Windows</h2>
+
+<ul>
+  <li>Visual Studio Installer
+    <ul>
+      <li>Community edition works</li>
+    </ul>
+  </li>
+  <li>Need “Desktop development with C++”</li>
+  <li>And “VS 2019 C++ x64/x86 build tools”</li>
+  <li>Not always reliable</li>
+  <li><a href="https://archives.albany.edu/mailbag/python/#working-with-pst-files">Docs for this</a></li>
+</ul>
+
+<hr />
+
+<h2 id="pdfs-require-external-dependencies">PDFs require external dependencies</h2>
+
+<ul>
+  <li><a href="https://wkhtmltopdf.org/">wkhtmltopdf</a>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">pdf</code></li>
+    </ul>
+  </li>
+  <li><a href="https://www.google.com/chrome/">Google Chrome</a> (<code class="language-plaintext highlighter-rouge">chrome</code>, <code class="language-plaintext highlighter-rouge">chrome.exe</code>, or <code class="language-plaintext highlighter-rouge">google-chrome</code>)
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">pdf-chrome</code></li>
+    </ul>
+  </li>
+  <li><a href="https://archives.albany.edu/mailbag/pdf/">More setup details</a></li>
+</ul>
+
+<hr />
+
+<h2 id="google-colab-mailbagit-setup">Google Colab mailbagit setup</h2>
+
+<ul>
+  <li>Go to <a href="https://colab.research.google.com/">colab.research.google.com</a></li>
+  <li>Load from Github</li>
+  <li>Enter the Github URL: https://github.com/UAlbanyArchives/mailbagit-workshop</li>
+  <li>Select the “mailbagit_workshop.ipynb” notebook</li>
+</ul>
+
+<hr />
+
+<h2 id="google-colab-mailbagit-setup-1">Google Colab mailbagit setup</h2>
+
+<p><img src="/slides/img/mailbag-colab-notebook.png" alt="Screenshot showing how to load the workshop notebook in Google Colab." /></p>
+
+<hr />
+
+<h2 id="what-mailbagit-does">What mailbagit does</h2>
+
+<ul>
+  <li>Takes email export files
+    <ul>
+      <li>PST, MBOX, MSG, EML</li>
+      <li>Single files or directory of files</li>
+      <li>“companion” files option</li>
+    </ul>
+  </li>
+  <li>Packages them into a mailbag</li>
+  <li>Creates derivative files
+    <ul>
+      <li>TXT, HTML, EML, MBOX</li>
+      <li>PDF, PDF-chrome, WARC</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="speed">Speed</h3>
+
+<ul>
+  <li>Things that are fast
+    <ul>
+      <li>MBOX, EML sources</li>
+      <li>TXT, HTML, EML, MBOX derivatives</li>
+    </ul>
+  </li>
+  <li>Things that are slow
+    <ul>
+      <li>PST, MSG sources</li>
+      <li>PDF, WARC derivatives</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="cli-options">CLI Options</h2>
+
+<ul>
+  <li>-r –dry-run</li>
+  <li>-k –keep</li>
+  <li>–css path/to/styles.css</li>
+  <li>-c –compress zip</li>
+  <li>-f –companion_files</li>
+</ul>
+
+<hr />
+
+<h2 id="cli-options-1">CLI Options</h2>
+
+<ul>
+  <li>–capture-date</li>
+  <li>–capture-agent</li>
+  <li>–capture-agent-version</li>
+  <li>Most bagit-python options
+    <ul>
+      <li>–processes</li>
+      <li>Checksums, –md5, –sha512</li>
+      <li>–source-organization</li>
+      <li>not -quiet, -validate, -fast</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="privacy--security-concerns">Privacy &amp; Security concerns</h2>
+
+<ul>
+  <li><a href="https://archives.albany.edu/mailbag/concerns/#email-trackers">Email trackers</a>
+    <ul>
+      <li>PDF and WARC derivatives ping all URLs</li>
+    </ul>
+  </li>
+  <li><a href="https://archives.albany.edu/mailbag/concerns/#file-inclusions-in-pdfs-and-warcs">File inclusions</a></li>
+</ul>
+
+<hr />
+
+<h2 id="mailbagit-error-reports">mailbagit error reports</h2>
+
+<ul>
+  <li>external to mailbag</li>
+  <li>created on -r –dry-run
+    <ul>
+      <li>more errors will show without dry-run</li>
+      <li>errors from subprocesses
+        <ul>
+          <li>wkhtmltopdf</li>
+          <li>chrome</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>errors.csv</li>
+  <li>.txt file for each message with error and full stack trace</li>
+</ul>
+
+<hr />
+
+<h3 id="lets-make-some-warcs">Lets make some WARCs!</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mailbagit msgs -i msg -d eml html warc -m test5 -k
+</code></pre></div></div>
+
+<p>Check out a WARC with <a href="https://replayweb.page/">replayweb.page</a>!</p>
+
+<hr />
+
+<h3 id="how-mailbagit-makes-warcs">How mailbagit makes WARCs</h3>
+
+<ul>
+  <li><a href="https://github.com/UAlbanyArchives/mailbagit/blob/main/mailbagit/derivatives/warc.py">mailbagit WARC module</a>
+    <ul>
+      <li>Extensible! You can make your own plugin</li>
+    </ul>
+  </li>
+  <li>WARCs and PDFs use a common <a href="https://github.com/UAlbanyArchives/mailbagit/blob/main/mailbagit/helper/derivative.py#L50">HTML extract and formatting process</a>
+    <ul>
+      <li>wraps partial html</li>
+      <li>Adds a table of basic headers</li>
+    </ul>
+  </li>
+  <li>Serves HTML locally with <a href="https://docs.python.org/3/library/http.server.html">http.server</a></li>
+  <li>uses <a href="https://github.com/webrecorder/warcio">warcio</a> and <code class="language-plaintext highlighter-rouge">requests</code> to write WARCs</li>
+  <li>Writes attachments as response records</li>
+  <li>-l, –external-links option will include &lt;a&gt; links</li>
+</ul>
+
+<hr />
+
+<h3 id="how-mailbagit-makes-warcs-1">How mailbagit makes WARCs</h3>
+
+<ul>
+  <li>WARC-Target-URI
+    <ul>
+      <li>uses “mailbag” and Mailbag-Message-ID</li>
+      <li>“http://mailbag/11/body.html”</li>
+    </ul>
+  </li>
+  <li>body.html response record</li>
+  <li>adds headers to <a href="https://iipc.github.io/warc-specifications/specifications/warc-format/warc-1.1-annotated/#metadata">WARC metadata record</a>
+    <ul>
+      <li>not used by replayweb.page</li>
+    </ul>
+  </li>
+  <li>headers duplicated in headers.json response record</li>
+  <li><a href="https://archives.albany.edu/mailbag/warcs">More documentation</a></li>
+</ul>
+
+<hr />
+
+<h2 id="how-mailbagit-handles-encoding">How mailbagit handles encoding</h2>
+
+<ul>
+  <li>Bodies and headers</li>
+  <li>Tries listed encoding if present (and valid)</li>
+  <li>Tries chardetect
+    <ul>
+      <li>raises warning if successful</li>
+      <li>raises error if failed</li>
+    </ul>
+  </li>
+  <li>replaces errors with listed encoding</li>
+  <li>Writes derivatives as UTF-8
+    <ul>
+      <li>except EML/MBOX</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="lossiness-in-derivatives">Lossiness in derivatives</h2>
+
+<ul>
+  <li>Most derivatives only contain part of the data</li>
+  <li>Most derivatives get written to/from <a href="https://github.com/UAlbanyArchives/mailbagit/blob/main/mailbagit/models.py">the mailbagit Model</a></li>
+  <li>EML and MBOX derivatives
+    <ul>
+      <li>tries to write complete object</li>
+      <li>only possible for EML/MBOX sources</li>
+      <li>uses original encoding</li>
+      <li>sometimes fails due to encoding issues
+        <ul>
+          <li>raises warning and generates from Model</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="warcs-for-email-preservation">WARCs for Email Preservation</h3>
+
+<ul>
+  <li>Preserves external content and data structure</li>
+  <li>Can include attachments</li>
+  <li>Useful for emails that may have more dynamic content</li>
+  <li>No real established practices
+    <ul>
+      <li>use WARC-Target-URI</li>
+      <li>Metadata record</li>
+    </ul>
+  </li>
+  <li>WARCs are getting easier to use
+    <ul>
+      <li><a href="https://replayweb.page/">replayweb.page</a></li>
+      <li><a href="https://specs.webrecorder.net/wacz/1.1.1/">WACZ</a></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="warc-your-email-2">WARC your Email</h2>
+<h3 id="how-web-archives-works-for-email-preservation-2">How Web Archives Works for Email Preservation</h3>
+
+<p><a href="https://gregwiedeman.com/slides/mailbag_coffee_chat.html">gregwiedeman.com/slides/mailbag_coffee_chat.html</a></p>
+
+<p>Gregory Wiedeman<br />
+University Archivist<br />
+University at Albany, SUNY</p>
+
+
+  <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          <li class="list-inline-item">
+            <a href="mailto:gwiedeman@albany.edu" aria-label="Email Gregory Wiedeman">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x" aria-hidden="true"></i>
+                <i class="far fa-envelope fa-stack-1x fa-inverse" aria-hidden="true"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          <li class="list-inline-item">
+            <a href="https://twitter.com/gregwiedeman" aria-label="Twitter">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x" aria-hidden="true"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse" aria-hidden="true"></i>
+              </span>
+            </a>
+          </li>
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/gwiedeman" aria-label="GitHub">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x" aria-hidden="true"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse" aria-hidden="true"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy; Gregory Wiedeman 2025
+        </p>
+        <p class="copyright text-muted">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '');
+</script>
+
+
+
+</body>
+
+</html>

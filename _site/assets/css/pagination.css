@@ -1,3 +1,41 @@
 ul.pagination {
 	margin-bottom: 0;
 }
+
+.btn-outline-info {
+  color: #117a8b !important;
+  border-color: #117a8b !important;
+}
+
+.btn-outline-info.disabled {
+  color: #117a8b !important;
+  border-color: #117a8b !important;
+}
+
+.btn-success {
+  color: #ffffff !important;
+  background-color: #1e7e34 !important;
+  border-color: #1c7430 !important;
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active {
+  background-color: #19692c !important;
+  border-color: #155d27 !important;
+  color: #ffffff !important;
+}
+
+.btn-success:disabled,
+.btn-success.disabled {
+  background-color: #1e7e34 !important;
+  border-color: #1c7430 !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+.btn.disabled,
+.btn:disabled {
+  opacity: 1 !important;
+}
